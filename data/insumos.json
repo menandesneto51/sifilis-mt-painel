@@ -1,8 +1,8 @@
 {
   "tipo": "extracao_dw",
   "onda": "MVP3-extract",
-  "aviso": "Agregados DW SES-MT (SIM/SIA/VW_INTERNACAO) via VPN — sem PII. SISLOGLAB: use scripts/ingest_sisloglab_csv.py (mapa mensal agregado). SUINS no DW é legado (~2006) e não substitui. ADR-007. Insumos de estoque via CSV agregado mapa mensal (saldo≤0 ou flag_ruptura). Sem limiar clínico de dias mínimos até norma em regras.yml. Insumos de estoque via CSV agregado mapa mensal (saldo≤0 ou flag_ruptura). Sem limiar clínico de dias mínimos até norma em regras.yml.",
-  "ano": 2026,
+  "aviso": "Agregados DW SES-MT (SIM/SIA/VW_INTERNACAO) via VPN — sem PII. SISLOGLAB: use scripts/ingest_sisloglab_csv.py (mapa mensal agregado). SUINS no DW é legado (~2006) e não substitui. ADR-007. Insumos de estoque via CSV agregado mapa mensal (saldo≤0 ou flag_ruptura). Sem limiar clínico de dias mínimos até norma em regras.yml. Óbitos SC: SIM (fato) e proxy SINAN/SIFC são publicados lado a lado — não misturar.",
+  "ano": 2025,
   "fonte_prevista": "dbo.SIM + dbo.SIA + dbo.VW_INTERNACAO (DW) · SISLOGLAB CSV opcional",
   "estado": {
     "ruptura_penicilina_n": 1,
@@ -11,10 +11,11 @@
     "dias_cobertura_penicilina_mediana": 22.5,
     "ubs_com_testagem_proxy": null,
     "ubs_com_penicilina_proxy": null,
-    "obitos_sc_sim": 0,
-    "obitos_sc_proxy_sinan": null,
-    "procedimentos_sia_sifilis": 0,
-    "internacoes_sih_sifilis": 0
+    "obitos_sc_sim": 13,
+    "obitos_sc_proxy_sinan": 6,
+    "procedimentos_sia_sifilis": 937,
+    "internacoes_sih_sifilis": 345,
+    "obitos_sc_delta_abs": 7
   },
   "indicadores": {
     "ruptura_penicilina": {
@@ -30,15 +31,15 @@
       "status": "ingest_csv"
     },
     "obitos_sc_sim": {
-      "valor": 0,
+      "valor": 13,
       "status": "extracao_dw"
     },
     "procedimentos_sia_sifilis": {
-      "valor": 0,
+      "valor": 937,
       "status": "extracao_dw"
     },
     "internacoes_sih_sifilis": {
-      "valor": 0,
+      "valor": 345,
       "status": "extracao_dw"
     }
   },
@@ -49,5 +50,11 @@
       "mun_ruptura": 1
     }
   ],
-  "fonte_sisloglab": "csv_agregado_mapa_mensal"
+  "fonte_sisloglab": "csv_agregado_mapa_mensal",
+  "obitos_sc_dual": {
+    "obitos_sc_sim": 13,
+    "obitos_sc_proxy_sinan": 6,
+    "delta_abs": 7,
+    "nota": "SIM = fato de mortalidade (CID A50). Proxy SINAN = campo óbito na ficha SIFC. Nunca somar nem substituir sem rotular."
+  }
 }

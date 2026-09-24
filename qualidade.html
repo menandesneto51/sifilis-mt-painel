@@ -44,15 +44,18 @@
   <script>
     document.addEventListener("DOMContentLoaded", async function () {
       SifilisApp.barraFonte("seletor-fonte");
-      const [proxyRaw, demo, epi] = await Promise.all([
+      const [proxyRaw, demo, epi, insumosRaw] = await Promise.all([
         SifilisApp.load("qualidade_proxy_dw.json").catch(function () { return null; }),
         SifilisApp.load("qualidade.json").catch(function () { return null; }),
         SifilisApp.load("epidemiologia.json"),
+        SifilisApp.load("insumos.json").catch(function () { return null; }),
       ]);
       const ano = SifilisApp.barraAno("wrap-ano", epi.anos_disponiveis || [], epi.ano);
       const proxy = proxyRaw ? SifilisApp.dadoNoAno(proxyRaw, ano) : null;
       const q = proxy && proxy.estado ? proxy : demo;
       const e = (q && q.estado) || {};
+      const insumos = insumosRaw ? SifilisApp.dadoNoAno(insumosRaw, ano) || insumosRaw : null;
+      const dual = (insumos && insumos.obitos_sc_dual) || {};
       document.getElementById("meta").textContent =
         (q && q.aviso ? q.aviso : "Sem dados de qualidade") + " · Ano " + ((q && q.ano) || ano);
       const faixa = document.getElementById("faixa-demo");
@@ -64,7 +67,13 @@
           SifilisApp.kpi("Score proxy", SifilisApp.fmt(e.score_qualidade_proxy, 1), "0–100", "≠ risco") +
           SifilisApp.kpi("Completude proxy", SifilisApp.fmt(e.completude_geral_pct, 1) + "%", "100 − média ignorados", "SIFG") +
           SifilisApp.kpi("Esquema ignorado", SifilisApp.fmt(e.esquema_ignorado_pct, 1) + "%", "fichas " + SifilisApp.fmt(e.n_fichas), "") +
-          SifilisApp.kpi("Parceria ignorada", SifilisApp.fmt(e.parceria_ignorado_pct, 1) + "%", "campo SIFG", "");
+          SifilisApp.kpi("Parceria ignorada", SifilisApp.fmt(e.parceria_ignorado_pct, 1) + "%", "campo SIFG", "") +
+          SifilisApp.kpi(
+            "|SIM − proxy SINAN|",
+            dual.delta_abs != null ? SifilisApp.fmt(dual.delta_abs) : "—",
+            "óbito SC agregado",
+            "dual"
+          );
         const tb = document.querySelector("#tab-q tbody");
         [
           ["Esquema tratamento", e.esquema_ignorado_pct, "Essencial cascata"],

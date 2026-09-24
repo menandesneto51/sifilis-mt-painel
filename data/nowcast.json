@@ -2,7 +2,7 @@
   "tipo": "extracao_dw",
   "onda": "MVP3-nowcast",
   "aviso": "Nowcast experimental MVP3 (média móvel + shrinkage EB para ERS). Não publicar como boletim oficial. Sem PII. Método estatístico — adaptação Meningites; não é regra clínica.",
-  "ano": 2026,
+  "ano": 2025,
   "metodo": "media_movel_anual + empirical_bayes_ers",
   "formula_status": "experimental",
   "parametros": {
@@ -30,8 +30,7 @@
       2022,
       2023,
       2024,
-      2025,
-      2026
+      2025
     ],
     "observado_sc": [
       69,
@@ -52,8 +51,7 @@
       367,
       469,
       494,
-      675,
-      459
+      675
     ],
     "nowcast_sc": [
       null,
@@ -74,8 +72,7 @@
       294.67,
       353.67,
       443.33,
-      546.0,
-      542.67
+      546.0
     ]
   },
   "serie_semanal": {
@@ -98,8 +95,7 @@
       2022,
       2023,
       2024,
-      2025,
-      2026
+      2025
     ],
     "observado_sc": [
       69,
@@ -120,8 +116,7 @@
       367,
       469,
       494,
-      675,
-      459
+      675
     ],
     "nowcast_sc": [
       null,
@@ -142,145 +137,153 @@
       294.67,
       353.67,
       443.33,
-      546.0,
-      542.67
+      546.0
     ]
   },
   "horizonte": {
-    "proximo_ano_estimado_casos_sc": 542.67,
+    "proximo_ano_estimado_casos_sc": 546.0,
     "nota": "Estimativa = última média móvel disponível; ano corrente pode estar incompleto."
   },
   "estado": {
-    "casos_sc": 459,
-    "nascidos_vivos": 36013,
-    "taxa_sc": 12.75
+    "casos_sc": 675,
+    "nascidos_vivos": 57643,
+    "taxa_sc": 11.71
   },
   "ers_taxas_eb": [
     {
       "ers": "CACERES",
-      "casos_sc": 56,
-      "nascidos_vivos": 1426,
-      "taxa_obs": 39.27,
-      "taxa_eb": 32.38,
-      "peso_observado": 0.74,
+      "casos_sc": 85,
+      "nascidos_vivos": 2339,
+      "taxa_obs": 36.34,
+      "taxa_eb": 32.0,
+      "peso_observado": 0.824,
       "suavizado": true
     },
     {
       "ers": "RONDONOPOLIS",
-      "casos_sc": 179,
-      "nascidos_vivos": 5353,
-      "taxa_obs": 33.44,
-      "taxa_eb": 31.67,
-      "peso_observado": 0.915,
+      "casos_sc": 239,
+      "nascidos_vivos": 8474,
+      "taxa_obs": 28.2,
+      "taxa_eb": 27.28,
+      "peso_observado": 0.944,
       "suavizado": false
     },
     {
-      "ers": "PONTES E LACERDA",
-      "casos_sc": 26,
-      "nascidos_vivos": 1105,
-      "taxa_obs": 23.53,
-      "taxa_eb": 20.17,
-      "peso_observado": 0.688,
+      "ers": "BARRA DO GARCAS",
+      "casos_sc": 27,
+      "nascidos_vivos": 1378,
+      "taxa_obs": 19.59,
+      "taxa_eb": 17.49,
+      "peso_observado": 0.734,
       "suavizado": true
     },
     {
       "ers": "CUIABA",
-      "casos_sc": 125,
-      "nascidos_vivos": 9221,
-      "taxa_obs": 13.56,
-      "taxa_eb": 13.51,
-      "peso_observado": 0.949,
+      "casos_sc": 188,
+      "nascidos_vivos": 14931,
+      "taxa_obs": 12.59,
+      "taxa_eb": 12.56,
+      "peso_observado": 0.968,
       "suavizado": false
     },
     {
       "ers": "DIAMANTINO",
+      "casos_sc": 11,
+      "nascidos_vivos": 865,
+      "taxa_obs": 12.72,
+      "taxa_eb": 12.35,
+      "peso_observado": 0.634,
+      "suavizado": true
+    },
+    {
+      "ers": "ALTA FLORESTA",
+      "casos_sc": 1,
+      "nascidos_vivos": 130,
+      "taxa_obs": 7.69,
+      "taxa_eb": 10.88,
+      "peso_observado": 0.206,
+      "suavizado": true
+    },
+    {
+      "ers": "PONTES E LACERDA",
+      "casos_sc": 13,
+      "nascidos_vivos": 1690,
+      "taxa_obs": 7.69,
+      "taxa_eb": 8.61,
+      "peso_observado": 0.772,
+      "suavizado": true
+    },
+    {
+      "ers": "JUINA",
+      "casos_sc": 4,
+      "nascidos_vivos": 682,
+      "taxa_obs": 5.87,
+      "taxa_eb": 8.34,
+      "peso_observado": 0.577,
+      "suavizado": true
+    },
+    {
+      "ers": "COLIDER",
+      "casos_sc": 6,
+      "nascidos_vivos": 929,
+      "taxa_obs": 6.46,
+      "taxa_eb": 8.3,
+      "peso_observado": 0.65,
+      "suavizado": true
+    },
+    {
+      "ers": "AGUA BOA",
+      "casos_sc": 6,
+      "nascidos_vivos": 1125,
+      "taxa_obs": 5.33,
+      "taxa_eb": 7.3,
+      "peso_observado": 0.692,
+      "suavizado": true
+    },
+    {
+      "ers": "SINOP",
+      "casos_sc": 66,
+      "nascidos_vivos": 9471,
+      "taxa_obs": 6.97,
+      "taxa_eb": 7.21,
+      "peso_observado": 0.95,
+      "suavizado": false
+    },
+    {
+      "ers": "PEIXOTO DE AZEVEDO",
+      "casos_sc": 9,
+      "nascidos_vivos": 1579,
+      "taxa_obs": 5.7,
+      "taxa_eb": 7.15,
+      "peso_observado": 0.759,
+      "suavizado": true
+    },
+    {
+      "ers": "PORTO ALEGRE DO NORTE",
       "casos_sc": 5,
-      "nascidos_vivos": 379,
-      "taxa_obs": 13.19,
-      "taxa_eb": 12.94,
-      "peso_observado": 0.431,
+      "nascidos_vivos": 1085,
+      "taxa_obs": 4.61,
+      "taxa_eb": 6.85,
+      "peso_observado": 0.685,
       "suavizado": true
     },
     {
       "ers": "JUARA",
       "casos_sc": 1,
-      "nascidos_vivos": 77,
-      "taxa_obs": 12.99,
-      "taxa_eb": 12.78,
-      "peso_observado": 0.133,
+      "nascidos_vivos": 603,
+      "taxa_obs": 1.66,
+      "taxa_eb": 6.21,
+      "peso_observado": 0.547,
       "suavizado": true
-    },
-    {
-      "ers": "PEIXOTO DE AZEVEDO",
-      "casos_sc": 1,
-      "nascidos_vivos": 96,
-      "taxa_obs": 10.42,
-      "taxa_eb": 12.37,
-      "peso_observado": 0.161,
-      "suavizado": true
-    },
-    {
-      "ers": "PORTO ALEGRE DO NORTE",
-      "casos_sc": 1,
-      "nascidos_vivos": 110,
-      "taxa_obs": 9.09,
-      "taxa_eb": 12.09,
-      "peso_observado": 0.18,
-      "suavizado": true
-    },
-    {
-      "ers": "JUINA",
-      "casos_sc": 5,
-      "nascidos_vivos": 534,
-      "taxa_obs": 9.36,
-      "taxa_eb": 11.0,
-      "peso_observado": 0.516,
-      "suavizado": true
-    },
-    {
-      "ers": "BARRA DO GARCAS",
-      "casos_sc": 8,
-      "nascidos_vivos": 882,
-      "taxa_obs": 9.07,
-      "taxa_eb": 10.4,
-      "peso_observado": 0.638,
-      "suavizado": true
-    },
-    {
-      "ers": "COLIDER",
-      "casos_sc": 1,
-      "nascidos_vivos": 294,
-      "taxa_obs": 3.4,
-      "taxa_eb": 9.29,
-      "peso_observado": 0.37,
-      "suavizado": true
-    },
-    {
-      "ers": "AGUA BOA",
-      "casos_sc": 5,
-      "nascidos_vivos": 726,
-      "taxa_obs": 6.89,
-      "taxa_eb": 9.28,
-      "peso_observado": 0.592,
-      "suavizado": true
-    },
-    {
-      "ers": "SINOP",
-      "casos_sc": 42,
-      "nascidos_vivos": 5054,
-      "taxa_obs": 8.31,
-      "taxa_eb": 8.71,
-      "peso_observado": 0.91,
-      "suavizado": false
     },
     {
       "ers": "TANGARA DA SERRA",
-      "casos_sc": 4,
-      "nascidos_vivos": 1694,
-      "taxa_obs": 2.36,
-      "taxa_eb": 4.73,
-      "peso_observado": 0.772,
-      "suavizado": true
+      "casos_sc": 14,
+      "nascidos_vivos": 3020,
+      "taxa_obs": 4.64,
+      "taxa_eb": 5.64,
+      "peso_observado": 0.858,
+      "suavizado": false
     }
   ],
   "nota_municipios_pequenos": "ERS com pouco peso observado (nv/(nv+500) < 0,85) são puxadas à taxa estadual (empirical Bayes). Preferir leitura regional a municipal em volumes baixos."

@@ -56,8 +56,9 @@
       <p class="aviso-regra" id="op-pendente"></p>
     </section>
     <section class="secao">
-      <h2>Municípios com maior gap de testagem (e-SUS APS)</h2>
-      <p class="meta-dados">Atendimentos com IG&gt;0 sem procedimento de testagem sífilis no mesmo encontro (mín. 80 atd.).</p>
+      <h2>Gap e-SUS APS × SIFG (hipótese de subnotificação)</h2>
+      <p class="meta-dados" id="gap-esus-headline">Atendimentos com IG&gt;0 sem procedimento de testagem sífilis no mesmo encontro (mín. 80 atd.). Alto volume APS + baixa SIFG = investigar, não afirmar.</p>
+      <div class="kpis" id="kpis-gap-esus"></div>
       <div class="tabela-wrap"><table class="tabela" id="tab-esus-gap"><thead>
         <tr><th>Município</th><th>ERS</th><th>Atend.</th><th>Com test.</th><th>Sem test.</th><th>%</th><th>HepB SIPNI</th></tr>
       </thead><tbody></tbody></table></div>
@@ -251,9 +252,51 @@
             "<span>ret. " + ret + " · Δ " + perda + "</span></li>";
         });
       }
+      const gap = (oport && oport.gap_esus_sifg) || (cas && cas.gap_esus_sifg) || {};
+      const kGap = document.getElementById("kpis-gap-esus");
+      if (kGap) {
+        const pctGap =
+          gap.esus_gestante_sem_testagem_pct != null
+            ? gap.esus_gestante_sem_testagem_pct
+            : oport && oport.esus_gestante_sem_testagem_pct;
+        kGap.innerHTML =
+          SifilisApp.kpi(
+            "% sem testagem APS",
+            pctGap != null ? SifilisApp.fmt(pctGap, 1) + "%" : "—",
+            "e-SUS encontro IG>0",
+            "gap"
+          ) +
+          SifilisApp.kpi(
+            "Atend. gestante APS",
+            gap.esus_atendimentos_gestante_n != null
+              ? SifilisApp.fmt(gap.esus_atendimentos_gestante_n)
+              : oport && oport.esus_atendimentos_gestante_n != null
+                ? SifilisApp.fmt(oport.esus_atendimentos_gestante_n)
+                : "—",
+            "volume e-SUS",
+            "esus"
+          ) +
+          SifilisApp.kpi(
+            "Casos SIFG",
+            gap.gestante_casos_sifg != null
+              ? SifilisApp.fmt(gap.gestante_casos_sifg)
+              : oport && oport.gestante_casos != null
+                ? SifilisApp.fmt(oport.gestante_casos)
+                : "—",
+            "notificação SINAN",
+            "SIFG"
+          );
+        const hl = document.getElementById("gap-esus-headline");
+        if (hl && gap.hipotese) hl.textContent = gap.hipotese;
+      }
       const tb = document.querySelector("#tab-esus-gap tbody");
       if (tb && oport) {
-        const rank = oport.ranking_esus_gap_testagem || [];
+        const rank =
+          (gap.ranking_esus_gap_municipios && gap.ranking_esus_gap_municipios.length
+            ? gap.ranking_esus_gap_municipios
+            : null) ||
+          oport.ranking_esus_gap_testagem ||
+          [];
         if (!rank.length) {
           tb.innerHTML = "<tr><td colspan='7'>Sem ranking e-SUS para o ano (extract ou volume mínimo).</td></tr>";
         } else {

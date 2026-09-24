@@ -89,13 +89,14 @@
     document.addEventListener("DOMContentLoaded", async function () {
       try {
         SifilisApp.barraFonte("seletor-fonte");
-        const [epi, terrRaw, oportRaw, qualRaw, pront, alertas] = await Promise.all([
+        const [epi, terrRaw, oportRaw, qualRaw, pront, alertas, insumosRaw] = await Promise.all([
           SifilisApp.load("epidemiologia.json"),
           SifilisApp.load("territorio_indicadores.json"),
           SifilisApp.load("oportunidade_dw.json").catch(function () { return null; }),
           SifilisApp.load("qualidade_proxy_dw.json").catch(function () { return null; }),
           SifilisApp.load("prontidao_eliminacao.json").catch(function () { return null; }),
           SifilisApp.load("alertas.json").catch(function () { return null; }),
+          SifilisApp.load("insumos.json").catch(function () { return null; }),
         ]);
         const anos = epi.anos_disponiveis || [];
         const ano = SifilisApp.barraAno("wrap-ano", anos, epi.ano);
@@ -103,6 +104,7 @@
         const terr = SifilisApp.dadoNoAno(terrRaw, ano) || terrRaw;
         const oport = oportRaw ? SifilisApp.dadoNoAno(oportRaw, ano) : null;
         const qual = qualRaw ? SifilisApp.dadoNoAno(qualRaw, ano) : null;
+        const insumos = insumosRaw ? SifilisApp.dadoNoAno(insumosRaw, ano) || insumosRaw : null;
         const faixa = document.getElementById("faixa-demo");
         if (faixa) {
           faixa.innerHTML =
@@ -114,16 +116,15 @@
                 " ERS oficiais" +
                 (epi.incompleto && ano === epi.ano ? " (pode estar incompleto)." : ".")
               : "<strong>DEMONSTRAÇÃO:</strong> agregados sintéticos. Não oficiais. Sem PII.";
+          SifilisApp.faixaDenominador(faixa, Object.assign({}, epi, { ano: ano }));
         }
         document.getElementById("meta").textContent = SifilisApp.metaHtml(Object.assign({}, epi, { ano: ano }));
         document.getElementById("kpis").innerHTML =
           SifilisApp.kpi(
             "Adquirida",
             SifilisApp.fmt(e.adquirida.casos),
-            e.adquirida && e.adquirida.nivel_evidencia === "proxy"
-              ? "NI+CID A51–A53 · /100 mil " + SifilisApp.fmt(e.adquirida.taxa, 1)
-              : "casos · view DW pendente",
-            (e.adquirida && e.adquirida.nota) || "SIFA"
+            "NI+CID A51–A53 (método SES-MT) · /100 mil " + SifilisApp.fmt(e.adquirida.taxa, 1),
+            (e.adquirida && e.adquirida.rotulo_painel) || "método SES-MT"
           ) +
           SifilisApp.kpi(
             "Gestantes",
@@ -184,8 +185,28 @@
           SifilisCharts.linha("chart-pqa-serie", s.anos.map(String), s.razao_sc_gestante_pct, "SC/SIFG %");
         }
         const qs = qual && qual.estado ? qual.estado.score_qualidade_proxy : null;
+        const gapPct =
+          oport && oport.esus_gestante_sem_testagem_pct != null
+            ? oport.esus_gestante_sem_testagem_pct
+            : (epi.gap_esus_sifg || {}).esus_gestante_sem_testagem_pct;
+        const ersGapN =
+          epi.contadores_acao && epi.contadores_acao.ers_gap_esus_alto_n != null
+            ? epi.contadores_acao.ers_gap_esus_alto_n
+            : null;
         document.getElementById("contadores").innerHTML =
           SifilisApp.kpi("ERS oficiais", String(terr.ers_n || 16), "escritórios regionais", "territorio.json") +
+          SifilisApp.kpi(
+            "Gap testagem e-SUS",
+            gapPct != null ? SifilisApp.fmt(gapPct, 1) + "%" : "—",
+            "IG>0 sem proced. no encontro",
+            "hipótese operacional"
+          ) +
+          SifilisApp.kpi(
+            "ERS gap ≥40%",
+            ersGapN != null ? String(ersGapN) : "—",
+            "regionais",
+            "ranking_esus_gap_ers"
+          ) +
           SifilisApp.kpi(
             "Índice oport. perdidas",
             oport && oport.indice_oportunidades_perdidas != null
@@ -232,6 +253,40 @@
             "≠ risco epidemiológico",
             "qualidade_proxy_dw"
           ) +
+          (function () {
+            const ie = (insumos && insumos.estado) || {};
+            const dual = (insumos && insumos.obitos_sc_dual) || {};
+            const proxyOb =
+              ie.obitos_sc_proxy_sinan != null
+                ? ie.obitos_sc_proxy_sinan
+                : e.congenita && e.congenita.obitos != null
+                  ? e.congenita.obitos
+                  : null;
+            return (
+              SifilisApp.kpi(
+                "Óbitos SC (SIM)",
+                ie.obitos_sc_sim != null ? SifilisApp.fmt(ie.obitos_sc_sim) : "—",
+                "fato dbo.SIM A50",
+                "obitos_sc_sim"
+              ) +
+              SifilisApp.kpi(
+                "Óbitos SC (proxy SINAN)",
+                proxyOb != null ? SifilisApp.fmt(proxyOb) : "—",
+                "campo SIFC · não misturar",
+                "proxy"
+              ) +
+              SifilisApp.kpi(
+                "|SIM − proxy|",
+                dual.delta_abs != null
+                  ? SifilisApp.fmt(dual.delta_abs)
+                  : ie.obitos_sc_delta_abs != null
+                    ? SifilisApp.fmt(ie.obitos_sc_delta_abs)
+                    : "—",
+                "inconsistência agregada",
+                "qualidade"
+              )
+            );
+          })() +
           (terr.cnes_disponivel
             ? SifilisApp.kpi(
                 "CNES",

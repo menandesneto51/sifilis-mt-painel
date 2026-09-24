@@ -63,7 +63,7 @@
 
   function metaHtml(meta) {
     const tipo = meta.tipo === "extracao_dw" ? "DW SES-MT (agregado)" : "Demonstração sintética";
-    return (
+    let s =
       "Fonte: " +
       tipo +
       " · " +
@@ -72,8 +72,36 @@
       (meta.extraido_em || "—") +
       (meta.atraso_dias != null ? " · Atraso simulado: " + meta.atraso_dias + " dias" : "") +
       (meta.ano != null ? " · Ano: " + meta.ano : "") +
-      (meta.incompleto ? " · Ano corrente incompleto" : "")
-    );
+      (meta.incompleto ? " · Ano corrente incompleto" : "");
+    const d = meta.denominador || {};
+    if (d.status && String(d.status).indexOf("carry_forward") === 0) {
+      s +=
+        " · População: carry-forward " +
+        (d.ano_populacao_usada || "?") +
+        " (numerador " +
+        (d.ano_numerador || meta.ano || "?") +
+        ")";
+    } else if (d.ano_populacao_usada != null) {
+      s += " · População ano " + d.ano_populacao_usada;
+    }
+    if (meta.adquirida_metodo) {
+      s += " · " + meta.adquirida_metodo;
+    }
+    return s;
+  }
+
+  function faixaDenominador(faixaEl, meta) {
+    if (!faixaEl || !meta) return;
+    const d = meta.denominador || {};
+    if (d.status && String(d.status).indexOf("carry_forward") === 0) {
+      const extra =
+        " · <strong>Atenção:</strong> população carry-forward " +
+        (d.ano_populacao_usada || "") +
+        " — taxas /100 mil podem estar enviesadas.";
+      if (faixaEl.innerHTML.indexOf("carry-forward") < 0) {
+        faixaEl.innerHTML = (faixaEl.innerHTML || "") + extra;
+      }
+    }
   }
 
   function kpi(rotulo, valor, unidade, fonte) {
@@ -242,6 +270,7 @@
     fmt: fmt,
     badgePrioridade: badgePrioridade,
     metaHtml: metaHtml,
+    faixaDenominador: faixaDenominador,
     kpi: kpi,
     fontePreferida: fontePreferida,
     setFonte: setFonte,

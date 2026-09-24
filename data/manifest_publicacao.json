@@ -1,8 +1,96 @@
 {
-  "publicado_em": "2026-09-24T00:05:01.225735+00:00",
-  "ano": 2026,
+  "publicado_em": "2026-09-24T14:49:18.763110+00:00",
+  "ano": 2025,
   "fonte": "DW",
   "ers_n": 16,
+  "denominador_status": "carry_forward_2023",
+  "denominador": {
+    "status": "carry_forward_2023",
+    "ano_numerador": 2025,
+    "ano_populacao_usada": 2023,
+    "nota": "POPULACAO no DW só até ~2023; numerador 2025 usa carry-forward. Exibir aviso no painel. Não inventar população."
+  },
+  "adquirida_metodo": "NI + CID A51–A53 (método SES-MT)",
+  "freshness": {
+    "coletado_em": "2026-09-24T14:49:18.829255+00:00",
+    "fontes": {
+      "sinan_sifg": {
+        "path": "data\\extracted\\staging\\agg_sifilis_gestante.csv",
+        "mtime": "2026-09-24T14:49:06.280421+00:00",
+        "existe": true
+      },
+      "sinan_sifc": {
+        "path": "data\\extracted\\staging\\agg_sifilis_congenita.csv",
+        "mtime": "2026-09-24T14:49:06.287709+00:00",
+        "existe": true
+      },
+      "sinan_sifa_ni": {
+        "path": "data\\extracted\\staging\\agg_sifilis_adquirida.csv",
+        "mtime": "2026-09-24T14:49:06.296452+00:00",
+        "existe": true
+      },
+      "sinasc": {
+        "path": "data\\extracted\\staging\\agg_sinasc.csv",
+        "mtime": "2026-09-24T14:49:06.321732+00:00",
+        "existe": true
+      },
+      "populacao": {
+        "path": "data\\extracted\\staging\\agg_populacao.csv",
+        "mtime": "2026-09-24T14:49:06.308671+00:00",
+        "existe": true
+      },
+      "cnes": {
+        "path": "data\\extracted\\staging\\agg_cnes.csv",
+        "mtime": "2026-09-24T14:49:06.329240+00:00",
+        "existe": true
+      },
+      "gal": {
+        "path": "data\\extracted\\staging\\agg_gal_sifilis.csv",
+        "mtime": "2026-09-24T14:49:06.334273+00:00",
+        "existe": true
+      },
+      "sim": {
+        "path": "data\\extracted\\staging\\agg_sim_obitos_sc.csv",
+        "mtime": "2026-09-20T22:47:14.933505+00:00",
+        "existe": true
+      },
+      "sia": {
+        "path": "data\\extracted\\staging\\agg_sia_sifilis.csv",
+        "mtime": "2026-09-20T22:49:16.706527+00:00",
+        "existe": true
+      },
+      "sih": {
+        "path": "data\\extracted\\staging\\agg_sih_sifilis.csv",
+        "mtime": "2026-09-20T22:49:18.400822+00:00",
+        "existe": true
+      },
+      "esus_aps": {
+        "path": "data\\extracted\\staging\\agg_esus_gestante_com_testagem.csv",
+        "mtime": "2026-09-19T14:28:55.868046+00:00",
+        "existe": true
+      },
+      "sipni": {
+        "path": "data\\extracted\\staging\\agg_sipni_doses.csv",
+        "mtime": "2026-09-19T18:12:34.010806+00:00",
+        "existe": true
+      },
+      "sisloglab": {
+        "path": "data\\extracted\\staging\\agg_sisloglab_mapa.csv",
+        "mtime": "2026-09-24T01:26:01.361686+00:00",
+        "existe": true
+      },
+      "watermark": {
+        "path": "data\\extracted\\watermark.json",
+        "mtime": "2026-09-24T14:49:06.565396+00:00",
+        "existe": true
+      },
+      "epidemiologia_dw": {
+        "path": "data\\extracted\\epidemiologia_dw.json",
+        "mtime": "2026-09-24T14:49:06.564324+00:00",
+        "existe": true
+      }
+    }
+  },
   "arquivos": [
     "epidemiologia.json",
     "linkage_agregado.json",

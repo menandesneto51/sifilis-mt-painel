@@ -97,18 +97,27 @@
             : "<strong>DEMONSTRAÇÃO:</strong> agregados sintéticos. Sem PII.";
       }
       document.getElementById("meta").textContent = SifilisApp.metaHtml(Object.assign({}, epi, { ano: ano }));
+      SifilisApp.faixaDenominador(faixa, Object.assign({}, epi, { ano: ano }));
+      const sens = epi.adquirida_sensibilidade || {};
       document.getElementById("kpis").innerHTML =
         SifilisApp.kpi(
           "Taxa adquirida",
           SifilisApp.fmt(e.adquirida && e.adquirida.taxa, 1),
-          "por 100 mil" +
-            (e.adquirida && e.adquirida.casos != null ? " · n=" + SifilisApp.fmt(e.adquirida.casos) : ""),
-          e.adquirida && e.adquirida.nivel_evidencia === "proxy" ? "NI+CID A51–A53 (SES-MT)" : "SIFA"
+          "por 100 mil · NI+A51–A53 (método SES-MT)",
+          e.adquirida && e.adquirida.rotulo_painel ? e.adquirida.rotulo_painel : "método SES-MT"
         ) +
         SifilisApp.kpi("Taxa gestante", SifilisApp.fmt(e.gestante.taxa, 1), "por 1.000 NV", "SIFG+SINASC") +
         SifilisApp.kpi("Incidência SC", SifilisApp.fmt(e.congenita.taxa, 1), "por 1.000 NV", "SIFC+SINASC") +
         SifilisApp.kpi("PQA-VS", SifilisApp.fmt(e.razao_sc_gestante_pct, 1) + "%", "SC/SIFG", "razao_sc_gestante") +
-        SifilisApp.kpi("Óbitos SC", SifilisApp.fmt(e.congenita.obitos), "proxy SINAN", "SIM MVP3");
+        SifilisApp.kpi("Óbitos SC (proxy SINAN)", SifilisApp.fmt(e.congenita.obitos), "SIFC — não misturar com SIM", "proxy") +
+        SifilisApp.kpi(
+          "Sensib. A53.9 vs faixa",
+          sens.casos_a53_9 != null
+            ? SifilisApp.fmt(sens.casos_a53_9) + " / " + SifilisApp.fmt(sens.casos_a51_a53)
+            : "—",
+          sens.status === "ok" ? "A53.9 sozinho subestima" : "rode extract sensibilidade",
+          "PROXY_SIFA"
+        );
       const s = epi.serie_anual || {};
       if (SifilisCharts.linhaMulti && s.anos) {
         SifilisCharts.linhaMulti(

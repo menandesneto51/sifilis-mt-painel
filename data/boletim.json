@@ -2,12 +2,12 @@
   "tipo": "extracao_dw",
   "onda": "MVP3-B+",
   "aviso": "Boletim gerado a partir de agregados DW. Não substitui boletim oficial SES/MS. Sem PII. ADR-008 / ADR-011 (rascunho IA separado).",
-  "ano": 2026,
+  "ano": 2025,
   "nivel": "estado",
-  "titulo": "Boletim Sífilis MT — estado · 2026",
+  "titulo": "Boletim Sífilis MT — estado · 2025",
   "orgao": "Governo de Mato Grosso · SES-MT · CIEVS-MT",
-  "periodo": "Recorte anual 2026",
-  "atraso_dados": "2026-09-18T00:28:00.823244+00:00",
+  "periodo": "Recorte anual 2025",
+  "atraso_dados": "2026-09-24T14:49:06.562923+00:00",
   "fontes": [
     "SINAN adquirida (NI + CID A51–A53)",
     "SINAN-SIFG",
@@ -19,61 +19,61 @@
     {
       "id": "taxa_incidencia_adquirida",
       "nome": "Taxa sífilis adquirida (NI + CID A51–A53)",
-      "valor": 94.7,
+      "valor": 173.7,
       "unidade": "por 100 mil",
-      "n": 3091
+      "n": 5672
     },
     {
       "id": "taxa_incidencia_gestante",
       "nome": "Taxa sífilis em gestante",
-      "valor": 35.5,
+      "valor": 40.5,
       "unidade": "por 1.000 NV",
-      "n": 1278
+      "n": 2336
     },
     {
       "id": "taxa_incidencia_congenita",
       "nome": "Incidência SC",
-      "valor": 12.7,
+      "valor": 11.7,
       "unidade": "por 1.000 NV",
-      "n": 459
+      "n": 675
     },
     {
       "id": "razao_sc_gestante",
       "nome": "PQA-VS (SC/SIFG)",
-      "valor": 35.9,
+      "valor": 28.9,
       "unidade": "%",
       "n": null
     }
   ],
   "destaques": [
-    "Alertas operacionais ativos: 56.",
+    "Alertas operacionais ativos: 61.",
     "Fenótipo: ver fenotipo_falha.json quando disponível.",
     "ERS em prioridade ALTA/MUITO ALTA: 5."
   ],
   "ers_destaque": [
     {
       "nome": "Cáceres",
-      "taxa_sc": 37.5,
+      "taxa_sc": 35.9,
       "prioridade": "MUITO ALTA"
     },
     {
       "nome": "Rondonópolis",
-      "taxa_sc": 32.5,
-      "prioridade": "MUITO ALTA"
-    },
-    {
-      "nome": "Pontes e Lacerda",
-      "taxa_sc": 25.2,
-      "prioridade": "MUITO ALTA"
-    },
-    {
-      "nome": "Baixada Cuiabana",
-      "taxa_sc": 13.5,
+      "taxa_sc": 27.6,
       "prioridade": "MUITO ALTA"
     },
     {
       "nome": "Diamantino",
-      "taxa_sc": 9.4,
+      "taxa_sc": 15.5,
+      "prioridade": "MUITO ALTA"
+    },
+    {
+      "nome": "Baixada Cuiabana",
+      "taxa_sc": 12.5,
+      "prioridade": "MUITO ALTA"
+    },
+    {
+      "nome": "Barra do Garças",
+      "taxa_sc": 12.5,
       "prioridade": "MUITO ALTA"
     }
   ],
@@ -82,6 +82,6 @@
     "Registrar andamento no quadro de gestão de ações (ADR-010 — store SES).",
     "Revisar rascunho assistido por IA antes de publicar (ADR-011)."
   ],
-  "rodape": "Parâmetros clínicos e metas oficiais apenas via config/regras.yml. Sem lista nominal. Gerado em 2026-09-24T00:05:01.276719+00:00",
-  "gerado_em": "2026-09-24T00:05:01.276729+00:00"
+  "rodape": "Parâmetros clínicos e metas oficiais apenas via config/regras.yml. Sem lista nominal. Gerado em 2026-09-24T14:49:18.819320+00:00",
+  "gerado_em": "2026-09-24T14:49:18.819331+00:00"
 }

@@ -3,15 +3,35 @@
   "onda": "MVP3-B+",
   "contrato_ses": true,
   "aviso": "Ações derivadas de alertas agregados. Sem PII. Atribuir responsavel_setor e persistir histórico somente no ambiente SES (ADR-010).",
-  "ano": 2026,
+  "ano": 2025,
   "status_fluxo": [
     "alerta",
     "em_andamento",
     "concluida",
     "resultado"
   ],
-  "n_alertas_origem": 56,
+  "n_alertas_origem": 61,
   "itens": [
+    {
+      "id": "ga-incidencia_sc_acima_meta__ers__Alta_Floresta",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — Alta Floresta",
+      "territorio": "Alta Floresta",
+      "nivel": "ers",
+      "co_municipio_ibge": null,
+      "ers": "Alta Floresta",
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=0.7 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T14:49:18.807569+00:00"
+    },
     {
       "id": "ga-incidencia_sc_acima_meta__ers__Baixada_Cuiabana",
       "alerta_id": "incidencia_sc_acima_meta",
@@ -28,9 +48,9 @@
       "acao_associada_ids": [
         "acao_distancia_eliminacao"
       ],
-      "evidencia_resumo": "taxa_incidencia_congenita=13.5 limiar=0.5",
+      "evidencia_resumo": "taxa_incidencia_congenita=12.5 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.280936+00:00"
+      "criado_em": "2026-09-24T14:49:18.807576+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__ers__Barra_do_Garças",
@@ -48,9 +68,9 @@
       "acao_associada_ids": [
         "acao_distancia_eliminacao"
       ],
-      "evidencia_resumo": "taxa_incidencia_congenita=6.1 limiar=0.5",
+      "evidencia_resumo": "taxa_incidencia_congenita=12.5 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.280963+00:00"
+      "criado_em": "2026-09-24T14:49:18.807580+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__ers__Colíder",
@@ -68,9 +88,9 @@
       "acao_associada_ids": [
         "acao_distancia_eliminacao"
       ],
-      "evidencia_resumo": "taxa_incidencia_congenita=1.6 limiar=0.5",
+      "evidencia_resumo": "taxa_incidencia_congenita=5.5 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.280972+00:00"
+      "criado_em": "2026-09-24T14:49:18.807583+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__ers__Cáceres",
@@ -88,9 +108,9 @@
       "acao_associada_ids": [
         "acao_distancia_eliminacao"
       ],
-      "evidencia_resumo": "taxa_incidencia_congenita=37.5 limiar=0.5",
+      "evidencia_resumo": "taxa_incidencia_congenita=35.9 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.280979+00:00"
+      "criado_em": "2026-09-24T14:49:18.807586+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__ers__Diamantino",
@@ -108,9 +128,9 @@
       "acao_associada_ids": [
         "acao_distancia_eliminacao"
       ],
-      "evidencia_resumo": "taxa_incidencia_congenita=9.4 limiar=0.5",
+      "evidencia_resumo": "taxa_incidencia_congenita=15.5 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.280986+00:00"
+      "criado_em": "2026-09-24T14:49:18.807590+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__ers__Juara",
@@ -128,9 +148,9 @@
       "acao_associada_ids": [
         "acao_distancia_eliminacao"
       ],
-      "evidencia_resumo": "taxa_incidencia_congenita=2.7 limiar=0.5",
+      "evidencia_resumo": "taxa_incidencia_congenita=1.7 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.280992+00:00"
+      "criado_em": "2026-09-24T14:49:18.807593+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__ers__Juína",
@@ -148,9 +168,9 @@
       "acao_associada_ids": [
         "acao_distancia_eliminacao"
       ],
-      "evidencia_resumo": "taxa_incidencia_congenita=3.5 limiar=0.5",
+      "evidencia_resumo": "taxa_incidencia_congenita=1.9 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.280999+00:00"
+      "criado_em": "2026-09-24T14:49:18.807596+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__estado__Mato_Grosso",
@@ -168,9 +188,9 @@
       "acao_associada_ids": [
         "acao_distancia_eliminacao"
       ],
-      "evidencia_resumo": "taxa_incidencia_congenita=12.7 limiar=0.5",
+      "evidencia_resumo": "taxa_incidencia_congenita=11.7 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.281010+00:00"
+      "criado_em": "2026-09-24T14:49:18.807598+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__ers__Peixoto_de_Azevedo",
@@ -188,9 +208,9 @@
       "acao_associada_ids": [
         "acao_distancia_eliminacao"
       ],
-      "evidencia_resumo": "taxa_incidencia_congenita=0.8 limiar=0.5",
+      "evidencia_resumo": "taxa_incidencia_congenita=5.0 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.281017+00:00"
+      "criado_em": "2026-09-24T14:49:18.807602+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__ers__Pontes_e_Lacerda",
@@ -208,9 +228,9 @@
       "acao_associada_ids": [
         "acao_distancia_eliminacao"
       ],
-      "evidencia_resumo": "taxa_incidencia_congenita=25.2 limiar=0.5",
+      "evidencia_resumo": "taxa_incidencia_congenita=8.3 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.281023+00:00"
+      "criado_em": "2026-09-24T14:49:18.807605+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__ers__Porto_Alegre_do_Norte",
@@ -228,9 +248,9 @@
       "acao_associada_ids": [
         "acao_distancia_eliminacao"
       ],
-      "evidencia_resumo": "taxa_incidencia_congenita=2.0 limiar=0.5",
+      "evidencia_resumo": "taxa_incidencia_congenita=1.3 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.281030+00:00"
+      "criado_em": "2026-09-24T14:49:18.807608+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__ers__Rondonópolis",
@@ -248,9 +268,9 @@
       "acao_associada_ids": [
         "acao_distancia_eliminacao"
       ],
-      "evidencia_resumo": "taxa_incidencia_congenita=32.5 limiar=0.5",
+      "evidencia_resumo": "taxa_incidencia_congenita=27.6 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.281036+00:00"
+      "criado_em": "2026-09-24T14:49:18.807611+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__ers__Sinop",
@@ -268,9 +288,29 @@
       "acao_associada_ids": [
         "acao_distancia_eliminacao"
       ],
-      "evidencia_resumo": "taxa_incidencia_congenita=6.9 limiar=0.5",
+      "evidencia_resumo": "taxa_incidencia_congenita=6.4 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.281043+00:00"
+      "criado_em": "2026-09-24T14:49:18.807614+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__ers__São_Félix_do_Araguaia",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — São Félix do Araguaia",
+      "territorio": "São Félix do Araguaia",
+      "nivel": "ers",
+      "co_municipio_ibge": null,
+      "ers": "São Félix do Araguaia",
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=3.6 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T14:49:18.807616+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__ers__Tangará_da_Serra",
@@ -288,9 +328,9 @@
       "acao_associada_ids": [
         "acao_distancia_eliminacao"
       ],
-      "evidencia_resumo": "taxa_incidencia_congenita=1.7 limiar=0.5",
+      "evidencia_resumo": "taxa_incidencia_congenita=4.2 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.281049+00:00"
+      "criado_em": "2026-09-24T14:49:18.807619+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__ers__Água_Boa",
@@ -308,9 +348,9 @@
       "acao_associada_ids": [
         "acao_distancia_eliminacao"
       ],
-      "evidencia_resumo": "taxa_incidencia_congenita=4.4 limiar=0.5",
+      "evidencia_resumo": "taxa_incidencia_congenita=3.6 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.281055+00:00"
+      "criado_em": "2026-09-24T14:49:18.807622+00:00"
     },
     {
       "id": "ga-pqa_vs_nao_reduziu__estado__Mato_Grosso",
@@ -328,9 +368,109 @@
       "acao_associada_ids": [
         "acao_pqa_vs"
       ],
-      "evidencia_resumo": "Δ=+7.0 p.p. vs ano-base (meta −1 p.p.)",
+      "evidencia_resumo": "Δ=+7.3 p.p. vs ano-base (meta −1 p.p.)",
       "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.281061+00:00"
+      "criado_em": "2026-09-24T14:49:18.807624+00:00"
+    },
+    {
+      "id": "ga-gap_esus_testagem_alto__estado__Mato_Grosso",
+      "alerta_id": "gap_esus_testagem_alto",
+      "recomendacao_id": null,
+      "titulo": "gap_esus_testagem_alto — Mato Grosso",
+      "territorio": "Mato Grosso",
+      "nivel": "estado",
+      "co_municipio_ibge": null,
+      "ers": null,
+      "status": "alerta",
+      "prioridade": "ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_iniciar_tratamento"
+      ],
+      "evidencia_resumo": "esus_gestante_sem_testagem_pct=63.9 limiar=40",
+      "resultado": null,
+      "criado_em": "2026-09-24T14:49:18.807627+00:00"
+    },
+    {
+      "id": "ga-pop_carry_forward__estado__Mato_Grosso",
+      "alerta_id": "pop_carry_forward",
+      "recomendacao_id": null,
+      "titulo": "pop_carry_forward — Mato Grosso",
+      "territorio": "Mato Grosso",
+      "nivel": "estado",
+      "co_municipio_ibge": null,
+      "ers": null,
+      "status": "alerta",
+      "prioridade": "MEDIA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_qualidade_dado"
+      ],
+      "evidencia_resumo": "pop_carry_forward=1.0 limiar=1",
+      "resultado": null,
+      "criado_em": "2026-09-24T14:49:18.807630+00:00"
+    },
+    {
+      "id": "ga-divergencia_obitos_sc_sim_sinan__estado__Mato_Grosso",
+      "alerta_id": "divergencia_obitos_sc_sim_sinan",
+      "recomendacao_id": null,
+      "titulo": "divergencia_obitos_sc_sim_sinan — Mato Grosso",
+      "territorio": "Mato Grosso",
+      "nivel": "estado",
+      "co_municipio_ibge": null,
+      "ers": null,
+      "status": "alerta",
+      "prioridade": "MEDIA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_qualidade_dado"
+      ],
+      "evidencia_resumo": "obitos_sc_delta_abs=7.0 limiar=3",
+      "resultado": null,
+      "criado_em": "2026-09-24T14:49:18.807632+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__municipio__510020",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — AGUA BOA",
+      "territorio": "AGUA BOA",
+      "nivel": "municipio",
+      "co_municipio_ibge": "510020",
+      "ers": null,
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=5.5 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T14:49:18.807635+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__municipio__510030",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — ALTO ARAGUAIA",
+      "territorio": "ALTO ARAGUAIA",
+      "nivel": "municipio",
+      "co_municipio_ibge": "510030",
+      "ers": null,
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=33.6 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T14:49:18.807638+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__municipio__510040",
@@ -348,49 +488,9 @@
       "acao_associada_ids": [
         "acao_distancia_eliminacao"
       ],
-      "evidencia_resumo": "taxa_incidencia_congenita=16.1 limiar=0.5",
+      "evidencia_resumo": "taxa_incidencia_congenita=12.2 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.281068+00:00"
-    },
-    {
-      "id": "ga-incidencia_sc_acima_meta__municipio__510125",
-      "alerta_id": "incidencia_sc_acima_meta",
-      "recomendacao_id": null,
-      "titulo": "incidencia_sc_acima_meta — ARAPUTANGA",
-      "territorio": "ARAPUTANGA",
-      "nivel": "municipio",
-      "co_municipio_ibge": "510125",
-      "ers": null,
-      "status": "alerta",
-      "prioridade": "MUITO ALTA",
-      "prazo_dias": 30,
-      "responsavel_setor": null,
-      "acao_associada_ids": [
-        "acao_distancia_eliminacao"
-      ],
-      "evidencia_resumo": "taxa_incidencia_congenita=14.6 limiar=0.5",
-      "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.281074+00:00"
-    },
-    {
-      "id": "ga-incidencia_sc_acima_meta__municipio__510140",
-      "alerta_id": "incidencia_sc_acima_meta",
-      "recomendacao_id": null,
-      "titulo": "incidencia_sc_acima_meta — ARIPUANA",
-      "territorio": "ARIPUANA",
-      "nivel": "municipio",
-      "co_municipio_ibge": "510140",
-      "ers": null,
-      "status": "alerta",
-      "prioridade": "MUITO ALTA",
-      "prazo_dias": 30,
-      "responsavel_setor": null,
-      "acao_associada_ids": [
-        "acao_distancia_eliminacao"
-      ],
-      "evidencia_resumo": "taxa_incidencia_congenita=10.6 limiar=0.5",
-      "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.281081+00:00"
+      "criado_em": "2026-09-24T14:49:18.807641+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__municipio__510180",
@@ -408,9 +508,9 @@
       "acao_associada_ids": [
         "acao_distancia_eliminacao"
       ],
-      "evidencia_resumo": "taxa_incidencia_congenita=9.0 limiar=0.5",
+      "evidencia_resumo": "taxa_incidencia_congenita=21.0 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.281087+00:00"
+      "criado_em": "2026-09-24T14:49:18.807644+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__municipio__510250",
@@ -428,9 +528,9 @@
       "acao_associada_ids": [
         "acao_distancia_eliminacao"
       ],
-      "evidencia_resumo": "taxa_incidencia_congenita=51.2 limiar=0.5",
+      "evidencia_resumo": "taxa_incidencia_congenita=51.8 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.281093+00:00"
+      "criado_em": "2026-09-24T14:49:18.807647+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__municipio__510263",
@@ -448,9 +548,9 @@
       "acao_associada_ids": [
         "acao_distancia_eliminacao"
       ],
-      "evidencia_resumo": "taxa_incidencia_congenita=3.6 limiar=0.5",
+      "evidencia_resumo": "taxa_incidencia_congenita=5.9 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.281100+00:00"
+      "criado_em": "2026-09-24T14:49:18.807649+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__municipio__510267",
@@ -468,9 +568,9 @@
       "acao_associada_ids": [
         "acao_distancia_eliminacao"
       ],
-      "evidencia_resumo": "taxa_incidencia_congenita=17.5 limiar=0.5",
+      "evidencia_resumo": "taxa_incidencia_congenita=14.6 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.281106+00:00"
+      "criado_em": "2026-09-24T14:49:18.807652+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__municipio__510270",
@@ -488,9 +588,9 @@
       "acao_associada_ids": [
         "acao_distancia_eliminacao"
       ],
-      "evidencia_resumo": "taxa_incidencia_congenita=6.2 limiar=0.5",
+      "evidencia_resumo": "taxa_incidencia_congenita=4.2 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.281112+00:00"
+      "criado_em": "2026-09-24T14:49:18.807655+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__municipio__510300",
@@ -508,9 +608,9 @@
       "acao_associada_ids": [
         "acao_distancia_eliminacao"
       ],
-      "evidencia_resumo": "taxa_incidencia_congenita=6.5 limiar=0.5",
+      "evidencia_resumo": "taxa_incidencia_congenita=12.8 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.281118+00:00"
+      "criado_em": "2026-09-24T14:49:18.807658+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__municipio__510320",
@@ -528,29 +628,9 @@
       "acao_associada_ids": [
         "acao_distancia_eliminacao"
       ],
-      "evidencia_resumo": "taxa_incidencia_congenita=3.4 limiar=0.5",
+      "evidencia_resumo": "taxa_incidencia_congenita=4.2 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.281124+00:00"
-    },
-    {
-      "id": "ga-incidencia_sc_acima_meta__municipio__510325",
-      "alerta_id": "incidencia_sc_acima_meta",
-      "recomendacao_id": null,
-      "titulo": "incidencia_sc_acima_meta — COLNIZA",
-      "territorio": "COLNIZA",
-      "nivel": "municipio",
-      "co_municipio_ibge": "510325",
-      "ers": null,
-      "status": "alerta",
-      "prioridade": "MUITO ALTA",
-      "prazo_dias": 30,
-      "responsavel_setor": null,
-      "acao_associada_ids": [
-        "acao_distancia_eliminacao"
-      ],
-      "evidencia_resumo": "taxa_incidencia_congenita=8.0 limiar=0.5",
-      "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.281130+00:00"
+      "criado_em": "2026-09-24T14:49:18.807660+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__municipio__510330",
@@ -568,9 +648,9 @@
       "acao_associada_ids": [
         "acao_distancia_eliminacao"
       ],
-      "evidencia_resumo": "taxa_incidencia_congenita=6.5 limiar=0.5",
+      "evidencia_resumo": "taxa_incidencia_congenita=6.6 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.281137+00:00"
+      "criado_em": "2026-09-24T14:49:18.807663+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__municipio__510340",
@@ -588,18 +668,18 @@
       "acao_associada_ids": [
         "acao_distancia_eliminacao"
       ],
-      "evidencia_resumo": "taxa_incidencia_congenita=13.9 limiar=0.5",
+      "evidencia_resumo": "taxa_incidencia_congenita=13.4 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.281143+00:00"
+      "criado_em": "2026-09-24T14:49:18.807666+00:00"
     },
     {
-      "id": "ga-incidencia_sc_acima_meta__municipio__510343",
+      "id": "ga-incidencia_sc_acima_meta__municipio__510350",
       "alerta_id": "incidencia_sc_acima_meta",
       "recomendacao_id": null,
-      "titulo": "incidencia_sc_acima_meta — CURVELANDIA",
-      "territorio": "CURVELANDIA",
+      "titulo": "incidencia_sc_acima_meta — DIAMANTINO",
+      "territorio": "DIAMANTINO",
       "nivel": "municipio",
-      "co_municipio_ibge": "510343",
+      "co_municipio_ibge": "510350",
       "ers": null,
       "status": "alerta",
       "prioridade": "MUITO ALTA",
@@ -608,9 +688,9 @@
       "acao_associada_ids": [
         "acao_distancia_eliminacao"
       ],
-      "evidencia_resumo": "taxa_incidencia_congenita=58.8 limiar=0.5",
+      "evidencia_resumo": "taxa_incidencia_congenita=8.6 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.281149+00:00"
+      "criado_em": "2026-09-24T14:49:18.807668+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__municipio__510360",
@@ -628,18 +708,18 @@
       "acao_associada_ids": [
         "acao_distancia_eliminacao"
       ],
-      "evidencia_resumo": "taxa_incidencia_congenita=38.5 limiar=0.5",
+      "evidencia_resumo": "taxa_incidencia_congenita=53.3 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.281157+00:00"
+      "criado_em": "2026-09-24T14:49:18.807671+00:00"
     },
     {
-      "id": "ga-incidencia_sc_acima_meta__municipio__510370",
+      "id": "ga-incidencia_sc_acima_meta__municipio__510410",
       "alerta_id": "incidencia_sc_acima_meta",
       "recomendacao_id": null,
-      "titulo": "incidencia_sc_acima_meta — FELIZ NATAL",
-      "territorio": "FELIZ NATAL",
+      "titulo": "incidencia_sc_acima_meta — GUARANTA DO NORTE",
+      "territorio": "GUARANTA DO NORTE",
       "nivel": "municipio",
-      "co_municipio_ibge": "510370",
+      "co_municipio_ibge": "510410",
       "ers": null,
       "status": "alerta",
       "prioridade": "MUITO ALTA",
@@ -648,29 +728,9 @@
       "acao_associada_ids": [
         "acao_distancia_eliminacao"
       ],
-      "evidencia_resumo": "taxa_incidencia_congenita=45.5 limiar=0.5",
+      "evidencia_resumo": "taxa_incidencia_congenita=6.5 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.281163+00:00"
-    },
-    {
-      "id": "ga-incidencia_sc_acima_meta__municipio__510420",
-      "alerta_id": "incidencia_sc_acima_meta",
-      "recomendacao_id": null,
-      "titulo": "incidencia_sc_acima_meta — GUIRATINGA",
-      "territorio": "GUIRATINGA",
-      "nivel": "municipio",
-      "co_municipio_ibge": "510420",
-      "ers": null,
-      "status": "alerta",
-      "prioridade": "MUITO ALTA",
-      "prazo_dias": 30,
-      "responsavel_setor": null,
-      "acao_associada_ids": [
-        "acao_distancia_eliminacao"
-      ],
-      "evidencia_resumo": "taxa_incidencia_congenita=18.5 limiar=0.5",
-      "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.281169+00:00"
+      "criado_em": "2026-09-24T14:49:18.807674+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__municipio__510452",
@@ -688,9 +748,9 @@
       "acao_associada_ids": [
         "acao_distancia_eliminacao"
       ],
-      "evidencia_resumo": "taxa_incidencia_congenita=12.5 limiar=0.5",
+      "evidencia_resumo": "taxa_incidencia_congenita=13.6 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.281176+00:00"
+      "criado_em": "2026-09-24T14:49:18.807676+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__municipio__510460",
@@ -708,18 +768,18 @@
       "acao_associada_ids": [
         "acao_distancia_eliminacao"
       ],
-      "evidencia_resumo": "taxa_incidencia_congenita=30.6 limiar=0.5",
+      "evidencia_resumo": "taxa_incidencia_congenita=21.6 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.281182+00:00"
+      "criado_em": "2026-09-24T14:49:18.807679+00:00"
     },
     {
-      "id": "ga-incidencia_sc_acima_meta__municipio__510480",
+      "id": "ga-incidencia_sc_acima_meta__municipio__510523",
       "alerta_id": "incidencia_sc_acima_meta",
       "recomendacao_id": null,
-      "titulo": "incidencia_sc_acima_meta — JACIARA",
-      "territorio": "JACIARA",
+      "titulo": "incidencia_sc_acima_meta — LAMBARI D OESTE",
+      "territorio": "LAMBARI D OESTE",
       "nivel": "municipio",
-      "co_municipio_ibge": "510480",
+      "co_municipio_ibge": "510523",
       "ers": null,
       "status": "alerta",
       "prioridade": "MUITO ALTA",
@@ -728,16 +788,56 @@
       "acao_associada_ids": [
         "acao_distancia_eliminacao"
       ],
-      "evidencia_resumo": "taxa_incidencia_congenita=14.0 limiar=0.5",
+      "evidencia_resumo": "taxa_incidencia_congenita=43.5 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T01:27:12.281188+00:00"
+      "criado_em": "2026-09-24T14:49:18.807682+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__municipio__510525",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — LUCAS DO RIO VERDE",
+      "territorio": "LUCAS DO RIO VERDE",
+      "nivel": "municipio",
+      "co_municipio_ibge": "510525",
+      "ers": null,
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=2.7 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T14:49:18.807684+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__municipio__510558",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — MARCELANDIA",
+      "territorio": "MARCELANDIA",
+      "nivel": "municipio",
+      "co_municipio_ibge": "510558",
+      "ers": null,
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=9.5 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T14:49:18.807687+00:00"
     }
   ],
   "contagem": {
-    "alerta": 36,
+    "alerta": 41,
     "em_andamento": 0,
     "concluida": 0,
     "resultado": 0
   },
-  "gerado_em": "2026-09-24T01:27:12.281204+00:00"
+  "gerado_em": "2026-09-24T14:49:18.807694+00:00"
 }

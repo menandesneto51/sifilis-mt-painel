@@ -1,12 +1,12 @@
 {
   "tipo": "extracao_dw",
   "aviso": "Posição frente a indicadores oficiais parametrizados. Este painel NÃO certifica o município nem substitui o processo do MS.",
-  "territorio": "Mato Grosso — 2026",
+  "territorio": "Mato Grosso — 2025",
   "guia_versao": "2024",
   "incidencia_sc": {
-    "atual": 12.7,
+    "atual": 11.7,
     "meta": 0.5,
-    "excesso": 12.2,
+    "excesso": 11.2,
     "atingiu": false
   },
   "tratamento_adequado": {
@@ -16,12 +16,12 @@
     "atingiu": null
   },
   "pqa_vs": {
-    "atual": 35.9,
-    "ano_base": 28.9,
-    "delta_pp": -7.0,
+    "atual": 28.9,
+    "ano_base": 21.6,
+    "delta_pp": -7.3,
     "meta_reducao_pp": 1.0,
     "atingiu": false,
-    "nota": "Redução de -7.0 p.p. (meta ≥1.0 p.p.)"
+    "nota": "Redução de -7.3 p.p. (meta ≥1.0 p.p.)"
   },
   "prontidao_score": 0.0,
   "indicadores_ref": [
@@ -33,8 +33,8 @@
     "prontidao_eliminacao_score"
   ],
   "fonte_prevista": "DW + parametros regras.yml",
-  "extraido_em": "2026-09-24T00:05:01.225716+00:00",
-  "ano": 2026,
+  "extraido_em": "2026-09-24T14:49:18.763093+00:00",
+  "ano": 2025,
   "parametros_usados": {
     "meta_incidencia_sc_por_1000_nv": 0.5,
     "meta_cobertura_trat_adequado_pct": 95,
@@ -50,12 +50,12 @@
     "ok": true,
     "aviso": "Simulação aritmética com meta de regras.yml. Não certifica município nem substitui o processo do MS.",
     "meta_por_1000_nv": 0.5,
-    "casos_sc": 459.0,
-    "nascidos_vivos": 36013,
-    "taxa_atual": 12.75,
-    "casos_no_teto_meta": 18.0,
-    "casos_a_evitar": 441.0,
-    "reducao_casos_pct": 96.1,
+    "casos_sc": 675.0,
+    "nascidos_vivos": 57643,
+    "taxa_atual": 11.71,
+    "casos_no_teto_meta": 28.8,
+    "casos_a_evitar": 646.2,
+    "reducao_casos_pct": 95.7,
     "atingiu": false,
     "indicadores_ref": [
       "taxa_incidencia_congenita",

@@ -1,17 +1,17 @@
 {
   "tipo": "extracao_dw",
   "aviso": "Recomendações territoriais geradas a partir de agregados DW (ERS, oportunidade, fenótipo proxy, qualidade). Não prescritivas clínicas. Sem PII. Índice de Risco composto municipal permanece demo até motor municipal completo.",
-  "ano": 2026,
+  "ano": 2025,
   "nivel": "territorio",
   "recomendacoes": [
     {
       "motivo": "Incidência SC elevada na ERS Cáceres — priorizar investigação de TV e cascata.",
-      "onde": "ERS Cáceres (12 municípios no recorte)",
+      "onde": "ERS Cáceres (11 municípios no recorte)",
       "evidencia": [
         "Prioridade proxy MUITO ALTA (incidência SC)",
-        "Taxa SC 37.5/1.000 NV · 52 casos SC · 54 gestantes SIFG",
-        "PQA-VS (SC/SIFG) na ERS: 96.3%",
-        "Fenótipo estadual dominante (proxy): Tratamento incompleto (24.8%)"
+        "Taxa SC 35.9/1.000 NV · 80 casos SC · 96 gestantes SIFG",
+        "PQA-VS (SC/SIFG) na ERS: 83.3%",
+        "Fenótipo estadual dominante (proxy): Tratamento incompleto (29.2%)"
       ],
       "acoes": [
         "Revisar agregados SC e gestantes do período na regional",
@@ -36,12 +36,12 @@
     },
     {
       "motivo": "Incidência SC elevada na ERS Rondonópolis — priorizar investigação de TV e cascata.",
-      "onde": "ERS Rondonópolis (15 municípios no recorte)",
+      "onde": "ERS Rondonópolis (18 municípios no recorte)",
       "evidencia": [
         "Prioridade proxy MUITO ALTA (incidência SC)",
-        "Taxa SC 32.5/1.000 NV · 179 casos SC · 214 gestantes SIFG",
-        "PQA-VS (SC/SIFG) na ERS: 83.6%",
-        "Fenótipo estadual dominante (proxy): Tratamento incompleto (24.8%)"
+        "Taxa SC 27.6/1.000 NV · 239 casos SC · 439 gestantes SIFG",
+        "PQA-VS (SC/SIFG) na ERS: 54.4%",
+        "Fenótipo estadual dominante (proxy): Tratamento incompleto (29.2%)"
       ],
       "acoes": [
         "Revisar agregados SC e gestantes do período na regional",
@@ -65,13 +65,13 @@
       "id": "rec-ers-02"
     },
     {
-      "motivo": "Incidência SC elevada na ERS Pontes e Lacerda — priorizar investigação de TV e cascata.",
-      "onde": "ERS Pontes e Lacerda (7 municípios no recorte)",
+      "motivo": "Incidência SC elevada na ERS Diamantino — priorizar investigação de TV e cascata.",
+      "onde": "ERS Diamantino (4 municípios no recorte)",
       "evidencia": [
         "Prioridade proxy MUITO ALTA (incidência SC)",
-        "Taxa SC 25.2/1.000 NV · 29 casos SC · 49 gestantes SIFG",
-        "PQA-VS (SC/SIFG) na ERS: 59.2%",
-        "Fenótipo estadual dominante (proxy): Tratamento incompleto (24.8%)"
+        "Taxa SC 15.5/1.000 NV · 8 casos SC · 17 gestantes SIFG",
+        "PQA-VS (SC/SIFG) na ERS: 47.1%",
+        "Fenótipo estadual dominante (proxy): Tratamento incompleto (29.2%)"
       ],
       "acoes": [
         "Revisar agregados SC e gestantes do período na regional",
@@ -96,12 +96,12 @@
     },
     {
       "motivo": "Incidência SC elevada na ERS Baixada Cuiabana — priorizar investigação de TV e cascata.",
-      "onde": "ERS Baixada Cuiabana (8 municípios no recorte)",
+      "onde": "ERS Baixada Cuiabana (10 municípios no recorte)",
       "evidencia": [
         "Prioridade proxy MUITO ALTA (incidência SC)",
-        "Taxa SC 13.5/1.000 NV · 125 casos SC · 384 gestantes SIFG",
-        "PQA-VS (SC/SIFG) na ERS: 32.6%",
-        "Fenótipo estadual dominante (proxy): Tratamento incompleto (24.8%)"
+        "Taxa SC 12.5/1.000 NV · 188 casos SC · 697 gestantes SIFG",
+        "PQA-VS (SC/SIFG) na ERS: 27.0%",
+        "Fenótipo estadual dominante (proxy): Tratamento incompleto (29.2%)"
       ],
       "acoes": [
         "Revisar agregados SC e gestantes do período na regional",
@@ -125,37 +125,62 @@
       "id": "rec-ers-04"
     },
     {
-      "motivo": "Esquema de tratamento não realizado em 5.8% das gestantes SIFG.",
-      "onde": "Mato Grosso (estadual) — 2026",
+      "motivo": "Gap de testagem no encontro APS: 63.9% dos atendimentos com IG>0 sem procedimento sífilis.",
+      "onde": "Mato Grosso (estadual) — 2025 · e-SUS APS",
       "evidencia": [
-        "74 fichas com esquema 'não realizado' / 1278 gestantes",
-        "Parceria tratada concomitante: 35.8%",
-        "Rótulo SIFG não substitui avaliação PCDT de adequação (MVP2)"
+        "Top municípios (mín. 80 atd.): ALTO GARÇAS (98.1%), CONFRESA (98.1%), VÁRZEA GRANDE (96.5%), JAURU (95.2%), VILA BELA DA SANTÍSSIMA TRINDADE (92.2%)",
+        "Mesmo encontro ≠ cobertura pré-natal completa; proxy operacional"
       ],
       "acoes": [
-        "Mapear municípios com maior proporção de esquema não realizado",
-        "Reforçar registro e oferta de penicilina no pré-natal",
-        "Melhorar completude do campo de esquema na ficha SIFG"
+        "Priorizar capacitação e oferta de TR/VDRL nas UBS dos municípios do ranking",
+        "Conferir registro de procedimento SIGTAP/AB no e-SUS APS",
+        "Cruzar com volume SISREG de exames/consultas especializadas"
       ],
       "prioridade": "ALTA",
       "indicador_ids": [
-        "gestantes_sem_tratamento",
-        "parceria_tratada",
-        "cascata_trat_adequado"
+        "consulta_sem_testagem"
       ],
       "acao_associada_ids": [
-        "acao_iniciar_tratamento",
-        "acao_completar_tratamento"
+        "acao_ampliar_testagem",
+        "acao_priorizar_territorio"
       ],
-      "fenotipo_dominante": "tratamento_nao_iniciado",
+      "fenotipo_dominante": "prenatal_sem_testagem",
       "nivel": "territorio",
-      "id": "rec-oportunidade-esquema"
+      "id": "rec-esus-gap-testagem"
     },
     {
-      "motivo": "Parceria tratada concomitante em apenas 35.8% das gestantes SIFG.",
-      "onde": "Mato Grosso (estadual) — 2026",
+      "motivo": "SI-PNI com 2525486 doses agregadas em MT (142 municípios).",
+      "onde": "Mato Grosso (estadual) — 2025 · SIPNI Vacinas",
       "evidencia": [
-        "458 / 1278 gestantes com parceria tratada (campo SIFG)",
+        "Principais imunobiológicos: VFA (650966), VIP (187761), HepB (135040)",
+        "HepB=135040 · dTpa=35912 · dT=47433 · BCG=40107",
+        "Fonte SES VW_Vacinas_PNI — volume, não cobertura gestacional",
+        "Gap e-SUS alto e HepB SIPNI baixo: NOVO HORIZONTE DO NORTE"
+      ],
+      "acoes": [
+        "Usar HepB/dTpa como contexto de rede no território com gap de testagem APS",
+        "Não interpretar doses totais como cobertura de sífilis ou pré-natal",
+        "Cruzamento mun×ano já parcial no ranking e-SUS (coluna HepB)"
+      ],
+      "prioridade": "MEDIA",
+      "indicador_ids": [
+        "sipni_doses_n",
+        "sipni_hepb_doses_n",
+        "consulta_sem_testagem"
+      ],
+      "acao_associada_ids": [
+        "acao_priorizar_territorio",
+        "acao_ampliar_testagem"
+      ],
+      "fenotipo_dominante": "tratamento_incompleto",
+      "nivel": "territorio",
+      "id": "rec-sipni-contexto"
+    },
+    {
+      "motivo": "Parceria tratada concomitante em apenas 38.7% das gestantes SIFG.",
+      "onde": "Mato Grosso (estadual) — 2025",
+      "evidencia": [
+        "905 / 2336 gestantes com parceria tratada (campo SIFG)",
         "Campo Ignorado/Em branco reduz interpretação — ver qualidade proxy"
       ],
       "acoes": [
@@ -176,10 +201,10 @@
       "id": "rec-parceria"
     },
     {
-      "motivo": "Diagnóstico de sífilis materna no parto ou após em 17.0% dos casos SC.",
-      "onde": "Mato Grosso (estadual) — 2026",
+      "motivo": "Diagnóstico de sífilis materna no parto ou após em 16.0% dos casos SC.",
+      "onde": "Mato Grosso (estadual) — 2025",
       "evidencia": [
-        "78 de 459 SC (SIFC)",
+        "108 de 675 SC (SIFC)",
         "Proxy de oportunidade perdida no pré-natal — não causalidade individual"
       ],
       "acoes": [
@@ -201,11 +226,11 @@
       "id": "rec-dx-parto"
     },
     {
-      "motivo": "Incidência SC estadual 12.7/1.000 NV — distante da meta ≤0.5.",
-      "onde": "Mato Grosso (estadual) — 2026",
+      "motivo": "Incidência SC estadual 11.7/1.000 NV — distante da meta ≤0.5.",
+      "onde": "Mato Grosso (estadual) — 2025",
       "evidencia": [
-        "PQA-VS estadual: 35.9%",
-        "Casos SC: 459 · Gestantes: 1278",
+        "PQA-VS estadual: 28.9%",
+        "Casos SC: 675 · Gestantes: 2336",
         "Prontidão no painel TV não certifica eliminação"
       ],
       "acoes": [

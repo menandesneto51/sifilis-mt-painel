@@ -1,10 +1,10 @@
 {
   "tipo": "extracao_dw",
-  "aviso": "Agregados reais do DW SES-MT. Sem microdados/PII. Ano corrente pode estar incompleto. Adquirida = proxy NI (A51–A53) até SES publicar VW_SINAN_SIFILISADQUIRIDA. Ano corrente pode estar incompleto.",
+  "aviso": "Agregados reais do DW SES-MT. Sem microdados/PII. Ano corrente pode estar incompleto. Adquirida = NI + CID A51–A53 (método SES-MT; sem ficha específica no DW). Denominador populacional: carry-forward de 2023 (numerador 2025).",
   "fonte_prevista": "DW/SES-MT Datawarehouse",
-  "extraido_em": "2026-09-18T00:28:00.823244+00:00",
+  "extraido_em": "2026-09-24T14:49:06.562923+00:00",
   "atraso_dias": null,
-  "ano": 2026,
+  "ano": 2025,
   "anos_disponiveis": [
     2007,
     2008,
@@ -27,13 +27,29 @@
     2025,
     2026
   ],
-  "incompleto": true,
+  "incompleto": false,
+  "denominador": {
+    "status": "carry_forward_2023",
+    "ano_numerador": 2025,
+    "ano_populacao_usada": 2023,
+    "nota": "POPULACAO no DW só até ~2023; numerador 2025 usa carry-forward. Exibir aviso no painel. Não inventar população."
+  },
+  "denominador_status": "carry_forward_2023",
+  "adquirida_metodo": "NI + CID A51–A53 (método SES-MT)",
+  "adquirida_sensibilidade": {
+    "status": "ok",
+    "ano": 2025,
+    "casos_a51_a53": 5672,
+    "casos_a53_9": 5672,
+    "razao_a53_9_sobre_faixa": 1.0,
+    "nota": "Sensibilidade: A53.9 sozinho subestima frente a A51–A53 (método SES-MT). Não usar A53.9 como numerador oficial."
+  },
   "por_ano_resumo": {
     "2007": {
       "adquirida": {
         "casos": 257,
         "taxa": 8.8,
-        "nota": "Proxy temporário: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). NÃO substitui ficha SINAN-SIFA / VW_SINAN_SIFILISADQUIRIDA. Sem PII.",
+        "nota": "Método SES-MT: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). Sem ficha específica de adquirida no DW (confirmado SES-MT 2026-09-21). SES citou A53.9 como exemplo; extract = A51–A53. Não confundir com boletim federal SIFA puro. Sem PII.",
         "nivel_evidencia": "proxy",
         "fonte": "dbo.VW_SINAN_NOTIFICACAOINDIVIDUAL"
       },
@@ -48,15 +64,21 @@
         "mortalidade_100mil_nv": 10.5
       },
       "razao_sc_gestante_pct": 51.1,
-      "evitabilidade_sc_pct": 51.1,
+      "evitabilidade_sc_pct": 48.9,
       "nascidos_vivos": 47676,
-      "populacao": 2910255
+      "populacao": 2910255,
+      "denominador": {
+        "status": "ano_coincidente",
+        "ano_numerador": 2007,
+        "ano_populacao_usada": 2007,
+        "nota": "População do mesmo ano do numerador."
+      }
     },
     "2008": {
       "adquirida": {
         "casos": 296,
         "taxa": 10.0,
-        "nota": "Proxy temporário: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). NÃO substitui ficha SINAN-SIFA / VW_SINAN_SIFILISADQUIRIDA. Sem PII.",
+        "nota": "Método SES-MT: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). Sem ficha específica de adquirida no DW (confirmado SES-MT 2026-09-21). SES citou A53.9 como exemplo; extract = A51–A53. Não confundir com boletim federal SIFA puro. Sem PII.",
         "nivel_evidencia": "proxy",
         "fonte": "dbo.VW_SINAN_NOTIFICACAOINDIVIDUAL"
       },
@@ -71,15 +93,21 @@
         "mortalidade_100mil_nv": 4.0
       },
       "razao_sc_gestante_pct": 41.2,
-      "evitabilidade_sc_pct": 41.2,
+      "evitabilidade_sc_pct": 58.8,
       "nascidos_vivos": 49462,
-      "populacao": 2956493
+      "populacao": 2956493,
+      "denominador": {
+        "status": "ano_coincidente",
+        "ano_numerador": 2008,
+        "ano_populacao_usada": 2008,
+        "nota": "População do mesmo ano do numerador."
+      }
     },
     "2009": {
       "adquirida": {
         "casos": 299,
         "taxa": 6.6,
-        "nota": "Proxy temporário: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). NÃO substitui ficha SINAN-SIFA / VW_SINAN_SIFILISADQUIRIDA. Sem PII.",
+        "nota": "Método SES-MT: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). Sem ficha específica de adquirida no DW (confirmado SES-MT 2026-09-21). SES citou A53.9 como exemplo; extract = A51–A53. Não confundir com boletim federal SIFA puro. Sem PII.",
         "nivel_evidencia": "proxy",
         "fonte": "dbo.VW_SINAN_NOTIFICACAOINDIVIDUAL"
       },
@@ -94,15 +122,21 @@
         "mortalidade_100mil_nv": 4.1
       },
       "razao_sc_gestante_pct": 34.5,
-      "evitabilidade_sc_pct": 34.5,
+      "evitabilidade_sc_pct": 65.5,
       "nascidos_vivos": 48929,
-      "populacao": 4547353
+      "populacao": 4547353,
+      "denominador": {
+        "status": "ano_coincidente",
+        "ano_numerador": 2009,
+        "ano_populacao_usada": 2009,
+        "nota": "População do mesmo ano do numerador."
+      }
     },
     "2010": {
       "adquirida": {
         "casos": 439,
         "taxa": 14.5,
-        "nota": "Proxy temporário: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). NÃO substitui ficha SINAN-SIFA / VW_SINAN_SIFILISADQUIRIDA. Sem PII.",
+        "nota": "Método SES-MT: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). Sem ficha específica de adquirida no DW (confirmado SES-MT 2026-09-21). SES citou A53.9 como exemplo; extract = A51–A53. Não confundir com boletim federal SIFA puro. Sem PII.",
         "nivel_evidencia": "proxy",
         "fonte": "dbo.VW_SINAN_NOTIFICACAOINDIVIDUAL"
       },
@@ -117,15 +151,21 @@
         "mortalidade_100mil_nv": 4.1
       },
       "razao_sc_gestante_pct": 31.0,
-      "evitabilidade_sc_pct": 31.0,
+      "evitabilidade_sc_pct": 69.0,
       "nascidos_vivos": 49275,
-      "populacao": 3035122
+      "populacao": 3035122,
+      "denominador": {
+        "status": "ano_coincidente",
+        "ano_numerador": 2010,
+        "ano_populacao_usada": 2010,
+        "nota": "População do mesmo ano do numerador."
+      }
     },
     "2011": {
       "adquirida": {
         "casos": 539,
         "taxa": 17.4,
-        "nota": "Proxy temporário: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). NÃO substitui ficha SINAN-SIFA / VW_SINAN_SIFILISADQUIRIDA. Sem PII.",
+        "nota": "Método SES-MT: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). Sem ficha específica de adquirida no DW (confirmado SES-MT 2026-09-21). SES citou A53.9 como exemplo; extract = A51–A53. Não confundir com boletim federal SIFA puro. Sem PII.",
         "nivel_evidencia": "proxy",
         "fonte": "dbo.VW_SINAN_NOTIFICACAOINDIVIDUAL"
       },
@@ -140,15 +180,21 @@
         "mortalidade_100mil_nv": 5.8
       },
       "razao_sc_gestante_pct": 27.5,
-      "evitabilidade_sc_pct": 27.5,
+      "evitabilidade_sc_pct": 72.5,
       "nascidos_vivos": 51473,
-      "populacao": 3094547
+      "populacao": 3094547,
+      "denominador": {
+        "status": "ano_coincidente",
+        "ano_numerador": 2011,
+        "ano_populacao_usada": 2011,
+        "nota": "População do mesmo ano do numerador."
+      }
     },
     "2012": {
       "adquirida": {
         "casos": 503,
         "taxa": 16.0,
-        "nota": "Proxy temporário: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). NÃO substitui ficha SINAN-SIFA / VW_SINAN_SIFILISADQUIRIDA. Sem PII.",
+        "nota": "Método SES-MT: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). Sem ficha específica de adquirida no DW (confirmado SES-MT 2026-09-21). SES citou A53.9 como exemplo; extract = A51–A53. Não confundir com boletim federal SIFA puro. Sem PII.",
         "nivel_evidencia": "proxy",
         "fonte": "dbo.VW_SINAN_NOTIFICACAOINDIVIDUAL"
       },
@@ -163,15 +209,21 @@
         "mortalidade_100mil_nv": 3.9
       },
       "razao_sc_gestante_pct": 54.2,
-      "evitabilidade_sc_pct": 54.2,
+      "evitabilidade_sc_pct": 45.8,
       "nascidos_vivos": 51514,
-      "populacao": 3138822
+      "populacao": 3138822,
+      "denominador": {
+        "status": "ano_coincidente",
+        "ano_numerador": 2012,
+        "ano_populacao_usada": 2012,
+        "nota": "População do mesmo ano do numerador."
+      }
     },
     "2013": {
       "adquirida": {
         "casos": 600,
         "taxa": 18.9,
-        "nota": "Proxy temporário: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). NÃO substitui ficha SINAN-SIFA / VW_SINAN_SIFILISADQUIRIDA. Sem PII.",
+        "nota": "Método SES-MT: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). Sem ficha específica de adquirida no DW (confirmado SES-MT 2026-09-21). SES citou A53.9 como exemplo; extract = A51–A53. Não confundir com boletim federal SIFA puro. Sem PII.",
         "nivel_evidencia": "proxy",
         "fonte": "dbo.VW_SINAN_NOTIFICACAOINDIVIDUAL"
       },
@@ -186,15 +238,21 @@
         "mortalidade_100mil_nv": 7.5
       },
       "razao_sc_gestante_pct": 62.3,
-      "evitabilidade_sc_pct": 62.3,
+      "evitabilidade_sc_pct": 37.7,
       "nascidos_vivos": 53144,
-      "populacao": 3182113
+      "populacao": 3182113,
+      "denominador": {
+        "status": "ano_coincidente",
+        "ano_numerador": 2013,
+        "ano_populacao_usada": 2013,
+        "nota": "População do mesmo ano do numerador."
+      }
     },
     "2014": {
       "adquirida": {
         "casos": 733,
         "taxa": 22.7,
-        "nota": "Proxy temporário: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). NÃO substitui ficha SINAN-SIFA / VW_SINAN_SIFILISADQUIRIDA. Sem PII.",
+        "nota": "Método SES-MT: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). Sem ficha específica de adquirida no DW (confirmado SES-MT 2026-09-21). SES citou A53.9 como exemplo; extract = A51–A53. Não confundir com boletim federal SIFA puro. Sem PII.",
         "nivel_evidencia": "proxy",
         "fonte": "dbo.VW_SINAN_NOTIFICACAOINDIVIDUAL"
       },
@@ -209,15 +267,21 @@
         "mortalidade_100mil_nv": 8.8
       },
       "razao_sc_gestante_pct": 74.9,
-      "evitabilidade_sc_pct": 74.9,
+      "evitabilidade_sc_pct": 25.1,
       "nascidos_vivos": 56860,
-      "populacao": 3224341
+      "populacao": 3224341,
+      "denominador": {
+        "status": "ano_coincidente",
+        "ano_numerador": 2014,
+        "ano_populacao_usada": 2014,
+        "nota": "População do mesmo ano do numerador."
+      }
     },
     "2015": {
       "adquirida": {
         "casos": 1174,
         "taxa": 36.0,
-        "nota": "Proxy temporário: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). NÃO substitui ficha SINAN-SIFA / VW_SINAN_SIFILISADQUIRIDA. Sem PII.",
+        "nota": "Método SES-MT: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). Sem ficha específica de adquirida no DW (confirmado SES-MT 2026-09-21). SES citou A53.9 como exemplo; extract = A51–A53. Não confundir com boletim federal SIFA puro. Sem PII.",
         "nivel_evidencia": "proxy",
         "fonte": "dbo.VW_SINAN_NOTIFICACAOINDIVIDUAL"
       },
@@ -232,15 +296,21 @@
         "mortalidade_100mil_nv": 12.3
       },
       "razao_sc_gestante_pct": 81.3,
-      "evitabilidade_sc_pct": 81.3,
+      "evitabilidade_sc_pct": 18.7,
       "nascidos_vivos": 56829,
-      "populacao": 3265468
+      "populacao": 3265468,
+      "denominador": {
+        "status": "ano_coincidente",
+        "ano_numerador": 2015,
+        "ano_populacao_usada": 2015,
+        "nota": "População do mesmo ano do numerador."
+      }
     },
     "2016": {
       "adquirida": {
         "casos": 1332,
         "taxa": 40.8,
-        "nota": "Proxy temporário: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). NÃO substitui ficha SINAN-SIFA / VW_SINAN_SIFILISADQUIRIDA. Sem PII.",
+        "nota": "Método SES-MT: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). Sem ficha específica de adquirida no DW (confirmado SES-MT 2026-09-21). SES citou A53.9 como exemplo; extract = A51–A53. Não confundir com boletim federal SIFA puro. Sem PII.",
         "nivel_evidencia": "proxy",
         "fonte": "dbo.VW_SINAN_NOTIFICACAOINDIVIDUAL"
       },
@@ -255,15 +325,21 @@
         "mortalidade_100mil_nv": 14.9
       },
       "razao_sc_gestante_pct": 69.3,
-      "evitabilidade_sc_pct": 69.3,
+      "evitabilidade_sc_pct": 30.7,
       "nascidos_vivos": 53657,
-      "populacao": 3265468
+      "populacao": 3265468,
+      "denominador": {
+        "status": "ano_coincidente",
+        "ano_numerador": 2016,
+        "ano_populacao_usada": 2016,
+        "nota": "População do mesmo ano do numerador."
+      }
     },
     "2017": {
       "adquirida": {
         "casos": 1903,
         "taxa": 58.3,
-        "nota": "Proxy temporário: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). NÃO substitui ficha SINAN-SIFA / VW_SINAN_SIFILISADQUIRIDA. Sem PII.",
+        "nota": "Método SES-MT: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). Sem ficha específica de adquirida no DW (confirmado SES-MT 2026-09-21). SES citou A53.9 como exemplo; extract = A51–A53. Não confundir com boletim federal SIFA puro. Sem PII.",
         "nivel_evidencia": "proxy",
         "fonte": "dbo.VW_SINAN_NOTIFICACAOINDIVIDUAL"
       },
@@ -278,15 +354,21 @@
         "mortalidade_100mil_nv": 13.9
       },
       "razao_sc_gestante_pct": 57.0,
-      "evitabilidade_sc_pct": 57.0,
+      "evitabilidade_sc_pct": 43.0,
       "nascidos_vivos": 57380,
-      "populacao": 3265468
+      "populacao": 3265468,
+      "denominador": {
+        "status": "ano_coincidente",
+        "ano_numerador": 2017,
+        "ano_populacao_usada": 2017,
+        "nota": "População do mesmo ano do numerador."
+      }
     },
     "2018": {
       "adquirida": {
         "casos": 2882,
         "taxa": 88.3,
-        "nota": "Proxy temporário: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). NÃO substitui ficha SINAN-SIFA / VW_SINAN_SIFILISADQUIRIDA. Sem PII.",
+        "nota": "Método SES-MT: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). Sem ficha específica de adquirida no DW (confirmado SES-MT 2026-09-21). SES citou A53.9 como exemplo; extract = A51–A53. Não confundir com boletim federal SIFA puro. Sem PII.",
         "nivel_evidencia": "proxy",
         "fonte": "dbo.VW_SINAN_NOTIFICACAOINDIVIDUAL"
       },
@@ -301,15 +383,21 @@
         "mortalidade_100mil_nv": 8.5
       },
       "razao_sc_gestante_pct": 40.9,
-      "evitabilidade_sc_pct": 40.9,
+      "evitabilidade_sc_pct": 59.1,
       "nascidos_vivos": 58733,
-      "populacao": 3265468
+      "populacao": 3265468,
+      "denominador": {
+        "status": "ano_coincidente",
+        "ano_numerador": 2018,
+        "ano_populacao_usada": 2018,
+        "nota": "População do mesmo ano do numerador."
+      }
     },
     "2019": {
       "adquirida": {
         "casos": 2850,
         "taxa": 87.3,
-        "nota": "Proxy temporário: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). NÃO substitui ficha SINAN-SIFA / VW_SINAN_SIFILISADQUIRIDA. Sem PII.",
+        "nota": "Método SES-MT: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). Sem ficha específica de adquirida no DW (confirmado SES-MT 2026-09-21). SES citou A53.9 como exemplo; extract = A51–A53. Não confundir com boletim federal SIFA puro. Sem PII.",
         "nivel_evidencia": "proxy",
         "fonte": "dbo.VW_SINAN_NOTIFICACAOINDIVIDUAL"
       },
@@ -324,15 +412,21 @@
         "mortalidade_100mil_nv": 6.8
       },
       "razao_sc_gestante_pct": 34.4,
-      "evitabilidade_sc_pct": 34.4,
+      "evitabilidade_sc_pct": 65.6,
       "nascidos_vivos": 58880,
-      "populacao": 3265468
+      "populacao": 3265468,
+      "denominador": {
+        "status": "ano_coincidente",
+        "ano_numerador": 2019,
+        "ano_populacao_usada": 2019,
+        "nota": "População do mesmo ano do numerador."
+      }
     },
     "2020": {
       "adquirida": {
         "casos": 1996,
         "taxa": 61.1,
-        "nota": "Proxy temporário: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). NÃO substitui ficha SINAN-SIFA / VW_SINAN_SIFILISADQUIRIDA. Sem PII.",
+        "nota": "Método SES-MT: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). Sem ficha específica de adquirida no DW (confirmado SES-MT 2026-09-21). SES citou A53.9 como exemplo; extract = A51–A53. Não confundir com boletim federal SIFA puro. Sem PII.",
         "nivel_evidencia": "proxy",
         "fonte": "dbo.VW_SINAN_NOTIFICACAOINDIVIDUAL"
       },
@@ -347,15 +441,21 @@
         "mortalidade_100mil_nv": 7.0
       },
       "razao_sc_gestante_pct": 29.6,
-      "evitabilidade_sc_pct": 29.6,
+      "evitabilidade_sc_pct": 70.4,
       "nascidos_vivos": 57018,
-      "populacao": 3265468
+      "populacao": 3265468,
+      "denominador": {
+        "status": "ano_coincidente",
+        "ano_numerador": 2020,
+        "ano_populacao_usada": 2020,
+        "nota": "População do mesmo ano do numerador."
+      }
     },
     "2021": {
       "adquirida": {
         "casos": 2445,
         "taxa": 74.9,
-        "nota": "Proxy temporário: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). NÃO substitui ficha SINAN-SIFA / VW_SINAN_SIFILISADQUIRIDA. Sem PII.",
+        "nota": "Método SES-MT: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). Sem ficha específica de adquirida no DW (confirmado SES-MT 2026-09-21). SES citou A53.9 como exemplo; extract = A51–A53. Não confundir com boletim federal SIFA puro. Sem PII.",
         "nivel_evidencia": "proxy",
         "fonte": "dbo.VW_SINAN_NOTIFICACAOINDIVIDUAL"
       },
@@ -370,15 +470,21 @@
         "mortalidade_100mil_nv": 13.8
       },
       "razao_sc_gestante_pct": 19.2,
-      "evitabilidade_sc_pct": 19.2,
+      "evitabilidade_sc_pct": 80.8,
       "nascidos_vivos": 57849,
-      "populacao": 3265468
+      "populacao": 3265468,
+      "denominador": {
+        "status": "ano_coincidente",
+        "ano_numerador": 2021,
+        "ano_populacao_usada": 2021,
+        "nota": "População do mesmo ano do numerador."
+      }
     },
     "2022": {
       "adquirida": {
         "casos": 3841,
         "taxa": 117.6,
-        "nota": "Proxy temporário: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). NÃO substitui ficha SINAN-SIFA / VW_SINAN_SIFILISADQUIRIDA. Sem PII.",
+        "nota": "Método SES-MT: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). Sem ficha específica de adquirida no DW (confirmado SES-MT 2026-09-21). SES citou A53.9 como exemplo; extract = A51–A53. Não confundir com boletim federal SIFA puro. Sem PII.",
         "nivel_evidencia": "proxy",
         "fonte": "dbo.VW_SINAN_NOTIFICACAOINDIVIDUAL"
       },
@@ -393,15 +499,21 @@
         "mortalidade_100mil_nv": 10.3
       },
       "razao_sc_gestante_pct": 21.7,
-      "evitabilidade_sc_pct": 21.7,
+      "evitabilidade_sc_pct": 78.3,
       "nascidos_vivos": 58103,
-      "populacao": 3265468
+      "populacao": 3265468,
+      "denominador": {
+        "status": "ano_coincidente",
+        "ano_numerador": 2022,
+        "ano_populacao_usada": 2022,
+        "nota": "População do mesmo ano do numerador."
+      }
     },
     "2023": {
       "adquirida": {
         "casos": 4836,
         "taxa": 148.1,
-        "nota": "Proxy temporário: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). NÃO substitui ficha SINAN-SIFA / VW_SINAN_SIFILISADQUIRIDA. Sem PII.",
+        "nota": "Método SES-MT: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). Sem ficha específica de adquirida no DW (confirmado SES-MT 2026-09-21). SES citou A53.9 como exemplo; extract = A51–A53. Não confundir com boletim federal SIFA puro. Sem PII.",
         "nivel_evidencia": "proxy",
         "fonte": "dbo.VW_SINAN_NOTIFICACAOINDIVIDUAL"
       },
@@ -416,15 +528,21 @@
         "mortalidade_100mil_nv": 13.7
       },
       "razao_sc_gestante_pct": 23.7,
-      "evitabilidade_sc_pct": 23.7,
+      "evitabilidade_sc_pct": 76.3,
       "nascidos_vivos": 58580,
-      "populacao": 3265468
+      "populacao": 3265468,
+      "denominador": {
+        "status": "ano_coincidente",
+        "ano_numerador": 2023,
+        "ano_populacao_usada": 2023,
+        "nota": "População do mesmo ano do numerador."
+      }
     },
     "2024": {
       "adquirida": {
         "casos": 4942,
         "taxa": 151.3,
-        "nota": "Proxy temporário: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). NÃO substitui ficha SINAN-SIFA / VW_SINAN_SIFILISADQUIRIDA. Sem PII.",
+        "nota": "Método SES-MT: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). Sem ficha específica de adquirida no DW (confirmado SES-MT 2026-09-21). SES citou A53.9 como exemplo; extract = A51–A53. Não confundir com boletim federal SIFA puro. Sem PII.",
         "nivel_evidencia": "proxy",
         "fonte": "dbo.VW_SINAN_NOTIFICACAOINDIVIDUAL"
       },
@@ -439,15 +557,21 @@
         "mortalidade_100mil_nv": 16.3
       },
       "razao_sc_gestante_pct": 21.6,
-      "evitabilidade_sc_pct": 21.6,
+      "evitabilidade_sc_pct": 78.4,
       "nascidos_vivos": 55250,
-      "populacao": 3265468
+      "populacao": 3265468,
+      "denominador": {
+        "status": "carry_forward_2023",
+        "ano_numerador": 2024,
+        "ano_populacao_usada": 2023,
+        "nota": "POPULACAO no DW só até ~2023; numerador 2024 usa carry-forward. Exibir aviso no painel. Não inventar população."
+      }
     },
     "2025": {
       "adquirida": {
         "casos": 5672,
         "taxa": 173.7,
-        "nota": "Proxy temporário: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). NÃO substitui ficha SINAN-SIFA / VW_SINAN_SIFILISADQUIRIDA. Sem PII.",
+        "nota": "Método SES-MT: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). Sem ficha específica de adquirida no DW (confirmado SES-MT 2026-09-21). SES citou A53.9 como exemplo; extract = A51–A53. Não confundir com boletim federal SIFA puro. Sem PII.",
         "nivel_evidencia": "proxy",
         "fonte": "dbo.VW_SINAN_NOTIFICACAOINDIVIDUAL"
       },
@@ -462,84 +586,69 @@
         "mortalidade_100mil_nv": 10.4
       },
       "razao_sc_gestante_pct": 28.9,
-      "evitabilidade_sc_pct": 28.9,
+      "evitabilidade_sc_pct": 71.1,
       "nascidos_vivos": 57643,
-      "populacao": 3265468
-    },
-    "2026": {
-      "adquirida": {
-        "casos": 3091,
-        "taxa": 94.7,
-        "nota": "Proxy temporário: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). NÃO substitui ficha SINAN-SIFA / VW_SINAN_SIFILISADQUIRIDA. Sem PII.",
-        "nivel_evidencia": "proxy",
-        "fonte": "dbo.VW_SINAN_NOTIFICACAOINDIVIDUAL"
-      },
-      "gestante": {
-        "casos": 1278,
-        "taxa": 35.5
-      },
-      "congenita": {
-        "casos": 459,
-        "taxa": 12.7,
-        "obitos": 8,
-        "mortalidade_100mil_nv": 22.2
-      },
-      "razao_sc_gestante_pct": 35.9,
-      "evitabilidade_sc_pct": 35.9,
-      "nascidos_vivos": 36013,
-      "populacao": 3265468
+      "populacao": 3265468,
+      "denominador": {
+        "status": "carry_forward_2023",
+        "ano_numerador": 2025,
+        "ano_populacao_usada": 2023,
+        "nota": "POPULACAO no DW só até ~2023; numerador 2025 usa carry-forward. Exibir aviso no painel. Não inventar população."
+      }
     }
   },
   "estado": {
     "adquirida": {
-      "casos": 3091,
-      "taxa": 94.7,
-      "variacao_anual_pct": -45.5,
-      "nota": "Proxy temporário: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). NÃO substitui ficha SINAN-SIFA / VW_SINAN_SIFILISADQUIRIDA. Sem PII.",
+      "casos": 5672,
+      "taxa": 173.7,
+      "variacao_anual_pct": 14.8,
+      "nota": "Método SES-MT: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). Sem ficha específica de adquirida no DW (confirmado SES-MT 2026-09-21). SES citou A53.9 como exemplo; extract = A51–A53. Não confundir com boletim federal SIFA puro. Sem PII.",
       "nivel_evidencia": "proxy",
-      "fonte": "dbo.VW_SINAN_NOTIFICACAOINDIVIDUAL"
+      "fonte": "dbo.VW_SINAN_NOTIFICACAOINDIVIDUAL",
+      "rotulo_painel": "Adquirida = NI + A51–A53 (método SES-MT)"
     },
     "gestante": {
-      "casos": 1278,
-      "taxa": 35.5,
-      "variacao_anual_pct": -45.3
+      "casos": 2336,
+      "taxa": 40.5,
+      "variacao_anual_pct": 2.1
     },
     "congenita": {
-      "casos": 459,
-      "taxa": 12.7,
-      "obitos": 8,
-      "mortalidade_100mil_nv": 22.2,
-      "variacao_anual_pct": -32.0
+      "casos": 675,
+      "taxa": 11.7,
+      "obitos": 6,
+      "obitos_fonte": "proxy_sinan_sifc",
+      "mortalidade_100mil_nv": 10.4,
+      "variacao_anual_pct": 36.6
     },
-    "razao_sc_gestante_pct": 35.9,
-    "evitabilidade_sc_pct": 35.9,
+    "razao_sc_gestante_pct": 28.9,
+    "evitabilidade_sc_pct": 71.1,
     "populacao": 3265468,
-    "nascidos_vivos": 36013,
+    "nascidos_vivos": 57643,
     "variacao_semanas": null,
     "equidade_gestante_raca": [
       {
         "categoria": "Parda",
-        "pct": 67.9
+        "pct": 67.7
       },
       {
         "categoria": "Branca",
-        "pct": 20.8
+        "pct": 18.5
       },
       {
         "categoria": "Preta",
-        "pct": 8.9
-      },
-      {
-        "categoria": "Indigena",
-        "pct": 0.9
-      },
-      {
-        "categoria": "Amarela",
-        "pct": 0.8
+        "pct": 11.2
       },
       {
         "categoria": "Ignorado",
-        "pct": 0.5
+        "pct": 1.1
+      },
+      {
+        "categoria": "Amarela",
+        "pct": 1.0
+      },
+      {
+        "categoria": "Indigena",
+        "pct": 0.3
       },
       {
         "categoria": "*Em Branco",
@@ -550,35 +659,35 @@
     "equidade_faixa_etaria": [
       {
         "categoria": "05.20 a 24 anos",
-        "pct": 36.5
+        "pct": 35.5
       },
       {
         "categoria": "06.25 a 29 anos",
-        "pct": 22.3
+        "pct": 25.1
       },
       {
         "categoria": "04.15 a 19 anos",
-        "pct": 21.8
+        "pct": 22.3
       },
       {
         "categoria": "07.30 a 34 anos",
-        "pct": 11.7
+        "pct": 10.7
       },
       {
         "categoria": "08.35 a 39 anos",
-        "pct": 4.9
+        "pct": 3.9
       },
       {
         "categoria": "09.40 a 44 anos",
-        "pct": 1.8
+        "pct": 1.1
       },
       {
         "categoria": "03.10 a 14 anos",
-        "pct": 0.9
+        "pct": 1.1
       },
       {
         "categoria": "10.45 a 49 anos",
-        "pct": 0.1
+        "pct": 0.3
       }
     ]
   },
@@ -602,8 +711,7 @@
       2022,
       2023,
       2024,
-      2025,
-      2026
+      2025
     ],
     "gestante_taxa": [
       2.8,
@@ -624,8 +732,7 @@
       29.1,
       33.8,
       41.4,
-      40.5,
-      35.5
+      40.5
     ],
     "congenita_taxa": [
       1.4,
@@ -646,8 +753,7 @@
       6.3,
       8.0,
       8.9,
-      11.7,
-      12.7
+      11.7
     ],
     "adquirida_taxa": [
       8.8,
@@ -668,8 +774,7 @@
       117.6,
       148.1,
       151.3,
-      173.7,
-      94.7
+      173.7
     ],
     "gestante_casos": [
       135,
@@ -690,8 +795,7 @@
       1690,
       1978,
       2289,
-      2336,
-      1278
+      2336
     ],
     "congenita_casos": [
       69,
@@ -712,8 +816,7 @@
       367,
       469,
       494,
-      675,
-      459
+      675
     ],
     "adquirida_casos": [
       257,
@@ -734,8 +837,7 @@
       3841,
       4836,
       4942,
-      5672,
-      3091
+      5672
     ],
     "razao_sc_gestante_pct": [
       51.1,
@@ -756,8 +858,7 @@
       21.7,
       23.7,
       21.6,
-      28.9,
-      35.9
+      28.9
     ],
     "nascidos_vivos": [
       47676,
@@ -778,8 +879,7 @@
       58103,
       58580,
       55250,
-      57643,
-      36013
+      57643
     ]
   },
   "contadores_acao": {
@@ -789,12 +889,15 @@
     "gal_sem_sinan": null,
     "gal_sem_sinan_nota": "MVP2 Onda A — ver aba Laboratório (lab_reagente_sem_sinan)",
     "municipios_baixa_qualidade": null,
-    "nota": "Contadores operacionais: demo sintética ou SES"
+    "nota": "Contadores operacionais: demo sintética ou SES",
+    "ers_gap_esus_alto_n": 16,
+    "gap_esus_nota": "ERS com ≥40% atendimentos IG>0 sem testagem no encontro (e-SUS) — hipótese operacional."
   },
   "top_problemas": [
     "Ver fenótipo da falha e PQA-VS na aba Transmissão Vertical",
     "Oportunidades: gap e-SUS APS (consulta sem testagem) e índice na Cascata/Executivo",
     "GAL: volume, positividade e TAT na aba Laboratório (subíndice risco lab = N/A)",
+    "Denominador POPULACAO: verificar carry-forward se ano > último disponível no DW",
     "Adequação terapêutica caso a caso (datas nominais) e linkage mãe–criança fora do Git"
   ],
   "views": {
@@ -804,8 +907,158 @@
     "adquirida_meta": {
       "nivel_evidencia": "proxy",
       "fonte": "dbo.VW_SINAN_NOTIFICACAOINDIVIDUAL",
-      "nota": "Proxy temporário: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). NÃO substitui ficha SINAN-SIFA / VW_SINAN_SIFILISADQUIRIDA. Sem PII.",
+      "nota": "Método SES-MT: VW_SINAN_NOTIFICACAOINDIVIDUAL com Agravo A51–A53 (exclui A50 congênita, O981 gestante e Gestante=Sim). Sem ficha específica de adquirida no DW (confirmado SES-MT 2026-09-21). SES citou A53.9 como exemplo; extract = A51–A53. Não confundir com boletim federal SIFA puro. Sem PII.",
       "filtro": "Agravo LIKE A51%/A52%/A53%; exclui Gestante=Sim"
     }
+  },
+  "gap_esus_sifg": {
+    "esus_gestante_sem_testagem_pct": 63.9,
+    "ranking_esus_gap_ers": [
+      {
+        "ers_id": "colider",
+        "regional": "Colíder",
+        "municipios_n": 1,
+        "atendimentos_gestante_n": 848,
+        "com_testagem_n": 196,
+        "sem_testagem_n": 652,
+        "sem_testagem_pct": 76.9
+      },
+      {
+        "ers_id": "peixoto-de-azevedo",
+        "regional": "Peixoto de Azevedo",
+        "municipios_n": 5,
+        "atendimentos_gestante_n": 7225,
+        "com_testagem_n": 1783,
+        "sem_testagem_n": 5442,
+        "sem_testagem_pct": 75.3
+      },
+      {
+        "ers_id": "baixada-cuiabana",
+        "regional": "Baixada Cuiabana",
+        "municipios_n": 10,
+        "atendimentos_gestante_n": 36552,
+        "com_testagem_n": 9876,
+        "sem_testagem_n": 26676,
+        "sem_testagem_pct": 73.0
+      },
+      {
+        "ers_id": "juina",
+        "regional": "Juína",
+        "municipios_n": 7,
+        "atendimentos_gestante_n": 14180,
+        "com_testagem_n": 4025,
+        "sem_testagem_n": 10155,
+        "sem_testagem_pct": 71.6
+      },
+      {
+        "ers_id": "juara",
+        "regional": "Juara",
+        "municipios_n": 5,
+        "atendimentos_gestante_n": 6440,
+        "com_testagem_n": 1857,
+        "sem_testagem_n": 4583,
+        "sem_testagem_pct": 71.2
+      },
+      {
+        "ers_id": "diamantino",
+        "regional": "Diamantino",
+        "municipios_n": 2,
+        "atendimentos_gestante_n": 1938,
+        "com_testagem_n": 577,
+        "sem_testagem_n": 1361,
+        "sem_testagem_pct": 70.2
+      },
+      {
+        "ers_id": "porto-alegre-do-norte",
+        "regional": "Porto Alegre do Norte",
+        "municipios_n": 5,
+        "atendimentos_gestante_n": 2571,
+        "com_testagem_n": 790,
+        "sem_testagem_n": 1781,
+        "sem_testagem_pct": 69.3
+      },
+      {
+        "ers_id": "pontes-e-lacerda",
+        "regional": "Pontes e Lacerda",
+        "municipios_n": 6,
+        "atendimentos_gestante_n": 9215,
+        "com_testagem_n": 2912,
+        "sem_testagem_n": 6303,
+        "sem_testagem_pct": 68.4
+      },
+      {
+        "ers_id": "rondonopolis",
+        "regional": "Rondonópolis",
+        "municipios_n": 19,
+        "atendimentos_gestante_n": 37886,
+        "com_testagem_n": 13831,
+        "sem_testagem_n": 24055,
+        "sem_testagem_pct": 63.5
+      },
+      {
+        "ers_id": "alta-floresta",
+        "regional": "Alta Floresta",
+        "municipios_n": 4,
+        "atendimentos_gestante_n": 5364,
+        "com_testagem_n": 2008,
+        "sem_testagem_n": 3356,
+        "sem_testagem_pct": 62.6
+      },
+      {
+        "ers_id": "tangara-da-serra",
+        "regional": "Tangará da Serra",
+        "municipios_n": 11,
+        "atendimentos_gestante_n": 27641,
+        "com_testagem_n": 10965,
+        "sem_testagem_n": 16676,
+        "sem_testagem_pct": 60.3
+      },
+      {
+        "ers_id": "sinop",
+        "regional": "Sinop",
+        "municipios_n": 13,
+        "atendimentos_gestante_n": 45562,
+        "com_testagem_n": 20222,
+        "sem_testagem_n": 25340,
+        "sem_testagem_pct": 55.6
+      },
+      {
+        "ers_id": "sao-felix-do-araguaia",
+        "regional": "São Félix do Araguaia",
+        "municipios_n": 5,
+        "atendimentos_gestante_n": 2772,
+        "com_testagem_n": 1288,
+        "sem_testagem_n": 1484,
+        "sem_testagem_pct": 53.5
+      },
+      {
+        "ers_id": "agua-boa",
+        "regional": "Água Boa",
+        "municipios_n": 6,
+        "atendimentos_gestante_n": 3518,
+        "com_testagem_n": 1685,
+        "sem_testagem_n": 1833,
+        "sem_testagem_pct": 52.1
+      },
+      {
+        "ers_id": "caceres",
+        "regional": "Cáceres",
+        "municipios_n": 12,
+        "atendimentos_gestante_n": 5259,
+        "com_testagem_n": 2535,
+        "sem_testagem_n": 2724,
+        "sem_testagem_pct": 51.8
+      },
+      {
+        "ers_id": "barra-do-garcas",
+        "regional": "Barra do Garças",
+        "municipios_n": 9,
+        "atendimentos_gestante_n": 3804,
+        "com_testagem_n": 1877,
+        "sem_testagem_n": 1927,
+        "sem_testagem_pct": 50.7
+      }
+    ],
+    "hipotese": "Alto volume APS com baixa testagem no encontro e/ou SIFG baixa gera hipótese de subnotificação ou falha de testagem — investigar, não afirmar."
   }
 }

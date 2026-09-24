@@ -110,9 +110,43 @@
         SifilisApp.kpi("Casos SC", SifilisApp.fmt(e.congenita.casos), "menores de 1 ano", "SINAN-SIFC") +
         SifilisApp.kpi("Incidência SC", SifilisApp.fmt(e.congenita.taxa, 1), "por 1.000 NV", "SIFC+SINASC") +
         SifilisApp.kpi("Evitabilidade SC", SifilisApp.fmt(e.evitabilidade_sc_pct, 1) + "%", "1 − PQA-VS (Boletim 2025)", "extraido_literal") +
-        SifilisApp.kpi("Óbitos SC", SifilisApp.fmt(e.congenita.obitos), "proxy SINAN", "SIM no MVP3") +
-        SifilisApp.kpi("Mortalidade SC", SifilisApp.fmt(e.congenita.mortalidade_100mil_nv, 1), "por 100 mil NV", "DW") +
+        SifilisApp.kpi("Óbitos SC (proxy SINAN)", SifilisApp.fmt(e.congenita.obitos), "campo SIFC — não misturar", "proxy_sinan") +
+        SifilisApp.kpi("Óbitos SC (SIM)", "—", "carregar insumos.json", "dbo.SIM · ver Lab/Insumos") +
+        SifilisApp.kpi("Mortalidade SC", SifilisApp.fmt(e.congenita.mortalidade_100mil_nv, 1), "por 100 mil NV (proxy)", "DW") +
         SifilisApp.kpi("Nascidos vivos", SifilisApp.fmt(e.nascidos_vivos), "SINASC", "denominador");
+
+      // Dual SIM vs proxy — enriquece KPI se insumos disponível
+      SifilisApp.load("insumos.json")
+        .then(function (insumos) {
+          const ie = (insumos && insumos.estado) || {};
+          const dual = (insumos && insumos.obitos_sc_dual) || {};
+          const k = document.getElementById("kpis");
+          if (!k) return;
+          k.innerHTML =
+            SifilisApp.kpi("Casos SC", SifilisApp.fmt(e.congenita.casos), "menores de 1 ano", "SINAN-SIFC") +
+            SifilisApp.kpi("Incidência SC", SifilisApp.fmt(e.congenita.taxa, 1), "por 1.000 NV", "SIFC+SINASC") +
+            SifilisApp.kpi("Evitabilidade SC", SifilisApp.fmt(e.evitabilidade_sc_pct, 1) + "%", "1 − PQA-VS", "Boletim 2025") +
+            SifilisApp.kpi(
+              "Óbitos SC (proxy SINAN)",
+              SifilisApp.fmt(ie.obitos_sc_proxy_sinan != null ? ie.obitos_sc_proxy_sinan : e.congenita.obitos),
+              "SIFC",
+              "não misturar com SIM"
+            ) +
+            SifilisApp.kpi(
+              "Óbitos SC (SIM)",
+              ie.obitos_sc_sim != null ? SifilisApp.fmt(ie.obitos_sc_sim) : "—",
+              "CID A50 · fato mortalidade",
+              "dbo.SIM"
+            ) +
+            SifilisApp.kpi(
+              "|SIM − proxy|",
+              dual.delta_abs != null ? SifilisApp.fmt(dual.delta_abs) : SifilisApp.fmt(ie.obitos_sc_delta_abs),
+              "inconsistência agregada",
+              "qualidade"
+            ) +
+            SifilisApp.kpi("Nascidos vivos", SifilisApp.fmt(e.nascidos_vivos), "SINASC", "denominador");
+        })
+        .catch(function () {});
 
       document.getElementById("pront-aviso").textContent = pront.aviso || "";
       const inc = pront.incidencia_sc || {};

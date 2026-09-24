@@ -1,13 +1,13 @@
 {
   "tipo": "extracao_dw",
   "aviso": "Categorias processuais da linha de cuidado — não são afirmações causais definitivas. Fenótipo a partir de rótulos SIFC no DW; não é motor PCDT próprio. 'tratamento_incompleto' espelha 'Inadequado' da ficha; 'sem_falha_identificavel' espelha esquema 'Adequado' no DW.",
-  "total_sc_classificados": 459,
+  "total_sc_classificados": 675,
   "categorias": [
     {
       "id": "sem_prenatal",
       "nome": "Sem pré-natal",
-      "n": 39,
-      "pct": 8.5,
+      "n": 41,
+      "pct": 6.1,
       "indicador_id": "fenotipo_sem_prenatal_pct",
       "regra_id": "fenotipo_falha_sem_prenatal"
     },
@@ -22,24 +22,24 @@
     {
       "id": "diagnostico_tardio",
       "nome": "Diagnóstico tardio",
-      "n": 45,
-      "pct": 9.8,
+      "n": 70,
+      "pct": 10.4,
       "indicador_id": "fenotipo_diagnostico_tardio_pct",
       "regra_id": "fenotipo_falha_diagnostico_tardio"
     },
     {
       "id": "tratamento_nao_iniciado",
       "nome": "Tratamento não iniciado",
-      "n": 53,
-      "pct": 11.5,
+      "n": 71,
+      "pct": 10.5,
       "indicador_id": "fenotipo_tratamento_nao_iniciado_pct",
       "regra_id": "fenotipo_falha_tratamento_nao_iniciado"
     },
     {
       "id": "tratamento_incompleto",
       "nome": "Tratamento incompleto",
-      "n": 114,
-      "pct": 24.8,
+      "n": 197,
+      "pct": 29.2,
       "indicador_id": "fenotipo_tratamento_incompleto_pct",
       "regra_id": "fenotipo_falha_tratamento_incompleto"
     },
@@ -70,24 +70,24 @@
     {
       "id": "falha_de_informacao",
       "nome": "Falha de informação",
-      "n": 3,
-      "pct": 0.7,
+      "n": 11,
+      "pct": 1.6,
       "indicador_id": "fenotipo_falha_de_informacao_pct",
       "regra_id": "fenotipo_falha_falha_de_informacao"
     },
     {
       "id": "sem_falha_identificavel",
       "nome": "Sem falha identificável nos dados",
-      "n": 205,
-      "pct": 44.7,
+      "n": 285,
+      "pct": 42.2,
       "indicador_id": "fenotipo_sem_falha_identificavel_pct",
       "regra_id": "fenotipo_falha_sem_falha_identificavel"
     }
   ],
-  "ano": 2026,
+  "ano": 2025,
   "nivel_evidencia": "proxy",
   "fonte_prevista": "SIFC DW — RealizouPreNatal / DiagnosticoSifilisMaterna / EsquemaTratamentoGestanteMae",
-  "extraido_em": "2026-09-18T11:30:17.090547+00:00",
+  "extraido_em": "2026-09-18T11:30:17.090015+00:00",
   "atraso_dias": null,
   "por_ano": {
     "2022": {

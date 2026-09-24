@@ -1,13 +1,13 @@
 {
   "tipo": "extracao_dw",
-  "ano": 2026,
+  "ano": 2025,
   "aviso": "Proxy de qualidade SIFG: proporção de Ignorado/*Em Branco em campos essenciais. SEPARADO do risco epidemiológico. Não substitui painel de inconsistências MS.",
   "estado": {
-    "n_fichas": 1278,
-    "esquema_ignorado_pct": 0.7,
-    "parceria_ignorado_pct": 5.9,
-    "classificacao_ignorado_pct": 13.4,
-    "raca_ignorado_pct": 0.6,
+    "n_fichas": 2336,
+    "esquema_ignorado_pct": 1.0,
+    "parceria_ignorado_pct": 6.8,
+    "classificacao_ignorado_pct": 11.8,
+    "raca_ignorado_pct": 1.2,
     "score_qualidade_proxy": 94.8,
     "completude_geral_pct": 94.8
   },
@@ -16,6 +16,12 @@
     "score_qualidade_municipio"
   ],
   "por_ano": {
+    "2021": {
+      "tipo": "extracao_dw",
+      "ano": 2021,
+      "aviso": "Sem linha de qualidade para o ano",
+      "estado": null
+    },
     "2022": {
       "tipo": "extracao_dw",
       "ano": 2022,
@@ -80,24 +86,6 @@
         "parceria_ignorado_pct": 6.8,
         "classificacao_ignorado_pct": 11.8,
         "raca_ignorado_pct": 1.2,
-        "score_qualidade_proxy": 94.8,
-        "completude_geral_pct": 94.8
-      },
-      "indicadores_ref": [
-        "completude_geral",
-        "score_qualidade_municipio"
-      ]
-    },
-    "2026": {
-      "tipo": "extracao_dw",
-      "ano": 2026,
-      "aviso": "Proxy de qualidade SIFG: proporção de Ignorado/*Em Branco em campos essenciais. SEPARADO do risco epidemiológico. Não substitui painel de inconsistências MS.",
-      "estado": {
-        "n_fichas": 1278,
-        "esquema_ignorado_pct": 0.7,
-        "parceria_ignorado_pct": 5.9,
-        "classificacao_ignorado_pct": 13.4,
-        "raca_ignorado_pct": 0.6,
         "score_qualidade_proxy": 94.8,
         "completude_geral_pct": 94.8
       },

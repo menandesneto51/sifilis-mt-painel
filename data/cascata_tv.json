@@ -1,76 +1,102 @@
 {
   "tipo": "extracao_dw",
-  "ano": 2026,
+  "ano": 2025,
   "aviso": "Cascata SIFG/SIFC + bloco paralelo e-SUS APS (IG>0 × procedimento testagem). Não é funil clínico único nem PCDT. Adequação terapêutica = onda seguinte. Sem PII.",
   "recorte": "Mato Grosso",
   "etapas": [
     {
       "id": "gestantes_sifg",
       "label": "Gestantes notificadas (SIFG)",
-      "n": 1278,
+      "n": 2336,
       "fonte": "sinan_sifg"
     },
     {
       "id": "testagem_registrada",
       "label": "Teste NT ≠ não realizado (SIFG)",
-      "n": 891,
+      "n": 1767,
       "fonte": "sinan_sifg"
     },
     {
       "id": "esquema_registrado",
       "label": "Esquema ≠ não realizado (SIFG)",
-      "n": 1204,
+      "n": 2244,
       "fonte": "sinan_sifg"
     },
     {
       "id": "parceria_tratada",
       "label": "Parceria tratada concomitante",
-      "n": 458,
+      "n": 905,
       "fonte": "sinan_sifg"
     },
     {
       "id": "sc_sifc",
       "label": "Sífilis congênita notificada (SIFC)",
-      "n": 459,
+      "n": 675,
       "fonte": "sinan_sifc"
     },
     {
       "id": "dx_materno_parto",
       "label": "Dx materno no parto/após (SIFC)",
-      "n": 78,
+      "n": 108,
       "fonte": "sinan_sifc"
     }
   ],
-  "etapas_esus_aps": [],
+  "etapas_esus_aps": [
+    {
+      "id": "esus_pn_ig",
+      "label": "Atendimentos APS com IG>0 (e-SUS)",
+      "n": 224898,
+      "fonte": "esus_aps"
+    },
+    {
+      "id": "esus_pn_com_testagem",
+      "label": "Desses com proced. testagem sífilis",
+      "n": 81078,
+      "fonte": "esus_aps"
+    }
+  ],
   "perdas_destaque": [
     {
       "de": "gestantes_sifg",
       "para": "testagem_registrada",
-      "perda": 387,
-      "retencao_pct": 69.7
+      "perda": 569,
+      "retencao_pct": 75.6
     },
     {
       "de": "esquema_registrado",
       "para": "parceria_tratada",
-      "perda": 746,
-      "retencao_pct": 38.0
+      "perda": 1339,
+      "retencao_pct": 40.3
+    },
+    {
+      "de": "parceria_tratada",
+      "para": "sc_sifc",
+      "perda": 230,
+      "retencao_pct": 74.6
     },
     {
       "de": "sc_sifc",
       "para": "dx_materno_parto",
-      "perda": 381,
-      "retencao_pct": 17.0
+      "perda": 567,
+      "retencao_pct": 16.0
+    },
+    {
+      "de": "esus_pn_ig",
+      "para": "esus_pn_com_testagem",
+      "perda": 143820,
+      "retencao_pct": 36.1,
+      "bloco": "esus_aps"
     }
   ],
   "operacional": {
-    "parceria_tratada_pct": 35.8,
-    "esquema_nao_realizado_pct": 5.8,
-    "gestantes_sem_tratamento": 74,
-    "diagnostico_materno_parto_pct": 17.0,
-    "consulta_sem_testagem_pct": 30.3,
-    "consulta_sem_testagem_fonte": "proxy_sifg_teste_nt",
-    "esus_gestante_sem_testagem_pct": null,
-    "indice_oportunidades_perdidas": 25.3
+    "parceria_tratada_pct": 38.7,
+    "esquema_nao_realizado_pct": 3.9,
+    "gestantes_sem_tratamento": 92,
+    "diagnostico_materno_parto_pct": 16.0,
+    "consulta_sem_testagem_pct": 63.9,
+    "consulta_sem_testagem_fonte": "esus_aps_gestante_sem_proced_testagem",
+    "esus_gestante_sem_testagem_pct": 63.9,
+    "indice_oportunidades_perdidas": 31.1
   },
   "pendente_mvp2": [
     "tempo diagnostico→tratamento (datas nominais — fora do agregado)",
@@ -78,6 +104,98 @@
     "cruzar SIPNI doses com coorte gestante (sem PII)"
   ],
   "por_ano": {
+    "2021": {
+      "tipo": "extracao_dw",
+      "ano": 2021,
+      "aviso": "Cascata SIFG/SIFC + bloco paralelo e-SUS APS (IG>0 × procedimento testagem). Não é funil clínico único nem PCDT. Adequação terapêutica = onda seguinte. Sem PII.",
+      "recorte": "Mato Grosso",
+      "etapas": [
+        {
+          "id": "gestantes_sifg",
+          "label": "Gestantes notificadas (SIFG)",
+          "n": 1171,
+          "fonte": "sinan_sifg"
+        },
+        {
+          "id": "testagem_registrada",
+          "label": "Teste NT ≠ não realizado (SIFG)",
+          "n": 1171,
+          "fonte": "sinan_sifg"
+        },
+        {
+          "id": "esquema_registrado",
+          "label": "Esquema ≠ não realizado (SIFG)",
+          "n": 1171,
+          "fonte": "sinan_sifg"
+        },
+        {
+          "id": "parceria_tratada",
+          "label": "Parceria tratada concomitante",
+          "n": 508,
+          "fonte": "sinan_sifg"
+        },
+        {
+          "id": "sc_sifc",
+          "label": "Sífilis congênita notificada (SIFC)",
+          "n": 225,
+          "fonte": "sinan_sifc"
+        },
+        {
+          "id": "dx_materno_parto",
+          "label": "Dx materno no parto/após (SIFC)",
+          "n": 0,
+          "fonte": "sinan_sifc"
+        }
+      ],
+      "etapas_esus_aps": [],
+      "perdas_destaque": [
+        {
+          "de": "gestantes_sifg",
+          "para": "testagem_registrada",
+          "perda": 0,
+          "retencao_pct": 100.0
+        },
+        {
+          "de": "testagem_registrada",
+          "para": "esquema_registrado",
+          "perda": 0,
+          "retencao_pct": 100.0
+        },
+        {
+          "de": "esquema_registrado",
+          "para": "parceria_tratada",
+          "perda": 663,
+          "retencao_pct": 43.4
+        },
+        {
+          "de": "parceria_tratada",
+          "para": "sc_sifc",
+          "perda": 283,
+          "retencao_pct": 44.3
+        },
+        {
+          "de": "sc_sifc",
+          "para": "dx_materno_parto",
+          "perda": 225,
+          "retencao_pct": 0.0
+        }
+      ],
+      "operacional": {
+        "parceria_tratada_pct": 43.4,
+        "esquema_nao_realizado_pct": 0.0,
+        "gestantes_sem_tratamento": 0,
+        "diagnostico_materno_parto_pct": 0.0,
+        "consulta_sem_testagem_pct": null,
+        "consulta_sem_testagem_fonte": "proxy_sifg_teste_nt",
+        "esus_gestante_sem_testagem_pct": null,
+        "indice_oportunidades_perdidas": 18.9
+      },
+      "pendente_mvp2": [
+        "tempo diagnostico→tratamento (datas nominais — fora do agregado)",
+        "avaliação caso PCDT (datas de dose/parto — sem PII no repo)",
+        "cruzar SIPNI doses com coorte gestante (sem PII)"
+      ]
+    },
     "2022": {
       "tipo": "extracao_dw",
       "ano": 2022,
@@ -501,86 +619,327 @@
         "avaliação caso PCDT (datas de dose/parto — sem PII no repo)",
         "cruzar SIPNI doses com coorte gestante (sem PII)"
       ]
-    },
-    "2026": {
-      "tipo": "extracao_dw",
-      "ano": 2026,
-      "aviso": "Cascata SIFG/SIFC + bloco paralelo e-SUS APS (IG>0 × procedimento testagem). Não é funil clínico único nem PCDT. Adequação terapêutica = onda seguinte. Sem PII.",
-      "recorte": "Mato Grosso",
-      "etapas": [
-        {
-          "id": "gestantes_sifg",
-          "label": "Gestantes notificadas (SIFG)",
-          "n": 1278,
-          "fonte": "sinan_sifg"
-        },
-        {
-          "id": "testagem_registrada",
-          "label": "Teste NT ≠ não realizado (SIFG)",
-          "n": 891,
-          "fonte": "sinan_sifg"
-        },
-        {
-          "id": "esquema_registrado",
-          "label": "Esquema ≠ não realizado (SIFG)",
-          "n": 1204,
-          "fonte": "sinan_sifg"
-        },
-        {
-          "id": "parceria_tratada",
-          "label": "Parceria tratada concomitante",
-          "n": 458,
-          "fonte": "sinan_sifg"
-        },
-        {
-          "id": "sc_sifc",
-          "label": "Sífilis congênita notificada (SIFC)",
-          "n": 459,
-          "fonte": "sinan_sifc"
-        },
-        {
-          "id": "dx_materno_parto",
-          "label": "Dx materno no parto/após (SIFC)",
-          "n": 78,
-          "fonte": "sinan_sifc"
-        }
-      ],
-      "etapas_esus_aps": [],
-      "perdas_destaque": [
-        {
-          "de": "gestantes_sifg",
-          "para": "testagem_registrada",
-          "perda": 387,
-          "retencao_pct": 69.7
-        },
-        {
-          "de": "esquema_registrado",
-          "para": "parceria_tratada",
-          "perda": 746,
-          "retencao_pct": 38.0
-        },
-        {
-          "de": "sc_sifc",
-          "para": "dx_materno_parto",
-          "perda": 381,
-          "retencao_pct": 17.0
-        }
-      ],
-      "operacional": {
-        "parceria_tratada_pct": 35.8,
-        "esquema_nao_realizado_pct": 5.8,
-        "gestantes_sem_tratamento": 74,
-        "diagnostico_materno_parto_pct": 17.0,
-        "consulta_sem_testagem_pct": 30.3,
-        "consulta_sem_testagem_fonte": "proxy_sifg_teste_nt",
-        "esus_gestante_sem_testagem_pct": null,
-        "indice_oportunidades_perdidas": 25.3
-      },
-      "pendente_mvp2": [
-        "tempo diagnostico→tratamento (datas nominais — fora do agregado)",
-        "avaliação caso PCDT (datas de dose/parto — sem PII no repo)",
-        "cruzar SIPNI doses com coorte gestante (sem PII)"
-      ]
     }
+  },
+  "gap_esus_sifg": {
+    "esus_gestante_sem_testagem_pct": 63.9,
+    "esus_atendimentos_gestante_n": 224898,
+    "esus_atendimentos_gestante_com_testagem_n": 81078,
+    "gestante_casos_sifg": 2336,
+    "consulta_sem_testagem_fonte": "esus_aps_gestante_sem_proced_testagem",
+    "ranking_esus_gap_ers": [
+      {
+        "ers_id": "colider",
+        "regional": "Colíder",
+        "municipios_n": 1,
+        "atendimentos_gestante_n": 848,
+        "com_testagem_n": 196,
+        "sem_testagem_n": 652,
+        "sem_testagem_pct": 76.9
+      },
+      {
+        "ers_id": "peixoto-de-azevedo",
+        "regional": "Peixoto de Azevedo",
+        "municipios_n": 5,
+        "atendimentos_gestante_n": 7225,
+        "com_testagem_n": 1783,
+        "sem_testagem_n": 5442,
+        "sem_testagem_pct": 75.3
+      },
+      {
+        "ers_id": "baixada-cuiabana",
+        "regional": "Baixada Cuiabana",
+        "municipios_n": 10,
+        "atendimentos_gestante_n": 36552,
+        "com_testagem_n": 9876,
+        "sem_testagem_n": 26676,
+        "sem_testagem_pct": 73.0
+      },
+      {
+        "ers_id": "juina",
+        "regional": "Juína",
+        "municipios_n": 7,
+        "atendimentos_gestante_n": 14180,
+        "com_testagem_n": 4025,
+        "sem_testagem_n": 10155,
+        "sem_testagem_pct": 71.6
+      },
+      {
+        "ers_id": "juara",
+        "regional": "Juara",
+        "municipios_n": 5,
+        "atendimentos_gestante_n": 6440,
+        "com_testagem_n": 1857,
+        "sem_testagem_n": 4583,
+        "sem_testagem_pct": 71.2
+      },
+      {
+        "ers_id": "diamantino",
+        "regional": "Diamantino",
+        "municipios_n": 2,
+        "atendimentos_gestante_n": 1938,
+        "com_testagem_n": 577,
+        "sem_testagem_n": 1361,
+        "sem_testagem_pct": 70.2
+      },
+      {
+        "ers_id": "porto-alegre-do-norte",
+        "regional": "Porto Alegre do Norte",
+        "municipios_n": 5,
+        "atendimentos_gestante_n": 2571,
+        "com_testagem_n": 790,
+        "sem_testagem_n": 1781,
+        "sem_testagem_pct": 69.3
+      },
+      {
+        "ers_id": "pontes-e-lacerda",
+        "regional": "Pontes e Lacerda",
+        "municipios_n": 6,
+        "atendimentos_gestante_n": 9215,
+        "com_testagem_n": 2912,
+        "sem_testagem_n": 6303,
+        "sem_testagem_pct": 68.4
+      },
+      {
+        "ers_id": "rondonopolis",
+        "regional": "Rondonópolis",
+        "municipios_n": 19,
+        "atendimentos_gestante_n": 37886,
+        "com_testagem_n": 13831,
+        "sem_testagem_n": 24055,
+        "sem_testagem_pct": 63.5
+      },
+      {
+        "ers_id": "alta-floresta",
+        "regional": "Alta Floresta",
+        "municipios_n": 4,
+        "atendimentos_gestante_n": 5364,
+        "com_testagem_n": 2008,
+        "sem_testagem_n": 3356,
+        "sem_testagem_pct": 62.6
+      },
+      {
+        "ers_id": "tangara-da-serra",
+        "regional": "Tangará da Serra",
+        "municipios_n": 11,
+        "atendimentos_gestante_n": 27641,
+        "com_testagem_n": 10965,
+        "sem_testagem_n": 16676,
+        "sem_testagem_pct": 60.3
+      },
+      {
+        "ers_id": "sinop",
+        "regional": "Sinop",
+        "municipios_n": 13,
+        "atendimentos_gestante_n": 45562,
+        "com_testagem_n": 20222,
+        "sem_testagem_n": 25340,
+        "sem_testagem_pct": 55.6
+      },
+      {
+        "ers_id": "sao-felix-do-araguaia",
+        "regional": "São Félix do Araguaia",
+        "municipios_n": 5,
+        "atendimentos_gestante_n": 2772,
+        "com_testagem_n": 1288,
+        "sem_testagem_n": 1484,
+        "sem_testagem_pct": 53.5
+      },
+      {
+        "ers_id": "agua-boa",
+        "regional": "Água Boa",
+        "municipios_n": 6,
+        "atendimentos_gestante_n": 3518,
+        "com_testagem_n": 1685,
+        "sem_testagem_n": 1833,
+        "sem_testagem_pct": 52.1
+      },
+      {
+        "ers_id": "caceres",
+        "regional": "Cáceres",
+        "municipios_n": 12,
+        "atendimentos_gestante_n": 5259,
+        "com_testagem_n": 2535,
+        "sem_testagem_n": 2724,
+        "sem_testagem_pct": 51.8
+      },
+      {
+        "ers_id": "barra-do-garcas",
+        "regional": "Barra do Garças",
+        "municipios_n": 9,
+        "atendimentos_gestante_n": 3804,
+        "com_testagem_n": 1877,
+        "sem_testagem_n": 1927,
+        "sem_testagem_pct": 50.7
+      }
+    ],
+    "ranking_esus_gap_municipios": [
+      {
+        "co_municipio_ibge": "510040",
+        "municipio": "ALTO GARÇAS",
+        "ers_id": "rondonopolis",
+        "regional": "Rondonópolis",
+        "atendimentos_gestante_n": 2032,
+        "com_testagem_n": 39,
+        "sem_testagem_n": 1993,
+        "sem_testagem_pct": 98.1,
+        "sipni_hepb_doses_n": 606
+      },
+      {
+        "co_municipio_ibge": "510335",
+        "municipio": "CONFRESA",
+        "ers_id": "porto-alegre-do-norte",
+        "regional": "Porto Alegre do Norte",
+        "atendimentos_gestante_n": 1138,
+        "com_testagem_n": 22,
+        "sem_testagem_n": 1116,
+        "sem_testagem_pct": 98.1,
+        "sipni_hepb_doses_n": 1130
+      },
+      {
+        "co_municipio_ibge": "510840",
+        "municipio": "VÁRZEA GRANDE",
+        "ers_id": "baixada-cuiabana",
+        "regional": "Baixada Cuiabana",
+        "atendimentos_gestante_n": 19434,
+        "com_testagem_n": 677,
+        "sem_testagem_n": 18757,
+        "sem_testagem_pct": 96.5,
+        "sipni_hepb_doses_n": 16693
+      },
+      {
+        "co_municipio_ibge": "510500",
+        "municipio": "JAURU",
+        "ers_id": "caceres",
+        "regional": "Cáceres",
+        "atendimentos_gestante_n": 524,
+        "com_testagem_n": 25,
+        "sem_testagem_n": 499,
+        "sem_testagem_pct": 95.2,
+        "sipni_hepb_doses_n": 233
+      },
+      {
+        "co_municipio_ibge": "510550",
+        "municipio": "VILA BELA DA SANTÍSSIMA TRINDADE",
+        "ers_id": "pontes-e-lacerda",
+        "regional": "Pontes e Lacerda",
+        "atendimentos_gestante_n": 1889,
+        "com_testagem_n": 147,
+        "sem_testagem_n": 1742,
+        "sem_testagem_pct": 92.2,
+        "sipni_hepb_doses_n": 475
+      },
+      {
+        "co_municipio_ibge": "510627",
+        "municipio": "NOVO HORIZONTE DO NORTE",
+        "ers_id": "juara",
+        "regional": "Juara",
+        "atendimentos_gestante_n": 431,
+        "com_testagem_n": 37,
+        "sem_testagem_n": 394,
+        "sem_testagem_pct": 91.4,
+        "sipni_hepb_doses_n": 105
+      },
+      {
+        "co_municipio_ibge": "510050",
+        "municipio": "ALTO PARAGUAI",
+        "ers_id": "tangara-da-serra",
+        "regional": "Tangará da Serra",
+        "atendimentos_gestante_n": 1699,
+        "com_testagem_n": 147,
+        "sem_testagem_n": 1552,
+        "sem_testagem_pct": 91.3,
+        "sipni_hepb_doses_n": 593
+      },
+      {
+        "co_municipio_ibge": "510621",
+        "municipio": "NOVA CANAÃ DO NORTE",
+        "ers_id": "peixoto-de-azevedo",
+        "regional": "Peixoto de Azevedo",
+        "atendimentos_gestante_n": 1360,
+        "com_testagem_n": 137,
+        "sem_testagem_n": 1223,
+        "sem_testagem_pct": 89.9,
+        "sipni_hepb_doses_n": 503
+      },
+      {
+        "co_municipio_ibge": "510420",
+        "municipio": "GUIRATINGA",
+        "ers_id": "rondonopolis",
+        "regional": "Rondonópolis",
+        "atendimentos_gestante_n": 847,
+        "com_testagem_n": 103,
+        "sem_testagem_n": 744,
+        "sem_testagem_pct": 87.8,
+        "sipni_hepb_doses_n": 341
+      },
+      {
+        "co_municipio_ibge": "510780",
+        "municipio": "SANTO ANTÔNIO DO LEVERGER",
+        "ers_id": "baixada-cuiabana",
+        "regional": "Baixada Cuiabana",
+        "atendimentos_gestante_n": 2031,
+        "com_testagem_n": 268,
+        "sem_testagem_n": 1763,
+        "sem_testagem_pct": 86.8,
+        "sipni_hepb_doses_n": 901
+      },
+      {
+        "co_municipio_ibge": "510600",
+        "municipio": "NORTELÂNDIA",
+        "ers_id": null,
+        "regional": null,
+        "atendimentos_gestante_n": 959,
+        "com_testagem_n": 141,
+        "sem_testagem_n": 818,
+        "sem_testagem_pct": 85.3,
+        "sipni_hepb_doses_n": 243
+      },
+      {
+        "co_municipio_ibge": "510279",
+        "municipio": "CARLINDA",
+        "ers_id": "alta-floresta",
+        "regional": "Alta Floresta",
+        "atendimentos_gestante_n": 1582,
+        "com_testagem_n": 236,
+        "sem_testagem_n": 1346,
+        "sem_testagem_pct": 85.1,
+        "sipni_hepb_doses_n": 390
+      },
+      {
+        "co_municipio_ibge": "510560",
+        "municipio": "MATUPÁ",
+        "ers_id": "peixoto-de-azevedo",
+        "regional": "Peixoto de Azevedo",
+        "atendimentos_gestante_n": 3529,
+        "com_testagem_n": 537,
+        "sem_testagem_n": 2992,
+        "sem_testagem_pct": 84.8,
+        "sipni_hepb_doses_n": 917
+      },
+      {
+        "co_municipio_ibge": "510525",
+        "municipio": "LUCAS DO RIO VERDE",
+        "ers_id": "sinop",
+        "regional": "Sinop",
+        "atendimentos_gestante_n": 3237,
+        "com_testagem_n": 519,
+        "sem_testagem_n": 2718,
+        "sem_testagem_pct": 84.0,
+        "sipni_hepb_doses_n": 5158
+      },
+      {
+        "co_municipio_ibge": "510890",
+        "municipio": "NOVA MARINGÁ",
+        "ers_id": null,
+        "regional": null,
+        "atendimentos_gestante_n": 992,
+        "com_testagem_n": 160,
+        "sem_testagem_n": 832,
+        "sem_testagem_pct": 83.9,
+        "sipni_hepb_doses_n": 219
+      }
+    ],
+    "hipotese": "Alto volume APS com baixa testagem no encontro e/ou SIFG baixa gera hipótese de subnotificação ou falha de testagem — investigar, não afirmar."
   }
 }

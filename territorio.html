@@ -36,12 +36,13 @@
     </form>
     <p class="meta-dados" id="meta"></p>
     <div class="kpis" id="kpis"></div>
+    <p class="aviso-regra" id="cnes-demanda-nota">CNES = capacidade (n estabelecimentos). Cruzar com volume SIFG/GAL no ranking ERS — capacidade ≠ execução clínica. Sem PII.</p>
     <section class="secao">
       <h2>Indicadores por regional (DW)</h2>
       <div class="grafico-wrap alto"><canvas id="chart-reg"></canvas></div>
       <div class="tabela-scroll" style="margin-top:1rem">
         <table class="dados" id="tab-reg">
-          <thead><tr><th>Regional</th><th>Adquirida*</th><th>Gestante</th><th>SC</th><th>Taxa SC</th><th>PQA %</th><th>Prioridade**</th></tr></thead>
+          <thead><tr><th>Regional</th><th>Adquirida*</th><th>Gestante</th><th>SC</th><th>Taxa SC</th><th>PQA %</th><th>SIFG/estab</th><th>GAL/estab</th><th>Prioridade**</th></tr></thead>
           <tbody></tbody>
         </table>
       </div>
@@ -111,6 +112,10 @@
             SifilisApp.fmt(r.d.taxa_congenita, 1) +
             '</td><td class="num">' +
             SifilisApp.fmt(r.d.razao_sc_gestante_pct, 1) +
+            '</td><td class="num">' +
+            SifilisApp.fmt(r.d.sifg_por_estab, 1) +
+            '</td><td class="num">' +
+            SifilisApp.fmt(r.d.gal_por_estab, 1) +
             "</td><td>" +
             SifilisApp.badgePrioridade(r.d.prioridade_max) +
             "</td></tr>";
