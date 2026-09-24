@@ -1,12 +1,16 @@
 {
   "tipo": "rascunho_boletim",
-  "ano": 2025,
+  "ano": 2026,
   "assistido_por_ia": true,
   "aviso": "Rascunho — revisar CIEVS antes de publicar. Sem lista nominal.",
   "citacoes": [
     {
       "parametro_id": "evitabilidade_sc",
       "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#evitabilidade_sc"
+    },
+    {
+      "parametro_id": "cobertura_trat_adequado_gestante",
+      "excerpt_ref": "docs/oficiais/excerpts/fenotipo_processual.yml#cobertura_trat_adequado_gestante"
     },
     {
       "parametro_id": "meta_incidencia_sc_por_1000_nv",
@@ -23,11 +27,7 @@
     {
       "parametro_id": "taxa_incidencia_congenita",
       "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita"
-    },
-    {
-      "parametro_id": "pqa_vs_razao_sc_gestante",
-      "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#pqa_vs_razao_sc_gestante"
     }
   ],
-  "markdown": "# Boletim Sífilis MT — rascunho 2025\n\nGoverno de Mato Grosso · SES-MT · CIEVS-MT\n\n## Situação estadual (agregados)\n- Gestante (casos): 2336 · taxa 40.5\n- Congênita (casos): 675 · taxa 11.7\n- PQA-VS (SC/SIFG %): 28.9\n- Evitabilidade %: 28.9\n- Alertas ativos: 57\n\n## Referências oficiais (excerpts)\n- evitabilidade_sc: Além disso, é possível estimar o percentual de evitabilidade da sífilis congênita em um determinado ano e local, considerando o inverso do indicador do PQA-VS [% de evitabilidade = 1 - (número de casos de sífilis congênita em menores de 1 a… (docs/oficiais/excerpts/boletim_2025_indicadores.yml#evitabilidade_sc)\n- meta_incidencia_sc_por_1000_nv: Indicador: Taxa de incidência de sífilis congênita. Meta de impacto: ≤ 0,5 caso por 1.000 nascidos vivos. Período avaliado: Pelo menos por um ano (último ano completo).… (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv)\n- pqa_vs_reducao_pp: Indicador: Percentual de casos de sífilis congênita em relação ao total de casos de sífilis em gestantes, na população residente em determinado espaço geográfico, no ano considerado. Meta: Redução de um ponto percentual do valor do ano base… (docs/oficiais/excerpts/pqa_vs_indicador11.yml#pqa_vs_reducao_pp)\n- pqa_vs_reducao_pp: Meta: Redução de um ponto percentual do valor do ano base ou a manutenção de percentual zero. Método de Cálculo: IM = (A/B) × 100 A = Número de casos de sífilis congênita em menores de um ano em determinado ano, segundo município de residên… (docs/oficiais/excerpts/pqa_vs_indicador11.yml#pqa_vs_reducao_pp)\n- taxa_incidencia_congenita: Taxa de incidência de sífilis congênita em menores de 1 ano. Número de casos novos confirmados de sífilis congênita em menores de 1 ano de idade, em um determinado ano de diagnóstico e local de residência × 1.000 / Número total de nascidos … (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita)\n- pqa_vs_razao_sc_gestante: Para monitorar a transmissão vertical da sífilis, é essencial avaliar regularmente o indicador 11 do Programa de Qualificação das Ações de Vigilância em Saúde (PQA-VS) – “Percentual de casos de sífilis congênita em relação ao total de casos… (docs/oficiais/excerpts/boletim_2025_indicadores.yml#pqa_vs_razao_sc_gestante)\n\n---\nAssistido por IA/RAG sobre corpus versionado. Revisar. Sem PII. ADR-011.\nMetas clínicas só via regras.yml / excerpts — não inventar."
+  "markdown": "# Boletim Sífilis MT — rascunho 2026\n\nGoverno de Mato Grosso · SES-MT · CIEVS-MT\n\n## Situação estadual (agregados)\n- Gestante (casos): 1278 · taxa 35.5\n- Congênita (casos): 459 · taxa 12.7\n- PQA-VS (SC/SIFG %): 35.9\n- Evitabilidade %: 35.9\n- Alertas ativos: 56\n\n## Referências oficiais (excerpts)\n- evitabilidade_sc: Além disso, é possível estimar o percentual de evitabilidade da sífilis congênita em um determinado ano e local, considerando o inverso do indicador do PQA-VS [% de evitabilidade = 1 - (número de casos de sífilis congênita em menores de 1 a… (docs/oficiais/excerpts/boletim_2025_indicadores.yml#evitabilidade_sc)\n- cobertura_trat_adequado_gestante: Cobertura de gestantes tratadas adequadamente para sífilis. Meta Eliminação / Selo Ouro: ≥ 95% (ver também Guia principal — Processo 5; critérios NT 14/2023 em pcdt_tv_parametros.yml).… (docs/oficiais/excerpts/fenotipo_processual.yml#cobertura_trat_adequado_gestante)\n- meta_incidencia_sc_por_1000_nv: Indicador: Taxa de incidência de sífilis congênita. Meta de impacto: ≤ 0,5 caso por 1.000 nascidos vivos. Período avaliado: Pelo menos por um ano (último ano completo).… (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv)\n- pqa_vs_reducao_pp: Indicador: Percentual de casos de sífilis congênita em relação ao total de casos de sífilis em gestantes, na população residente em determinado espaço geográfico, no ano considerado. Meta: Redução de um ponto percentual do valor do ano base… (docs/oficiais/excerpts/pqa_vs_indicador11.yml#pqa_vs_reducao_pp)\n- pqa_vs_reducao_pp: Meta: Redução de um ponto percentual do valor do ano base ou a manutenção de percentual zero. Método de Cálculo: IM = (A/B) × 100 A = Número de casos de sífilis congênita em menores de um ano em determinado ano, segundo município de residên… (docs/oficiais/excerpts/pqa_vs_indicador11.yml#pqa_vs_reducao_pp)\n- taxa_incidencia_congenita: Taxa de incidência de sífilis congênita em menores de 1 ano. Número de casos novos confirmados de sífilis congênita em menores de 1 ano de idade, em um determinado ano de diagnóstico e local de residência × 1.000 / Número total de nascidos … (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita)\n\n---\nAssistido por IA/RAG sobre corpus versionado. Revisar. Sem PII. ADR-011.\nMetas clínicas só via regras.yml / excerpts — não inventar."
 }

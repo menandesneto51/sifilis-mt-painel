@@ -30,7 +30,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=13.5 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964634+00:00"
+      "criado_em": "2026-09-24T01:27:12.280936+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__ers__Barra_do_Garças",
@@ -50,7 +50,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=6.1 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964649+00:00"
+      "criado_em": "2026-09-24T01:27:12.280963+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__ers__Colíder",
@@ -70,7 +70,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=1.6 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964654+00:00"
+      "criado_em": "2026-09-24T01:27:12.280972+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__ers__Cáceres",
@@ -90,7 +90,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=37.5 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964658+00:00"
+      "criado_em": "2026-09-24T01:27:12.280979+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__ers__Diamantino",
@@ -110,7 +110,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=9.4 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964662+00:00"
+      "criado_em": "2026-09-24T01:27:12.280986+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__ers__Juara",
@@ -130,7 +130,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=2.7 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964665+00:00"
+      "criado_em": "2026-09-24T01:27:12.280992+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__ers__Juína",
@@ -150,7 +150,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=3.5 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964669+00:00"
+      "criado_em": "2026-09-24T01:27:12.280999+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__estado__Mato_Grosso",
@@ -170,7 +170,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=12.7 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964676+00:00"
+      "criado_em": "2026-09-24T01:27:12.281010+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__ers__Peixoto_de_Azevedo",
@@ -190,7 +190,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=0.8 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964680+00:00"
+      "criado_em": "2026-09-24T01:27:12.281017+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__ers__Pontes_e_Lacerda",
@@ -210,7 +210,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=25.2 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964683+00:00"
+      "criado_em": "2026-09-24T01:27:12.281023+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__ers__Porto_Alegre_do_Norte",
@@ -230,7 +230,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=2.0 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964686+00:00"
+      "criado_em": "2026-09-24T01:27:12.281030+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__ers__Rondonópolis",
@@ -250,7 +250,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=32.5 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964689+00:00"
+      "criado_em": "2026-09-24T01:27:12.281036+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__ers__Sinop",
@@ -270,7 +270,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=6.9 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964692+00:00"
+      "criado_em": "2026-09-24T01:27:12.281043+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__ers__Tangará_da_Serra",
@@ -290,7 +290,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=1.7 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964695+00:00"
+      "criado_em": "2026-09-24T01:27:12.281049+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__ers__Água_Boa",
@@ -310,7 +310,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=4.4 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964698+00:00"
+      "criado_em": "2026-09-24T01:27:12.281055+00:00"
     },
     {
       "id": "ga-pqa_vs_nao_reduziu__estado__Mato_Grosso",
@@ -330,7 +330,7 @@
       ],
       "evidencia_resumo": "Δ=+7.0 p.p. vs ano-base (meta −1 p.p.)",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964701+00:00"
+      "criado_em": "2026-09-24T01:27:12.281061+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__municipio__510040",
@@ -350,7 +350,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=16.1 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964704+00:00"
+      "criado_em": "2026-09-24T01:27:12.281068+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__municipio__510125",
@@ -370,7 +370,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=14.6 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964708+00:00"
+      "criado_em": "2026-09-24T01:27:12.281074+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__municipio__510140",
@@ -390,7 +390,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=10.6 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964711+00:00"
+      "criado_em": "2026-09-24T01:27:12.281081+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__municipio__510180",
@@ -410,7 +410,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=9.0 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964714+00:00"
+      "criado_em": "2026-09-24T01:27:12.281087+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__municipio__510250",
@@ -430,7 +430,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=51.2 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964717+00:00"
+      "criado_em": "2026-09-24T01:27:12.281093+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__municipio__510263",
@@ -450,7 +450,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=3.6 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964720+00:00"
+      "criado_em": "2026-09-24T01:27:12.281100+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__municipio__510267",
@@ -470,7 +470,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=17.5 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964723+00:00"
+      "criado_em": "2026-09-24T01:27:12.281106+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__municipio__510270",
@@ -490,7 +490,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=6.2 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964726+00:00"
+      "criado_em": "2026-09-24T01:27:12.281112+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__municipio__510300",
@@ -510,7 +510,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=6.5 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964729+00:00"
+      "criado_em": "2026-09-24T01:27:12.281118+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__municipio__510320",
@@ -530,7 +530,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=3.4 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964732+00:00"
+      "criado_em": "2026-09-24T01:27:12.281124+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__municipio__510325",
@@ -550,7 +550,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=8.0 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964735+00:00"
+      "criado_em": "2026-09-24T01:27:12.281130+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__municipio__510330",
@@ -570,7 +570,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=6.5 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964739+00:00"
+      "criado_em": "2026-09-24T01:27:12.281137+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__municipio__510340",
@@ -590,7 +590,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=13.9 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964742+00:00"
+      "criado_em": "2026-09-24T01:27:12.281143+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__municipio__510343",
@@ -610,7 +610,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=58.8 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964745+00:00"
+      "criado_em": "2026-09-24T01:27:12.281149+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__municipio__510360",
@@ -630,7 +630,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=38.5 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964749+00:00"
+      "criado_em": "2026-09-24T01:27:12.281157+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__municipio__510370",
@@ -650,7 +650,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=45.5 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964752+00:00"
+      "criado_em": "2026-09-24T01:27:12.281163+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__municipio__510420",
@@ -670,7 +670,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=18.5 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964755+00:00"
+      "criado_em": "2026-09-24T01:27:12.281169+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__municipio__510452",
@@ -690,7 +690,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=12.5 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964758+00:00"
+      "criado_em": "2026-09-24T01:27:12.281176+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__municipio__510460",
@@ -710,7 +710,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=30.6 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964762+00:00"
+      "criado_em": "2026-09-24T01:27:12.281182+00:00"
     },
     {
       "id": "ga-incidencia_sc_acima_meta__municipio__510480",
@@ -730,7 +730,7 @@
       ],
       "evidencia_resumo": "taxa_incidencia_congenita=14.0 limiar=0.5",
       "resultado": null,
-      "criado_em": "2026-09-24T00:05:12.964765+00:00"
+      "criado_em": "2026-09-24T01:27:12.281188+00:00"
     }
   ],
   "contagem": {
@@ -739,5 +739,5 @@
     "concluida": 0,
     "resultado": 0
   },
-  "gerado_em": "2026-09-24T00:05:12.964774+00:00"
+  "gerado_em": "2026-09-24T01:27:12.281204+00:00"
 }

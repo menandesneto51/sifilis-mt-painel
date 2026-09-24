@@ -1,7 +1,7 @@
 {
   "tipo": "alertas_operacionais",
   "ano": 2026,
-  "gerado_em": "2026-09-24T00:05:12.963207+00:00",
+  "gerado_em": "2026-09-24T01:27:12.278718+00:00",
   "aviso": "Alertas agregados territoriais — sem PII. Limiares em config/alertas.yml e parametros em regras.yml. Não confundir qualidade baixa com risco epidemiológico baixo. Ano 2026 incompleto (YTD) — comparar com cautela ao ano civil fechado.",
   "fonte_atraso": "DW / publish_dashboard_data — atraso conforme meta do painel",
   "n_alertas": 56,
