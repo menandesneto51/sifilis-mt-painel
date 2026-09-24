@@ -1,0 +1,47 @@
+{
+  "tipo": "linkage_agregado_territorial",
+  "onda": "MVP2-C",
+  "aviso": "Proxy territorial MVP2 Onda C: municípios com coocorrência de fontes no mesmo ano. NÃO substitui linkage nominal mãe–gestação–criança (ambiente SES / Gold). Ver ADR-006 e sql/silver/02_linkage_bridges.sql.",
+  "ano": 2026,
+  "nivel_evidencia": "proxy",
+  "exige_linkage_individual": true,
+  "municipios_sifg": 101,
+  "municipios_sifc": 61,
+  "municipios_sinasc": 142,
+  "cadeia": {
+    "onda": "MVP2-C",
+    "cadeia": [
+      "esus_aps",
+      "gal",
+      "sinan_sifg",
+      "sinasc",
+      "sinan_sifc"
+    ],
+    "nota": "Contrato documental da linha de cuidado. No Git só agregados/hashes; linkage nominal no SES.",
+    "sql_silver": "sql/silver/02_linkage_bridges.sql",
+    "adr": "ADR-006"
+  },
+  "indicadores": {
+    "pct_sifg_com_sinasc_mun": {
+      "valor": 100.0,
+      "numerador": 101,
+      "denominador": 101,
+      "registry_id": "pct_sifg_sinasc",
+      "nota": "Proxy: mun. com SIFG que também têm SINASC no ano"
+    },
+    "pct_sifc_com_sifg_mun": {
+      "valor": 88.5,
+      "numerador": 54,
+      "denominador": 61,
+      "registry_id": "pct_sifc_sifg_materna",
+      "nota": "Proxy: mun. com SIFC que também têm SIFG no ano"
+    },
+    "pct_sifc_com_sinasc_mun": {
+      "valor": 100.0,
+      "numerador": 61,
+      "denominador": 61,
+      "registry_id": "pct_sifc_mae_localizada",
+      "nota": "Proxy territorial fraco; match individual pendente"
+    }
+  }
+}

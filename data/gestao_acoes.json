@@ -1,0 +1,743 @@
+{
+  "tipo": "derivado_alertas",
+  "onda": "MVP3-B+",
+  "contrato_ses": true,
+  "aviso": "Ações derivadas de alertas agregados. Sem PII. Atribuir responsavel_setor e persistir histórico somente no ambiente SES (ADR-010).",
+  "ano": 2026,
+  "status_fluxo": [
+    "alerta",
+    "em_andamento",
+    "concluida",
+    "resultado"
+  ],
+  "n_alertas_origem": 56,
+  "itens": [
+    {
+      "id": "ga-incidencia_sc_acima_meta__ers__Baixada_Cuiabana",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — Baixada Cuiabana",
+      "territorio": "Baixada Cuiabana",
+      "nivel": "ers",
+      "co_municipio_ibge": null,
+      "ers": "Baixada Cuiabana",
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=13.5 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964634+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__ers__Barra_do_Garças",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — Barra do Garças",
+      "territorio": "Barra do Garças",
+      "nivel": "ers",
+      "co_municipio_ibge": null,
+      "ers": "Barra do Garças",
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=6.1 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964649+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__ers__Colíder",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — Colíder",
+      "territorio": "Colíder",
+      "nivel": "ers",
+      "co_municipio_ibge": null,
+      "ers": "Colíder",
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=1.6 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964654+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__ers__Cáceres",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — Cáceres",
+      "territorio": "Cáceres",
+      "nivel": "ers",
+      "co_municipio_ibge": null,
+      "ers": "Cáceres",
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=37.5 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964658+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__ers__Diamantino",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — Diamantino",
+      "territorio": "Diamantino",
+      "nivel": "ers",
+      "co_municipio_ibge": null,
+      "ers": "Diamantino",
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=9.4 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964662+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__ers__Juara",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — Juara",
+      "territorio": "Juara",
+      "nivel": "ers",
+      "co_municipio_ibge": null,
+      "ers": "Juara",
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=2.7 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964665+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__ers__Juína",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — Juína",
+      "territorio": "Juína",
+      "nivel": "ers",
+      "co_municipio_ibge": null,
+      "ers": "Juína",
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=3.5 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964669+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__estado__Mato_Grosso",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — Mato Grosso",
+      "territorio": "Mato Grosso",
+      "nivel": "estado",
+      "co_municipio_ibge": null,
+      "ers": null,
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=12.7 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964676+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__ers__Peixoto_de_Azevedo",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — Peixoto de Azevedo",
+      "territorio": "Peixoto de Azevedo",
+      "nivel": "ers",
+      "co_municipio_ibge": null,
+      "ers": "Peixoto de Azevedo",
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=0.8 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964680+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__ers__Pontes_e_Lacerda",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — Pontes e Lacerda",
+      "territorio": "Pontes e Lacerda",
+      "nivel": "ers",
+      "co_municipio_ibge": null,
+      "ers": "Pontes e Lacerda",
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=25.2 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964683+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__ers__Porto_Alegre_do_Norte",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — Porto Alegre do Norte",
+      "territorio": "Porto Alegre do Norte",
+      "nivel": "ers",
+      "co_municipio_ibge": null,
+      "ers": "Porto Alegre do Norte",
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=2.0 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964686+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__ers__Rondonópolis",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — Rondonópolis",
+      "territorio": "Rondonópolis",
+      "nivel": "ers",
+      "co_municipio_ibge": null,
+      "ers": "Rondonópolis",
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=32.5 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964689+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__ers__Sinop",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — Sinop",
+      "territorio": "Sinop",
+      "nivel": "ers",
+      "co_municipio_ibge": null,
+      "ers": "Sinop",
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=6.9 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964692+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__ers__Tangará_da_Serra",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — Tangará da Serra",
+      "territorio": "Tangará da Serra",
+      "nivel": "ers",
+      "co_municipio_ibge": null,
+      "ers": "Tangará da Serra",
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=1.7 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964695+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__ers__Água_Boa",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — Água Boa",
+      "territorio": "Água Boa",
+      "nivel": "ers",
+      "co_municipio_ibge": null,
+      "ers": "Água Boa",
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=4.4 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964698+00:00"
+    },
+    {
+      "id": "ga-pqa_vs_nao_reduziu__estado__Mato_Grosso",
+      "alerta_id": "pqa_vs_nao_reduziu",
+      "recomendacao_id": null,
+      "titulo": "pqa_vs_nao_reduziu — Mato Grosso",
+      "territorio": "Mato Grosso",
+      "nivel": "estado",
+      "co_municipio_ibge": null,
+      "ers": null,
+      "status": "alerta",
+      "prioridade": "ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_pqa_vs"
+      ],
+      "evidencia_resumo": "Δ=+7.0 p.p. vs ano-base (meta −1 p.p.)",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964701+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__municipio__510040",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — ALTO GARCAS",
+      "territorio": "ALTO GARCAS",
+      "nivel": "municipio",
+      "co_municipio_ibge": "510040",
+      "ers": null,
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=16.1 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964704+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__municipio__510125",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — ARAPUTANGA",
+      "territorio": "ARAPUTANGA",
+      "nivel": "municipio",
+      "co_municipio_ibge": "510125",
+      "ers": null,
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=14.6 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964708+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__municipio__510140",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — ARIPUANA",
+      "territorio": "ARIPUANA",
+      "nivel": "municipio",
+      "co_municipio_ibge": "510140",
+      "ers": null,
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=10.6 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964711+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__municipio__510180",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — BARRA DO GARCAS",
+      "territorio": "BARRA DO GARCAS",
+      "nivel": "municipio",
+      "co_municipio_ibge": "510180",
+      "ers": null,
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=9.0 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964714+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__municipio__510250",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — CACERES",
+      "territorio": "CACERES",
+      "nivel": "municipio",
+      "co_municipio_ibge": "510250",
+      "ers": null,
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=51.2 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964717+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__municipio__510263",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — CAMPO NOVO DO PARECIS",
+      "territorio": "CAMPO NOVO DO PARECIS",
+      "nivel": "municipio",
+      "co_municipio_ibge": "510263",
+      "ers": null,
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=3.6 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964720+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__municipio__510267",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — CAMPO VERDE",
+      "territorio": "CAMPO VERDE",
+      "nivel": "municipio",
+      "co_municipio_ibge": "510267",
+      "ers": null,
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=17.5 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964723+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__municipio__510270",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — CANARANA",
+      "territorio": "CANARANA",
+      "nivel": "municipio",
+      "co_municipio_ibge": "510270",
+      "ers": null,
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=6.2 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964726+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__municipio__510300",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — CHAPADA DOS GUIMARAES",
+      "territorio": "CHAPADA DOS GUIMARAES",
+      "nivel": "municipio",
+      "co_municipio_ibge": "510300",
+      "ers": null,
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=6.5 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964729+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__municipio__510320",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — COLIDER",
+      "territorio": "COLIDER",
+      "nivel": "municipio",
+      "co_municipio_ibge": "510320",
+      "ers": null,
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=3.4 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964732+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__municipio__510325",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — COLNIZA",
+      "territorio": "COLNIZA",
+      "nivel": "municipio",
+      "co_municipio_ibge": "510325",
+      "ers": null,
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=8.0 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964735+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__municipio__510330",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — COMODORO",
+      "territorio": "COMODORO",
+      "nivel": "municipio",
+      "co_municipio_ibge": "510330",
+      "ers": null,
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=6.5 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964739+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__municipio__510340",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — CUIABA",
+      "territorio": "CUIABA",
+      "nivel": "municipio",
+      "co_municipio_ibge": "510340",
+      "ers": null,
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=13.9 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964742+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__municipio__510343",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — CURVELANDIA",
+      "territorio": "CURVELANDIA",
+      "nivel": "municipio",
+      "co_municipio_ibge": "510343",
+      "ers": null,
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=58.8 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964745+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__municipio__510360",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — DOM AQUINO",
+      "territorio": "DOM AQUINO",
+      "nivel": "municipio",
+      "co_municipio_ibge": "510360",
+      "ers": null,
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=38.5 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964749+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__municipio__510370",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — FELIZ NATAL",
+      "territorio": "FELIZ NATAL",
+      "nivel": "municipio",
+      "co_municipio_ibge": "510370",
+      "ers": null,
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=45.5 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964752+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__municipio__510420",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — GUIRATINGA",
+      "territorio": "GUIRATINGA",
+      "nivel": "municipio",
+      "co_municipio_ibge": "510420",
+      "ers": null,
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=18.5 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964755+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__municipio__510452",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — IPIRANGA DO NORTE",
+      "territorio": "IPIRANGA DO NORTE",
+      "nivel": "municipio",
+      "co_municipio_ibge": "510452",
+      "ers": null,
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=12.5 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964758+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__municipio__510460",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — ITIQUIRA",
+      "territorio": "ITIQUIRA",
+      "nivel": "municipio",
+      "co_municipio_ibge": "510460",
+      "ers": null,
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=30.6 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964762+00:00"
+    },
+    {
+      "id": "ga-incidencia_sc_acima_meta__municipio__510480",
+      "alerta_id": "incidencia_sc_acima_meta",
+      "recomendacao_id": null,
+      "titulo": "incidencia_sc_acima_meta — JACIARA",
+      "territorio": "JACIARA",
+      "nivel": "municipio",
+      "co_municipio_ibge": "510480",
+      "ers": null,
+      "status": "alerta",
+      "prioridade": "MUITO ALTA",
+      "prazo_dias": 30,
+      "responsavel_setor": null,
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao"
+      ],
+      "evidencia_resumo": "taxa_incidencia_congenita=14.0 limiar=0.5",
+      "resultado": null,
+      "criado_em": "2026-09-24T00:05:12.964765+00:00"
+    }
+  ],
+  "contagem": {
+    "alerta": 36,
+    "em_andamento": 0,
+    "concluida": 0,
+    "resultado": 0
+  },
+  "gerado_em": "2026-09-24T00:05:12.964774+00:00"
+}

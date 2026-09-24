@@ -1,0 +1,232 @@
+{
+  "tipo": "extracao_dw",
+  "aviso": "Recomendações territoriais geradas a partir de agregados DW (ERS, oportunidade, fenótipo proxy, qualidade). Não prescritivas clínicas. Sem PII. Índice de Risco composto municipal permanece demo até motor municipal completo.",
+  "ano": 2026,
+  "nivel": "territorio",
+  "recomendacoes": [
+    {
+      "motivo": "Incidência SC elevada na ERS Cáceres — priorizar investigação de TV e cascata.",
+      "onde": "ERS Cáceres (12 municípios no recorte)",
+      "evidencia": [
+        "Prioridade proxy MUITO ALTA (incidência SC)",
+        "Taxa SC 37.5/1.000 NV · 52 casos SC · 54 gestantes SIFG",
+        "PQA-VS (SC/SIFG) na ERS: 96.3%",
+        "Fenótipo estadual dominante (proxy): Tratamento incompleto (24.8%)"
+      ],
+      "acoes": [
+        "Revisar agregados SC e gestantes do período na regional",
+        "Auditar parceria tratada e esquema prescrito (SIFG) no recorte",
+        "Discutir no comitê regional de transmissão vertical",
+        "Cruzar com qualidade da informação antes de concluir tendência"
+      ],
+      "prioridade": "MUITO ALTA",
+      "indicador_ids": [
+        "taxa_incidencia_congenita",
+        "razao_sc_gestante",
+        "indice_prioridade_sifilis_mt"
+      ],
+      "acao_associada_ids": [
+        "acao_investigar_tv",
+        "acao_priorizar_territorio",
+        "acao_pqa_vs"
+      ],
+      "fenotipo_dominante": "tratamento_incompleto",
+      "nivel": "territorio",
+      "id": "rec-ers-01"
+    },
+    {
+      "motivo": "Incidência SC elevada na ERS Rondonópolis — priorizar investigação de TV e cascata.",
+      "onde": "ERS Rondonópolis (15 municípios no recorte)",
+      "evidencia": [
+        "Prioridade proxy MUITO ALTA (incidência SC)",
+        "Taxa SC 32.5/1.000 NV · 179 casos SC · 214 gestantes SIFG",
+        "PQA-VS (SC/SIFG) na ERS: 83.6%",
+        "Fenótipo estadual dominante (proxy): Tratamento incompleto (24.8%)"
+      ],
+      "acoes": [
+        "Revisar agregados SC e gestantes do período na regional",
+        "Auditar parceria tratada e esquema prescrito (SIFG) no recorte",
+        "Discutir no comitê regional de transmissão vertical",
+        "Cruzar com qualidade da informação antes de concluir tendência"
+      ],
+      "prioridade": "MUITO ALTA",
+      "indicador_ids": [
+        "taxa_incidencia_congenita",
+        "razao_sc_gestante",
+        "indice_prioridade_sifilis_mt"
+      ],
+      "acao_associada_ids": [
+        "acao_investigar_tv",
+        "acao_priorizar_territorio",
+        "acao_pqa_vs"
+      ],
+      "fenotipo_dominante": "tratamento_incompleto",
+      "nivel": "territorio",
+      "id": "rec-ers-02"
+    },
+    {
+      "motivo": "Incidência SC elevada na ERS Pontes e Lacerda — priorizar investigação de TV e cascata.",
+      "onde": "ERS Pontes e Lacerda (7 municípios no recorte)",
+      "evidencia": [
+        "Prioridade proxy MUITO ALTA (incidência SC)",
+        "Taxa SC 25.2/1.000 NV · 29 casos SC · 49 gestantes SIFG",
+        "PQA-VS (SC/SIFG) na ERS: 59.2%",
+        "Fenótipo estadual dominante (proxy): Tratamento incompleto (24.8%)"
+      ],
+      "acoes": [
+        "Revisar agregados SC e gestantes do período na regional",
+        "Auditar parceria tratada e esquema prescrito (SIFG) no recorte",
+        "Discutir no comitê regional de transmissão vertical",
+        "Cruzar com qualidade da informação antes de concluir tendência"
+      ],
+      "prioridade": "MUITO ALTA",
+      "indicador_ids": [
+        "taxa_incidencia_congenita",
+        "razao_sc_gestante",
+        "indice_prioridade_sifilis_mt"
+      ],
+      "acao_associada_ids": [
+        "acao_investigar_tv",
+        "acao_priorizar_territorio",
+        "acao_pqa_vs"
+      ],
+      "fenotipo_dominante": "tratamento_incompleto",
+      "nivel": "territorio",
+      "id": "rec-ers-03"
+    },
+    {
+      "motivo": "Incidência SC elevada na ERS Baixada Cuiabana — priorizar investigação de TV e cascata.",
+      "onde": "ERS Baixada Cuiabana (8 municípios no recorte)",
+      "evidencia": [
+        "Prioridade proxy MUITO ALTA (incidência SC)",
+        "Taxa SC 13.5/1.000 NV · 125 casos SC · 384 gestantes SIFG",
+        "PQA-VS (SC/SIFG) na ERS: 32.6%",
+        "Fenótipo estadual dominante (proxy): Tratamento incompleto (24.8%)"
+      ],
+      "acoes": [
+        "Revisar agregados SC e gestantes do período na regional",
+        "Auditar parceria tratada e esquema prescrito (SIFG) no recorte",
+        "Discutir no comitê regional de transmissão vertical",
+        "Cruzar com qualidade da informação antes de concluir tendência"
+      ],
+      "prioridade": "MUITO ALTA",
+      "indicador_ids": [
+        "taxa_incidencia_congenita",
+        "razao_sc_gestante",
+        "indice_prioridade_sifilis_mt"
+      ],
+      "acao_associada_ids": [
+        "acao_investigar_tv",
+        "acao_priorizar_territorio",
+        "acao_pqa_vs"
+      ],
+      "fenotipo_dominante": "tratamento_incompleto",
+      "nivel": "territorio",
+      "id": "rec-ers-04"
+    },
+    {
+      "motivo": "Esquema de tratamento não realizado em 5.8% das gestantes SIFG.",
+      "onde": "Mato Grosso (estadual) — 2026",
+      "evidencia": [
+        "74 fichas com esquema 'não realizado' / 1278 gestantes",
+        "Parceria tratada concomitante: 35.8%",
+        "Rótulo SIFG não substitui avaliação PCDT de adequação (MVP2)"
+      ],
+      "acoes": [
+        "Mapear municípios com maior proporção de esquema não realizado",
+        "Reforçar registro e oferta de penicilina no pré-natal",
+        "Melhorar completude do campo de esquema na ficha SIFG"
+      ],
+      "prioridade": "ALTA",
+      "indicador_ids": [
+        "gestantes_sem_tratamento",
+        "parceria_tratada",
+        "cascata_trat_adequado"
+      ],
+      "acao_associada_ids": [
+        "acao_iniciar_tratamento",
+        "acao_completar_tratamento"
+      ],
+      "fenotipo_dominante": "tratamento_nao_iniciado",
+      "nivel": "territorio",
+      "id": "rec-oportunidade-esquema"
+    },
+    {
+      "motivo": "Parceria tratada concomitante em apenas 35.8% das gestantes SIFG.",
+      "onde": "Mato Grosso (estadual) — 2026",
+      "evidencia": [
+        "458 / 1278 gestantes com parceria tratada (campo SIFG)",
+        "Campo Ignorado/Em branco reduz interpretação — ver qualidade proxy"
+      ],
+      "acoes": [
+        "Priorizar abordagem e tratamento de parcerias no pré-natal",
+        "Melhorar registro do campo de parceria na ficha SIFG",
+        "Incluir indicador nos boletins regionais de TV"
+      ],
+      "prioridade": "ALTA",
+      "indicador_ids": [
+        "parceria_tratada"
+      ],
+      "acao_associada_ids": [
+        "acao_tratar_parceria",
+        "acao_investigar_tv"
+      ],
+      "fenotipo_dominante": "tratamento_incompleto",
+      "nivel": "territorio",
+      "id": "rec-parceria"
+    },
+    {
+      "motivo": "Diagnóstico de sífilis materna no parto ou após em 17.0% dos casos SC.",
+      "onde": "Mato Grosso (estadual) — 2026",
+      "evidencia": [
+        "78 de 459 SC (SIFC)",
+        "Proxy de oportunidade perdida no pré-natal — não causalidade individual"
+      ],
+      "acoes": [
+        "Reforçar testagem no início da gestação e no 3º trimestre",
+        "Auditar fluxos de pré-natal nas ERS com maior SC",
+        "Acompanhar fenótipo diagnóstico tardio no painel TV"
+      ],
+      "prioridade": "ALTA",
+      "indicador_ids": [
+        "diagnostico_somente_parto",
+        "fenotipo_diagnostico_tardio_pct"
+      ],
+      "acao_associada_ids": [
+        "acao_ampliar_testagem",
+        "acao_investigar_tv"
+      ],
+      "fenotipo_dominante": "diagnostico_tardio",
+      "nivel": "territorio",
+      "id": "rec-dx-parto"
+    },
+    {
+      "motivo": "Incidência SC estadual 12.7/1.000 NV — distante da meta ≤0.5.",
+      "onde": "Mato Grosso (estadual) — 2026",
+      "evidencia": [
+        "PQA-VS estadual: 35.9%",
+        "Casos SC: 459 · Gestantes: 1278",
+        "Prontidão no painel TV não certifica eliminação"
+      ],
+      "acoes": [
+        "Manter monitoramento da série PQA-VS e incidência SC",
+        "Priorizar ERS em MUITO ALTA/ALTA no ranking territorial",
+        "Acompanhar prontidão (gap de incidência e tratamento)"
+      ],
+      "prioridade": "ALTA",
+      "indicador_ids": [
+        "taxa_incidencia_congenita",
+        "distancia_meta_incidencia_sc",
+        "prontidao_eliminacao_score"
+      ],
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao",
+        "acao_priorizar_territorio"
+      ],
+      "fenotipo_dominante": "tratamento_incompleto",
+      "nivel": "territorio",
+      "id": "rec-meta-incidencia"
+    }
+  ],
+  "fonte_prevista": "publish_dashboard_data.build_recomendacoes_dw"
+}

@@ -1,0 +1,26 @@
+{
+  "publicado_em": "2026-09-24T00:05:01.225735+00:00",
+  "ano": 2026,
+  "fonte": "DW",
+  "ers_n": 16,
+  "arquivos": [
+    "epidemiologia.json",
+    "linkage_agregado.json",
+    "prontidao_eliminacao.json",
+    "territorio_indicadores.json",
+    "catalogo_anos.json",
+    "oportunidade_dw.json",
+    "equidade_dw.json",
+    "qualidade_proxy_dw.json",
+    "recomendacoes.json",
+    "cascata_tv.json",
+    "laboratorio.json",
+    "insumos.json",
+    "nowcast.json",
+    "fenotipo_falha.json",
+    "alertas.json",
+    "gestao_acoes.json",
+    "boletim.json",
+    "sala_tv_agregado.json"
+  ]
+}

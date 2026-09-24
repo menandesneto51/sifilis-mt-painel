@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Qualidade — Sífilis MT</title>
+  <link rel="stylesheet" href="assets/css/ses-mt.css" />
+  <script src="assets/js/app.js" defer></script>
+</head>
+<body>
+  <header class="cabecalho"><div class="cabecalho-inner">
+    <p class="cabecalho-orgao">Governo de Mato Grosso · SES-MT · CIEVS-MT</p>
+    <h1>Sífilis MT — Qualidade da informação</h1>
+    <p class="cabecalho-sub">Score separado do risco epidemiológico</p>
+  </div></header>
+  <nav class="nav-principal"><ul>
+    <li><a href="index.html">Executivo</a></li>
+    <li><a href="epidemiologia.html">Epidemiologia</a></li>
+    <li><a href="transmissao-vertical.html">Transmissão Vertical</a></li>
+    <li><a href="cascata.html">Cascata</a></li>
+    <li><a href="laboratorio.html">Laboratório</a></li>
+    <li><a href="territorio.html">Território</a></li>
+    <li><a href="qualidade.html" aria-current="page">Qualidade</a></li>
+    <li><a href="acoes.html">Ações</a></li>
+  </ul></nav>
+  <div class="faixa-demo" id="faixa-demo"><strong>Qualidade:</strong> proxy DW (Ignorado) separado do risco epidemiológico.</div>
+  <main class="conteudo">
+    <h2 class="page-titulo">Podemos confiar nos números?</h2>
+    <p class="meta-dados" id="seletor-fonte"></p>
+    <p class="meta-dados" id="meta"></p>
+    <div class="kpis" id="kpis"></div>
+    <section class="secao">
+      <h2>Proxy estadual SIFG — campos Ignorado / Em branco</h2>
+      <div class="tabela-scroll">
+        <table class="dados" id="tab-q">
+          <thead><tr><th>Campo</th><th>% Ignorado</th><th>Nota</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="aviso-regra" style="margin-top:0.75rem">Separado do Índice de Risco (ADR-003). Score proxy = 100 − média dos % ignorados nos campos essenciais. Painel municipal de inconsistências MS permanece referência.</p>
+    </section>
+  </main>
+  <footer class="rodape"><div class="rodape-inner"><p>SES-MT · CIEVS-MT · Qualidade ≠ risco epidemiológico</p></div></footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", async function () {
+      SifilisApp.barraFonte("seletor-fonte");
+      const [proxyRaw, demo, epi] = await Promise.all([
+        SifilisApp.load("qualidade_proxy_dw.json").catch(function () { return null; }),
+        SifilisApp.load("qualidade.json").catch(function () { return null; }),
+        SifilisApp.load("epidemiologia.json"),
+      ]);
+      const ano = SifilisApp.barraAno("wrap-ano", epi.anos_disponiveis || [], epi.ano);
+      const proxy = proxyRaw ? SifilisApp.dadoNoAno(proxyRaw, ano) : null;
+      const q = proxy && proxy.estado ? proxy : demo;
+      const e = (q && q.estado) || {};
+      document.getElementById("meta").textContent =
+        (q && q.aviso ? q.aviso : "Sem dados de qualidade") + " · Ano " + ((q && q.ano) || ano);
+      const faixa = document.getElementById("faixa-demo");
+      if (faixa && proxy && proxy.estado) {
+        faixa.innerHTML = "<strong>DW SES-MT:</strong> proxy de qualidade SIFG (agregado). Sem PII. ≠ risco.";
+      }
+      if (proxy && proxy.estado) {
+        document.getElementById("kpis").innerHTML =
+          SifilisApp.kpi("Score proxy", SifilisApp.fmt(e.score_qualidade_proxy, 1), "0–100", "≠ risco") +
+          SifilisApp.kpi("Completude proxy", SifilisApp.fmt(e.completude_geral_pct, 1) + "%", "100 − média ignorados", "SIFG") +
+          SifilisApp.kpi("Esquema ignorado", SifilisApp.fmt(e.esquema_ignorado_pct, 1) + "%", "fichas " + SifilisApp.fmt(e.n_fichas), "") +
+          SifilisApp.kpi("Parceria ignorada", SifilisApp.fmt(e.parceria_ignorado_pct, 1) + "%", "campo SIFG", "");
+        const tb = document.querySelector("#tab-q tbody");
+        [
+          ["Esquema tratamento", e.esquema_ignorado_pct, "Essencial cascata"],
+          ["Parceria tratada", e.parceria_ignorado_pct, "Essencial TV"],
+          ["Classificação clínica", e.classificacao_ignorado_pct, "Estadiamento"],
+          ["Raça/cor", e.raca_ignorado_pct, "Equidade"],
+        ].forEach(function (row) {
+          tb.innerHTML +=
+            "<tr><td>" + row[0] + '</td><td class="num">' + SifilisApp.fmt(row[1], 1) +
+            "</td><td>" + row[2] + "</td></tr>";
+        });
+      } else if (demo && demo.estado) {
+        document.getElementById("kpis").innerHTML =
+          SifilisApp.kpi("Completude geral", SifilisApp.fmt(e.completude_geral_pct, 1) + "%", "demo", "") +
+          SifilisApp.kpi("Score médio", SifilisApp.fmt(e.score_qualidade_medio, 1), "0–100 demo", "≠ risco");
+        const tb = document.querySelector("#tab-q tbody");
+        tb.innerHTML = "<tr><td colspan='3'>Proxy DW indisponível — exibindo fallback demo. Rode extract_dw_enriquecimento + publish.</td></tr>";
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Transmissão Vertical — Sífilis MT</title>
+  <link rel="stylesheet" href="assets/css/ses-mt.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/charts.js" defer></script>
+</head>
+<body>
+  <header class="cabecalho"><div class="cabecalho-inner">
+    <p class="cabecalho-orgao">Governo de Mato Grosso · SES-MT · CIEVS-MT</p>
+    <h1>Sífilis MT — Transmissão Vertical</h1>
+    <p class="cabecalho-sub">PQA-VS · fenótipo da falha · prontidão · linkage Onda C</p>
+  </div></header>
+  <nav class="nav-principal"><ul>
+    <li><a href="index.html">Executivo</a></li>
+    <li><a href="epidemiologia.html">Epidemiologia</a></li>
+    <li><a href="transmissao-vertical.html" aria-current="page">Transmissão Vertical</a></li>
+    <li><a href="cascata.html">Cascata</a></li>
+    <li><a href="laboratorio.html">Laboratório</a></li>
+    <li><a href="territorio.html">Território</a></li>
+    <li><a href="qualidade.html">Qualidade</a></li>
+    <li><a href="acoes.html">Ações</a></li>
+  </ul></nav>
+  <div class="faixa-demo" id="faixa-demo"><strong>DW / DEMO:</strong> agregados. Sem PII. Não certifica município.</div>
+  <main class="conteudo">
+    <h2 class="page-titulo">Indicadores de transmissão vertical</h2>
+    <p class="page-lead">Referências: Boletim Sífilis; Guia Eliminação TV; PQA-VS. Parâmetros em <code>regras.yml</code>.
+      <a href="sala-tv.html">Sala de investigação TV (MVP3)</a> ·
+      <a href="boletim.html">Boletim agregado</a>
+    </p>
+    <p class="meta-dados" id="seletor-fonte"></p>
+    <p class="meta-dados" id="meta"></p>
+
+    <section class="painel-destaque" aria-labelledby="pqa-titulo">
+      <h2 id="pqa-titulo">Indicador PQA-VS — SC / sífilis em gestantes</h2>
+      <p class="destaque-valor" id="pqa-valor">—</p>
+      <p class="destaque-meta" id="pqa-meta"></p>
+      <p class="aviso-regra">Meta parametrizada: redução de 1 p.p. frente ao ano-base ou manutenção de zero. Fonte: PQA-VS / Boletim. Registry: <span class="tag-registry">razao_sc_gestante</span></p>
+    </section>
+
+    <div class="kpis" id="kpis"></div>
+
+    <div class="grid-2">
+      <section class="secao painel-prontidao">
+        <h2>Distância para eliminação / prontidão</h2>
+        <p class="aviso-regra" id="pront-aviso"></p>
+        <dl id="pront-dl"></dl>
+        <p class="kpi-fonte" id="pront-score"></p>
+        <h3 style="font-size:1rem;margin-top:1rem;color:var(--gov-azul)">Simulador de metas (MVP3)</h3>
+        <p class="aviso-regra" id="sim-aviso"></p>
+        <div class="kpis" id="sim-kpis"></div>
+      </section>
+      <section class="secao">
+        <h2>Linkage Onda C (proxy territorial)</h2>
+        <p class="aviso-regra" id="link-aviso"></p>
+        <p class="meta-dados" id="link-cadeia"></p>
+        <div class="kpis" id="link-cobertura"></div>
+        <div class="kpis" id="link-kpis"></div>
+        <p class="kpi-fonte">Contrato: ADR-006 · <code>sql/silver/02_linkage_bridges.sql</code> · match nominal só no SES</p>
+      </section>
+    </div>
+    <div class="grid-2">
+      <section class="secao">
+        <h2>Fenótipo da falha (distribuição processual)</h2>
+        <p class="aviso-regra" id="fen-aviso"></p>
+        <div class="grafico-wrap alto"><canvas id="chart-fenotipo"></canvas></div>
+        <ul class="lista-fenotipo" id="lista-fenotipo"></ul>
+      </section>
+      <section class="secao">
+        <h2>Leitura para gestão</h2>
+        <p>A razão SC/gestantes aproxima quanto da infecção materna se traduz em doença na criança. O fenótipo indica <em>em que etapa</em> a linha de cuidado mais falha nos dados disponíveis — sem afirmar causalidade individual. O linkage territorial é proxy até o Gold nominal no SES.</p>
+      </section>
+    </div>
+  </main>
+  <footer class="rodape"><div class="rodape-inner"><p>SES-MT · CIEVS-MT · Resolução CIB/MT 279/2021 (contexto estadual)</p></div></footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", async function () {
+      SifilisApp.barraFonte("seletor-fonte");
+      const [epi, fenRaw, pront, link] = await Promise.all([
+        SifilisApp.load("epidemiologia.json"),
+        SifilisApp.load("fenotipo_falha.json"),
+        SifilisApp.load("prontidao_eliminacao.json"),
+        SifilisApp.load("linkage_agregado.json"),
+      ]);
+      const ano = SifilisApp.barraAno("wrap-ano", epi.anos_disponiveis || [], epi.ano);
+      const e = SifilisApp.estadoNoAno(epi, ano) || epi.estado;
+      const fen = SifilisApp.dadoNoAno(fenRaw, ano) || fenRaw;
+      const faixa = document.getElementById("faixa-demo");
+      if (faixa && epi.tipo === "extracao_dw") {
+        faixa.innerHTML =
+          "<strong>DW SES-MT:</strong> agregados reais ano " + ano + ". Sem PII. Não certifica.";
+      }
+      document.getElementById("meta").textContent = SifilisApp.metaHtml(Object.assign({}, epi, { ano: ano }));
+      document.getElementById("pqa-valor").textContent = SifilisApp.fmt(e.razao_sc_gestante_pct, 1) + "%";
+      const pqa = pront.pqa_vs || {};
+      document.getElementById("pqa-meta").textContent =
+        (pqa.nota || "") +
+        (pqa.ano_base != null ? " · Ano-base: " + SifilisApp.fmt(pqa.ano_base, 1) + "%" : "") +
+        (pqa.atingiu === true
+          ? " · Trajetória: atingiu meta"
+          : pqa.atingiu === false
+            ? " · Trajetória: ainda não atingiu meta"
+            : "");
+
+      document.getElementById("kpis").innerHTML =
+        SifilisApp.kpi("Casos SC", SifilisApp.fmt(e.congenita.casos), "menores de 1 ano", "SINAN-SIFC") +
+        SifilisApp.kpi("Incidência SC", SifilisApp.fmt(e.congenita.taxa, 1), "por 1.000 NV", "SIFC+SINASC") +
+        SifilisApp.kpi("Evitabilidade SC", SifilisApp.fmt(e.evitabilidade_sc_pct, 1) + "%", "1 − PQA-VS (Boletim 2025)", "extraido_literal") +
+        SifilisApp.kpi("Óbitos SC", SifilisApp.fmt(e.congenita.obitos), "proxy SINAN", "SIM no MVP3") +
+        SifilisApp.kpi("Mortalidade SC", SifilisApp.fmt(e.congenita.mortalidade_100mil_nv, 1), "por 100 mil NV", "DW") +
+        SifilisApp.kpi("Nascidos vivos", SifilisApp.fmt(e.nascidos_vivos), "SINASC", "denominador");
+
+      document.getElementById("pront-aviso").textContent = pront.aviso || "";
+      const inc = pront.incidencia_sc || {};
+      const trat = pront.tratamento_adequado || {};
+      document.getElementById("pront-dl").innerHTML =
+        "<dt>Incidência atual</dt><dd>" +
+        SifilisApp.fmt(inc.atual, 1) +
+        " / 1.000 NV</dd>" +
+        "<dt>Meta (parametrizada)</dt><dd>≤ " +
+        SifilisApp.fmt(inc.meta, 1) +
+        " / 1.000 NV</dd>" +
+        "<dt>Excesso</dt><dd>" +
+        SifilisApp.fmt(inc.excesso, 1) +
+        " / 1.000 NV</dd>" +
+        "<dt>Tratamento adequado</dt><dd>" +
+        SifilisApp.fmt(trat.atual, 1) +
+        "%</dd>" +
+        "<dt>Referência</dt><dd>≥ " +
+        SifilisApp.fmt(trat.meta, 0) +
+        "%</dd>" +
+        "<dt>Gap</dt><dd>" +
+        SifilisApp.fmt(trat.gap_pp, 1) +
+        " p.p.</dd>" +
+        "<dt>Guia (versão param.)</dt><dd>" +
+        (pront.guia_versao || "—") +
+        "</dd>";
+      document.getElementById("pront-score").textContent =
+        "Score de prontidão: " +
+        SifilisApp.fmt(pront.prontidao_score, 1) +
+        " · não certifica" +
+        (pront.cobertura_trat_nota ? " · " + pront.cobertura_trat_nota : "");
+
+      const sim = pront.simulador_metas || null;
+      if (sim && sim.ok) {
+        document.getElementById("sim-aviso").textContent = sim.aviso || "";
+        document.getElementById("sim-kpis").innerHTML =
+          SifilisApp.kpi(
+            "Casos no teto da meta",
+            SifilisApp.fmt(sim.casos_no_teto_meta, 1),
+            "≤ " + SifilisApp.fmt(sim.meta_por_1000_nv, 1) + "/1.000 NV",
+            sim.parametro_ref || "meta"
+          ) +
+          SifilisApp.kpi(
+            "Casos a evitar",
+            SifilisApp.fmt(sim.casos_a_evitar, 1),
+            "vs observado " + SifilisApp.fmt(sim.casos_sc, 0),
+            "distancia_meta_incidencia_sc"
+          ) +
+          SifilisApp.kpi(
+            "Redução necessária",
+            SifilisApp.fmt(sim.reducao_casos_pct, 1) + "%",
+            sim.atingiu ? "meta atingida" : "dos casos SC do ano",
+            "simulador_metas"
+          );
+      } else {
+        document.getElementById("sim-aviso").textContent =
+          (sim && sim.aviso) || "Simulador indisponível — rode publish_dashboard_data.";
+      }
+
+      document.getElementById("link-aviso").textContent = link.aviso || "";
+      const cadeia = link.cadeia || {};
+      const passos = (cadeia.cadeia || ["esus_aps", "gal", "sinan_sifg", "sinasc", "sinan_sifc"]).join(" → ");
+      document.getElementById("link-cadeia").textContent =
+        "Cadeia contratual (" +
+        (link.onda || cadeia.onda || "MVP2-C") +
+        "): " +
+        passos;
+      document.getElementById("link-cobertura").innerHTML =
+        SifilisApp.kpi("Mun. com SIFG", SifilisApp.fmt(link.municipios_sifg), "no ano", "coocorrência") +
+        SifilisApp.kpi("Mun. com SIFC", SifilisApp.fmt(link.municipios_sifc), "no ano", "coocorrência") +
+        SifilisApp.kpi("Mun. com SINASC", SifilisApp.fmt(link.municipios_sinasc), "no ano", "denominador NV");
+      const ind = link.indicadores || {};
+      document.getElementById("link-kpis").innerHTML =
+        SifilisApp.kpi(
+          "Mun. SIFC ∩ SIFG",
+          SifilisApp.fmt((ind.pct_sifc_com_sifg_mun || {}).valor, 1) + "%",
+          "proxy territorial",
+          "pct_sifc_sifg_materna"
+        ) +
+        SifilisApp.kpi(
+          "Mun. SIFG ∩ SINASC",
+          SifilisApp.fmt((ind.pct_sifg_com_sinasc_mun || {}).valor, 1) + "%",
+          "proxy territorial",
+          "pct_sifg_sinasc"
+        ) +
+        SifilisApp.kpi(
+          "Mun. SIFC ∩ SINASC",
+          SifilisApp.fmt((ind.pct_sifc_com_sinasc_mun || {}).valor, 1) + "%",
+          "proxy fraco",
+          "pct_sifc_mae_localizada"
+        );
+
+      document.getElementById("fen-aviso").textContent =
+        (fen.aviso || "") + " · Fenótipo ainda sintético até classificador Gold/SIFC.";
+      const cats = (fen.categorias || []).filter(function (c) {
+        return c.n > 0;
+      });
+      SifilisCharts.barras(
+        "chart-fenotipo",
+        cats.map(function (c) {
+          return c.nome;
+        }),
+        cats.map(function (c) {
+          return c.pct;
+        }),
+        "% dos SC classificados"
+      );
+      document.getElementById("lista-fenotipo").innerHTML = cats
+        .map(function (c) {
+          return (
+            "<li><span>" +
+            c.nome +
+            ' <span class="tag-registry">' +
+            c.indicador_id +
+            "</span></span>" +
+            "<span><strong>" +
+            SifilisApp.fmt(c.pct, 1) +
+            "%</strong> (" +
+            SifilisApp.fmt(c.n) +
+            ")</span></li>"
+          );
+        })
+        .join("");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+{
+  "tipo": "extracao_dw",
+  "aviso": "Posição frente a indicadores oficiais parametrizados. Este painel NÃO certifica o município nem substitui o processo do MS.",
+  "territorio": "Mato Grosso — 2026",
+  "guia_versao": "2024",
+  "incidencia_sc": {
+    "atual": 12.7,
+    "meta": 0.5,
+    "excesso": 12.2,
+    "atingiu": false
+  },
+  "tratamento_adequado": {
+    "atual": null,
+    "meta": 95.0,
+    "gap_pp": null,
+    "atingiu": null
+  },
+  "pqa_vs": {
+    "atual": 35.9,
+    "ano_base": 28.9,
+    "delta_pp": -7.0,
+    "meta_reducao_pp": 1.0,
+    "atingiu": false,
+    "nota": "Redução de -7.0 p.p. (meta ≥1.0 p.p.)"
+  },
+  "prontidao_score": 0.0,
+  "indicadores_ref": [
+    "taxa_incidencia_congenita",
+    "distancia_meta_incidencia_sc",
+    "cobertura_trat_adequado_pct",
+    "gap_trat_adequado_pp",
+    "razao_sc_gestante",
+    "prontidao_eliminacao_score"
+  ],
+  "fonte_prevista": "DW + parametros regras.yml",
+  "extraido_em": "2026-09-24T00:05:01.225716+00:00",
+  "ano": 2026,
+  "parametros_usados": {
+    "meta_incidencia_sc_por_1000_nv": 0.5,
+    "meta_cobertura_trat_adequado_pct": 95,
+    "dias_antes_parto_tratamento_adequado": 30,
+    "intervalo_doses_penicilina_dias": 9,
+    "pqa_vs_reducao_pp": 1,
+    "meta_prop_gestantes_exames_sifilis_hiv_pct": 60,
+    "parametro_prop_gestantes_exames_sifilis_hiv_pct": 100,
+    "guia_eliminacao_versao": "2024"
+  },
+  "cobertura_trat_nota": "Cobertura tratamento adequado pendente de campos SIFG / e-SUS (MVP2)",
+  "simulador_metas": {
+    "ok": true,
+    "aviso": "Simulação aritmética com meta de regras.yml. Não certifica município nem substitui o processo do MS.",
+    "meta_por_1000_nv": 0.5,
+    "casos_sc": 459.0,
+    "nascidos_vivos": 36013,
+    "taxa_atual": 12.75,
+    "casos_no_teto_meta": 18.0,
+    "casos_a_evitar": 441.0,
+    "reducao_casos_pct": 96.1,
+    "atingiu": false,
+    "indicadores_ref": [
+      "taxa_incidencia_congenita",
+      "distancia_meta_incidencia_sc"
+    ],
+    "parametro_ref": "meta_incidencia_sc_por_1000_nv"
+  }
+}

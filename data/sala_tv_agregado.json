@@ -1,0 +1,192 @@
+{
+  "tipo": "extracao_dw",
+  "onda": "MVP3-B+",
+  "aviso": "Sala TV a partir de agregados DW. Sem lista nominal nem dossiê de caso. Match mãe–criança somente no SES. ADR-008. Alertas ativos: 56.",
+  "ano": 2026,
+  "nivel": "ers",
+  "fonte": "SINAN-SIFC/SIFG + SINASC (agregado) · NI + CID A51–A53 · fenótipo proxy",
+  "resumo_estado": {
+    "casos_sc": 459,
+    "gestantes_sifg": 1278,
+    "pqa_vs_pct": 35.9,
+    "fenotipo_dominante": "proxy_nao_classificado",
+    "ers_prioridade_alta_n": 11
+  },
+  "pauta_ers": [
+    {
+      "ers_id": "caceres",
+      "ers_nome": "Cáceres",
+      "casos_sc": 52,
+      "gestantes_sifg": 54,
+      "taxa_sc": 37.5,
+      "pqa_vs_pct": 96.3,
+      "fenotipo_dominante": "proxy_nao_classificado",
+      "prioridade": "MUITO ALTA",
+      "pontos_discussao": [
+        "Taxa SC elevada — priorizar cascata e oportunidades perdidas (agregado)",
+        "Revisar agregados SC × gestantes no período",
+        "Cruzar qualidade da informação antes de concluir tendência",
+        "PQA-VS alto na regional — discutir redução vs ano-base (Portaria 6.878/2025)"
+      ],
+      "status_comite": "pendente"
+    },
+    {
+      "ers_id": "rondonopolis",
+      "ers_nome": "Rondonópolis",
+      "casos_sc": 179,
+      "gestantes_sifg": 214,
+      "taxa_sc": 32.5,
+      "pqa_vs_pct": 83.6,
+      "fenotipo_dominante": "proxy_nao_classificado",
+      "prioridade": "MUITO ALTA",
+      "pontos_discussao": [
+        "Taxa SC elevada — priorizar cascata e oportunidades perdidas (agregado)",
+        "Revisar agregados SC × gestantes no período",
+        "Cruzar qualidade da informação antes de concluir tendência",
+        "PQA-VS alto na regional — discutir redução vs ano-base (Portaria 6.878/2025)"
+      ],
+      "status_comite": "pendente"
+    },
+    {
+      "ers_id": "pontes-e-lacerda",
+      "ers_nome": "Pontes e Lacerda",
+      "casos_sc": 29,
+      "gestantes_sifg": 49,
+      "taxa_sc": 25.2,
+      "pqa_vs_pct": 59.2,
+      "fenotipo_dominante": "proxy_nao_classificado",
+      "prioridade": "MUITO ALTA",
+      "pontos_discussao": [
+        "Taxa SC elevada — priorizar cascata e oportunidades perdidas (agregado)",
+        "Revisar agregados SC × gestantes no período",
+        "Cruzar qualidade da informação antes de concluir tendência",
+        "PQA-VS alto na regional — discutir redução vs ano-base (Portaria 6.878/2025)"
+      ],
+      "status_comite": "pendente"
+    },
+    {
+      "ers_id": "baixada-cuiabana",
+      "ers_nome": "Baixada Cuiabana",
+      "casos_sc": 125,
+      "gestantes_sifg": 384,
+      "taxa_sc": 13.5,
+      "pqa_vs_pct": 32.6,
+      "fenotipo_dominante": "proxy_nao_classificado",
+      "prioridade": "MUITO ALTA",
+      "pontos_discussao": [
+        "Taxa SC elevada — priorizar cascata e oportunidades perdidas (agregado)",
+        "Revisar agregados SC × gestantes no período",
+        "Cruzar qualidade da informação antes de concluir tendência"
+      ],
+      "status_comite": "pendente"
+    },
+    {
+      "ers_id": "diamantino",
+      "ers_nome": "Diamantino",
+      "casos_sc": 4,
+      "gestantes_sifg": 12,
+      "taxa_sc": 9.4,
+      "pqa_vs_pct": 33.3,
+      "fenotipo_dominante": "proxy_nao_classificado",
+      "prioridade": "MUITO ALTA",
+      "pontos_discussao": [
+        "Revisar agregados SC × gestantes no período",
+        "Cruzar qualidade da informação antes de concluir tendência"
+      ],
+      "status_comite": "pendente"
+    },
+    {
+      "ers_id": "sinop",
+      "ers_nome": "Sinop",
+      "casos_sc": 42,
+      "gestantes_sifg": 284,
+      "taxa_sc": 6.9,
+      "pqa_vs_pct": 14.8,
+      "fenotipo_dominante": "proxy_nao_classificado",
+      "prioridade": "MUITO ALTA",
+      "pontos_discussao": [
+        "Revisar agregados SC × gestantes no período",
+        "Cruzar qualidade da informação antes de concluir tendência"
+      ],
+      "status_comite": "pendente"
+    },
+    {
+      "ers_id": "barra-do-garcas",
+      "ers_nome": "Barra do Garças",
+      "casos_sc": 8,
+      "gestantes_sifg": 17,
+      "taxa_sc": 6.1,
+      "pqa_vs_pct": 47.1,
+      "fenotipo_dominante": "proxy_nao_classificado",
+      "prioridade": "MUITO ALTA",
+      "pontos_discussao": [
+        "Revisar agregados SC × gestantes no período",
+        "Cruzar qualidade da informação antes de concluir tendência",
+        "PQA-VS alto na regional — discutir redução vs ano-base (Portaria 6.878/2025)"
+      ],
+      "status_comite": "pendente"
+    },
+    {
+      "ers_id": "agua-boa",
+      "ers_nome": "Água Boa",
+      "casos_sc": 4,
+      "gestantes_sifg": 24,
+      "taxa_sc": 4.4,
+      "pqa_vs_pct": 16.7,
+      "fenotipo_dominante": "proxy_nao_classificado",
+      "prioridade": "MUITO ALTA",
+      "pontos_discussao": [
+        "Revisar agregados SC × gestantes no período",
+        "Cruzar qualidade da informação antes de concluir tendência"
+      ],
+      "status_comite": "pendente"
+    },
+    {
+      "ers_id": "juina",
+      "ers_nome": "Juína",
+      "casos_sc": 5,
+      "gestantes_sifg": 30,
+      "taxa_sc": 3.5,
+      "pqa_vs_pct": 16.7,
+      "fenotipo_dominante": "proxy_nao_classificado",
+      "prioridade": "ALTA",
+      "pontos_discussao": [
+        "Revisar agregados SC × gestantes no período",
+        "Cruzar qualidade da informação antes de concluir tendência"
+      ],
+      "status_comite": "pendente"
+    },
+    {
+      "ers_id": "juara",
+      "ers_nome": "Juara",
+      "casos_sc": 2,
+      "gestantes_sifg": 16,
+      "taxa_sc": 2.7,
+      "pqa_vs_pct": 12.5,
+      "fenotipo_dominante": "proxy_nao_classificado",
+      "prioridade": "ALTA",
+      "pontos_discussao": [
+        "Revisar agregados SC × gestantes no período",
+        "Cruzar qualidade da informação antes de concluir tendência"
+      ],
+      "status_comite": "pendente"
+    },
+    {
+      "ers_id": "peixoto-de-azevedo",
+      "ers_nome": "Peixoto de Azevedo",
+      "casos_sc": 1,
+      "gestantes_sifg": 39,
+      "taxa_sc": 0.8,
+      "pqa_vs_pct": 2.6,
+      "fenotipo_dominante": "proxy_nao_classificado",
+      "prioridade": "ALTA",
+      "pontos_discussao": [
+        "Revisar agregados SC × gestantes no período",
+        "Cruzar qualidade da informação antes de concluir tendência"
+      ],
+      "status_comite": "pendente"
+    }
+  ],
+  "disclaimer": "Categorias de fenótipo são processuais, não afirmações causais. Este painel não substitui investigação de caso no SES.",
+  "gerado_em": "2026-09-24T00:05:01.276756+00:00"
+}

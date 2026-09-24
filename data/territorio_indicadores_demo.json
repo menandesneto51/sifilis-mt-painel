@@ -1,0 +1,78 @@
+{
+  "tipo": "demonstracao",
+  "ano": 2025,
+  "por_regional": {
+    "baixada-cuiabana": {
+      "adquirida_casos": 980,
+      "gestante_casos": 412,
+      "congenita_casos": 78,
+      "taxa_adquirida": 128.6,
+      "taxa_gestante": 41.2,
+      "taxa_congenita": 7.9,
+      "prioridade_max": "ALTA"
+    },
+    "rondonopolis": {
+      "adquirida_casos": 520,
+      "gestante_casos": 225,
+      "congenita_casos": 42,
+      "taxa_adquirida": 119.4,
+      "taxa_gestante": 38.5,
+      "taxa_congenita": 7.4,
+      "prioridade_max": "MÉDIA"
+    },
+    "sinop": {
+      "adquirida_casos": 410,
+      "gestante_casos": 178,
+      "congenita_casos": 35,
+      "taxa_adquirida": 115.8,
+      "taxa_gestante": 37.2,
+      "taxa_congenita": 7.0,
+      "prioridade_max": "MÉDIA"
+    },
+    "sao-felix-do-araguaia": {
+      "adquirida_casos": 85,
+      "gestante_casos": 36,
+      "congenita_casos": 14,
+      "taxa_adquirida": 88.5,
+      "taxa_gestante": 28.0,
+      "taxa_congenita": 9.8,
+      "prioridade_max": "MUITO ALTA"
+    },
+    "porto-alegre-do-norte": {
+      "adquirida_casos": 110,
+      "gestante_casos": 48,
+      "congenita_casos": 12,
+      "taxa_adquirida": 95.0,
+      "taxa_gestante": 30.2,
+      "taxa_congenita": 8.5,
+      "prioridade_max": "ALTA"
+    },
+    "tangara-da-serra": {
+      "adquirida_casos": 264,
+      "gestante_casos": 113,
+      "congenita_casos": 21,
+      "taxa_adquirida": 111.0,
+      "taxa_gestante": 35.5,
+      "taxa_congenita": 6.7,
+      "prioridade_max": "MÉDIA"
+    },
+    "caceres": {
+      "adquirida_casos": 195,
+      "gestante_casos": 84,
+      "congenita_casos": 16,
+      "taxa_adquirida": 102.7,
+      "taxa_gestante": 33.9,
+      "taxa_congenita": 6.5,
+      "prioridade_max": "ALTA"
+    },
+    "barra-do-garcas": {
+      "adquirida_casos": 210,
+      "gestante_casos": 88,
+      "congenita_casos": 18,
+      "taxa_adquirida": 110.3,
+      "taxa_gestante": 35.8,
+      "taxa_congenita": 7.1,
+      "prioridade_max": "MÉDIA"
+    }
+  }
+}

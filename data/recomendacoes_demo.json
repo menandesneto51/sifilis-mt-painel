@@ -1,0 +1,140 @@
+{
+  "tipo": "demonstracao",
+  "aviso": "Recomendações sintéticas territoriais — amarradas a indicador_ids / acao_associada_ids do registry. Não prescritivas clínicas. Sem PII.",
+  "ano": 2025,
+  "nivel": "territorio",
+  "recomendacoes": [
+    {
+      "id": "rec-001",
+      "prioridade": "MUITO ALTA",
+      "motivo": "Aumento de sífilis congênita e tratamento materno inadequado (fenótipo dominante: diagnóstico tardio).",
+      "onde": "São Félix do Araguaia (ERS São Félix do Araguaia)",
+      "evidencia": [
+        "Prioridade MUITO ALTA no Índice de Risco (score demo 84,1)",
+        "Subíndice TV 91; falha assistencial 88",
+        "Fenótipo estadual: 26% diagnóstico tardio; 13% tratamento incompleto",
+        "Score de qualidade 52 — cruzar interpretação com cautela"
+      ],
+      "acoes": [
+        "Revisar agregados de SC e gestantes do período",
+        "Busca ativa de gestantes reagentes sem tratamento registrado",
+        "Auditar cascata (perda tratamento iniciado → adequado)",
+        "Verificar estoque e administração de penicilina (capacidade — MVP2+ insumos)",
+        "Discutir casos no comitê de transmissão vertical"
+      ],
+      "indicador_ids": [
+        "razao_sc_gestante",
+        "fenotipo_diagnostico_tardio_pct",
+        "cobertura_trat_adequado_pct",
+        "indice_prioridade_sifilis_mt"
+      ],
+      "acao_associada_ids": [
+        "acao_investigar_tv",
+        "acao_ampliar_testagem",
+        "acao_completar_tratamento"
+      ],
+      "fenotipo_dominante": "diagnostico_tardio",
+      "nivel": "territorio"
+    },
+    {
+      "id": "rec-002",
+      "prioridade": "ALTA",
+      "motivo": "Perda na cascata entre tratamento iniciado e adequado; gap de 7 p.p. até meta ≥95%.",
+      "onde": "Porto Alegre do Norte (ERS Porto Alegre do Norte)",
+      "evidencia": [
+        "Score risco 79,2",
+        "Gap tratamento adequado (demo estadual): 7 p.p.",
+        "Gestantes sem tratamento no contador estadual (demo)"
+      ],
+      "acoes": [
+        "Mapear oportunidades perdidas de tratamento",
+        "Reforçar testagem no início da gestação e no parto",
+        "Melhorar completude das fichas SINAN-SIFG"
+      ],
+      "indicador_ids": [
+        "gap_trat_adequado_pp",
+        "gestantes_sem_tratamento",
+        "cascata_trat_adequado"
+      ],
+      "acao_associada_ids": [
+        "acao_iniciar_tratamento",
+        "acao_completar_tratamento",
+        "acao_distancia_eliminacao"
+      ],
+      "fenotipo_dominante": "tratamento_incompleto",
+      "nivel": "territorio"
+    },
+    {
+      "id": "rec-003",
+      "prioridade": "ALTA",
+      "motivo": "Incidência SC distante da meta de eliminação (≤0,5/1.000 NV) com alto volume absoluto.",
+      "onde": "Cuiabá (ERS Baixada Cuiabana)",
+      "evidencia": [
+        "Maior volume absoluto do estado (demo)",
+        "Incidência SC estadual demo 7,2 vs meta 0,5",
+        "Risco ALTA com qualidade relativamente boa (88)"
+      ],
+      "acoes": [
+        "Priorizar UBS com maior concentração (quando linkage MVP2 disponível)",
+        "Manter comitê de TV e monitoramento semanal da cascata",
+        "Acompanhar painel de prontidão (não é certificação)"
+      ],
+      "indicador_ids": [
+        "taxa_incidencia_congenita",
+        "distancia_meta_incidencia_sc",
+        "prontidao_eliminacao_score"
+      ],
+      "acao_associada_ids": [
+        "acao_distancia_eliminacao",
+        "acao_priorizar_territorio"
+      ],
+      "fenotipo_dominante": null,
+      "nivel": "territorio"
+    },
+    {
+      "id": "rec-004",
+      "prioridade": "MÉDIA",
+      "motivo": "Qualidade da informação abaixo do limiar — fenótipo 'falha de informação' impede classificação plena.",
+      "onde": "16 municípios com baixa qualidade (contador demo)",
+      "evidencia": [
+        "Score qualidade < 60 em recortes demo",
+        "Inconsistências lógicas agregadas no estado: 214",
+        "Fenótipo falha_de_informacao presente na distribuição estadual"
+      ],
+      "acoes": [
+        "Capacitação de digitação/investigação SINAN",
+        "Painel de inconsistências por agravo (SIFA/SIFG/SIFC)",
+        "Não interpretar ausência de casos como município saudável"
+      ],
+      "indicador_ids": [
+        "score_qualidade_municipio",
+        "fenotipo_falha_de_informacao_pct",
+        "inconsistencias_logicas"
+      ],
+      "acao_associada_ids": [
+        "acao_melhorar_qualidade"
+      ],
+      "fenotipo_dominante": "falha_de_informacao",
+      "nivel": "territorio"
+    },
+    {
+      "id": "rec-005",
+      "prioridade": "ALTA",
+      "motivo": "Indicador PQA-VS (SC/SIFG) ainda acima da trajetória de redução de 1 p.p. vs ano-base.",
+      "onde": "Estado de Mato Grosso (visão estadual)",
+      "evidencia": [
+        "Razão SC/gestantes demo 16,3% (ano-base demo 17,1%)",
+        "Redução 0,8 p.p. — meta parametrizada ≥1 p.p. ou zero"
+      ],
+      "acoes": [
+        "Destacar PQA-VS nas reuniões de comissão",
+        "Cruzar com distribuição do fenótipo da falha",
+        "Priorizar municípios com maior contribuição à razão"
+      ],
+      "indicador_ids": ["razao_sc_gestante"],
+      "acao_associada_ids": ["acao_pqa_vs", "acao_investigar_tv"],
+      "fenotipo_dominante": null,
+      "nivel": "territorio"
+    }
+  ]
+}

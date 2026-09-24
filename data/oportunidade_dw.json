@@ -1,0 +1,3022 @@
+{
+  "tipo": "extracao_dw",
+  "ano": 2026,
+  "aviso": "Oportunidade SIFG/SIFC + e-SUS APS (procedimentos SIGTAP/AB de testagem). consulta_sem_testagem = % atendimentos com IG>0 sem procedimento sífilis/VDRL/TR no mesmo encontro (quando extract e-SUS disponível); senão proxy SIFG NT. SIPNI (SQL Server Vacinas) agregado quando extract disponível. Índice = média simples — experimental, não PCDT. Sem PII.",
+  "gestante_casos": 1278,
+  "congenita_casos": 459,
+  "parceria_tratada_n": 458,
+  "parceria_tratada_pct": 35.8,
+  "esquema_prescrito_gestante": {
+    "Penicilina G benzantina 7.200.000 UI": 940,
+    "Penicilina G benzantina 2.400.000 UI": 228,
+    "Não realizado": 74,
+    "Penicilina G benzantina 4.800.000 UI": 24,
+    "Ignorado": 9,
+    "Outro esquema": 3
+  },
+  "esquema_nao_realizado_n": 74,
+  "esquema_nao_realizado_pct": 5.8,
+  "esquema_registrado_n": 1204,
+  "esquema_penicilina_n": 1192,
+  "esquema_outro_n": 3,
+  "sifc_esquema_mae": {
+    "Adequado": 212,
+    "Inadequado": 153,
+    "Não realizado": 90,
+    "Ignorado": 4
+  },
+  "sifc_diagnostico_materno": {
+    "Durante o pré-natal": 365,
+    "No momento do parto/curetagem": 58,
+    "Após o parto": 20,
+    "Ignorado": 8,
+    "Não realizado": 8
+  },
+  "diagnostico_materno_no_parto_ou_apos_n": 78,
+  "diagnostico_materno_no_parto_ou_apos_pct": 17.0,
+  "teste_nao_treponemico": {
+    "Reagente": 785,
+    "Não realizado": 387,
+    "Não reagente": 59,
+    "Ignorado": 47
+  },
+  "teste_treponemico": {
+    "Reagente": 1063,
+    "Não realizado": 120,
+    "Não reagente": 81,
+    "Ignorado": 14
+  },
+  "teste_nt_nao_realizado_n": 387,
+  "teste_nt_nao_realizado_pct": 30.3,
+  "teste_trep_nao_realizado_n": 120,
+  "teste_trep_nao_realizado_pct": 9.4,
+  "consulta_sem_testagem_n": 387,
+  "consulta_sem_testagem_pct": 30.3,
+  "consulta_sem_testagem_fonte": "proxy_sifg_teste_nt",
+  "indice_oportunidades_perdidas": 25.3,
+  "indice_componentes": [
+    {
+      "id": "esquema_nao_realizado",
+      "peso": 1,
+      "valor_0_100": 5.8
+    },
+    {
+      "id": "parceria_nao_tratada",
+      "peso": 1,
+      "valor_0_100": 64.2
+    },
+    {
+      "id": "teste_nt_nao_realizado",
+      "peso": 1,
+      "valor_0_100": 30.3
+    },
+    {
+      "id": "teste_trep_nao_realizado",
+      "peso": 1,
+      "valor_0_100": 9.4
+    },
+    {
+      "id": "dx_materno_parto",
+      "peso": 1,
+      "valor_0_100": 17.0
+    }
+  ],
+  "esus_aps_status": "acesso_ok_conector_pronto",
+  "esus_problemas_sifilis_n": null,
+  "esus_atendimentos_gestante_n": null,
+  "esus_proced_testagem_n": null,
+  "esus_atendimentos_gestante_com_testagem_n": null,
+  "esus_gestante_sem_testagem_n": null,
+  "esus_gestante_sem_testagem_pct": null,
+  "ranking_esus_gap_testagem": [],
+  "ranking_esus_gap_ers": [],
+  "esus_proced_penicilina_n": null,
+  "esus_proced_penicilina_nota": "Códigos ABPG032/0301100241 na dim e-SUS; volume zero no fato APS na janela.",
+  "sisreg_status": "acesso_ok_sem_volume_ou_pendente",
+  "sisreg_solicitacoes_sifilis_n": null,
+  "sisreg_cid_sifilis_n": null,
+  "sisreg_proced_sifilis_n": null,
+  "sisreg_por_status": [],
+  "sipni_status": "acesso_ok_conector_pronto",
+  "sipni_doses_n": null,
+  "sipni_municipios_n": null,
+  "sipni_top_vacinas": [],
+  "sipni_hepb_n": null,
+  "sipni_dtpa_n": null,
+  "sipni_dt_n": null,
+  "sipni_bcg_n": null,
+  "sipni_materno_aviso": "HepB/dTpa/dT/BCG = volume SIPNI por sigla — contexto de rede, não cobertura gestacional nem PCDT.",
+  "sisprenatal_status": "legado_sem_anos_recentes",
+  "fontes_fora_dw": [
+    "esus_aps",
+    "sisreg",
+    "indicasus",
+    "sipni"
+  ],
+  "indicadores_ref": [
+    "parceria_tratada",
+    "gestantes_sem_tratamento",
+    "diagnostico_somente_parto",
+    "consulta_sem_testagem",
+    "indice_oportunidades_perdidas",
+    "cascata_trat_adequado"
+  ],
+  "pendente_mvp2": [
+    "tempo diagnostico→tratamento (datas nominais — fora do agregado)",
+    "avaliação caso PCDT (datas de dose/parto — sem PII no repo)",
+    "cruzar SIPNI doses com coorte gestante (sem PII)"
+  ],
+  "motor_pcdt": {
+    "motor": "parametros_prontos",
+    "motivo": "Parâmetros com formula_status=extraido_literal (NT 14/2023, Guia TV, NT 14/2022 APS, PQA-VS Portaria 6.878/2025). Avaliação caso a caso (datas de dose/parto) permanece fora do MVP agregado — sem PII.",
+    "parametros": [
+      {
+        "id": "meta_cobertura_trat_adequado_pct",
+        "valor": 95,
+        "unidade": "%",
+        "documento": "Guia Certificação Eliminação TV (MS) — Indicador de Processo 5",
+        "valid_from": "2024-01-01",
+        "valid_to": null,
+        "formula_status": "extraido_literal",
+        "citacao": "Cobertura de gestantes tratadas adequadamente para sífilis. Meta de impacto: ≥ 95%.",
+        "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct",
+        "nota": "Cobertura de tratamento adequado das gestantes com sífilis ≥95% (eliminação / selo ouro).",
+        "pronto_para_motor": true
+      },
+      {
+        "id": "dias_antes_parto_tratamento_adequado",
+        "valor": 30,
+        "unidade": "dias",
+        "documento": "NT 14/2023-DATHI/SVSA/MS §3.4; Guia Eliminação TV (processo 5)",
+        "valid_from": "2023-07-17",
+        "valid_to": null,
+        "formula_status": "extraido_literal",
+        "citacao": "Considera-se tratamento adequado para sífilis durante a gestação aquele que é completo para o respectivo estágio clínico da sífilis, feito com benzilpenicilina benzatina e iniciado até 30 dias antes do parto.\n",
+        "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#dias_antes_parto_tratamento_adequado",
+        "nota": "Início do tratamento até 30 dias antes do parto; concluir antes do parto.",
+        "pronto_para_motor": true
+      },
+      {
+        "id": "intervalo_doses_penicilina_dias",
+        "valor": 9,
+        "unidade": "dias",
+        "documento": "NT 14/2023-DATHI/SVSA/MS — intervalo entre doses em gestantes",
+        "valid_from": "2023-07-17",
+        "valid_to": null,
+        "formula_status": "extraido_literal",
+        "citacao": "As doses sejam aplicadas, idealmente, a cada 7 (sete) dias, não ultrapassando 9 (nove) dias. Caso alguma dose seja perdida ou o intervalo entre elas seja maior que nove dias, o esquema terapêutico deve ser reiniciado.\n",
+        "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#intervalo_doses_penicilina_dias",
+        "nota": "Intervalo máximo entre doses semanais ≤9 dias (ideal 7). Ultrapassado → reinício.",
+        "pronto_para_motor": true
+      },
+      {
+        "id": "meta_incidencia_sc_por_1000_nv",
+        "valor": 0.5,
+        "unidade": "por 1.000 NV",
+        "documento": "Guia Certificação Eliminação TV (MS) — Indicador de Impacto 3",
+        "valid_from": "2024-01-01",
+        "valid_to": null,
+        "formula_status": "extraido_literal",
+        "citacao": "Taxa de incidência de sífilis congênita. Meta de impacto: ≤ 0,5 caso por 1.000 nascidos vivos.",
+        "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv",
+        "nota": "Meta de incidência SC ≤0,5/1.000 NV (eliminação).",
+        "pronto_para_motor": true
+      },
+      {
+        "id": "pqa_vs_reducao_pp",
+        "valor": 1,
+        "unidade": "pontos percentuais",
+        "documento": "Portaria GM/MS nº 6.878/2025; Caderno Indicadores PQA-VS 2023",
+        "valid_from": "2025-04-25",
+        "valid_to": null,
+        "formula_status": "extraido_literal",
+        "citacao": "Meta: Redução de um ponto percentual do valor do ano base ou a manutenção de percentual zero.\n",
+        "excerpt_ref": "docs/oficiais/excerpts/pqa_vs_indicador11.yml#pqa_vs_reducao_pp",
+        "nota": "Meta PQA-VS ind. 11 — Δ ≤ −1 p.p. vs ano-base, ou manutenção em 0%.",
+        "pronto_para_motor": true
+      },
+      {
+        "id": "meta_prop_gestantes_exames_sifilis_hiv_pct",
+        "valor": 60,
+        "unidade": "%",
+        "documento": "NT 14/2022-SAPS/MS",
+        "valid_from": "2022-07-11",
+        "valid_to": null,
+        "formula_status": "extraido_literal",
+        "citacao": "a meta pactuada para este indicador é de 60%.",
+        "excerpt_ref": "docs/oficiais/excerpts/nt14_2022_testagem_aps.yml#meta_prop_gestantes_exames_sifilis_hiv_pct",
+        "nota": "Meta Previne Brasil / APS — não confundir com parâmetro ideal 100%.",
+        "pronto_para_motor": true
+      },
+      {
+        "id": "parametro_prop_gestantes_exames_sifilis_hiv_pct",
+        "valor": 100,
+        "unidade": "%",
+        "documento": "NT 14/2022-SAPS/MS",
+        "valid_from": "2022-07-11",
+        "valid_to": null,
+        "formula_status": "extraido_literal",
+        "citacao": "o parâmetro para esse indicador é de 100%.",
+        "excerpt_ref": "docs/oficiais/excerpts/nt14_2022_testagem_aps.yml#parametro_prop_gestantes_exames_sifilis_hiv_pct",
+        "nota": "Valor ideal (2 TR sífilis + 2 TR HIV: 1ª consulta e 3º trimestre).",
+        "pronto_para_motor": true
+      }
+    ],
+    "prontos_n": 7,
+    "total_n": 7,
+    "avaliacao_caso": "pendente_datas_nominais"
+  },
+  "por_ano": {
+    "2022": {
+      "tipo": "extracao_dw",
+      "ano": 2022,
+      "aviso": "Oportunidade SIFG/SIFC + e-SUS APS (procedimentos SIGTAP/AB de testagem). consulta_sem_testagem = % atendimentos com IG>0 sem procedimento sífilis/VDRL/TR no mesmo encontro (quando extract e-SUS disponível); senão proxy SIFG NT. SIPNI (SQL Server Vacinas) agregado quando extract disponível. Índice = média simples — experimental, não PCDT. Sem PII.",
+      "gestante_casos": 1690,
+      "congenita_casos": 367,
+      "parceria_tratada_n": 727,
+      "parceria_tratada_pct": 43.0,
+      "esquema_prescrito_gestante": {
+        "Penicilina G benzantina 7.200.000 UI": 1268,
+        "Penicilina G benzantina 2.400.000 UI": 297,
+        "Não realizado": 57,
+        "Penicilina G benzantina 4.800.000 UI": 32,
+        "Ignorado": 18,
+        "Outro esquema": 18
+      },
+      "esquema_nao_realizado_n": 57,
+      "esquema_nao_realizado_pct": 3.4,
+      "esquema_registrado_n": 1633,
+      "esquema_penicilina_n": 1597,
+      "esquema_outro_n": 18,
+      "sifc_esquema_mae": {
+        "Adequado": 167,
+        "Inadequado": 94,
+        "Não realizado": 73,
+        "Ignorado": 32,
+        "*Em Branco": 1
+      },
+      "sifc_diagnostico_materno": {
+        "Durante o pré-natal": 258,
+        "No momento do parto/curetagem": 51,
+        "Após o parto": 49,
+        "Ignorado": 6,
+        "Não realizado": 2,
+        "*Em Branco": 1
+      },
+      "diagnostico_materno_no_parto_ou_apos_n": 100,
+      "diagnostico_materno_no_parto_ou_apos_pct": 27.2,
+      "teste_nao_treponemico": {
+        "Reagente": 1185,
+        "Não realizado": 286,
+        "Ignorado": 153,
+        "Não reagente": 66
+      },
+      "teste_treponemico": {
+        "Reagente": 1277,
+        "Não realizado": 244,
+        "Não reagente": 91,
+        "Ignorado": 78
+      },
+      "teste_nt_nao_realizado_n": 286,
+      "teste_nt_nao_realizado_pct": 16.9,
+      "teste_trep_nao_realizado_n": 244,
+      "teste_trep_nao_realizado_pct": 14.4,
+      "consulta_sem_testagem_n": 111466,
+      "consulta_sem_testagem_pct": 59.7,
+      "consulta_sem_testagem_fonte": "esus_aps_gestante_sem_proced_testagem",
+      "indice_oportunidades_perdidas": 32.3,
+      "indice_componentes": [
+        {
+          "id": "esquema_nao_realizado",
+          "peso": 1,
+          "valor_0_100": 3.4
+        },
+        {
+          "id": "parceria_nao_tratada",
+          "peso": 1,
+          "valor_0_100": 57.0
+        },
+        {
+          "id": "esus_gestante_sem_testagem",
+          "peso": 1,
+          "valor_0_100": 59.7
+        },
+        {
+          "id": "teste_trep_nao_realizado",
+          "peso": 1,
+          "valor_0_100": 14.4
+        },
+        {
+          "id": "dx_materno_parto",
+          "peso": 1,
+          "valor_0_100": 27.2
+        }
+      ],
+      "esus_aps_status": "extract_ok",
+      "esus_problemas_sifilis_n": 9072,
+      "esus_atendimentos_gestante_n": 186577,
+      "esus_proced_testagem_n": 296445,
+      "esus_atendimentos_gestante_com_testagem_n": 75111,
+      "esus_gestante_sem_testagem_n": 111466,
+      "esus_gestante_sem_testagem_pct": 59.7,
+      "ranking_esus_gap_testagem": [
+        {
+          "co_municipio_ibge": "510040",
+          "municipio": "ALTO GARÇAS",
+          "ers_id": "rondonopolis",
+          "regional": "Rondonópolis",
+          "atendimentos_gestante_n": 847,
+          "com_testagem_n": 26,
+          "sem_testagem_n": 821,
+          "sem_testagem_pct": 96.9,
+          "sipni_hepb_doses_n": 768
+        },
+        {
+          "co_municipio_ibge": "510335",
+          "municipio": "CONFRESA",
+          "ers_id": "porto-alegre-do-norte",
+          "regional": "Porto Alegre do Norte",
+          "atendimentos_gestante_n": 3312,
+          "com_testagem_n": 106,
+          "sem_testagem_n": 3206,
+          "sem_testagem_pct": 96.8,
+          "sipni_hepb_doses_n": 738
+        },
+        {
+          "co_municipio_ibge": "510050",
+          "municipio": "ALTO PARAGUAI",
+          "ers_id": "tangara-da-serra",
+          "regional": "Tangará da Serra",
+          "atendimentos_gestante_n": 1048,
+          "com_testagem_n": 60,
+          "sem_testagem_n": 988,
+          "sem_testagem_pct": 94.3,
+          "sipni_hepb_doses_n": 890
+        },
+        {
+          "co_municipio_ibge": "510550",
+          "municipio": "VILA BELA DA SANTÍSSIMA TRINDADE",
+          "ers_id": "pontes-e-lacerda",
+          "regional": "Pontes e Lacerda",
+          "atendimentos_gestante_n": 863,
+          "com_testagem_n": 64,
+          "sem_testagem_n": 799,
+          "sem_testagem_pct": 92.6,
+          "sipni_hepb_doses_n": 1103
+        },
+        {
+          "co_municipio_ibge": "510420",
+          "municipio": "GUIRATINGA",
+          "ers_id": "rondonopolis",
+          "regional": "Rondonópolis",
+          "atendimentos_gestante_n": 880,
+          "com_testagem_n": 73,
+          "sem_testagem_n": 807,
+          "sem_testagem_pct": 91.7,
+          "sipni_hepb_doses_n": 607
+        },
+        {
+          "co_municipio_ibge": "510460",
+          "municipio": "ITIQUIRA",
+          "ers_id": "rondonopolis",
+          "regional": "Rondonópolis",
+          "atendimentos_gestante_n": 1116,
+          "com_testagem_n": 136,
+          "sem_testagem_n": 980,
+          "sem_testagem_pct": 87.8,
+          "sipni_hepb_doses_n": 590
+        },
+        {
+          "co_municipio_ibge": "510600",
+          "municipio": "NORTELÂNDIA",
+          "ers_id": null,
+          "regional": null,
+          "atendimentos_gestante_n": 515,
+          "com_testagem_n": 63,
+          "sem_testagem_n": 452,
+          "sem_testagem_pct": 87.8,
+          "sipni_hepb_doses_n": 372
+        },
+        {
+          "co_municipio_ibge": "510337",
+          "municipio": "COTRIGUAÇU",
+          "ers_id": "juina",
+          "regional": "Juína",
+          "atendimentos_gestante_n": 965,
+          "com_testagem_n": 154,
+          "sem_testagem_n": 811,
+          "sem_testagem_pct": 84.0,
+          "sipni_hepb_doses_n": 402
+        },
+        {
+          "co_municipio_ibge": "510787",
+          "municipio": "SAPEZAL",
+          "ers_id": "tangara-da-serra",
+          "regional": "Tangará da Serra",
+          "atendimentos_gestante_n": 2710,
+          "com_testagem_n": 477,
+          "sem_testagem_n": 2233,
+          "sem_testagem_pct": 82.4,
+          "sipni_hepb_doses_n": 2032
+        },
+        {
+          "co_municipio_ibge": "510525",
+          "municipio": "LUCAS DO RIO VERDE",
+          "ers_id": "sinop",
+          "regional": "Sinop",
+          "atendimentos_gestante_n": 11860,
+          "com_testagem_n": 2311,
+          "sem_testagem_n": 9549,
+          "sem_testagem_pct": 80.5,
+          "sipni_hepb_doses_n": 9839
+        },
+        {
+          "co_municipio_ibge": "510840",
+          "municipio": "VÁRZEA GRANDE",
+          "ers_id": "baixada-cuiabana",
+          "regional": "Baixada Cuiabana",
+          "atendimentos_gestante_n": 11677,
+          "com_testagem_n": 2464,
+          "sem_testagem_n": 9213,
+          "sem_testagem_pct": 78.9,
+          "sipni_hepb_doses_n": 17319
+        },
+        {
+          "co_municipio_ibge": "510385",
+          "municipio": "GAÚCHA DO NORTE",
+          "ers_id": "agua-boa",
+          "regional": "Água Boa",
+          "atendimentos_gestante_n": 898,
+          "com_testagem_n": 195,
+          "sem_testagem_n": 703,
+          "sem_testagem_pct": 78.3,
+          "sipni_hepb_doses_n": 573
+        },
+        {
+          "co_municipio_ibge": "510730",
+          "municipio": "SÃO JOSÉ DO RIO CLARO",
+          "ers_id": "juara",
+          "regional": "Juara",
+          "atendimentos_gestante_n": 1745,
+          "com_testagem_n": 391,
+          "sem_testagem_n": 1354,
+          "sem_testagem_pct": 77.6,
+          "sipni_hepb_doses_n": 2706
+        },
+        {
+          "co_municipio_ibge": "510627",
+          "municipio": "NOVO HORIZONTE DO NORTE",
+          "ers_id": "juara",
+          "regional": "Juara",
+          "atendimentos_gestante_n": 198,
+          "com_testagem_n": 47,
+          "sem_testagem_n": 151,
+          "sem_testagem_pct": 76.3,
+          "sipni_hepb_doses_n": 251
+        },
+        {
+          "co_municipio_ibge": "510410",
+          "municipio": "GUARANTÃ DO NORTE",
+          "ers_id": null,
+          "regional": null,
+          "atendimentos_gestante_n": 3739,
+          "com_testagem_n": 1000,
+          "sem_testagem_n": 2739,
+          "sem_testagem_pct": 73.3,
+          "sipni_hepb_doses_n": 2036
+        }
+      ],
+      "ranking_esus_gap_ers": [
+        {
+          "ers_id": "porto-alegre-do-norte",
+          "regional": "Porto Alegre do Norte",
+          "municipios_n": 5,
+          "atendimentos_gestante_n": 4835,
+          "com_testagem_n": 951,
+          "sem_testagem_n": 3884,
+          "sem_testagem_pct": 80.3
+        },
+        {
+          "ers_id": "pontes-e-lacerda",
+          "regional": "Pontes e Lacerda",
+          "municipios_n": 6,
+          "atendimentos_gestante_n": 8196,
+          "com_testagem_n": 2710,
+          "sem_testagem_n": 5486,
+          "sem_testagem_pct": 66.9
+        },
+        {
+          "ers_id": "juara",
+          "regional": "Juara",
+          "municipios_n": 5,
+          "atendimentos_gestante_n": 4386,
+          "com_testagem_n": 1644,
+          "sem_testagem_n": 2742,
+          "sem_testagem_pct": 62.5
+        },
+        {
+          "ers_id": "baixada-cuiabana",
+          "regional": "Baixada Cuiabana",
+          "municipios_n": 10,
+          "atendimentos_gestante_n": 26227,
+          "com_testagem_n": 9880,
+          "sem_testagem_n": 16347,
+          "sem_testagem_pct": 62.3
+        },
+        {
+          "ers_id": "alta-floresta",
+          "regional": "Alta Floresta",
+          "municipios_n": 4,
+          "atendimentos_gestante_n": 3647,
+          "com_testagem_n": 1438,
+          "sem_testagem_n": 2209,
+          "sem_testagem_pct": 60.6
+        },
+        {
+          "ers_id": "agua-boa",
+          "regional": "Água Boa",
+          "municipios_n": 6,
+          "atendimentos_gestante_n": 6587,
+          "com_testagem_n": 2604,
+          "sem_testagem_n": 3983,
+          "sem_testagem_pct": 60.5
+        },
+        {
+          "ers_id": "sinop",
+          "regional": "Sinop",
+          "municipios_n": 13,
+          "atendimentos_gestante_n": 47364,
+          "com_testagem_n": 18866,
+          "sem_testagem_n": 28498,
+          "sem_testagem_pct": 60.2
+        },
+        {
+          "ers_id": "tangara-da-serra",
+          "regional": "Tangará da Serra",
+          "municipios_n": 11,
+          "atendimentos_gestante_n": 20821,
+          "com_testagem_n": 8486,
+          "sem_testagem_n": 12335,
+          "sem_testagem_pct": 59.2
+        },
+        {
+          "ers_id": "caceres",
+          "regional": "Cáceres",
+          "municipios_n": 12,
+          "atendimentos_gestante_n": 7039,
+          "com_testagem_n": 2947,
+          "sem_testagem_n": 4092,
+          "sem_testagem_pct": 58.1
+        },
+        {
+          "ers_id": "diamantino",
+          "regional": "Diamantino",
+          "municipios_n": 2,
+          "atendimentos_gestante_n": 1492,
+          "com_testagem_n": 633,
+          "sem_testagem_n": 859,
+          "sem_testagem_pct": 57.6
+        },
+        {
+          "ers_id": "barra-do-garcas",
+          "regional": "Barra do Garças",
+          "municipios_n": 9,
+          "atendimentos_gestante_n": 4653,
+          "com_testagem_n": 2014,
+          "sem_testagem_n": 2639,
+          "sem_testagem_pct": 56.7
+        },
+        {
+          "ers_id": "peixoto-de-azevedo",
+          "regional": "Peixoto de Azevedo",
+          "municipios_n": 5,
+          "atendimentos_gestante_n": 3600,
+          "com_testagem_n": 1595,
+          "sem_testagem_n": 2005,
+          "sem_testagem_pct": 55.7
+        },
+        {
+          "ers_id": "rondonopolis",
+          "regional": "Rondonópolis",
+          "municipios_n": 19,
+          "atendimentos_gestante_n": 19863,
+          "com_testagem_n": 8860,
+          "sem_testagem_n": 11003,
+          "sem_testagem_pct": 55.4
+        },
+        {
+          "ers_id": "sao-felix-do-araguaia",
+          "regional": "São Félix do Araguaia",
+          "municipios_n": 5,
+          "atendimentos_gestante_n": 3297,
+          "com_testagem_n": 1630,
+          "sem_testagem_n": 1667,
+          "sem_testagem_pct": 50.6
+        },
+        {
+          "ers_id": "juina",
+          "regional": "Juína",
+          "municipios_n": 7,
+          "atendimentos_gestante_n": 10536,
+          "com_testagem_n": 5252,
+          "sem_testagem_n": 5284,
+          "sem_testagem_pct": 50.2
+        },
+        {
+          "ers_id": "colider",
+          "regional": "Colíder",
+          "municipios_n": 1,
+          "atendimentos_gestante_n": 665,
+          "com_testagem_n": 468,
+          "sem_testagem_n": 197,
+          "sem_testagem_pct": 29.6
+        }
+      ],
+      "esus_proced_penicilina_n": null,
+      "esus_proced_penicilina_nota": "Códigos ABPG032/0301100241 na dim e-SUS; volume zero no fato APS na janela.",
+      "sisreg_status": "extract_ok",
+      "sisreg_solicitacoes_sifilis_n": 35197,
+      "sisreg_cid_sifilis_n": 278,
+      "sisreg_proced_sifilis_n": 35197,
+      "sisreg_por_status": [
+        {
+          "status": "AGENDAMENTO / CONFIRMADO / EXECUTANTE",
+          "n": 18610
+        },
+        {
+          "status": "AGENDAMENTO / PENDENTE CONFIRMAÇÃO / EXECUTANTE",
+          "n": 12249
+        },
+        {
+          "status": "AGENDAMENTO / CANCELADO / SOLICITANTE",
+          "n": 2210
+        },
+        {
+          "status": "SOLICITAÇÃO / AGENDADA / SOLICITANTE",
+          "n": 844
+        },
+        {
+          "status": "AGENDAMENTO / FALTA / EXECUTANTE",
+          "n": 722
+        },
+        {
+          "status": "AGENDAMENTO / CANCELADO / REGULADOR",
+          "n": 240
+        },
+        {
+          "status": "SOLICITAÇÃO / AGENDADA / FILA DE ESPERA",
+          "n": 143
+        },
+        {
+          "status": "SOLICITAÇÃO / NEGADA / REGULADOR",
+          "n": 109
+        },
+        {
+          "status": "SOLICITAÇÃO / DEVOLVIDA / REGULADOR",
+          "n": 20
+        },
+        {
+          "status": "SOLICITAÇÃO / AUTORIZADA / REGULADOR",
+          "n": 15
+        },
+        {
+          "status": "AGENDAMENTO / CANCELADO / COORDENADOR",
+          "n": 11
+        },
+        {
+          "status": "SOLICITAÇÃO / CANCELADA / SOLICITANTE",
+          "n": 10
+        }
+      ],
+      "sipni_status": "extract_ok",
+      "sipni_doses_n": 3091242,
+      "sipni_municipios_n": 141,
+      "sipni_top_vacinas": [
+        {
+          "co_vacina": "33",
+          "sg_vacina": "INF3",
+          "doses_n": 613944
+        },
+        {
+          "co_vacina": "24",
+          "sg_vacina": "SCR",
+          "doses_n": 244987
+        },
+        {
+          "co_vacina": "9",
+          "sg_vacina": "HepB",
+          "doses_n": 241857
+        },
+        {
+          "co_vacina": "28",
+          "sg_vacina": "VOP",
+          "doses_n": 195653
+        },
+        {
+          "co_vacina": "41",
+          "sg_vacina": "MenC",
+          "doses_n": 195007
+        },
+        {
+          "co_vacina": "25",
+          "sg_vacina": "dT",
+          "doses_n": 190110
+        },
+        {
+          "co_vacina": "42",
+          "sg_vacina": "PENTA",
+          "doses_n": 178761
+        },
+        {
+          "co_vacina": "14",
+          "sg_vacina": "VFA",
+          "doses_n": 178663
+        },
+        {
+          "co_vacina": "22",
+          "sg_vacina": "VIP",
+          "doses_n": 175224
+        },
+        {
+          "co_vacina": "26",
+          "sg_vacina": "VPC10",
+          "doses_n": 173813
+        }
+      ],
+      "sipni_hepb_n": 241857,
+      "sipni_dtpa_n": 45944,
+      "sipni_dt_n": 190110,
+      "sipni_bcg_n": 60593,
+      "sipni_materno_aviso": "HepB/dTpa/dT/BCG = volume SIPNI por sigla — contexto de rede, não cobertura gestacional nem PCDT.",
+      "sisprenatal_status": "legado_sem_anos_recentes",
+      "fontes_fora_dw": [
+        "esus_aps",
+        "sisreg",
+        "indicasus",
+        "sipni"
+      ],
+      "indicadores_ref": [
+        "parceria_tratada",
+        "gestantes_sem_tratamento",
+        "diagnostico_somente_parto",
+        "consulta_sem_testagem",
+        "indice_oportunidades_perdidas",
+        "cascata_trat_adequado"
+      ],
+      "pendente_mvp2": [
+        "tempo diagnostico→tratamento (datas nominais — fora do agregado)",
+        "avaliação caso PCDT (datas de dose/parto — sem PII no repo)",
+        "cruzar SIPNI doses com coorte gestante (sem PII)"
+      ],
+      "motor_pcdt": {
+        "motor": "parametros_prontos",
+        "motivo": "Parâmetros com formula_status=extraido_literal (NT 14/2023, Guia TV, NT 14/2022 APS, PQA-VS Portaria 6.878/2025). Avaliação caso a caso (datas de dose/parto) permanece fora do MVP agregado — sem PII.",
+        "parametros": [
+          {
+            "id": "meta_cobertura_trat_adequado_pct",
+            "valor": 95,
+            "unidade": "%",
+            "documento": "Guia Certificação Eliminação TV (MS) — Indicador de Processo 5",
+            "valid_from": "2024-01-01",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "Cobertura de gestantes tratadas adequadamente para sífilis. Meta de impacto: ≥ 95%.",
+            "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct",
+            "nota": "Cobertura de tratamento adequado das gestantes com sífilis ≥95% (eliminação / selo ouro).",
+            "pronto_para_motor": true
+          },
+          {
+            "id": "dias_antes_parto_tratamento_adequado",
+            "valor": 30,
+            "unidade": "dias",
+            "documento": "NT 14/2023-DATHI/SVSA/MS §3.4; Guia Eliminação TV (processo 5)",
+            "valid_from": "2023-07-17",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "Considera-se tratamento adequado para sífilis durante a gestação aquele que é completo para o respectivo estágio clínico da sífilis, feito com benzilpenicilina benzatina e iniciado até 30 dias antes do parto.\n",
+            "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#dias_antes_parto_tratamento_adequado",
+            "nota": "Início do tratamento até 30 dias antes do parto; concluir antes do parto.",
+            "pronto_para_motor": true
+          },
+          {
+            "id": "intervalo_doses_penicilina_dias",
+            "valor": 9,
+            "unidade": "dias",
+            "documento": "NT 14/2023-DATHI/SVSA/MS — intervalo entre doses em gestantes",
+            "valid_from": "2023-07-17",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "As doses sejam aplicadas, idealmente, a cada 7 (sete) dias, não ultrapassando 9 (nove) dias. Caso alguma dose seja perdida ou o intervalo entre elas seja maior que nove dias, o esquema terapêutico deve ser reiniciado.\n",
+            "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#intervalo_doses_penicilina_dias",
+            "nota": "Intervalo máximo entre doses semanais ≤9 dias (ideal 7). Ultrapassado → reinício.",
+            "pronto_para_motor": true
+          },
+          {
+            "id": "meta_incidencia_sc_por_1000_nv",
+            "valor": 0.5,
+            "unidade": "por 1.000 NV",
+            "documento": "Guia Certificação Eliminação TV (MS) — Indicador de Impacto 3",
+            "valid_from": "2024-01-01",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "Taxa de incidência de sífilis congênita. Meta de impacto: ≤ 0,5 caso por 1.000 nascidos vivos.",
+            "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv",
+            "nota": "Meta de incidência SC ≤0,5/1.000 NV (eliminação).",
+            "pronto_para_motor": true
+          },
+          {
+            "id": "pqa_vs_reducao_pp",
+            "valor": 1,
+            "unidade": "pontos percentuais",
+            "documento": "Portaria GM/MS nº 6.878/2025; Caderno Indicadores PQA-VS 2023",
+            "valid_from": "2025-04-25",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "Meta: Redução de um ponto percentual do valor do ano base ou a manutenção de percentual zero.\n",
+            "excerpt_ref": "docs/oficiais/excerpts/pqa_vs_indicador11.yml#pqa_vs_reducao_pp",
+            "nota": "Meta PQA-VS ind. 11 — Δ ≤ −1 p.p. vs ano-base, ou manutenção em 0%.",
+            "pronto_para_motor": true
+          },
+          {
+            "id": "meta_prop_gestantes_exames_sifilis_hiv_pct",
+            "valor": 60,
+            "unidade": "%",
+            "documento": "NT 14/2022-SAPS/MS",
+            "valid_from": "2022-07-11",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "a meta pactuada para este indicador é de 60%.",
+            "excerpt_ref": "docs/oficiais/excerpts/nt14_2022_testagem_aps.yml#meta_prop_gestantes_exames_sifilis_hiv_pct",
+            "nota": "Meta Previne Brasil / APS — não confundir com parâmetro ideal 100%.",
+            "pronto_para_motor": true
+          },
+          {
+            "id": "parametro_prop_gestantes_exames_sifilis_hiv_pct",
+            "valor": 100,
+            "unidade": "%",
+            "documento": "NT 14/2022-SAPS/MS",
+            "valid_from": "2022-07-11",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "o parâmetro para esse indicador é de 100%.",
+            "excerpt_ref": "docs/oficiais/excerpts/nt14_2022_testagem_aps.yml#parametro_prop_gestantes_exames_sifilis_hiv_pct",
+            "nota": "Valor ideal (2 TR sífilis + 2 TR HIV: 1ª consulta e 3º trimestre).",
+            "pronto_para_motor": true
+          }
+        ],
+        "prontos_n": 7,
+        "total_n": 7,
+        "avaliacao_caso": "pendente_datas_nominais"
+      }
+    },
+    "2023": {
+      "tipo": "extracao_dw",
+      "ano": 2023,
+      "aviso": "Oportunidade SIFG/SIFC + e-SUS APS (procedimentos SIGTAP/AB de testagem). consulta_sem_testagem = % atendimentos com IG>0 sem procedimento sífilis/VDRL/TR no mesmo encontro (quando extract e-SUS disponível); senão proxy SIFG NT. SIPNI (SQL Server Vacinas) agregado quando extract disponível. Índice = média simples — experimental, não PCDT. Sem PII.",
+      "gestante_casos": 1978,
+      "congenita_casos": 469,
+      "parceria_tratada_n": 796,
+      "parceria_tratada_pct": 40.2,
+      "esquema_prescrito_gestante": {
+        "Penicilina G benzantina 7.200.000 UI": 1521,
+        "Penicilina G benzantina 2.400.000 UI": 335,
+        "Não realizado": 53,
+        "Penicilina G benzantina 4.800.000 UI": 40,
+        "Ignorado": 22,
+        "Outro esquema": 7
+      },
+      "esquema_nao_realizado_n": 53,
+      "esquema_nao_realizado_pct": 2.7,
+      "esquema_registrado_n": 1925,
+      "esquema_penicilina_n": 1896,
+      "esquema_outro_n": 7,
+      "sifc_esquema_mae": {
+        "Inadequado": 206,
+        "Adequado": 159,
+        "Não realizado": 83,
+        "Ignorado": 21
+      },
+      "sifc_diagnostico_materno": {
+        "Durante o pré-natal": 347,
+        "No momento do parto/curetagem": 67,
+        "Após o parto": 41,
+        "Não realizado": 7,
+        "Ignorado": 7
+      },
+      "diagnostico_materno_no_parto_ou_apos_n": 108,
+      "diagnostico_materno_no_parto_ou_apos_pct": 23.0,
+      "teste_nao_treponemico": {
+        "Reagente": 1338,
+        "Não realizado": 402,
+        "Ignorado": 144,
+        "Não reagente": 94
+      },
+      "teste_treponemico": {
+        "Reagente": 1644,
+        "Não realizado": 177,
+        "Não reagente": 101,
+        "Ignorado": 56
+      },
+      "teste_nt_nao_realizado_n": 402,
+      "teste_nt_nao_realizado_pct": 20.3,
+      "teste_trep_nao_realizado_n": 177,
+      "teste_trep_nao_realizado_pct": 8.9,
+      "consulta_sem_testagem_n": 150264,
+      "consulta_sem_testagem_pct": 64.1,
+      "consulta_sem_testagem_fonte": "esus_aps_gestante_sem_proced_testagem",
+      "indice_oportunidades_perdidas": 31.7,
+      "indice_componentes": [
+        {
+          "id": "esquema_nao_realizado",
+          "peso": 1,
+          "valor_0_100": 2.7
+        },
+        {
+          "id": "parceria_nao_tratada",
+          "peso": 1,
+          "valor_0_100": 59.8
+        },
+        {
+          "id": "esus_gestante_sem_testagem",
+          "peso": 1,
+          "valor_0_100": 64.1
+        },
+        {
+          "id": "teste_trep_nao_realizado",
+          "peso": 1,
+          "valor_0_100": 8.9
+        },
+        {
+          "id": "dx_materno_parto",
+          "peso": 1,
+          "valor_0_100": 23.0
+        }
+      ],
+      "esus_aps_status": "extract_ok",
+      "esus_problemas_sifilis_n": 11260,
+      "esus_atendimentos_gestante_n": 234592,
+      "esus_proced_testagem_n": 337755,
+      "esus_atendimentos_gestante_com_testagem_n": 84328,
+      "esus_gestante_sem_testagem_n": 150264,
+      "esus_gestante_sem_testagem_pct": 64.1,
+      "ranking_esus_gap_testagem": [
+        {
+          "co_municipio_ibge": "510335",
+          "municipio": "CONFRESA",
+          "ers_id": "porto-alegre-do-norte",
+          "regional": "Porto Alegre do Norte",
+          "atendimentos_gestante_n": 6190,
+          "com_testagem_n": 65,
+          "sem_testagem_n": 6125,
+          "sem_testagem_pct": 98.9,
+          "sipni_hepb_doses_n": 1137
+        },
+        {
+          "co_municipio_ibge": "510840",
+          "municipio": "VÁRZEA GRANDE",
+          "ers_id": "baixada-cuiabana",
+          "regional": "Baixada Cuiabana",
+          "atendimentos_gestante_n": 16093,
+          "com_testagem_n": 470,
+          "sem_testagem_n": 15623,
+          "sem_testagem_pct": 97.1,
+          "sipni_hepb_doses_n": 17609
+        },
+        {
+          "co_municipio_ibge": "510040",
+          "municipio": "ALTO GARÇAS",
+          "ers_id": "rondonopolis",
+          "regional": "Rondonópolis",
+          "atendimentos_gestante_n": 1218,
+          "com_testagem_n": 38,
+          "sem_testagem_n": 1180,
+          "sem_testagem_pct": 96.9,
+          "sipni_hepb_doses_n": 984
+        },
+        {
+          "co_municipio_ibge": "510550",
+          "municipio": "VILA BELA DA SANTÍSSIMA TRINDADE",
+          "ers_id": "pontes-e-lacerda",
+          "regional": "Pontes e Lacerda",
+          "atendimentos_gestante_n": 2058,
+          "com_testagem_n": 82,
+          "sem_testagem_n": 1976,
+          "sem_testagem_pct": 96.0,
+          "sipni_hepb_doses_n": 1095
+        },
+        {
+          "co_municipio_ibge": "510420",
+          "municipio": "GUIRATINGA",
+          "ers_id": "rondonopolis",
+          "regional": "Rondonópolis",
+          "atendimentos_gestante_n": 1115,
+          "com_testagem_n": 59,
+          "sem_testagem_n": 1056,
+          "sem_testagem_pct": 94.7,
+          "sipni_hepb_doses_n": 515
+        },
+        {
+          "co_municipio_ibge": "510780",
+          "municipio": "SANTO ANTÔNIO DO LEVERGER",
+          "ers_id": "baixada-cuiabana",
+          "regional": "Baixada Cuiabana",
+          "atendimentos_gestante_n": 1278,
+          "com_testagem_n": 137,
+          "sem_testagem_n": 1141,
+          "sem_testagem_pct": 89.3,
+          "sipni_hepb_doses_n": 1419
+        },
+        {
+          "co_municipio_ibge": "510337",
+          "municipio": "COTRIGUAÇU",
+          "ers_id": "juina",
+          "regional": "Juína",
+          "atendimentos_gestante_n": 1867,
+          "com_testagem_n": 204,
+          "sem_testagem_n": 1663,
+          "sem_testagem_pct": 89.1,
+          "sipni_hepb_doses_n": 477
+        },
+        {
+          "co_municipio_ibge": "510050",
+          "municipio": "ALTO PARAGUAI",
+          "ers_id": "tangara-da-serra",
+          "regional": "Tangará da Serra",
+          "atendimentos_gestante_n": 1133,
+          "com_testagem_n": 147,
+          "sem_testagem_n": 986,
+          "sem_testagem_pct": 87.0,
+          "sipni_hepb_doses_n": 869
+        },
+        {
+          "co_municipio_ibge": "510890",
+          "municipio": "NOVA MARINGÁ",
+          "ers_id": null,
+          "regional": null,
+          "atendimentos_gestante_n": 782,
+          "com_testagem_n": 110,
+          "sem_testagem_n": 672,
+          "sem_testagem_pct": 85.9,
+          "sipni_hepb_doses_n": 324
+        },
+        {
+          "co_municipio_ibge": "510600",
+          "municipio": "NORTELÂNDIA",
+          "ers_id": null,
+          "regional": null,
+          "atendimentos_gestante_n": 631,
+          "com_testagem_n": 90,
+          "sem_testagem_n": 541,
+          "sem_testagem_pct": 85.7,
+          "sipni_hepb_doses_n": 315
+        },
+        {
+          "co_municipio_ibge": "510460",
+          "municipio": "ITIQUIRA",
+          "ers_id": "rondonopolis",
+          "regional": "Rondonópolis",
+          "atendimentos_gestante_n": 935,
+          "com_testagem_n": 194,
+          "sem_testagem_n": 741,
+          "sem_testagem_pct": 79.3,
+          "sipni_hepb_doses_n": 545
+        },
+        {
+          "co_municipio_ibge": "510480",
+          "municipio": "JACIARA",
+          "ers_id": "rondonopolis",
+          "regional": "Rondonópolis",
+          "atendimentos_gestante_n": 351,
+          "com_testagem_n": 75,
+          "sem_testagem_n": 276,
+          "sem_testagem_pct": 78.6,
+          "sipni_hepb_doses_n": 1175
+        },
+        {
+          "co_municipio_ibge": "510525",
+          "municipio": "LUCAS DO RIO VERDE",
+          "ers_id": "sinop",
+          "regional": "Sinop",
+          "atendimentos_gestante_n": 12895,
+          "com_testagem_n": 2787,
+          "sem_testagem_n": 10108,
+          "sem_testagem_pct": 78.4,
+          "sipni_hepb_doses_n": 8612
+        },
+        {
+          "co_municipio_ibge": "510627",
+          "municipio": "NOVO HORIZONTE DO NORTE",
+          "ers_id": "juara",
+          "regional": "Juara",
+          "atendimentos_gestante_n": 466,
+          "com_testagem_n": 105,
+          "sem_testagem_n": 361,
+          "sem_testagem_pct": 77.5,
+          "sipni_hepb_doses_n": 188
+        },
+        {
+          "co_municipio_ibge": "510558",
+          "municipio": "MARCELÂNDIA",
+          "ers_id": null,
+          "regional": null,
+          "atendimentos_gestante_n": 2510,
+          "com_testagem_n": 569,
+          "sem_testagem_n": 1941,
+          "sem_testagem_pct": 77.3,
+          "sipni_hepb_doses_n": 622
+        }
+      ],
+      "ranking_esus_gap_ers": [
+        {
+          "ers_id": "porto-alegre-do-norte",
+          "regional": "Porto Alegre do Norte",
+          "municipios_n": 5,
+          "atendimentos_gestante_n": 8054,
+          "com_testagem_n": 1037,
+          "sem_testagem_n": 7017,
+          "sem_testagem_pct": 87.1
+        },
+        {
+          "ers_id": "colider",
+          "regional": "Colíder",
+          "municipios_n": 1,
+          "atendimentos_gestante_n": 1019,
+          "com_testagem_n": 256,
+          "sem_testagem_n": 763,
+          "sem_testagem_pct": 74.9
+        },
+        {
+          "ers_id": "pontes-e-lacerda",
+          "regional": "Pontes e Lacerda",
+          "municipios_n": 6,
+          "atendimentos_gestante_n": 10295,
+          "com_testagem_n": 2687,
+          "sem_testagem_n": 7608,
+          "sem_testagem_pct": 73.9
+        },
+        {
+          "ers_id": "baixada-cuiabana",
+          "regional": "Baixada Cuiabana",
+          "municipios_n": 10,
+          "atendimentos_gestante_n": 32263,
+          "com_testagem_n": 8634,
+          "sem_testagem_n": 23629,
+          "sem_testagem_pct": 73.2
+        },
+        {
+          "ers_id": "juara",
+          "regional": "Juara",
+          "municipios_n": 5,
+          "atendimentos_gestante_n": 6071,
+          "com_testagem_n": 1959,
+          "sem_testagem_n": 4112,
+          "sem_testagem_pct": 67.7
+        },
+        {
+          "ers_id": "juina",
+          "regional": "Juína",
+          "municipios_n": 7,
+          "atendimentos_gestante_n": 14073,
+          "com_testagem_n": 5004,
+          "sem_testagem_n": 9069,
+          "sem_testagem_pct": 64.4
+        },
+        {
+          "ers_id": "diamantino",
+          "regional": "Diamantino",
+          "municipios_n": 2,
+          "atendimentos_gestante_n": 2199,
+          "com_testagem_n": 784,
+          "sem_testagem_n": 1415,
+          "sem_testagem_pct": 64.3
+        },
+        {
+          "ers_id": "rondonopolis",
+          "regional": "Rondonópolis",
+          "municipios_n": 19,
+          "atendimentos_gestante_n": 32653,
+          "com_testagem_n": 11797,
+          "sem_testagem_n": 20856,
+          "sem_testagem_pct": 63.9
+        },
+        {
+          "ers_id": "peixoto-de-azevedo",
+          "regional": "Peixoto de Azevedo",
+          "municipios_n": 5,
+          "atendimentos_gestante_n": 6640,
+          "com_testagem_n": 2562,
+          "sem_testagem_n": 4078,
+          "sem_testagem_pct": 61.4
+        },
+        {
+          "ers_id": "sinop",
+          "regional": "Sinop",
+          "municipios_n": 13,
+          "atendimentos_gestante_n": 52576,
+          "com_testagem_n": 21220,
+          "sem_testagem_n": 31356,
+          "sem_testagem_pct": 59.6
+        },
+        {
+          "ers_id": "tangara-da-serra",
+          "regional": "Tangará da Serra",
+          "municipios_n": 11,
+          "atendimentos_gestante_n": 31650,
+          "com_testagem_n": 12949,
+          "sem_testagem_n": 18701,
+          "sem_testagem_pct": 59.1
+        },
+        {
+          "ers_id": "agua-boa",
+          "regional": "Água Boa",
+          "municipios_n": 6,
+          "atendimentos_gestante_n": 5076,
+          "com_testagem_n": 2146,
+          "sem_testagem_n": 2930,
+          "sem_testagem_pct": 57.7
+        },
+        {
+          "ers_id": "alta-floresta",
+          "regional": "Alta Floresta",
+          "municipios_n": 4,
+          "atendimentos_gestante_n": 4201,
+          "com_testagem_n": 1858,
+          "sem_testagem_n": 2343,
+          "sem_testagem_pct": 55.8
+        },
+        {
+          "ers_id": "caceres",
+          "regional": "Cáceres",
+          "municipios_n": 12,
+          "atendimentos_gestante_n": 6674,
+          "com_testagem_n": 2987,
+          "sem_testagem_n": 3687,
+          "sem_testagem_pct": 55.2
+        },
+        {
+          "ers_id": "barra-do-garcas",
+          "regional": "Barra do Garças",
+          "municipios_n": 9,
+          "atendimentos_gestante_n": 3947,
+          "com_testagem_n": 1869,
+          "sem_testagem_n": 2078,
+          "sem_testagem_pct": 52.6
+        },
+        {
+          "ers_id": "sao-felix-do-araguaia",
+          "regional": "São Félix do Araguaia",
+          "municipios_n": 5,
+          "atendimentos_gestante_n": 2942,
+          "com_testagem_n": 1458,
+          "sem_testagem_n": 1484,
+          "sem_testagem_pct": 50.4
+        }
+      ],
+      "esus_proced_penicilina_n": null,
+      "esus_proced_penicilina_nota": "Códigos ABPG032/0301100241 na dim e-SUS; volume zero no fato APS na janela.",
+      "sisreg_status": "extract_ok",
+      "sisreg_solicitacoes_sifilis_n": 41959,
+      "sisreg_cid_sifilis_n": 464,
+      "sisreg_proced_sifilis_n": 41959,
+      "sisreg_por_status": [
+        {
+          "status": "AGENDAMENTO / CONFIRMADO / EXECUTANTE",
+          "n": 25257
+        },
+        {
+          "status": "AGENDAMENTO / PENDENTE CONFIRMAÇÃO / EXECUTANTE",
+          "n": 14281
+        },
+        {
+          "status": "AGENDAMENTO / CANCELADO / SOLICITANTE",
+          "n": 1329
+        },
+        {
+          "status": "AGENDAMENTO / FALTA / EXECUTANTE",
+          "n": 539
+        },
+        {
+          "status": "AGENDAMENTO / CANCELADO / REGULADOR",
+          "n": 235
+        },
+        {
+          "status": "SOLICITAÇÃO / NEGADA / REGULADOR",
+          "n": 181
+        },
+        {
+          "status": "SOLICITAÇÃO / PENDENTE / FILA DE ESPERA",
+          "n": 52
+        },
+        {
+          "status": "SOLICITAÇÃO / DEVOLVIDA / REGULADOR",
+          "n": 42
+        },
+        {
+          "status": "AGENDAMENTO / CANCELADO / COORDENADOR",
+          "n": 22
+        },
+        {
+          "status": "SOLICITAÇÃO / CANCELADA / COORDENADOR",
+          "n": 9
+        },
+        {
+          "status": "SOLICITAÇÃO / CANCELADA / REGULADOR",
+          "n": 5
+        },
+        {
+          "status": "SOLICITAÇÃO / PENDENTE / REGULADOR",
+          "n": 5
+        }
+      ],
+      "sipni_status": "extract_ok",
+      "sipni_doses_n": 3131272,
+      "sipni_municipios_n": 141,
+      "sipni_top_vacinas": [
+        {
+          "co_vacina": "33",
+          "sg_vacina": "INF3",
+          "doses_n": 810972
+        },
+        {
+          "co_vacina": "9",
+          "sg_vacina": "HepB",
+          "doses_n": 233769
+        },
+        {
+          "co_vacina": "25",
+          "sg_vacina": "dT",
+          "doses_n": 189152
+        },
+        {
+          "co_vacina": "14",
+          "sg_vacina": "VFA",
+          "doses_n": 174941
+        },
+        {
+          "co_vacina": "22",
+          "sg_vacina": "VIP",
+          "doses_n": 172635
+        },
+        {
+          "co_vacina": "42",
+          "sg_vacina": "PENTA",
+          "doses_n": 171513
+        },
+        {
+          "co_vacina": "41",
+          "sg_vacina": "MenC",
+          "doses_n": 168749
+        },
+        {
+          "co_vacina": "26",
+          "sg_vacina": "VPC10",
+          "doses_n": 167492
+        },
+        {
+          "co_vacina": "24",
+          "sg_vacina": "SCR",
+          "doses_n": 150095
+        },
+        {
+          "co_vacina": "67",
+          "sg_vacina": "HPV4",
+          "doses_n": 118623
+        }
+      ],
+      "sipni_hepb_n": 233769,
+      "sipni_dtpa_n": 47185,
+      "sipni_dt_n": 189152,
+      "sipni_bcg_n": 66259,
+      "sipni_materno_aviso": "HepB/dTpa/dT/BCG = volume SIPNI por sigla — contexto de rede, não cobertura gestacional nem PCDT.",
+      "sisprenatal_status": "legado_sem_anos_recentes",
+      "fontes_fora_dw": [
+        "esus_aps",
+        "sisreg",
+        "indicasus",
+        "sipni"
+      ],
+      "indicadores_ref": [
+        "parceria_tratada",
+        "gestantes_sem_tratamento",
+        "diagnostico_somente_parto",
+        "consulta_sem_testagem",
+        "indice_oportunidades_perdidas",
+        "cascata_trat_adequado"
+      ],
+      "pendente_mvp2": [
+        "tempo diagnostico→tratamento (datas nominais — fora do agregado)",
+        "avaliação caso PCDT (datas de dose/parto — sem PII no repo)",
+        "cruzar SIPNI doses com coorte gestante (sem PII)"
+      ],
+      "motor_pcdt": {
+        "motor": "parametros_prontos",
+        "motivo": "Parâmetros com formula_status=extraido_literal (NT 14/2023, Guia TV, NT 14/2022 APS, PQA-VS Portaria 6.878/2025). Avaliação caso a caso (datas de dose/parto) permanece fora do MVP agregado — sem PII.",
+        "parametros": [
+          {
+            "id": "meta_cobertura_trat_adequado_pct",
+            "valor": 95,
+            "unidade": "%",
+            "documento": "Guia Certificação Eliminação TV (MS) — Indicador de Processo 5",
+            "valid_from": "2024-01-01",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "Cobertura de gestantes tratadas adequadamente para sífilis. Meta de impacto: ≥ 95%.",
+            "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct",
+            "nota": "Cobertura de tratamento adequado das gestantes com sífilis ≥95% (eliminação / selo ouro).",
+            "pronto_para_motor": true
+          },
+          {
+            "id": "dias_antes_parto_tratamento_adequado",
+            "valor": 30,
+            "unidade": "dias",
+            "documento": "NT 14/2023-DATHI/SVSA/MS §3.4; Guia Eliminação TV (processo 5)",
+            "valid_from": "2023-07-17",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "Considera-se tratamento adequado para sífilis durante a gestação aquele que é completo para o respectivo estágio clínico da sífilis, feito com benzilpenicilina benzatina e iniciado até 30 dias antes do parto.\n",
+            "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#dias_antes_parto_tratamento_adequado",
+            "nota": "Início do tratamento até 30 dias antes do parto; concluir antes do parto.",
+            "pronto_para_motor": true
+          },
+          {
+            "id": "intervalo_doses_penicilina_dias",
+            "valor": 9,
+            "unidade": "dias",
+            "documento": "NT 14/2023-DATHI/SVSA/MS — intervalo entre doses em gestantes",
+            "valid_from": "2023-07-17",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "As doses sejam aplicadas, idealmente, a cada 7 (sete) dias, não ultrapassando 9 (nove) dias. Caso alguma dose seja perdida ou o intervalo entre elas seja maior que nove dias, o esquema terapêutico deve ser reiniciado.\n",
+            "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#intervalo_doses_penicilina_dias",
+            "nota": "Intervalo máximo entre doses semanais ≤9 dias (ideal 7). Ultrapassado → reinício.",
+            "pronto_para_motor": true
+          },
+          {
+            "id": "meta_incidencia_sc_por_1000_nv",
+            "valor": 0.5,
+            "unidade": "por 1.000 NV",
+            "documento": "Guia Certificação Eliminação TV (MS) — Indicador de Impacto 3",
+            "valid_from": "2024-01-01",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "Taxa de incidência de sífilis congênita. Meta de impacto: ≤ 0,5 caso por 1.000 nascidos vivos.",
+            "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv",
+            "nota": "Meta de incidência SC ≤0,5/1.000 NV (eliminação).",
+            "pronto_para_motor": true
+          },
+          {
+            "id": "pqa_vs_reducao_pp",
+            "valor": 1,
+            "unidade": "pontos percentuais",
+            "documento": "Portaria GM/MS nº 6.878/2025; Caderno Indicadores PQA-VS 2023",
+            "valid_from": "2025-04-25",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "Meta: Redução de um ponto percentual do valor do ano base ou a manutenção de percentual zero.\n",
+            "excerpt_ref": "docs/oficiais/excerpts/pqa_vs_indicador11.yml#pqa_vs_reducao_pp",
+            "nota": "Meta PQA-VS ind. 11 — Δ ≤ −1 p.p. vs ano-base, ou manutenção em 0%.",
+            "pronto_para_motor": true
+          },
+          {
+            "id": "meta_prop_gestantes_exames_sifilis_hiv_pct",
+            "valor": 60,
+            "unidade": "%",
+            "documento": "NT 14/2022-SAPS/MS",
+            "valid_from": "2022-07-11",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "a meta pactuada para este indicador é de 60%.",
+            "excerpt_ref": "docs/oficiais/excerpts/nt14_2022_testagem_aps.yml#meta_prop_gestantes_exames_sifilis_hiv_pct",
+            "nota": "Meta Previne Brasil / APS — não confundir com parâmetro ideal 100%.",
+            "pronto_para_motor": true
+          },
+          {
+            "id": "parametro_prop_gestantes_exames_sifilis_hiv_pct",
+            "valor": 100,
+            "unidade": "%",
+            "documento": "NT 14/2022-SAPS/MS",
+            "valid_from": "2022-07-11",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "o parâmetro para esse indicador é de 100%.",
+            "excerpt_ref": "docs/oficiais/excerpts/nt14_2022_testagem_aps.yml#parametro_prop_gestantes_exames_sifilis_hiv_pct",
+            "nota": "Valor ideal (2 TR sífilis + 2 TR HIV: 1ª consulta e 3º trimestre).",
+            "pronto_para_motor": true
+          }
+        ],
+        "prontos_n": 7,
+        "total_n": 7,
+        "avaliacao_caso": "pendente_datas_nominais"
+      }
+    },
+    "2024": {
+      "tipo": "extracao_dw",
+      "ano": 2024,
+      "aviso": "Oportunidade SIFG/SIFC + e-SUS APS (procedimentos SIGTAP/AB de testagem). consulta_sem_testagem = % atendimentos com IG>0 sem procedimento sífilis/VDRL/TR no mesmo encontro (quando extract e-SUS disponível); senão proxy SIFG NT. SIPNI (SQL Server Vacinas) agregado quando extract disponível. Índice = média simples — experimental, não PCDT. Sem PII.",
+      "gestante_casos": 2289,
+      "congenita_casos": 494,
+      "parceria_tratada_n": 886,
+      "parceria_tratada_pct": 38.7,
+      "esquema_prescrito_gestante": {
+        "Penicilina G benzantina 7.200.000 UI": 1812,
+        "Penicilina G benzantina 2.400.000 UI": 326,
+        "Não realizado": 84,
+        "Penicilina G benzantina 4.800.000 UI": 39,
+        "Outro esquema": 17,
+        "Ignorado": 11
+      },
+      "esquema_nao_realizado_n": 84,
+      "esquema_nao_realizado_pct": 3.7,
+      "esquema_registrado_n": 2205,
+      "esquema_penicilina_n": 2177,
+      "esquema_outro_n": 17,
+      "sifc_esquema_mae": {
+        "Inadequado": 235,
+        "Adequado": 137,
+        "Não realizado": 103,
+        "Ignorado": 19
+      },
+      "sifc_diagnostico_materno": {
+        "Durante o pré-natal": 347,
+        "No momento do parto/curetagem": 86,
+        "Após o parto": 43,
+        "Ignorado": 9,
+        "Não realizado": 9
+      },
+      "diagnostico_materno_no_parto_ou_apos_n": 129,
+      "diagnostico_materno_no_parto_ou_apos_pct": 26.1,
+      "teste_nao_treponemico": {
+        "Reagente": 1592,
+        "Não realizado": 499,
+        "Não reagente": 106,
+        "Ignorado": 92
+      },
+      "teste_treponemico": {
+        "Reagente": 1807,
+        "Não realizado": 265,
+        "Não reagente": 166,
+        "Ignorado": 51
+      },
+      "teste_nt_nao_realizado_n": 499,
+      "teste_nt_nao_realizado_pct": 21.8,
+      "teste_trep_nao_realizado_n": 265,
+      "teste_trep_nao_realizado_pct": 11.6,
+      "consulta_sem_testagem_n": 152993,
+      "consulta_sem_testagem_pct": 65.8,
+      "consulta_sem_testagem_fonte": "esus_aps_gestante_sem_proced_testagem",
+      "indice_oportunidades_perdidas": 33.7,
+      "indice_componentes": [
+        {
+          "id": "esquema_nao_realizado",
+          "peso": 1,
+          "valor_0_100": 3.7
+        },
+        {
+          "id": "parceria_nao_tratada",
+          "peso": 1,
+          "valor_0_100": 61.3
+        },
+        {
+          "id": "esus_gestante_sem_testagem",
+          "peso": 1,
+          "valor_0_100": 65.8
+        },
+        {
+          "id": "teste_trep_nao_realizado",
+          "peso": 1,
+          "valor_0_100": 11.6
+        },
+        {
+          "id": "dx_materno_parto",
+          "peso": 1,
+          "valor_0_100": 26.1
+        }
+      ],
+      "esus_aps_status": "extract_ok",
+      "esus_problemas_sifilis_n": 10334,
+      "esus_atendimentos_gestante_n": 232639,
+      "esus_proced_testagem_n": 347166,
+      "esus_atendimentos_gestante_com_testagem_n": 79646,
+      "esus_gestante_sem_testagem_n": 152993,
+      "esus_gestante_sem_testagem_pct": 65.8,
+      "ranking_esus_gap_testagem": [
+        {
+          "co_municipio_ibge": "510335",
+          "municipio": "CONFRESA",
+          "ers_id": "porto-alegre-do-norte",
+          "regional": "Porto Alegre do Norte",
+          "atendimentos_gestante_n": 5956,
+          "com_testagem_n": 65,
+          "sem_testagem_n": 5891,
+          "sem_testagem_pct": 98.9,
+          "sipni_hepb_doses_n": 1527
+        },
+        {
+          "co_municipio_ibge": "510040",
+          "municipio": "ALTO GARÇAS",
+          "ers_id": "rondonopolis",
+          "regional": "Rondonópolis",
+          "atendimentos_gestante_n": 1795,
+          "com_testagem_n": 29,
+          "sem_testagem_n": 1766,
+          "sem_testagem_pct": 98.4,
+          "sipni_hepb_doses_n": 941
+        },
+        {
+          "co_municipio_ibge": "510840",
+          "municipio": "VÁRZEA GRANDE",
+          "ers_id": "baixada-cuiabana",
+          "regional": "Baixada Cuiabana",
+          "atendimentos_gestante_n": 24104,
+          "com_testagem_n": 702,
+          "sem_testagem_n": 23402,
+          "sem_testagem_pct": 97.1,
+          "sipni_hepb_doses_n": 25407
+        },
+        {
+          "co_municipio_ibge": "510337",
+          "municipio": "COTRIGUAÇU",
+          "ers_id": "juina",
+          "regional": "Juína",
+          "atendimentos_gestante_n": 1825,
+          "com_testagem_n": 60,
+          "sem_testagem_n": 1765,
+          "sem_testagem_pct": 96.7,
+          "sipni_hepb_doses_n": 478
+        },
+        {
+          "co_municipio_ibge": "510550",
+          "municipio": "VILA BELA DA SANTÍSSIMA TRINDADE",
+          "ers_id": "pontes-e-lacerda",
+          "regional": "Pontes e Lacerda",
+          "atendimentos_gestante_n": 2053,
+          "com_testagem_n": 104,
+          "sem_testagem_n": 1949,
+          "sem_testagem_pct": 94.9,
+          "sipni_hepb_doses_n": 1294
+        },
+        {
+          "co_municipio_ibge": "510420",
+          "municipio": "GUIRATINGA",
+          "ers_id": "rondonopolis",
+          "regional": "Rondonópolis",
+          "atendimentos_gestante_n": 863,
+          "com_testagem_n": 60,
+          "sem_testagem_n": 803,
+          "sem_testagem_pct": 93.0,
+          "sipni_hepb_doses_n": 477
+        },
+        {
+          "co_municipio_ibge": "510780",
+          "municipio": "SANTO ANTÔNIO DO LEVERGER",
+          "ers_id": "baixada-cuiabana",
+          "regional": "Baixada Cuiabana",
+          "atendimentos_gestante_n": 1510,
+          "com_testagem_n": 138,
+          "sem_testagem_n": 1372,
+          "sem_testagem_pct": 90.9,
+          "sipni_hepb_doses_n": 1673
+        },
+        {
+          "co_municipio_ibge": "510050",
+          "municipio": "ALTO PARAGUAI",
+          "ers_id": "tangara-da-serra",
+          "regional": "Tangará da Serra",
+          "atendimentos_gestante_n": 1410,
+          "com_testagem_n": 148,
+          "sem_testagem_n": 1262,
+          "sem_testagem_pct": 89.5,
+          "sipni_hepb_doses_n": 661
+        },
+        {
+          "co_municipio_ibge": "510890",
+          "municipio": "NOVA MARINGÁ",
+          "ers_id": null,
+          "regional": null,
+          "atendimentos_gestante_n": 816,
+          "com_testagem_n": 98,
+          "sem_testagem_n": 718,
+          "sem_testagem_pct": 88.0,
+          "sipni_hepb_doses_n": 293
+        },
+        {
+          "co_municipio_ibge": "510560",
+          "municipio": "MATUPÁ",
+          "ers_id": "peixoto-de-azevedo",
+          "regional": "Peixoto de Azevedo",
+          "atendimentos_gestante_n": 3497,
+          "com_testagem_n": 440,
+          "sem_testagem_n": 3057,
+          "sem_testagem_pct": 87.4,
+          "sipni_hepb_doses_n": 1536
+        },
+        {
+          "co_municipio_ibge": "510600",
+          "municipio": "NORTELÂNDIA",
+          "ers_id": null,
+          "regional": null,
+          "atendimentos_gestante_n": 784,
+          "com_testagem_n": 105,
+          "sem_testagem_n": 679,
+          "sem_testagem_pct": 86.6,
+          "sipni_hepb_doses_n": 429
+        },
+        {
+          "co_municipio_ibge": "510621",
+          "municipio": "NOVA CANAÃ DO NORTE",
+          "ers_id": "peixoto-de-azevedo",
+          "regional": "Peixoto de Azevedo",
+          "atendimentos_gestante_n": 1635,
+          "com_testagem_n": 239,
+          "sem_testagem_n": 1396,
+          "sem_testagem_pct": 85.4,
+          "sipni_hepb_doses_n": 750
+        },
+        {
+          "co_municipio_ibge": "510558",
+          "municipio": "MARCELÂNDIA",
+          "ers_id": null,
+          "regional": null,
+          "atendimentos_gestante_n": 1951,
+          "com_testagem_n": 313,
+          "sem_testagem_n": 1638,
+          "sem_testagem_pct": 84.0,
+          "sipni_hepb_doses_n": 686
+        },
+        {
+          "co_municipio_ibge": "510627",
+          "municipio": "NOVO HORIZONTE DO NORTE",
+          "ers_id": "juara",
+          "regional": "Juara",
+          "atendimentos_gestante_n": 415,
+          "com_testagem_n": 70,
+          "sem_testagem_n": 345,
+          "sem_testagem_pct": 83.1,
+          "sipni_hepb_doses_n": 206
+        },
+        {
+          "co_municipio_ibge": "510385",
+          "municipio": "GAÚCHA DO NORTE",
+          "ers_id": "agua-boa",
+          "regional": "Água Boa",
+          "atendimentos_gestante_n": 1685,
+          "com_testagem_n": 292,
+          "sem_testagem_n": 1393,
+          "sem_testagem_pct": 82.7,
+          "sipni_hepb_doses_n": 607
+        }
+      ],
+      "ranking_esus_gap_ers": [
+        {
+          "ers_id": "porto-alegre-do-norte",
+          "regional": "Porto Alegre do Norte",
+          "municipios_n": 5,
+          "atendimentos_gestante_n": 7596,
+          "com_testagem_n": 1011,
+          "sem_testagem_n": 6585,
+          "sem_testagem_pct": 86.7
+        },
+        {
+          "ers_id": "baixada-cuiabana",
+          "regional": "Baixada Cuiabana",
+          "municipios_n": 10,
+          "atendimentos_gestante_n": 40487,
+          "com_testagem_n": 9420,
+          "sem_testagem_n": 31067,
+          "sem_testagem_pct": 76.7
+        },
+        {
+          "ers_id": "peixoto-de-azevedo",
+          "regional": "Peixoto de Azevedo",
+          "municipios_n": 5,
+          "atendimentos_gestante_n": 7447,
+          "com_testagem_n": 1775,
+          "sem_testagem_n": 5672,
+          "sem_testagem_pct": 76.2
+        },
+        {
+          "ers_id": "colider",
+          "regional": "Colíder",
+          "municipios_n": 1,
+          "atendimentos_gestante_n": 1162,
+          "com_testagem_n": 283,
+          "sem_testagem_n": 879,
+          "sem_testagem_pct": 75.6
+        },
+        {
+          "ers_id": "diamantino",
+          "regional": "Diamantino",
+          "municipios_n": 2,
+          "atendimentos_gestante_n": 2111,
+          "com_testagem_n": 562,
+          "sem_testagem_n": 1549,
+          "sem_testagem_pct": 73.4
+        },
+        {
+          "ers_id": "pontes-e-lacerda",
+          "regional": "Pontes e Lacerda",
+          "municipios_n": 6,
+          "atendimentos_gestante_n": 10598,
+          "com_testagem_n": 2894,
+          "sem_testagem_n": 7704,
+          "sem_testagem_pct": 72.7
+        },
+        {
+          "ers_id": "juara",
+          "regional": "Juara",
+          "municipios_n": 5,
+          "atendimentos_gestante_n": 5359,
+          "com_testagem_n": 1640,
+          "sem_testagem_n": 3719,
+          "sem_testagem_pct": 69.4
+        },
+        {
+          "ers_id": "juina",
+          "regional": "Juína",
+          "municipios_n": 7,
+          "atendimentos_gestante_n": 12984,
+          "com_testagem_n": 4322,
+          "sem_testagem_n": 8662,
+          "sem_testagem_pct": 66.7
+        },
+        {
+          "ers_id": "tangara-da-serra",
+          "regional": "Tangará da Serra",
+          "municipios_n": 11,
+          "atendimentos_gestante_n": 23933,
+          "com_testagem_n": 9309,
+          "sem_testagem_n": 14624,
+          "sem_testagem_pct": 61.1
+        },
+        {
+          "ers_id": "sinop",
+          "regional": "Sinop",
+          "municipios_n": 13,
+          "atendimentos_gestante_n": 46849,
+          "com_testagem_n": 18282,
+          "sem_testagem_n": 28567,
+          "sem_testagem_pct": 61.0
+        },
+        {
+          "ers_id": "agua-boa",
+          "regional": "Água Boa",
+          "municipios_n": 6,
+          "atendimentos_gestante_n": 4869,
+          "com_testagem_n": 1922,
+          "sem_testagem_n": 2947,
+          "sem_testagem_pct": 60.5
+        },
+        {
+          "ers_id": "rondonopolis",
+          "regional": "Rondonópolis",
+          "municipios_n": 19,
+          "atendimentos_gestante_n": 37911,
+          "com_testagem_n": 15726,
+          "sem_testagem_n": 22185,
+          "sem_testagem_pct": 58.5
+        },
+        {
+          "ers_id": "barra-do-garcas",
+          "regional": "Barra do Garças",
+          "municipios_n": 9,
+          "atendimentos_gestante_n": 3927,
+          "com_testagem_n": 1630,
+          "sem_testagem_n": 2297,
+          "sem_testagem_pct": 58.5
+        },
+        {
+          "ers_id": "alta-floresta",
+          "regional": "Alta Floresta",
+          "municipios_n": 4,
+          "atendimentos_gestante_n": 4861,
+          "com_testagem_n": 2086,
+          "sem_testagem_n": 2775,
+          "sem_testagem_pct": 57.1
+        },
+        {
+          "ers_id": "caceres",
+          "regional": "Cáceres",
+          "municipios_n": 12,
+          "atendimentos_gestante_n": 6063,
+          "com_testagem_n": 2849,
+          "sem_testagem_n": 3214,
+          "sem_testagem_pct": 53.0
+        },
+        {
+          "ers_id": "sao-felix-do-araguaia",
+          "regional": "São Félix do Araguaia",
+          "municipios_n": 5,
+          "atendimentos_gestante_n": 2404,
+          "com_testagem_n": 1316,
+          "sem_testagem_n": 1088,
+          "sem_testagem_pct": 45.3
+        }
+      ],
+      "esus_proced_penicilina_n": null,
+      "esus_proced_penicilina_nota": "Códigos ABPG032/0301100241 na dim e-SUS; volume zero no fato APS na janela.",
+      "sisreg_status": "extract_ok",
+      "sisreg_solicitacoes_sifilis_n": 40910,
+      "sisreg_cid_sifilis_n": 702,
+      "sisreg_proced_sifilis_n": 40910,
+      "sisreg_por_status": [
+        {
+          "status": "AGENDAMENTO / CONFIRMADO / EXECUTANTE",
+          "n": 23914
+        },
+        {
+          "status": "AGENDAMENTO / PENDENTE CONFIRMAÇÃO / EXECUTANTE",
+          "n": 13975
+        },
+        {
+          "status": "AGENDAMENTO / CANCELADO / SOLICITANTE",
+          "n": 1333
+        },
+        {
+          "status": "AGENDAMENTO / FALTA / EXECUTANTE",
+          "n": 651
+        },
+        {
+          "status": "AGENDAMENTO / CANCELADO / REGULADOR",
+          "n": 460
+        },
+        {
+          "status": "SOLICITAÇÃO / NEGADA / REGULADOR",
+          "n": 302
+        },
+        {
+          "status": "SOLICITAÇÃO / PENDENTE / FILA DE ESPERA",
+          "n": 175
+        },
+        {
+          "status": "SOLICITAÇÃO / CANCELADA / REGULADOR",
+          "n": 32
+        },
+        {
+          "status": "AGENDAMENTO / CANCELADO / COORDENADOR",
+          "n": 17
+        },
+        {
+          "status": "SOLICITAÇÃO / PENDENTE / REGULADOR",
+          "n": 16
+        },
+        {
+          "status": "SOLICITAÇÃO / AGENDADA / FILA DE ESPERA",
+          "n": 14
+        },
+        {
+          "status": "SOLICITAÇÃO / DEVOLVIDA / REGULADOR",
+          "n": 13
+        }
+      ],
+      "sipni_status": "extract_ok",
+      "sipni_doses_n": 2790853,
+      "sipni_municipios_n": 141,
+      "sipni_top_vacinas": [
+        {
+          "co_vacina": "9",
+          "sg_vacina": "HepB",
+          "doses_n": 265654
+        },
+        {
+          "co_vacina": "25",
+          "sg_vacina": "dT",
+          "doses_n": 226176
+        },
+        {
+          "co_vacina": "28",
+          "sg_vacina": "VOP",
+          "doses_n": 222054
+        },
+        {
+          "co_vacina": "22",
+          "sg_vacina": "VIP",
+          "doses_n": 203547
+        },
+        {
+          "co_vacina": "74",
+          "sg_vacina": "MenACWY",
+          "doses_n": 193952
+        },
+        {
+          "co_vacina": "42",
+          "sg_vacina": "PENTA",
+          "doses_n": 188939
+        },
+        {
+          "co_vacina": "26",
+          "sg_vacina": "VPC10",
+          "doses_n": 186009
+        },
+        {
+          "co_vacina": "14",
+          "sg_vacina": "VFA",
+          "doses_n": 181588
+        },
+        {
+          "co_vacina": "24",
+          "sg_vacina": "SCR",
+          "doses_n": 138532
+        },
+        {
+          "co_vacina": "46",
+          "sg_vacina": "DTP",
+          "doses_n": 125496
+        }
+      ],
+      "sipni_hepb_n": 265654,
+      "sipni_dtpa_n": 58997,
+      "sipni_dt_n": 226176,
+      "sipni_bcg_n": 68051,
+      "sipni_materno_aviso": "HepB/dTpa/dT/BCG = volume SIPNI por sigla — contexto de rede, não cobertura gestacional nem PCDT.",
+      "sisprenatal_status": "legado_sem_anos_recentes",
+      "fontes_fora_dw": [
+        "esus_aps",
+        "sisreg",
+        "indicasus",
+        "sipni"
+      ],
+      "indicadores_ref": [
+        "parceria_tratada",
+        "gestantes_sem_tratamento",
+        "diagnostico_somente_parto",
+        "consulta_sem_testagem",
+        "indice_oportunidades_perdidas",
+        "cascata_trat_adequado"
+      ],
+      "pendente_mvp2": [
+        "tempo diagnostico→tratamento (datas nominais — fora do agregado)",
+        "avaliação caso PCDT (datas de dose/parto — sem PII no repo)",
+        "cruzar SIPNI doses com coorte gestante (sem PII)"
+      ],
+      "motor_pcdt": {
+        "motor": "parametros_prontos",
+        "motivo": "Parâmetros com formula_status=extraido_literal (NT 14/2023, Guia TV, NT 14/2022 APS, PQA-VS Portaria 6.878/2025). Avaliação caso a caso (datas de dose/parto) permanece fora do MVP agregado — sem PII.",
+        "parametros": [
+          {
+            "id": "meta_cobertura_trat_adequado_pct",
+            "valor": 95,
+            "unidade": "%",
+            "documento": "Guia Certificação Eliminação TV (MS) — Indicador de Processo 5",
+            "valid_from": "2024-01-01",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "Cobertura de gestantes tratadas adequadamente para sífilis. Meta de impacto: ≥ 95%.",
+            "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct",
+            "nota": "Cobertura de tratamento adequado das gestantes com sífilis ≥95% (eliminação / selo ouro).",
+            "pronto_para_motor": true
+          },
+          {
+            "id": "dias_antes_parto_tratamento_adequado",
+            "valor": 30,
+            "unidade": "dias",
+            "documento": "NT 14/2023-DATHI/SVSA/MS §3.4; Guia Eliminação TV (processo 5)",
+            "valid_from": "2023-07-17",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "Considera-se tratamento adequado para sífilis durante a gestação aquele que é completo para o respectivo estágio clínico da sífilis, feito com benzilpenicilina benzatina e iniciado até 30 dias antes do parto.\n",
+            "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#dias_antes_parto_tratamento_adequado",
+            "nota": "Início do tratamento até 30 dias antes do parto; concluir antes do parto.",
+            "pronto_para_motor": true
+          },
+          {
+            "id": "intervalo_doses_penicilina_dias",
+            "valor": 9,
+            "unidade": "dias",
+            "documento": "NT 14/2023-DATHI/SVSA/MS — intervalo entre doses em gestantes",
+            "valid_from": "2023-07-17",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "As doses sejam aplicadas, idealmente, a cada 7 (sete) dias, não ultrapassando 9 (nove) dias. Caso alguma dose seja perdida ou o intervalo entre elas seja maior que nove dias, o esquema terapêutico deve ser reiniciado.\n",
+            "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#intervalo_doses_penicilina_dias",
+            "nota": "Intervalo máximo entre doses semanais ≤9 dias (ideal 7). Ultrapassado → reinício.",
+            "pronto_para_motor": true
+          },
+          {
+            "id": "meta_incidencia_sc_por_1000_nv",
+            "valor": 0.5,
+            "unidade": "por 1.000 NV",
+            "documento": "Guia Certificação Eliminação TV (MS) — Indicador de Impacto 3",
+            "valid_from": "2024-01-01",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "Taxa de incidência de sífilis congênita. Meta de impacto: ≤ 0,5 caso por 1.000 nascidos vivos.",
+            "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv",
+            "nota": "Meta de incidência SC ≤0,5/1.000 NV (eliminação).",
+            "pronto_para_motor": true
+          },
+          {
+            "id": "pqa_vs_reducao_pp",
+            "valor": 1,
+            "unidade": "pontos percentuais",
+            "documento": "Portaria GM/MS nº 6.878/2025; Caderno Indicadores PQA-VS 2023",
+            "valid_from": "2025-04-25",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "Meta: Redução de um ponto percentual do valor do ano base ou a manutenção de percentual zero.\n",
+            "excerpt_ref": "docs/oficiais/excerpts/pqa_vs_indicador11.yml#pqa_vs_reducao_pp",
+            "nota": "Meta PQA-VS ind. 11 — Δ ≤ −1 p.p. vs ano-base, ou manutenção em 0%.",
+            "pronto_para_motor": true
+          },
+          {
+            "id": "meta_prop_gestantes_exames_sifilis_hiv_pct",
+            "valor": 60,
+            "unidade": "%",
+            "documento": "NT 14/2022-SAPS/MS",
+            "valid_from": "2022-07-11",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "a meta pactuada para este indicador é de 60%.",
+            "excerpt_ref": "docs/oficiais/excerpts/nt14_2022_testagem_aps.yml#meta_prop_gestantes_exames_sifilis_hiv_pct",
+            "nota": "Meta Previne Brasil / APS — não confundir com parâmetro ideal 100%.",
+            "pronto_para_motor": true
+          },
+          {
+            "id": "parametro_prop_gestantes_exames_sifilis_hiv_pct",
+            "valor": 100,
+            "unidade": "%",
+            "documento": "NT 14/2022-SAPS/MS",
+            "valid_from": "2022-07-11",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "o parâmetro para esse indicador é de 100%.",
+            "excerpt_ref": "docs/oficiais/excerpts/nt14_2022_testagem_aps.yml#parametro_prop_gestantes_exames_sifilis_hiv_pct",
+            "nota": "Valor ideal (2 TR sífilis + 2 TR HIV: 1ª consulta e 3º trimestre).",
+            "pronto_para_motor": true
+          }
+        ],
+        "prontos_n": 7,
+        "total_n": 7,
+        "avaliacao_caso": "pendente_datas_nominais"
+      }
+    },
+    "2025": {
+      "tipo": "extracao_dw",
+      "ano": 2025,
+      "aviso": "Oportunidade SIFG/SIFC + e-SUS APS (procedimentos SIGTAP/AB de testagem). consulta_sem_testagem = % atendimentos com IG>0 sem procedimento sífilis/VDRL/TR no mesmo encontro (quando extract e-SUS disponível); senão proxy SIFG NT. SIPNI (SQL Server Vacinas) agregado quando extract disponível. Índice = média simples — experimental, não PCDT. Sem PII.",
+      "gestante_casos": 2336,
+      "congenita_casos": 675,
+      "parceria_tratada_n": 905,
+      "parceria_tratada_pct": 38.7,
+      "esquema_prescrito_gestante": {
+        "Penicilina G benzantina 7.200.000 UI": 1830,
+        "Penicilina G benzantina 2.400.000 UI": 328,
+        "Não realizado": 92,
+        "Penicilina G benzantina 4.800.000 UI": 49,
+        "Ignorado": 23,
+        "Outro esquema": 14
+      },
+      "esquema_nao_realizado_n": 92,
+      "esquema_nao_realizado_pct": 3.9,
+      "esquema_registrado_n": 2244,
+      "esquema_penicilina_n": 2207,
+      "esquema_outro_n": 14,
+      "sifc_esquema_mae": {
+        "Adequado": 295,
+        "Inadequado": 232,
+        "Não realizado": 132,
+        "Ignorado": 16
+      },
+      "sifc_diagnostico_materno": {
+        "Durante o pré-natal": 550,
+        "No momento do parto/curetagem": 66,
+        "Após o parto": 42,
+        "Não realizado": 12,
+        "Ignorado": 5
+      },
+      "diagnostico_materno_no_parto_ou_apos_n": 108,
+      "diagnostico_materno_no_parto_ou_apos_pct": 16.0,
+      "teste_nao_treponemico": {
+        "Reagente": 1580,
+        "Não realizado": 569,
+        "Não reagente": 111,
+        "Ignorado": 76
+      },
+      "teste_treponemico": {
+        "Reagente": 1894,
+        "Não realizado": 243,
+        "Não reagente": 160,
+        "Ignorado": 39
+      },
+      "teste_nt_nao_realizado_n": 569,
+      "teste_nt_nao_realizado_pct": 24.4,
+      "teste_trep_nao_realizado_n": 243,
+      "teste_trep_nao_realizado_pct": 10.4,
+      "consulta_sem_testagem_n": 143820,
+      "consulta_sem_testagem_pct": 63.9,
+      "consulta_sem_testagem_fonte": "esus_aps_gestante_sem_proced_testagem",
+      "indice_oportunidades_perdidas": 31.1,
+      "indice_componentes": [
+        {
+          "id": "esquema_nao_realizado",
+          "peso": 1,
+          "valor_0_100": 3.9
+        },
+        {
+          "id": "parceria_nao_tratada",
+          "peso": 1,
+          "valor_0_100": 61.3
+        },
+        {
+          "id": "esus_gestante_sem_testagem",
+          "peso": 1,
+          "valor_0_100": 63.9
+        },
+        {
+          "id": "teste_trep_nao_realizado",
+          "peso": 1,
+          "valor_0_100": 10.4
+        },
+        {
+          "id": "dx_materno_parto",
+          "peso": 1,
+          "valor_0_100": 16.0
+        }
+      ],
+      "esus_aps_status": "extract_ok",
+      "esus_problemas_sifilis_n": 9749,
+      "esus_atendimentos_gestante_n": 224898,
+      "esus_proced_testagem_n": 380146,
+      "esus_atendimentos_gestante_com_testagem_n": 81078,
+      "esus_gestante_sem_testagem_n": 143820,
+      "esus_gestante_sem_testagem_pct": 63.9,
+      "ranking_esus_gap_testagem": [
+        {
+          "co_municipio_ibge": "510040",
+          "municipio": "ALTO GARÇAS",
+          "ers_id": "rondonopolis",
+          "regional": "Rondonópolis",
+          "atendimentos_gestante_n": 2032,
+          "com_testagem_n": 39,
+          "sem_testagem_n": 1993,
+          "sem_testagem_pct": 98.1,
+          "sipni_hepb_doses_n": 606
+        },
+        {
+          "co_municipio_ibge": "510335",
+          "municipio": "CONFRESA",
+          "ers_id": "porto-alegre-do-norte",
+          "regional": "Porto Alegre do Norte",
+          "atendimentos_gestante_n": 1138,
+          "com_testagem_n": 22,
+          "sem_testagem_n": 1116,
+          "sem_testagem_pct": 98.1,
+          "sipni_hepb_doses_n": 1130
+        },
+        {
+          "co_municipio_ibge": "510840",
+          "municipio": "VÁRZEA GRANDE",
+          "ers_id": "baixada-cuiabana",
+          "regional": "Baixada Cuiabana",
+          "atendimentos_gestante_n": 19434,
+          "com_testagem_n": 677,
+          "sem_testagem_n": 18757,
+          "sem_testagem_pct": 96.5,
+          "sipni_hepb_doses_n": 16693
+        },
+        {
+          "co_municipio_ibge": "510500",
+          "municipio": "JAURU",
+          "ers_id": "caceres",
+          "regional": "Cáceres",
+          "atendimentos_gestante_n": 524,
+          "com_testagem_n": 25,
+          "sem_testagem_n": 499,
+          "sem_testagem_pct": 95.2,
+          "sipni_hepb_doses_n": 233
+        },
+        {
+          "co_municipio_ibge": "510550",
+          "municipio": "VILA BELA DA SANTÍSSIMA TRINDADE",
+          "ers_id": "pontes-e-lacerda",
+          "regional": "Pontes e Lacerda",
+          "atendimentos_gestante_n": 1889,
+          "com_testagem_n": 147,
+          "sem_testagem_n": 1742,
+          "sem_testagem_pct": 92.2,
+          "sipni_hepb_doses_n": 475
+        },
+        {
+          "co_municipio_ibge": "510627",
+          "municipio": "NOVO HORIZONTE DO NORTE",
+          "ers_id": "juara",
+          "regional": "Juara",
+          "atendimentos_gestante_n": 431,
+          "com_testagem_n": 37,
+          "sem_testagem_n": 394,
+          "sem_testagem_pct": 91.4,
+          "sipni_hepb_doses_n": 105
+        },
+        {
+          "co_municipio_ibge": "510050",
+          "municipio": "ALTO PARAGUAI",
+          "ers_id": "tangara-da-serra",
+          "regional": "Tangará da Serra",
+          "atendimentos_gestante_n": 1699,
+          "com_testagem_n": 147,
+          "sem_testagem_n": 1552,
+          "sem_testagem_pct": 91.3,
+          "sipni_hepb_doses_n": 593
+        },
+        {
+          "co_municipio_ibge": "510621",
+          "municipio": "NOVA CANAÃ DO NORTE",
+          "ers_id": "peixoto-de-azevedo",
+          "regional": "Peixoto de Azevedo",
+          "atendimentos_gestante_n": 1360,
+          "com_testagem_n": 137,
+          "sem_testagem_n": 1223,
+          "sem_testagem_pct": 89.9,
+          "sipni_hepb_doses_n": 503
+        },
+        {
+          "co_municipio_ibge": "510420",
+          "municipio": "GUIRATINGA",
+          "ers_id": "rondonopolis",
+          "regional": "Rondonópolis",
+          "atendimentos_gestante_n": 847,
+          "com_testagem_n": 103,
+          "sem_testagem_n": 744,
+          "sem_testagem_pct": 87.8,
+          "sipni_hepb_doses_n": 341
+        },
+        {
+          "co_municipio_ibge": "510780",
+          "municipio": "SANTO ANTÔNIO DO LEVERGER",
+          "ers_id": "baixada-cuiabana",
+          "regional": "Baixada Cuiabana",
+          "atendimentos_gestante_n": 2031,
+          "com_testagem_n": 268,
+          "sem_testagem_n": 1763,
+          "sem_testagem_pct": 86.8,
+          "sipni_hepb_doses_n": 901
+        },
+        {
+          "co_municipio_ibge": "510600",
+          "municipio": "NORTELÂNDIA",
+          "ers_id": null,
+          "regional": null,
+          "atendimentos_gestante_n": 959,
+          "com_testagem_n": 141,
+          "sem_testagem_n": 818,
+          "sem_testagem_pct": 85.3,
+          "sipni_hepb_doses_n": 243
+        },
+        {
+          "co_municipio_ibge": "510279",
+          "municipio": "CARLINDA",
+          "ers_id": "alta-floresta",
+          "regional": "Alta Floresta",
+          "atendimentos_gestante_n": 1582,
+          "com_testagem_n": 236,
+          "sem_testagem_n": 1346,
+          "sem_testagem_pct": 85.1,
+          "sipni_hepb_doses_n": 390
+        },
+        {
+          "co_municipio_ibge": "510560",
+          "municipio": "MATUPÁ",
+          "ers_id": "peixoto-de-azevedo",
+          "regional": "Peixoto de Azevedo",
+          "atendimentos_gestante_n": 3529,
+          "com_testagem_n": 537,
+          "sem_testagem_n": 2992,
+          "sem_testagem_pct": 84.8,
+          "sipni_hepb_doses_n": 917
+        },
+        {
+          "co_municipio_ibge": "510525",
+          "municipio": "LUCAS DO RIO VERDE",
+          "ers_id": "sinop",
+          "regional": "Sinop",
+          "atendimentos_gestante_n": 3237,
+          "com_testagem_n": 519,
+          "sem_testagem_n": 2718,
+          "sem_testagem_pct": 84.0,
+          "sipni_hepb_doses_n": 5158
+        },
+        {
+          "co_municipio_ibge": "510890",
+          "municipio": "NOVA MARINGÁ",
+          "ers_id": null,
+          "regional": null,
+          "atendimentos_gestante_n": 992,
+          "com_testagem_n": 160,
+          "sem_testagem_n": 832,
+          "sem_testagem_pct": 83.9,
+          "sipni_hepb_doses_n": 219
+        }
+      ],
+      "ranking_esus_gap_ers": [
+        {
+          "ers_id": "colider",
+          "regional": "Colíder",
+          "municipios_n": 1,
+          "atendimentos_gestante_n": 848,
+          "com_testagem_n": 196,
+          "sem_testagem_n": 652,
+          "sem_testagem_pct": 76.9
+        },
+        {
+          "ers_id": "peixoto-de-azevedo",
+          "regional": "Peixoto de Azevedo",
+          "municipios_n": 5,
+          "atendimentos_gestante_n": 7225,
+          "com_testagem_n": 1783,
+          "sem_testagem_n": 5442,
+          "sem_testagem_pct": 75.3
+        },
+        {
+          "ers_id": "baixada-cuiabana",
+          "regional": "Baixada Cuiabana",
+          "municipios_n": 10,
+          "atendimentos_gestante_n": 36552,
+          "com_testagem_n": 9876,
+          "sem_testagem_n": 26676,
+          "sem_testagem_pct": 73.0
+        },
+        {
+          "ers_id": "juina",
+          "regional": "Juína",
+          "municipios_n": 7,
+          "atendimentos_gestante_n": 14180,
+          "com_testagem_n": 4025,
+          "sem_testagem_n": 10155,
+          "sem_testagem_pct": 71.6
+        },
+        {
+          "ers_id": "juara",
+          "regional": "Juara",
+          "municipios_n": 5,
+          "atendimentos_gestante_n": 6440,
+          "com_testagem_n": 1857,
+          "sem_testagem_n": 4583,
+          "sem_testagem_pct": 71.2
+        },
+        {
+          "ers_id": "diamantino",
+          "regional": "Diamantino",
+          "municipios_n": 2,
+          "atendimentos_gestante_n": 1938,
+          "com_testagem_n": 577,
+          "sem_testagem_n": 1361,
+          "sem_testagem_pct": 70.2
+        },
+        {
+          "ers_id": "porto-alegre-do-norte",
+          "regional": "Porto Alegre do Norte",
+          "municipios_n": 5,
+          "atendimentos_gestante_n": 2571,
+          "com_testagem_n": 790,
+          "sem_testagem_n": 1781,
+          "sem_testagem_pct": 69.3
+        },
+        {
+          "ers_id": "pontes-e-lacerda",
+          "regional": "Pontes e Lacerda",
+          "municipios_n": 6,
+          "atendimentos_gestante_n": 9215,
+          "com_testagem_n": 2912,
+          "sem_testagem_n": 6303,
+          "sem_testagem_pct": 68.4
+        },
+        {
+          "ers_id": "rondonopolis",
+          "regional": "Rondonópolis",
+          "municipios_n": 19,
+          "atendimentos_gestante_n": 37886,
+          "com_testagem_n": 13831,
+          "sem_testagem_n": 24055,
+          "sem_testagem_pct": 63.5
+        },
+        {
+          "ers_id": "alta-floresta",
+          "regional": "Alta Floresta",
+          "municipios_n": 4,
+          "atendimentos_gestante_n": 5364,
+          "com_testagem_n": 2008,
+          "sem_testagem_n": 3356,
+          "sem_testagem_pct": 62.6
+        },
+        {
+          "ers_id": "tangara-da-serra",
+          "regional": "Tangará da Serra",
+          "municipios_n": 11,
+          "atendimentos_gestante_n": 27641,
+          "com_testagem_n": 10965,
+          "sem_testagem_n": 16676,
+          "sem_testagem_pct": 60.3
+        },
+        {
+          "ers_id": "sinop",
+          "regional": "Sinop",
+          "municipios_n": 13,
+          "atendimentos_gestante_n": 45562,
+          "com_testagem_n": 20222,
+          "sem_testagem_n": 25340,
+          "sem_testagem_pct": 55.6
+        },
+        {
+          "ers_id": "sao-felix-do-araguaia",
+          "regional": "São Félix do Araguaia",
+          "municipios_n": 5,
+          "atendimentos_gestante_n": 2772,
+          "com_testagem_n": 1288,
+          "sem_testagem_n": 1484,
+          "sem_testagem_pct": 53.5
+        },
+        {
+          "ers_id": "agua-boa",
+          "regional": "Água Boa",
+          "municipios_n": 6,
+          "atendimentos_gestante_n": 3518,
+          "com_testagem_n": 1685,
+          "sem_testagem_n": 1833,
+          "sem_testagem_pct": 52.1
+        },
+        {
+          "ers_id": "caceres",
+          "regional": "Cáceres",
+          "municipios_n": 12,
+          "atendimentos_gestante_n": 5259,
+          "com_testagem_n": 2535,
+          "sem_testagem_n": 2724,
+          "sem_testagem_pct": 51.8
+        },
+        {
+          "ers_id": "barra-do-garcas",
+          "regional": "Barra do Garças",
+          "municipios_n": 9,
+          "atendimentos_gestante_n": 3804,
+          "com_testagem_n": 1877,
+          "sem_testagem_n": 1927,
+          "sem_testagem_pct": 50.7
+        }
+      ],
+      "esus_proced_penicilina_n": null,
+      "esus_proced_penicilina_nota": "Códigos ABPG032/0301100241 na dim e-SUS; volume zero no fato APS na janela.",
+      "sisreg_status": "extract_ok",
+      "sisreg_solicitacoes_sifilis_n": 49302,
+      "sisreg_cid_sifilis_n": 570,
+      "sisreg_proced_sifilis_n": 49302,
+      "sisreg_por_status": [
+        {
+          "status": "AGENDAMENTO / CONFIRMADO / EXECUTANTE",
+          "n": 27681
+        },
+        {
+          "status": "AGENDAMENTO / PENDENTE CONFIRMAÇÃO / EXECUTANTE",
+          "n": 9877
+        },
+        {
+          "status": "SOLICITAÇÃO / AGENDADA / SOLICITANTE",
+          "n": 4840
+        },
+        {
+          "status": "AGENDAMENTO / FALTA / EXECUTANTE",
+          "n": 1683
+        },
+        {
+          "status": "SOLICITAÇÃO / AGENDADA / FILA DE ESPERA",
+          "n": 1370
+        },
+        {
+          "status": "SOLICITAÇÃO / AUTORIZADA / REGULADOR",
+          "n": 1156
+        },
+        {
+          "status": "AGENDAMENTO / CANCELADO / SOLICITANTE",
+          "n": 1008
+        },
+        {
+          "status": "AGENDAMENTO / CANCELADO / REGULADOR",
+          "n": 836
+        },
+        {
+          "status": "SOLICITAÇÃO / NEGADA / REGULADOR",
+          "n": 374
+        },
+        {
+          "status": "SOLICITAÇÃO / PENDENTE / FILA DE ESPERA",
+          "n": 340
+        },
+        {
+          "status": "SOLICITAÇÃO / CANCELADA / SOLICITANTE",
+          "n": 58
+        },
+        {
+          "status": "SOLICITAÇÃO / DEVOLVIDA / REGULADOR",
+          "n": 54
+        }
+      ],
+      "sipni_status": "extract_ok",
+      "sipni_doses_n": 2525486,
+      "sipni_municipios_n": 142,
+      "sipni_top_vacinas": [
+        {
+          "co_vacina": "33",
+          "sg_vacina": "VFA",
+          "doses_n": 650966
+        },
+        {
+          "co_vacina": "22",
+          "sg_vacina": "VIP",
+          "doses_n": 187761
+        },
+        {
+          "co_vacina": "9",
+          "sg_vacina": "HepB",
+          "doses_n": 135040
+        },
+        {
+          "co_vacina": "14",
+          "sg_vacina": "VFA",
+          "doses_n": 122549
+        },
+        {
+          "co_vacina": "25",
+          "sg_vacina": "VFA",
+          "doses_n": 117787
+        },
+        {
+          "co_vacina": "33",
+          "sg_vacina": "INF3",
+          "doses_n": 116074
+        },
+        {
+          "co_vacina": "26",
+          "sg_vacina": "VPC10",
+          "doses_n": 114706
+        },
+        {
+          "co_vacina": "42",
+          "sg_vacina": "PENTA",
+          "doses_n": 109936
+        },
+        {
+          "co_vacina": "41",
+          "sg_vacina": "MenC",
+          "doses_n": 72092
+        },
+        {
+          "co_vacina": "45",
+          "sg_vacina": "ROTA",
+          "doses_n": 68764
+        }
+      ],
+      "sipni_hepb_n": 135040,
+      "sipni_dtpa_n": 35912,
+      "sipni_dt_n": 47433,
+      "sipni_bcg_n": 40107,
+      "sipni_materno_aviso": "HepB/dTpa/dT/BCG = volume SIPNI por sigla — contexto de rede, não cobertura gestacional nem PCDT.",
+      "sisprenatal_status": "legado_sem_anos_recentes",
+      "fontes_fora_dw": [
+        "esus_aps",
+        "sisreg",
+        "indicasus",
+        "sipni"
+      ],
+      "indicadores_ref": [
+        "parceria_tratada",
+        "gestantes_sem_tratamento",
+        "diagnostico_somente_parto",
+        "consulta_sem_testagem",
+        "indice_oportunidades_perdidas",
+        "cascata_trat_adequado"
+      ],
+      "pendente_mvp2": [
+        "tempo diagnostico→tratamento (datas nominais — fora do agregado)",
+        "avaliação caso PCDT (datas de dose/parto — sem PII no repo)",
+        "cruzar SIPNI doses com coorte gestante (sem PII)"
+      ],
+      "motor_pcdt": {
+        "motor": "parametros_prontos",
+        "motivo": "Parâmetros com formula_status=extraido_literal (NT 14/2023, Guia TV, NT 14/2022 APS, PQA-VS Portaria 6.878/2025). Avaliação caso a caso (datas de dose/parto) permanece fora do MVP agregado — sem PII.",
+        "parametros": [
+          {
+            "id": "meta_cobertura_trat_adequado_pct",
+            "valor": 95,
+            "unidade": "%",
+            "documento": "Guia Certificação Eliminação TV (MS) — Indicador de Processo 5",
+            "valid_from": "2024-01-01",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "Cobertura de gestantes tratadas adequadamente para sífilis. Meta de impacto: ≥ 95%.",
+            "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct",
+            "nota": "Cobertura de tratamento adequado das gestantes com sífilis ≥95% (eliminação / selo ouro).",
+            "pronto_para_motor": true
+          },
+          {
+            "id": "dias_antes_parto_tratamento_adequado",
+            "valor": 30,
+            "unidade": "dias",
+            "documento": "NT 14/2023-DATHI/SVSA/MS §3.4; Guia Eliminação TV (processo 5)",
+            "valid_from": "2023-07-17",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "Considera-se tratamento adequado para sífilis durante a gestação aquele que é completo para o respectivo estágio clínico da sífilis, feito com benzilpenicilina benzatina e iniciado até 30 dias antes do parto.\n",
+            "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#dias_antes_parto_tratamento_adequado",
+            "nota": "Início do tratamento até 30 dias antes do parto; concluir antes do parto.",
+            "pronto_para_motor": true
+          },
+          {
+            "id": "intervalo_doses_penicilina_dias",
+            "valor": 9,
+            "unidade": "dias",
+            "documento": "NT 14/2023-DATHI/SVSA/MS — intervalo entre doses em gestantes",
+            "valid_from": "2023-07-17",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "As doses sejam aplicadas, idealmente, a cada 7 (sete) dias, não ultrapassando 9 (nove) dias. Caso alguma dose seja perdida ou o intervalo entre elas seja maior que nove dias, o esquema terapêutico deve ser reiniciado.\n",
+            "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#intervalo_doses_penicilina_dias",
+            "nota": "Intervalo máximo entre doses semanais ≤9 dias (ideal 7). Ultrapassado → reinício.",
+            "pronto_para_motor": true
+          },
+          {
+            "id": "meta_incidencia_sc_por_1000_nv",
+            "valor": 0.5,
+            "unidade": "por 1.000 NV",
+            "documento": "Guia Certificação Eliminação TV (MS) — Indicador de Impacto 3",
+            "valid_from": "2024-01-01",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "Taxa de incidência de sífilis congênita. Meta de impacto: ≤ 0,5 caso por 1.000 nascidos vivos.",
+            "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv",
+            "nota": "Meta de incidência SC ≤0,5/1.000 NV (eliminação).",
+            "pronto_para_motor": true
+          },
+          {
+            "id": "pqa_vs_reducao_pp",
+            "valor": 1,
+            "unidade": "pontos percentuais",
+            "documento": "Portaria GM/MS nº 6.878/2025; Caderno Indicadores PQA-VS 2023",
+            "valid_from": "2025-04-25",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "Meta: Redução de um ponto percentual do valor do ano base ou a manutenção de percentual zero.\n",
+            "excerpt_ref": "docs/oficiais/excerpts/pqa_vs_indicador11.yml#pqa_vs_reducao_pp",
+            "nota": "Meta PQA-VS ind. 11 — Δ ≤ −1 p.p. vs ano-base, ou manutenção em 0%.",
+            "pronto_para_motor": true
+          },
+          {
+            "id": "meta_prop_gestantes_exames_sifilis_hiv_pct",
+            "valor": 60,
+            "unidade": "%",
+            "documento": "NT 14/2022-SAPS/MS",
+            "valid_from": "2022-07-11",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "a meta pactuada para este indicador é de 60%.",
+            "excerpt_ref": "docs/oficiais/excerpts/nt14_2022_testagem_aps.yml#meta_prop_gestantes_exames_sifilis_hiv_pct",
+            "nota": "Meta Previne Brasil / APS — não confundir com parâmetro ideal 100%.",
+            "pronto_para_motor": true
+          },
+          {
+            "id": "parametro_prop_gestantes_exames_sifilis_hiv_pct",
+            "valor": 100,
+            "unidade": "%",
+            "documento": "NT 14/2022-SAPS/MS",
+            "valid_from": "2022-07-11",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "o parâmetro para esse indicador é de 100%.",
+            "excerpt_ref": "docs/oficiais/excerpts/nt14_2022_testagem_aps.yml#parametro_prop_gestantes_exames_sifilis_hiv_pct",
+            "nota": "Valor ideal (2 TR sífilis + 2 TR HIV: 1ª consulta e 3º trimestre).",
+            "pronto_para_motor": true
+          }
+        ],
+        "prontos_n": 7,
+        "total_n": 7,
+        "avaliacao_caso": "pendente_datas_nominais"
+      }
+    },
+    "2026": {
+      "tipo": "extracao_dw",
+      "ano": 2026,
+      "aviso": "Oportunidade SIFG/SIFC + e-SUS APS (procedimentos SIGTAP/AB de testagem). consulta_sem_testagem = % atendimentos com IG>0 sem procedimento sífilis/VDRL/TR no mesmo encontro (quando extract e-SUS disponível); senão proxy SIFG NT. SIPNI (SQL Server Vacinas) agregado quando extract disponível. Índice = média simples — experimental, não PCDT. Sem PII.",
+      "gestante_casos": 1278,
+      "congenita_casos": 459,
+      "parceria_tratada_n": 458,
+      "parceria_tratada_pct": 35.8,
+      "esquema_prescrito_gestante": {
+        "Penicilina G benzantina 7.200.000 UI": 940,
+        "Penicilina G benzantina 2.400.000 UI": 228,
+        "Não realizado": 74,
+        "Penicilina G benzantina 4.800.000 UI": 24,
+        "Ignorado": 9,
+        "Outro esquema": 3
+      },
+      "esquema_nao_realizado_n": 74,
+      "esquema_nao_realizado_pct": 5.8,
+      "esquema_registrado_n": 1204,
+      "esquema_penicilina_n": 1192,
+      "esquema_outro_n": 3,
+      "sifc_esquema_mae": {
+        "Adequado": 212,
+        "Inadequado": 153,
+        "Não realizado": 90,
+        "Ignorado": 4
+      },
+      "sifc_diagnostico_materno": {
+        "Durante o pré-natal": 365,
+        "No momento do parto/curetagem": 58,
+        "Após o parto": 20,
+        "Ignorado": 8,
+        "Não realizado": 8
+      },
+      "diagnostico_materno_no_parto_ou_apos_n": 78,
+      "diagnostico_materno_no_parto_ou_apos_pct": 17.0,
+      "teste_nao_treponemico": {
+        "Reagente": 785,
+        "Não realizado": 387,
+        "Não reagente": 59,
+        "Ignorado": 47
+      },
+      "teste_treponemico": {
+        "Reagente": 1063,
+        "Não realizado": 120,
+        "Não reagente": 81,
+        "Ignorado": 14
+      },
+      "teste_nt_nao_realizado_n": 387,
+      "teste_nt_nao_realizado_pct": 30.3,
+      "teste_trep_nao_realizado_n": 120,
+      "teste_trep_nao_realizado_pct": 9.4,
+      "consulta_sem_testagem_n": 387,
+      "consulta_sem_testagem_pct": 30.3,
+      "consulta_sem_testagem_fonte": "proxy_sifg_teste_nt",
+      "indice_oportunidades_perdidas": 25.3,
+      "indice_componentes": [
+        {
+          "id": "esquema_nao_realizado",
+          "peso": 1,
+          "valor_0_100": 5.8
+        },
+        {
+          "id": "parceria_nao_tratada",
+          "peso": 1,
+          "valor_0_100": 64.2
+        },
+        {
+          "id": "teste_nt_nao_realizado",
+          "peso": 1,
+          "valor_0_100": 30.3
+        },
+        {
+          "id": "teste_trep_nao_realizado",
+          "peso": 1,
+          "valor_0_100": 9.4
+        },
+        {
+          "id": "dx_materno_parto",
+          "peso": 1,
+          "valor_0_100": 17.0
+        }
+      ],
+      "esus_aps_status": "acesso_ok_conector_pronto",
+      "esus_problemas_sifilis_n": null,
+      "esus_atendimentos_gestante_n": null,
+      "esus_proced_testagem_n": null,
+      "esus_atendimentos_gestante_com_testagem_n": null,
+      "esus_gestante_sem_testagem_n": null,
+      "esus_gestante_sem_testagem_pct": null,
+      "ranking_esus_gap_testagem": [],
+      "ranking_esus_gap_ers": [],
+      "esus_proced_penicilina_n": null,
+      "esus_proced_penicilina_nota": "Códigos ABPG032/0301100241 na dim e-SUS; volume zero no fato APS na janela.",
+      "sisreg_status": "acesso_ok_sem_volume_ou_pendente",
+      "sisreg_solicitacoes_sifilis_n": null,
+      "sisreg_cid_sifilis_n": null,
+      "sisreg_proced_sifilis_n": null,
+      "sisreg_por_status": [],
+      "sipni_status": "acesso_ok_conector_pronto",
+      "sipni_doses_n": null,
+      "sipni_municipios_n": null,
+      "sipni_top_vacinas": [],
+      "sipni_hepb_n": null,
+      "sipni_dtpa_n": null,
+      "sipni_dt_n": null,
+      "sipni_bcg_n": null,
+      "sipni_materno_aviso": "HepB/dTpa/dT/BCG = volume SIPNI por sigla — contexto de rede, não cobertura gestacional nem PCDT.",
+      "sisprenatal_status": "legado_sem_anos_recentes",
+      "fontes_fora_dw": [
+        "esus_aps",
+        "sisreg",
+        "indicasus",
+        "sipni"
+      ],
+      "indicadores_ref": [
+        "parceria_tratada",
+        "gestantes_sem_tratamento",
+        "diagnostico_somente_parto",
+        "consulta_sem_testagem",
+        "indice_oportunidades_perdidas",
+        "cascata_trat_adequado"
+      ],
+      "pendente_mvp2": [
+        "tempo diagnostico→tratamento (datas nominais — fora do agregado)",
+        "avaliação caso PCDT (datas de dose/parto — sem PII no repo)",
+        "cruzar SIPNI doses com coorte gestante (sem PII)"
+      ],
+      "motor_pcdt": {
+        "motor": "parametros_prontos",
+        "motivo": "Parâmetros com formula_status=extraido_literal (NT 14/2023, Guia TV, NT 14/2022 APS, PQA-VS Portaria 6.878/2025). Avaliação caso a caso (datas de dose/parto) permanece fora do MVP agregado — sem PII.",
+        "parametros": [
+          {
+            "id": "meta_cobertura_trat_adequado_pct",
+            "valor": 95,
+            "unidade": "%",
+            "documento": "Guia Certificação Eliminação TV (MS) — Indicador de Processo 5",
+            "valid_from": "2024-01-01",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "Cobertura de gestantes tratadas adequadamente para sífilis. Meta de impacto: ≥ 95%.",
+            "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct",
+            "nota": "Cobertura de tratamento adequado das gestantes com sífilis ≥95% (eliminação / selo ouro).",
+            "pronto_para_motor": true
+          },
+          {
+            "id": "dias_antes_parto_tratamento_adequado",
+            "valor": 30,
+            "unidade": "dias",
+            "documento": "NT 14/2023-DATHI/SVSA/MS §3.4; Guia Eliminação TV (processo 5)",
+            "valid_from": "2023-07-17",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "Considera-se tratamento adequado para sífilis durante a gestação aquele que é completo para o respectivo estágio clínico da sífilis, feito com benzilpenicilina benzatina e iniciado até 30 dias antes do parto.\n",
+            "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#dias_antes_parto_tratamento_adequado",
+            "nota": "Início do tratamento até 30 dias antes do parto; concluir antes do parto.",
+            "pronto_para_motor": true
+          },
+          {
+            "id": "intervalo_doses_penicilina_dias",
+            "valor": 9,
+            "unidade": "dias",
+            "documento": "NT 14/2023-DATHI/SVSA/MS — intervalo entre doses em gestantes",
+            "valid_from": "2023-07-17",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "As doses sejam aplicadas, idealmente, a cada 7 (sete) dias, não ultrapassando 9 (nove) dias. Caso alguma dose seja perdida ou o intervalo entre elas seja maior que nove dias, o esquema terapêutico deve ser reiniciado.\n",
+            "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#intervalo_doses_penicilina_dias",
+            "nota": "Intervalo máximo entre doses semanais ≤9 dias (ideal 7). Ultrapassado → reinício.",
+            "pronto_para_motor": true
+          },
+          {
+            "id": "meta_incidencia_sc_por_1000_nv",
+            "valor": 0.5,
+            "unidade": "por 1.000 NV",
+            "documento": "Guia Certificação Eliminação TV (MS) — Indicador de Impacto 3",
+            "valid_from": "2024-01-01",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "Taxa de incidência de sífilis congênita. Meta de impacto: ≤ 0,5 caso por 1.000 nascidos vivos.",
+            "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv",
+            "nota": "Meta de incidência SC ≤0,5/1.000 NV (eliminação).",
+            "pronto_para_motor": true
+          },
+          {
+            "id": "pqa_vs_reducao_pp",
+            "valor": 1,
+            "unidade": "pontos percentuais",
+            "documento": "Portaria GM/MS nº 6.878/2025; Caderno Indicadores PQA-VS 2023",
+            "valid_from": "2025-04-25",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "Meta: Redução de um ponto percentual do valor do ano base ou a manutenção de percentual zero.\n",
+            "excerpt_ref": "docs/oficiais/excerpts/pqa_vs_indicador11.yml#pqa_vs_reducao_pp",
+            "nota": "Meta PQA-VS ind. 11 — Δ ≤ −1 p.p. vs ano-base, ou manutenção em 0%.",
+            "pronto_para_motor": true
+          },
+          {
+            "id": "meta_prop_gestantes_exames_sifilis_hiv_pct",
+            "valor": 60,
+            "unidade": "%",
+            "documento": "NT 14/2022-SAPS/MS",
+            "valid_from": "2022-07-11",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "a meta pactuada para este indicador é de 60%.",
+            "excerpt_ref": "docs/oficiais/excerpts/nt14_2022_testagem_aps.yml#meta_prop_gestantes_exames_sifilis_hiv_pct",
+            "nota": "Meta Previne Brasil / APS — não confundir com parâmetro ideal 100%.",
+            "pronto_para_motor": true
+          },
+          {
+            "id": "parametro_prop_gestantes_exames_sifilis_hiv_pct",
+            "valor": 100,
+            "unidade": "%",
+            "documento": "NT 14/2022-SAPS/MS",
+            "valid_from": "2022-07-11",
+            "valid_to": null,
+            "formula_status": "extraido_literal",
+            "citacao": "o parâmetro para esse indicador é de 100%.",
+            "excerpt_ref": "docs/oficiais/excerpts/nt14_2022_testagem_aps.yml#parametro_prop_gestantes_exames_sifilis_hiv_pct",
+            "nota": "Valor ideal (2 TR sífilis + 2 TR HIV: 1ª consulta e 3º trimestre).",
+            "pronto_para_motor": true
+          }
+        ],
+        "prontos_n": 7,
+        "total_n": 7,
+        "avaliacao_caso": "pendente_datas_nominais"
+      }
+    }
+  }
+}

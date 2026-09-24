@@ -1,0 +1,1991 @@
+{
+  "tipo": "extracao_dw",
+  "aviso": "Agregados GAL (VW_GAL) — exames de sífilis (Teste Rápido / Sífilis / VDRL / treponêmicos). Positividade e TAT usam exames liberados. lab_reagente_sem_sinan = proxy municipal (reagente GAL sem casos SIFA-proxy+SIFG no ano); não é linkage nominal. Sinal laboratorial gera hipótese a investigar — não equivale a surto. Sem PII. Subíndice lab no Índice de Risco = N/A (ADR-003).",
+  "ano": 2026,
+  "fonte_prevista": "dbo.VW_GAL",
+  "disponivel": true,
+  "ers_n": 16,
+  "estado": {
+    "lab_testes_n": 21,
+    "lab_testes_liberados_n": 1,
+    "lab_reagentes_n": 0,
+    "lab_positividade": 0.0,
+    "lab_tat_p50": 1.0,
+    "lab_reagente_sem_sinan": 0
+  },
+  "indicadores": {
+    "lab_testes_n": {
+      "valor": 21,
+      "unidade": "n"
+    },
+    "lab_positividade": {
+      "valor": 0.0,
+      "unidade": "%"
+    },
+    "lab_tat_p50": {
+      "valor": 1.0,
+      "unidade": "dias"
+    },
+    "lab_reagente_sem_sinan": {
+      "valor": 0,
+      "unidade": "n",
+      "nivel_evidencia": "proxy_municipal"
+    }
+  },
+  "ranking_ers": [
+    {
+      "ers_id": "baixada-cuiabana",
+      "nome": "Baixada Cuiabana",
+      "testes_n": 15,
+      "testes_liberados_n": 1,
+      "reagentes_n": 0,
+      "positividade_pct": 0.0,
+      "tat_media_dias": 1.0,
+      "reagente_sem_sinan_n": 0,
+      "municipios_n": 2
+    },
+    {
+      "ers_id": "juina",
+      "nome": "Juína",
+      "testes_n": 5,
+      "testes_liberados_n": 0,
+      "reagentes_n": 0,
+      "positividade_pct": null,
+      "tat_media_dias": null,
+      "reagente_sem_sinan_n": 0,
+      "municipios_n": 2
+    },
+    {
+      "ers_id": "diamantino",
+      "nome": "Diamantino",
+      "testes_n": 1,
+      "testes_liberados_n": 0,
+      "reagentes_n": 0,
+      "positividade_pct": null,
+      "tat_media_dias": null,
+      "reagente_sem_sinan_n": 0,
+      "municipios_n": 1
+    },
+    {
+      "ers_id": "sinop",
+      "nome": "Sinop",
+      "testes_n": 1,
+      "testes_liberados_n": 0,
+      "reagentes_n": 0,
+      "positividade_pct": null,
+      "tat_media_dias": null,
+      "reagente_sem_sinan_n": 0,
+      "municipios_n": 1
+    },
+    {
+      "ers_id": "agua-boa",
+      "nome": "Água Boa",
+      "testes_n": 0,
+      "testes_liberados_n": 0,
+      "reagentes_n": 0,
+      "positividade_pct": null,
+      "tat_media_dias": null,
+      "reagente_sem_sinan_n": 0,
+      "municipios_n": 0
+    },
+    {
+      "ers_id": "alta-floresta",
+      "nome": "Alta Floresta",
+      "testes_n": 0,
+      "testes_liberados_n": 0,
+      "reagentes_n": 0,
+      "positividade_pct": null,
+      "tat_media_dias": null,
+      "reagente_sem_sinan_n": 0,
+      "municipios_n": 0
+    },
+    {
+      "ers_id": "barra-do-garcas",
+      "nome": "Barra do Garças",
+      "testes_n": 0,
+      "testes_liberados_n": 0,
+      "reagentes_n": 0,
+      "positividade_pct": null,
+      "tat_media_dias": null,
+      "reagente_sem_sinan_n": 0,
+      "municipios_n": 0
+    },
+    {
+      "ers_id": "caceres",
+      "nome": "Cáceres",
+      "testes_n": 0,
+      "testes_liberados_n": 0,
+      "reagentes_n": 0,
+      "positividade_pct": null,
+      "tat_media_dias": null,
+      "reagente_sem_sinan_n": 0,
+      "municipios_n": 0
+    },
+    {
+      "ers_id": "colider",
+      "nome": "Colíder",
+      "testes_n": 0,
+      "testes_liberados_n": 0,
+      "reagentes_n": 0,
+      "positividade_pct": null,
+      "tat_media_dias": null,
+      "reagente_sem_sinan_n": 0,
+      "municipios_n": 0
+    },
+    {
+      "ers_id": "juara",
+      "nome": "Juara",
+      "testes_n": 0,
+      "testes_liberados_n": 0,
+      "reagentes_n": 0,
+      "positividade_pct": null,
+      "tat_media_dias": null,
+      "reagente_sem_sinan_n": 0,
+      "municipios_n": 0
+    },
+    {
+      "ers_id": "peixoto-de-azevedo",
+      "nome": "Peixoto de Azevedo",
+      "testes_n": 0,
+      "testes_liberados_n": 0,
+      "reagentes_n": 0,
+      "positividade_pct": null,
+      "tat_media_dias": null,
+      "reagente_sem_sinan_n": 0,
+      "municipios_n": 0
+    },
+    {
+      "ers_id": "pontes-e-lacerda",
+      "nome": "Pontes e Lacerda",
+      "testes_n": 0,
+      "testes_liberados_n": 0,
+      "reagentes_n": 0,
+      "positividade_pct": null,
+      "tat_media_dias": null,
+      "reagente_sem_sinan_n": 0,
+      "municipios_n": 0
+    },
+    {
+      "ers_id": "porto-alegre-do-norte",
+      "nome": "Porto Alegre do Norte",
+      "testes_n": 0,
+      "testes_liberados_n": 0,
+      "reagentes_n": 0,
+      "positividade_pct": null,
+      "tat_media_dias": null,
+      "reagente_sem_sinan_n": 0,
+      "municipios_n": 0
+    },
+    {
+      "ers_id": "rondonopolis",
+      "nome": "Rondonópolis",
+      "testes_n": 0,
+      "testes_liberados_n": 0,
+      "reagentes_n": 0,
+      "positividade_pct": null,
+      "tat_media_dias": null,
+      "reagente_sem_sinan_n": 0,
+      "municipios_n": 0
+    },
+    {
+      "ers_id": "sao-felix-do-araguaia",
+      "nome": "São Félix do Araguaia",
+      "testes_n": 0,
+      "testes_liberados_n": 0,
+      "reagentes_n": 0,
+      "positividade_pct": null,
+      "tat_media_dias": null,
+      "reagente_sem_sinan_n": 0,
+      "municipios_n": 0
+    },
+    {
+      "ers_id": "tangara-da-serra",
+      "nome": "Tangará da Serra",
+      "testes_n": 0,
+      "testes_liberados_n": 0,
+      "reagentes_n": 0,
+      "positividade_pct": null,
+      "tat_media_dias": null,
+      "reagente_sem_sinan_n": 0,
+      "municipios_n": 0
+    }
+  ],
+  "ranking_municipios": [
+    {
+      "co_municipio_ibge": "510340",
+      "municipio": "CUIABA",
+      "ers_id": "baixada-cuiabana",
+      "regional": "Baixada Cuiabana",
+      "testes_n": 14,
+      "testes_liberados_n": 1,
+      "reagentes_n": 0,
+      "positividade_pct": 0.0,
+      "reagente_sem_sinan_n": 0
+    },
+    {
+      "co_municipio_ibge": "510325",
+      "municipio": "COLNIZA",
+      "ers_id": "juina",
+      "regional": "Juína",
+      "testes_n": 3,
+      "testes_liberados_n": 0,
+      "reagentes_n": 0,
+      "positividade_pct": null,
+      "reagente_sem_sinan_n": 0
+    },
+    {
+      "co_municipio_ibge": "510515",
+      "municipio": "JUINA",
+      "ers_id": "juina",
+      "regional": "Juína",
+      "testes_n": 2,
+      "testes_liberados_n": 0,
+      "reagentes_n": 0,
+      "positividade_pct": null,
+      "reagente_sem_sinan_n": 0
+    },
+    {
+      "co_municipio_ibge": "510622",
+      "municipio": "NOVA MUTUM",
+      "ers_id": "sinop",
+      "regional": "Sinop",
+      "testes_n": 1,
+      "testes_liberados_n": 0,
+      "reagentes_n": 0,
+      "positividade_pct": null,
+      "reagente_sem_sinan_n": 0
+    },
+    {
+      "co_municipio_ibge": "510840",
+      "municipio": "VARZEA GRANDE",
+      "ers_id": "baixada-cuiabana",
+      "regional": "Baixada Cuiabana",
+      "testes_n": 1,
+      "testes_liberados_n": 0,
+      "reagentes_n": 0,
+      "positividade_pct": null,
+      "reagente_sem_sinan_n": 0
+    }
+  ],
+  "subindice_risco_lab": "N/A",
+  "por_ano": {
+    "2022": {
+      "tipo": "extracao_dw",
+      "aviso": "Agregados GAL (VW_GAL) — exames de sífilis (Teste Rápido / Sífilis / VDRL / treponêmicos). Positividade e TAT usam exames liberados. lab_reagente_sem_sinan = proxy municipal (reagente GAL sem casos SIFA-proxy+SIFG no ano); não é linkage nominal. Sinal laboratorial gera hipótese a investigar — não equivale a surto. Sem PII. Subíndice lab no Índice de Risco = N/A (ADR-003).",
+      "ano": 2022,
+      "fonte_prevista": "dbo.VW_GAL",
+      "disponivel": true,
+      "ers_n": 16,
+      "estado": {
+        "lab_testes_n": 219,
+        "lab_testes_liberados_n": 7,
+        "lab_reagentes_n": 2,
+        "lab_positividade": 28.6,
+        "lab_tat_p50": 5.0,
+        "lab_reagente_sem_sinan": 0
+      },
+      "indicadores": {
+        "lab_testes_n": {
+          "valor": 219,
+          "unidade": "n"
+        },
+        "lab_positividade": {
+          "valor": 28.6,
+          "unidade": "%"
+        },
+        "lab_tat_p50": {
+          "valor": 5.0,
+          "unidade": "dias"
+        },
+        "lab_reagente_sem_sinan": {
+          "valor": 0,
+          "unidade": "n",
+          "nivel_evidencia": "proxy_municipal"
+        }
+      },
+      "ranking_ers": [
+        {
+          "ers_id": "baixada-cuiabana",
+          "nome": "Baixada Cuiabana",
+          "testes_n": 105,
+          "testes_liberados_n": 3,
+          "reagentes_n": 2,
+          "positividade_pct": 66.7,
+          "tat_media_dias": 3.7,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 2
+        },
+        {
+          "ers_id": "tangara-da-serra",
+          "nome": "Tangará da Serra",
+          "testes_n": 37,
+          "testes_liberados_n": 1,
+          "reagentes_n": 0,
+          "positividade_pct": 0.0,
+          "tat_media_dias": 4.0,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 5
+        },
+        {
+          "ers_id": "sinop",
+          "nome": "Sinop",
+          "testes_n": 32,
+          "testes_liberados_n": 2,
+          "reagentes_n": 0,
+          "positividade_pct": 0.0,
+          "tat_media_dias": 5.5,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 6
+        },
+        {
+          "ers_id": "diamantino",
+          "nome": "Diamantino",
+          "testes_n": 20,
+          "testes_liberados_n": 1,
+          "reagentes_n": 0,
+          "positividade_pct": 0.0,
+          "tat_media_dias": 7.0,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 5
+        },
+        {
+          "ers_id": "barra-do-garcas",
+          "nome": "Barra do Garças",
+          "testes_n": 13,
+          "testes_liberados_n": 1,
+          "reagentes_n": 0,
+          "positividade_pct": 0.0,
+          "tat_media_dias": 8.0,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 2
+        },
+        {
+          "ers_id": "rondonopolis",
+          "nome": "Rondonópolis",
+          "testes_n": 12,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 6
+        },
+        {
+          "ers_id": "colider",
+          "nome": "Colíder",
+          "testes_n": 6,
+          "testes_liberados_n": 1,
+          "reagentes_n": 0,
+          "positividade_pct": 0.0,
+          "tat_media_dias": 3.0,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 4
+        },
+        {
+          "ers_id": "peixoto-de-azevedo",
+          "nome": "Peixoto de Azevedo",
+          "testes_n": 6,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 4
+        },
+        {
+          "ers_id": "porto-alegre-do-norte",
+          "nome": "Porto Alegre do Norte",
+          "testes_n": 5,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 2
+        },
+        {
+          "ers_id": "caceres",
+          "nome": "Cáceres",
+          "testes_n": 4,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 2
+        },
+        {
+          "ers_id": "agua-boa",
+          "nome": "Água Boa",
+          "testes_n": 1,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 1
+        },
+        {
+          "ers_id": "alta-floresta",
+          "nome": "Alta Floresta",
+          "testes_n": 1,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 1
+        },
+        {
+          "ers_id": "pontes-e-lacerda",
+          "nome": "Pontes e Lacerda",
+          "testes_n": 1,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 1
+        },
+        {
+          "ers_id": "juara",
+          "nome": "Juara",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "juina",
+          "nome": "Juína",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "sao-felix-do-araguaia",
+          "nome": "São Félix do Araguaia",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        }
+      ],
+      "ranking_municipios": [
+        {
+          "co_municipio_ibge": "510340",
+          "municipio": "CUIABA",
+          "ers_id": "baixada-cuiabana",
+          "regional": "Baixada Cuiabana",
+          "testes_n": 61,
+          "testes_liberados_n": 2,
+          "reagentes_n": 1,
+          "positividade_pct": 50.0,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510840",
+          "municipio": "VARZEA GRANDE",
+          "ers_id": "baixada-cuiabana",
+          "regional": "Baixada Cuiabana",
+          "testes_n": 44,
+          "testes_liberados_n": 1,
+          "reagentes_n": 1,
+          "positividade_pct": 100.0,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510263",
+          "municipio": "CAMPO NOVO DO PARECIS",
+          "ers_id": "tangara-da-serra",
+          "regional": "Tangará da Serra",
+          "testes_n": 17,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510180",
+          "municipio": "BARRA DO GARCAS",
+          "ers_id": "barra-do-garcas",
+          "regional": "Barra do Garças",
+          "testes_n": 12,
+          "testes_liberados_n": 1,
+          "reagentes_n": 0,
+          "positividade_pct": 0.0,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510787",
+          "municipio": "SAPEZAL",
+          "ers_id": "tangara-da-serra",
+          "regional": "Tangará da Serra",
+          "testes_n": 10,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510525",
+          "municipio": "LUCAS DO RIO VERDE",
+          "ers_id": "sinop",
+          "regional": "Sinop",
+          "testes_n": 10,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510790",
+          "municipio": "SINOP",
+          "ers_id": "sinop",
+          "regional": "Sinop",
+          "testes_n": 9,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510795",
+          "municipio": "TANGARA DA SERRA",
+          "ers_id": "tangara-da-serra",
+          "regional": "Tangará da Serra",
+          "testes_n": 7,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510622",
+          "municipio": "NOVA MUTUM",
+          "ers_id": "sinop",
+          "regional": "Sinop",
+          "testes_n": 7,
+          "testes_liberados_n": 1,
+          "reagentes_n": 0,
+          "positividade_pct": 0.0,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510760",
+          "municipio": "RONDONOPOLIS",
+          "ers_id": "rondonopolis",
+          "regional": "Rondonópolis",
+          "testes_n": 5,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510706",
+          "municipio": "QUERENCIA",
+          "ers_id": "porto-alegre-do-norte",
+          "regional": "Porto Alegre do Norte",
+          "testes_n": 4,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510792",
+          "municipio": "SORRISO",
+          "ers_id": "sinop",
+          "regional": "Sinop",
+          "testes_n": 3,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510642",
+          "municipio": "PEIXOTO DE AZEVEDO",
+          "ers_id": "peixoto-de-azevedo",
+          "regional": "Peixoto de Azevedo",
+          "testes_n": 2,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510626",
+          "municipio": "NOVO MUNDO",
+          "ers_id": "peixoto-de-azevedo",
+          "regional": "Peixoto de Azevedo",
+          "testes_n": 2,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510455",
+          "municipio": "ITAUBA",
+          "ers_id": "colider",
+          "regional": "Colíder",
+          "testes_n": 2,
+          "testes_liberados_n": 1,
+          "reagentes_n": 0,
+          "positividade_pct": 0.0,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510520",
+          "municipio": "JUSCIMEIRA",
+          "ers_id": "rondonopolis",
+          "regional": "Rondonópolis",
+          "testes_n": 2,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510250",
+          "municipio": "CACERES",
+          "ers_id": "caceres",
+          "regional": "Cáceres",
+          "testes_n": 2,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510624",
+          "municipio": "NOVA UBIRATA",
+          "ers_id": "tangara-da-serra",
+          "regional": "Tangará da Serra",
+          "testes_n": 2,
+          "testes_liberados_n": 1,
+          "reagentes_n": 0,
+          "positividade_pct": 0.0,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510704",
+          "municipio": "PRIMAVERA DO LESTE",
+          "ers_id": "rondonopolis",
+          "regional": "Rondonópolis",
+          "testes_n": 2,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510682",
+          "municipio": "PORTO ESPERIDIAO",
+          "ers_id": "caceres",
+          "regional": "Cáceres",
+          "testes_n": 2,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510020",
+          "municipio": "AGUA BOA",
+          "ers_id": "agua-boa",
+          "regional": "Água Boa",
+          "testes_n": 1,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510267",
+          "municipio": "CAMPO VERDE",
+          "ers_id": "rondonopolis",
+          "regional": "Rondonópolis",
+          "testes_n": 1,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510320",
+          "municipio": "COLIDER",
+          "ers_id": null,
+          "regional": "15",
+          "testes_n": 1,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510335",
+          "municipio": "CONFRESA",
+          "ers_id": "porto-alegre-do-norte",
+          "regional": "Porto Alegre do Norte",
+          "testes_n": 1,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510350",
+          "municipio": "DIAMANTINO",
+          "ers_id": "tangara-da-serra",
+          "regional": "Tangará da Serra",
+          "testes_n": 1,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510410",
+          "municipio": "GUARANTA DO NORTE",
+          "ers_id": null,
+          "regional": "12",
+          "testes_n": 1,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510625",
+          "municipio": "NOVA XAVANTINA",
+          "ers_id": "barra-do-garcas",
+          "regional": "Barra do Garças",
+          "testes_n": 1,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510560",
+          "municipio": "MATUPA",
+          "ers_id": "peixoto-de-azevedo",
+          "regional": "Peixoto de Azevedo",
+          "testes_n": 1,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510460",
+          "municipio": "ITIQUIRA",
+          "ers_id": "rondonopolis",
+          "regional": "Rondonópolis",
+          "testes_n": 1,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510629",
+          "municipio": "PARANAITA",
+          "ers_id": "alta-floresta",
+          "regional": "Alta Floresta",
+          "testes_n": 1,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510675",
+          "municipio": "PONTES E LACERDA",
+          "ers_id": "pontes-e-lacerda",
+          "regional": "Pontes e Lacerda",
+          "testes_n": 1,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510630",
+          "municipio": "PARANATINGA",
+          "ers_id": "rondonopolis",
+          "regional": "Rondonópolis",
+          "testes_n": 1,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510770",
+          "municipio": "ROSARIO OESTE",
+          "ers_id": null,
+          "regional": "09",
+          "testes_n": 1,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510800",
+          "municipio": "TAPURAH",
+          "ers_id": "sinop",
+          "regional": "Sinop",
+          "testes_n": 1,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        }
+      ],
+      "subindice_risco_lab": "N/A"
+    },
+    "2023": {
+      "tipo": "extracao_dw",
+      "aviso": "Agregados GAL (VW_GAL) — exames de sífilis (Teste Rápido / Sífilis / VDRL / treponêmicos). Positividade e TAT usam exames liberados. lab_reagente_sem_sinan = proxy municipal (reagente GAL sem casos SIFA-proxy+SIFG no ano); não é linkage nominal. Sinal laboratorial gera hipótese a investigar — não equivale a surto. Sem PII. Subíndice lab no Índice de Risco = N/A (ADR-003).",
+      "ano": 2023,
+      "fonte_prevista": "dbo.VW_GAL",
+      "disponivel": true,
+      "ers_n": 16,
+      "estado": {
+        "lab_testes_n": 1,
+        "lab_testes_liberados_n": 1,
+        "lab_reagentes_n": 1,
+        "lab_positividade": 100.0,
+        "lab_tat_p50": null,
+        "lab_reagente_sem_sinan": 0
+      },
+      "indicadores": {
+        "lab_testes_n": {
+          "valor": 1,
+          "unidade": "n"
+        },
+        "lab_positividade": {
+          "valor": 100.0,
+          "unidade": "%"
+        },
+        "lab_tat_p50": {
+          "valor": null,
+          "unidade": "dias"
+        },
+        "lab_reagente_sem_sinan": {
+          "valor": 0,
+          "unidade": "n",
+          "nivel_evidencia": "proxy_municipal"
+        }
+      },
+      "ranking_ers": [
+        {
+          "ers_id": "baixada-cuiabana",
+          "nome": "Baixada Cuiabana",
+          "testes_n": 1,
+          "testes_liberados_n": 1,
+          "reagentes_n": 1,
+          "positividade_pct": 100.0,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 1
+        },
+        {
+          "ers_id": "agua-boa",
+          "nome": "Água Boa",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "alta-floresta",
+          "nome": "Alta Floresta",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "barra-do-garcas",
+          "nome": "Barra do Garças",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "caceres",
+          "nome": "Cáceres",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "colider",
+          "nome": "Colíder",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "diamantino",
+          "nome": "Diamantino",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "juara",
+          "nome": "Juara",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "juina",
+          "nome": "Juína",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "peixoto-de-azevedo",
+          "nome": "Peixoto de Azevedo",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "pontes-e-lacerda",
+          "nome": "Pontes e Lacerda",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "porto-alegre-do-norte",
+          "nome": "Porto Alegre do Norte",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "rondonopolis",
+          "nome": "Rondonópolis",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "sao-felix-do-araguaia",
+          "nome": "São Félix do Araguaia",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "sinop",
+          "nome": "Sinop",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "tangara-da-serra",
+          "nome": "Tangará da Serra",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        }
+      ],
+      "ranking_municipios": [
+        {
+          "co_municipio_ibge": "510340",
+          "municipio": "CUIABA",
+          "ers_id": "baixada-cuiabana",
+          "regional": "Baixada Cuiabana",
+          "testes_n": 1,
+          "testes_liberados_n": 1,
+          "reagentes_n": 1,
+          "positividade_pct": 100.0,
+          "reagente_sem_sinan_n": 0
+        }
+      ],
+      "subindice_risco_lab": "N/A"
+    },
+    "2024": {
+      "tipo": "extracao_dw",
+      "aviso": "Agregados GAL (VW_GAL) — exames de sífilis (Teste Rápido / Sífilis / VDRL / treponêmicos). Positividade e TAT usam exames liberados. lab_reagente_sem_sinan = proxy municipal (reagente GAL sem casos SIFA-proxy+SIFG no ano); não é linkage nominal. Sinal laboratorial gera hipótese a investigar — não equivale a surto. Sem PII. Subíndice lab no Índice de Risco = N/A (ADR-003).",
+      "ano": 2024,
+      "fonte_prevista": "dbo.VW_GAL",
+      "disponivel": true,
+      "ers_n": 16,
+      "estado": {
+        "lab_testes_n": 38,
+        "lab_testes_liberados_n": 25,
+        "lab_reagentes_n": 12,
+        "lab_positividade": 48.0,
+        "lab_tat_p50": 2.0,
+        "lab_reagente_sem_sinan": 0
+      },
+      "indicadores": {
+        "lab_testes_n": {
+          "valor": 38,
+          "unidade": "n"
+        },
+        "lab_positividade": {
+          "valor": 48.0,
+          "unidade": "%"
+        },
+        "lab_tat_p50": {
+          "valor": 2.0,
+          "unidade": "dias"
+        },
+        "lab_reagente_sem_sinan": {
+          "valor": 0,
+          "unidade": "n",
+          "nivel_evidencia": "proxy_municipal"
+        }
+      },
+      "ranking_ers": [
+        {
+          "ers_id": "baixada-cuiabana",
+          "nome": "Baixada Cuiabana",
+          "testes_n": 35,
+          "testes_liberados_n": 24,
+          "reagentes_n": 12,
+          "positividade_pct": 50.0,
+          "tat_media_dias": 14.9,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 2
+        },
+        {
+          "ers_id": "colider",
+          "nome": "Colíder",
+          "testes_n": 1,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 1
+        },
+        {
+          "ers_id": "diamantino",
+          "nome": "Diamantino",
+          "testes_n": 1,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 1
+        },
+        {
+          "ers_id": "peixoto-de-azevedo",
+          "nome": "Peixoto de Azevedo",
+          "testes_n": 1,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 1
+        },
+        {
+          "ers_id": "sinop",
+          "nome": "Sinop",
+          "testes_n": 1,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 1
+        },
+        {
+          "ers_id": "tangara-da-serra",
+          "nome": "Tangará da Serra",
+          "testes_n": 1,
+          "testes_liberados_n": 1,
+          "reagentes_n": 0,
+          "positividade_pct": 0.0,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 1
+        },
+        {
+          "ers_id": "agua-boa",
+          "nome": "Água Boa",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "alta-floresta",
+          "nome": "Alta Floresta",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "barra-do-garcas",
+          "nome": "Barra do Garças",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "caceres",
+          "nome": "Cáceres",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "juara",
+          "nome": "Juara",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "juina",
+          "nome": "Juína",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "pontes-e-lacerda",
+          "nome": "Pontes e Lacerda",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "porto-alegre-do-norte",
+          "nome": "Porto Alegre do Norte",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "rondonopolis",
+          "nome": "Rondonópolis",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "sao-felix-do-araguaia",
+          "nome": "São Félix do Araguaia",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        }
+      ],
+      "ranking_municipios": [
+        {
+          "co_municipio_ibge": "510340",
+          "municipio": "CUIABA",
+          "ers_id": "baixada-cuiabana",
+          "regional": "Baixada Cuiabana",
+          "testes_n": 29,
+          "testes_liberados_n": 20,
+          "reagentes_n": 10,
+          "positividade_pct": 50.0,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510840",
+          "municipio": "VARZEA GRANDE",
+          "ers_id": "baixada-cuiabana",
+          "regional": "Baixada Cuiabana",
+          "testes_n": 6,
+          "testes_liberados_n": 4,
+          "reagentes_n": 2,
+          "positividade_pct": 50.0,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510560",
+          "municipio": "MATUPA",
+          "ers_id": "peixoto-de-azevedo",
+          "regional": "Peixoto de Azevedo",
+          "testes_n": 1,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510622",
+          "municipio": "NOVA MUTUM",
+          "ers_id": "sinop",
+          "regional": "Sinop",
+          "testes_n": 1,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510795",
+          "municipio": "TANGARA DA SERRA",
+          "ers_id": "tangara-da-serra",
+          "regional": "Tangará da Serra",
+          "testes_n": 1,
+          "testes_liberados_n": 1,
+          "reagentes_n": 0,
+          "positividade_pct": 0.0,
+          "reagente_sem_sinan_n": 0
+        }
+      ],
+      "subindice_risco_lab": "N/A"
+    },
+    "2025": {
+      "tipo": "extracao_dw",
+      "aviso": "Agregados GAL (VW_GAL) — exames de sífilis (Teste Rápido / Sífilis / VDRL / treponêmicos). Positividade e TAT usam exames liberados. lab_reagente_sem_sinan = proxy municipal (reagente GAL sem casos SIFA-proxy+SIFG no ano); não é linkage nominal. Sinal laboratorial gera hipótese a investigar — não equivale a surto. Sem PII. Subíndice lab no Índice de Risco = N/A (ADR-003).",
+      "ano": 2025,
+      "fonte_prevista": "dbo.VW_GAL",
+      "disponivel": true,
+      "ers_n": 16,
+      "estado": {
+        "lab_testes_n": 74,
+        "lab_testes_liberados_n": 37,
+        "lab_reagentes_n": 6,
+        "lab_positividade": 16.2,
+        "lab_tat_p50": 7.0,
+        "lab_reagente_sem_sinan": 0
+      },
+      "indicadores": {
+        "lab_testes_n": {
+          "valor": 74,
+          "unidade": "n"
+        },
+        "lab_positividade": {
+          "valor": 16.2,
+          "unidade": "%"
+        },
+        "lab_tat_p50": {
+          "valor": 7.0,
+          "unidade": "dias"
+        },
+        "lab_reagente_sem_sinan": {
+          "valor": 0,
+          "unidade": "n",
+          "nivel_evidencia": "proxy_municipal"
+        }
+      },
+      "ranking_ers": [
+        {
+          "ers_id": "baixada-cuiabana",
+          "nome": "Baixada Cuiabana",
+          "testes_n": 52,
+          "testes_liberados_n": 27,
+          "reagentes_n": 6,
+          "positividade_pct": 22.2,
+          "tat_media_dias": 41.5,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 2
+        },
+        {
+          "ers_id": "sinop",
+          "nome": "Sinop",
+          "testes_n": 7,
+          "testes_liberados_n": 3,
+          "reagentes_n": 0,
+          "positividade_pct": 0.0,
+          "tat_media_dias": 5.7,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 3
+        },
+        {
+          "ers_id": "agua-boa",
+          "nome": "Água Boa",
+          "testes_n": 4,
+          "testes_liberados_n": 1,
+          "reagentes_n": 0,
+          "positividade_pct": 0.0,
+          "tat_media_dias": 1.0,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 2
+        },
+        {
+          "ers_id": "peixoto-de-azevedo",
+          "nome": "Peixoto de Azevedo",
+          "testes_n": 3,
+          "testes_liberados_n": 1,
+          "reagentes_n": 0,
+          "positividade_pct": 0.0,
+          "tat_media_dias": 4.0,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 1
+        },
+        {
+          "ers_id": "diamantino",
+          "nome": "Diamantino",
+          "testes_n": 2,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 1
+        },
+        {
+          "ers_id": "porto-alegre-do-norte",
+          "nome": "Porto Alegre do Norte",
+          "testes_n": 2,
+          "testes_liberados_n": 1,
+          "reagentes_n": 0,
+          "positividade_pct": 0.0,
+          "tat_media_dias": 21.0,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 1
+        },
+        {
+          "ers_id": "rondonopolis",
+          "nome": "Rondonópolis",
+          "testes_n": 2,
+          "testes_liberados_n": 1,
+          "reagentes_n": 0,
+          "positividade_pct": 0.0,
+          "tat_media_dias": 15.0,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 2
+        },
+        {
+          "ers_id": "alta-floresta",
+          "nome": "Alta Floresta",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "barra-do-garcas",
+          "nome": "Barra do Garças",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "caceres",
+          "nome": "Cáceres",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "colider",
+          "nome": "Colíder",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "juara",
+          "nome": "Juara",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "juina",
+          "nome": "Juína",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "pontes-e-lacerda",
+          "nome": "Pontes e Lacerda",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "sao-felix-do-araguaia",
+          "nome": "São Félix do Araguaia",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "tangara-da-serra",
+          "nome": "Tangará da Serra",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        }
+      ],
+      "ranking_municipios": [
+        {
+          "co_municipio_ibge": "510340",
+          "municipio": "CUIABA",
+          "ers_id": "baixada-cuiabana",
+          "regional": "Baixada Cuiabana",
+          "testes_n": 38,
+          "testes_liberados_n": 20,
+          "reagentes_n": 6,
+          "positividade_pct": 30.0,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510840",
+          "municipio": "VARZEA GRANDE",
+          "ers_id": "baixada-cuiabana",
+          "regional": "Baixada Cuiabana",
+          "testes_n": 14,
+          "testes_liberados_n": 7,
+          "reagentes_n": 0,
+          "positividade_pct": 0.0,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510790",
+          "municipio": "SINOP",
+          "ers_id": "sinop",
+          "regional": "Sinop",
+          "testes_n": 4,
+          "testes_liberados_n": 2,
+          "reagentes_n": 0,
+          "positividade_pct": 0.0,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510642",
+          "municipio": "PEIXOTO DE AZEVEDO",
+          "ers_id": "peixoto-de-azevedo",
+          "regional": "Peixoto de Azevedo",
+          "testes_n": 3,
+          "testes_liberados_n": 1,
+          "reagentes_n": 0,
+          "positividade_pct": 0.0,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510185",
+          "municipio": "BOM JESUS DO ARAGUAIA",
+          "ers_id": "agua-boa",
+          "regional": "Água Boa",
+          "testes_n": 2,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510706",
+          "municipio": "QUERENCIA",
+          "ers_id": "porto-alegre-do-norte",
+          "regional": "Porto Alegre do Norte",
+          "testes_n": 2,
+          "testes_liberados_n": 1,
+          "reagentes_n": 0,
+          "positividade_pct": 0.0,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510410",
+          "municipio": "GUARANTA DO NORTE",
+          "ers_id": null,
+          "regional": "Secretaria Municipal de Saude de Guaranta do Nort",
+          "testes_n": 2,
+          "testes_liberados_n": 1,
+          "reagentes_n": 0,
+          "positividade_pct": 0.0,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510270",
+          "municipio": "CANARANA",
+          "ers_id": "agua-boa",
+          "regional": "Água Boa",
+          "testes_n": 2,
+          "testes_liberados_n": 1,
+          "reagentes_n": 0,
+          "positividade_pct": 0.0,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510558",
+          "municipio": "MARCELANDIA",
+          "ers_id": null,
+          "regional": "Secretaria Municipal de Saude de Marcelandia",
+          "testes_n": 2,
+          "testes_liberados_n": 2,
+          "reagentes_n": 0,
+          "positividade_pct": 0.0,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510622",
+          "municipio": "NOVA MUTUM",
+          "ers_id": "sinop",
+          "regional": "Sinop",
+          "testes_n": 2,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510267",
+          "municipio": "CAMPO VERDE",
+          "ers_id": "rondonopolis",
+          "regional": "Rondonópolis",
+          "testes_n": 1,
+          "testes_liberados_n": 1,
+          "reagentes_n": 0,
+          "positividade_pct": 0.0,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510760",
+          "municipio": "RONDONOPOLIS",
+          "ers_id": "rondonopolis",
+          "regional": "Rondonópolis",
+          "testes_n": 1,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510792",
+          "municipio": "SORRISO",
+          "ers_id": "sinop",
+          "regional": "Sinop",
+          "testes_n": 1,
+          "testes_liberados_n": 1,
+          "reagentes_n": 0,
+          "positividade_pct": 0.0,
+          "reagente_sem_sinan_n": 0
+        }
+      ],
+      "subindice_risco_lab": "N/A"
+    },
+    "2026": {
+      "tipo": "extracao_dw",
+      "aviso": "Agregados GAL (VW_GAL) — exames de sífilis (Teste Rápido / Sífilis / VDRL / treponêmicos). Positividade e TAT usam exames liberados. lab_reagente_sem_sinan = proxy municipal (reagente GAL sem casos SIFA-proxy+SIFG no ano); não é linkage nominal. Sinal laboratorial gera hipótese a investigar — não equivale a surto. Sem PII. Subíndice lab no Índice de Risco = N/A (ADR-003).",
+      "ano": 2026,
+      "fonte_prevista": "dbo.VW_GAL",
+      "disponivel": true,
+      "ers_n": 16,
+      "estado": {
+        "lab_testes_n": 21,
+        "lab_testes_liberados_n": 1,
+        "lab_reagentes_n": 0,
+        "lab_positividade": 0.0,
+        "lab_tat_p50": 1.0,
+        "lab_reagente_sem_sinan": 0
+      },
+      "indicadores": {
+        "lab_testes_n": {
+          "valor": 21,
+          "unidade": "n"
+        },
+        "lab_positividade": {
+          "valor": 0.0,
+          "unidade": "%"
+        },
+        "lab_tat_p50": {
+          "valor": 1.0,
+          "unidade": "dias"
+        },
+        "lab_reagente_sem_sinan": {
+          "valor": 0,
+          "unidade": "n",
+          "nivel_evidencia": "proxy_municipal"
+        }
+      },
+      "ranking_ers": [
+        {
+          "ers_id": "baixada-cuiabana",
+          "nome": "Baixada Cuiabana",
+          "testes_n": 15,
+          "testes_liberados_n": 1,
+          "reagentes_n": 0,
+          "positividade_pct": 0.0,
+          "tat_media_dias": 1.0,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 2
+        },
+        {
+          "ers_id": "juina",
+          "nome": "Juína",
+          "testes_n": 5,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 2
+        },
+        {
+          "ers_id": "diamantino",
+          "nome": "Diamantino",
+          "testes_n": 1,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 1
+        },
+        {
+          "ers_id": "sinop",
+          "nome": "Sinop",
+          "testes_n": 1,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 1
+        },
+        {
+          "ers_id": "agua-boa",
+          "nome": "Água Boa",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "alta-floresta",
+          "nome": "Alta Floresta",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "barra-do-garcas",
+          "nome": "Barra do Garças",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "caceres",
+          "nome": "Cáceres",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "colider",
+          "nome": "Colíder",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "juara",
+          "nome": "Juara",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "peixoto-de-azevedo",
+          "nome": "Peixoto de Azevedo",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "pontes-e-lacerda",
+          "nome": "Pontes e Lacerda",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "porto-alegre-do-norte",
+          "nome": "Porto Alegre do Norte",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "rondonopolis",
+          "nome": "Rondonópolis",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "sao-felix-do-araguaia",
+          "nome": "São Félix do Araguaia",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        },
+        {
+          "ers_id": "tangara-da-serra",
+          "nome": "Tangará da Serra",
+          "testes_n": 0,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "tat_media_dias": null,
+          "reagente_sem_sinan_n": 0,
+          "municipios_n": 0
+        }
+      ],
+      "ranking_municipios": [
+        {
+          "co_municipio_ibge": "510340",
+          "municipio": "CUIABA",
+          "ers_id": "baixada-cuiabana",
+          "regional": "Baixada Cuiabana",
+          "testes_n": 14,
+          "testes_liberados_n": 1,
+          "reagentes_n": 0,
+          "positividade_pct": 0.0,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510325",
+          "municipio": "COLNIZA",
+          "ers_id": "juina",
+          "regional": "Juína",
+          "testes_n": 3,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510515",
+          "municipio": "JUINA",
+          "ers_id": "juina",
+          "regional": "Juína",
+          "testes_n": 2,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510622",
+          "municipio": "NOVA MUTUM",
+          "ers_id": "sinop",
+          "regional": "Sinop",
+          "testes_n": 1,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        },
+        {
+          "co_municipio_ibge": "510840",
+          "municipio": "VARZEA GRANDE",
+          "ers_id": "baixada-cuiabana",
+          "regional": "Baixada Cuiabana",
+          "testes_n": 1,
+          "testes_liberados_n": 0,
+          "reagentes_n": 0,
+          "positividade_pct": null,
+          "reagente_sem_sinan_n": 0
+        }
+      ],
+      "subindice_risco_lab": "N/A"
+    }
+  }
+}

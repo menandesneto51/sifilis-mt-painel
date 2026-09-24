@@ -1,0 +1,53 @@
+{
+  "tipo": "extracao_dw",
+  "onda": "MVP3-extract",
+  "aviso": "Agregados DW SES-MT (SIM/SIA/VW_INTERNACAO) via VPN — sem PII. SISLOGLAB: use scripts/ingest_sisloglab_csv.py (mapa mensal agregado). SUINS no DW é legado (~2006) e não substitui. ADR-007. Insumos de estoque via CSV agregado mapa mensal (saldo≤0 ou flag_ruptura). Sem limiar clínico de dias mínimos até norma em regras.yml.",
+  "ano": 2026,
+  "fonte_prevista": "dbo.SIM + dbo.SIA + dbo.VW_INTERNACAO (DW) · SISLOGLAB CSV opcional",
+  "estado": {
+    "ruptura_penicilina_n": 1,
+    "municipios_com_ruptura_penicilina": 1,
+    "dias_cobertura_testes_mediana": 120.0,
+    "dias_cobertura_penicilina_mediana": 22.5,
+    "ubs_com_testagem_proxy": null,
+    "ubs_com_penicilina_proxy": null,
+    "obitos_sc_sim": 0,
+    "obitos_sc_proxy_sinan": 8,
+    "procedimentos_sia_sifilis": 0,
+    "internacoes_sih_sifilis": 0
+  },
+  "indicadores": {
+    "ruptura_penicilina": {
+      "valor": 1,
+      "status": "ingest_csv"
+    },
+    "estoque_testes_dias_cobertura": {
+      "valor": 120.0,
+      "status": "ingest_csv"
+    },
+    "estoque_penicilina_dias_cobertura": {
+      "valor": 22.5,
+      "status": "ingest_csv"
+    },
+    "obitos_sc_sim": {
+      "valor": 0,
+      "status": "extracao_dw"
+    },
+    "procedimentos_sia_sifilis": {
+      "valor": 0,
+      "status": "extracao_dw"
+    },
+    "internacoes_sih_sifilis": {
+      "valor": 0,
+      "status": "extracao_dw"
+    }
+  },
+  "regionais_alerta_ruptura": [
+    {
+      "id": "caceres",
+      "nome": "CACERES",
+      "mun_ruptura": 1
+    }
+  ],
+  "fonte_sisloglab": "csv_agregado_mapa_mensal"
+}

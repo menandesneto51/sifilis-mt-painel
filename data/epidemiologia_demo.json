@@ -1,0 +1,50 @@
+{
+  "tipo": "demonstracao",
+  "aviso": "Dados sintéticos. NÃO oficiais. Sem PII.",
+  "fonte_prevista": "DW/SES-MT — SINAN-SIFA/SIFG/SIFC + SINASC + CNES + IBGE (conexão pendente)",
+  "extraido_em": "2026-09-17",
+  "atraso_dias": 45,
+  "ano": 2025,
+  "estado": {
+    "adquirida": { "casos": 4125, "taxa": 112.6, "variacao_anual_pct": 12.4 },
+    "gestante": { "casos": 2218, "taxa": 36.4, "variacao_anual_pct": 8.7 },
+    "congenita": { "casos": 361, "taxa": 7.2, "obitos": 8, "mortalidade_100mil_nv": 16.3, "variacao_anual_pct": 17.9 },
+    "razao_sc_gestante_pct": 16.3,
+    "evitabilidade_sc_pct": 16.3,
+    "populacao": 3563000,
+    "nascidos_vivos": 49100,
+    "variacao_semanas": { "4": 3.2, "8": 5.1, "12": 7.8 },
+    "equidade_gestante_raca": [
+      { "categoria": "Parda", "pct": 52.1 },
+      { "categoria": "Branca", "pct": 28.4 },
+      { "categoria": "Preta", "pct": 12.8 },
+      { "categoria": "Amarela/Indígena/Ignorado", "pct": 6.7 }
+    ],
+    "equidade_faixa_etaria": [
+      { "categoria": "10–19", "pct": 18.2 },
+      { "categoria": "20–29", "pct": 48.5 },
+      { "categoria": "30–39", "pct": 26.1 },
+      { "categoria": "40+", "pct": 7.2 }
+    ]
+  },
+  "serie_anual": {
+    "anos": [2021, 2022, 2023, 2024, 2025],
+    "adquirida_taxa": [105.2, 112.8, 118.4, 124.1, 112.6],
+    "gestante_taxa": [35.1, 36.8, 38.2, 39.1, 36.4],
+    "congenita_taxa": [9.8, 9.1, 8.5, 8.1, 7.2]
+  },
+  "contadores_acao": {
+    "municipios_alerta": 27,
+    "gestantes_sem_tratamento": 63,
+    "criancas_expostas_sem_seguimento": 18,
+    "gal_sem_sinan": null,
+    "gal_sem_sinan_nota": "MVP2+",
+    "municipios_baixa_qualidade": 16
+  },
+  "top_problemas": [
+    "Tratamento materno inadequado",
+    "Diagnóstico tardio",
+    "Oportunidade perdida no pré-natal",
+    "Possível subnotificação / qualidade"
+  ]
+}

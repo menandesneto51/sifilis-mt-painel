@@ -1,0 +1,159 @@
+{
+  "tipo": "demonstracao",
+  "aviso": "Índice de Risco sintético. Laboratorial = N/A (MVP1). Motivos transparentes.",
+  "ano": 2025,
+  "municipios": [
+    {
+      "ibge": "5103403",
+      "nome": "Cuiabá",
+      "regional_id": "baixada-cuiabana",
+      "subindices": {
+        "epidemiologico": 72,
+        "transmissao_vertical": 68,
+        "falha_assistencial": 55,
+        "qualidade_informacao": 88,
+        "vulnerabilidade": 60,
+        "laboratorial": null
+      },
+      "score": 67.3,
+      "prioridade": "ALTA",
+      "motivos": [
+        "Volume elevado de sífilis em gestantes",
+        "Incidência de SC acima da meta de eliminação (referência)",
+        "Concentração assistencial a investigar em UBS (MVP2)"
+      ]
+    },
+    {
+      "ibge": "5107859",
+      "nome": "São Félix do Araguaia",
+      "regional_id": "sao-felix-do-araguaia",
+      "subindices": {
+        "epidemiologico": 78,
+        "transmissao_vertical": 91,
+        "falha_assistencial": 88,
+        "qualidade_informacao": 52,
+        "vulnerabilidade": 85,
+        "laboratorial": null
+      },
+      "score": 84.1,
+      "prioridade": "MUITO ALTA",
+      "motivos": [
+        "Aumento recente de sífilis em gestantes (série demo)",
+        "Incidência elevada de sífilis congênita",
+        "Tratamento materno inadequado na cascata",
+        "Score de qualidade baixo — interpretar risco com cautela"
+      ]
+    },
+    {
+      "ibge": "5107063",
+      "nome": "Porto Alegre do Norte",
+      "regional_id": "porto-alegre-do-norte",
+      "subindices": {
+        "epidemiologico": 75,
+        "transmissao_vertical": 86,
+        "falha_assistencial": 82,
+        "qualidade_informacao": 55,
+        "vulnerabilidade": 80,
+        "laboratorial": null
+      },
+      "score": 79.2,
+      "prioridade": "ALTA",
+      "motivos": [
+        "Perda entre tratamento iniciado e adequado",
+        "Diagnóstico tardio (proxy 3º trimestre/parto)",
+        "Qualidade da informação limitada"
+      ]
+    },
+    {
+      "ibge": "5107602",
+      "nome": "Rondonópolis",
+      "regional_id": "rondonopolis",
+      "subindices": {
+        "epidemiologico": 70,
+        "transmissao_vertical": 64,
+        "falha_assistencial": 58,
+        "qualidade_informacao": 79,
+        "vulnerabilidade": 55,
+        "laboratorial": null
+      },
+      "score": 64.8,
+      "prioridade": "MÉDIA",
+      "motivos": [
+        "Taxa de gestantes elevada com tratamento ainda aquém da meta ≥95%"
+      ]
+    },
+    {
+      "ibge": "5107909",
+      "nome": "Sinop",
+      "regional_id": "sinop",
+      "subindices": {
+        "epidemiologico": 66,
+        "transmissao_vertical": 60,
+        "falha_assistencial": 50,
+        "qualidade_informacao": 81,
+        "vulnerabilidade": 48,
+        "laboratorial": null
+      },
+      "score": 59.5,
+      "prioridade": "MÉDIA",
+      "motivos": [
+        "Monitorar variação de 8–12 semanas na adquirida"
+      ]
+    },
+    {
+      "ibge": "5102504",
+      "nome": "Cáceres",
+      "regional_id": "caceres",
+      "subindices": {
+        "epidemiologico": 68,
+        "transmissao_vertical": 74,
+        "falha_assistencial": 70,
+        "qualidade_informacao": 61,
+        "vulnerabilidade": 65,
+        "laboratorial": null
+      },
+      "score": 69.4,
+      "prioridade": "ALTA",
+      "motivos": [
+        "Tratamento da parceria abaixo do esperado",
+        "Completude de investigação aquém da média estadual"
+      ]
+    },
+    {
+      "ibge": "5101803",
+      "nome": "Barra do Garças",
+      "regional_id": "barra-do-garcas",
+      "subindices": {
+        "epidemiologico": 62,
+        "transmissao_vertical": 58,
+        "falha_assistencial": 52,
+        "qualidade_informacao": 68,
+        "vulnerabilidade": 50,
+        "laboratorial": null
+      },
+      "score": 57.6,
+      "prioridade": "MÉDIA",
+      "motivos": [
+        "Manter vigilância da cascata e qualidade SINAN"
+      ]
+    },
+    {
+      "ibge": "5107958",
+      "nome": "Tangará da Serra",
+      "regional_id": "tangara-da-serra",
+      "subindices": {
+        "epidemiologico": 64,
+        "transmissao_vertical": 61,
+        "falha_assistencial": 54,
+        "qualidade_informacao": 76,
+        "vulnerabilidade": 52,
+        "laboratorial": null
+      },
+      "score": 60.1,
+      "prioridade": "MÉDIA",
+      "motivos": [
+        "Oportunidade de reforço na retestagem (proxy)"
+      ]
+    }
+  ]
+}

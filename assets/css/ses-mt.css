@@ -1,0 +1,680 @@
+/* Identidade visual SES-MT / GOV-MT — Manual de Marca (azul institucional #1B3281) */
+:root {
+  --gov-azul: #1B3281;
+  --gov-azul-escuro: #14255f;
+  --gov-azul-claro: #e8ecf5;
+  --gov-texto: #231F20;
+  --gov-texto-sec: #4a4647;
+  --gov-fundo: #f5f6f8;
+  --gov-branco: #ffffff;
+  --gov-borda: #c5c9d4;
+  --gov-alerta: #8a6d00;
+  --gov-alerta-bg: #fff8e1;
+  --gov-ok: #1a5c2e;
+  --fonte: "Uni Neue", Calibri, "Segoe UI", Arial, sans-serif;
+  --max: 1120px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fonte);
+  color: var(--gov-texto);
+  background: var(--gov-fundo);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--gov-azul);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Cabeçalho institucional */
+.cabecalho {
+  background: var(--gov-azul);
+  color: var(--gov-branco);
+  border-bottom: 4px solid var(--gov-azul-escuro);
+}
+
+.cabecalho-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+}
+
+.cabecalho-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.cabecalho-logos img {
+  height: 48px;
+  width: auto;
+  background: #fff;
+  padding: 4px 6px;
+  border-radius: 2px;
+}
+
+.cabecalho-orgao {
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.9;
+  margin: 0 0 0.35rem;
+}
+
+.cabecalho h1 {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.cabecalho-sub {
+  margin: 0.35rem 0 0;
+  font-size: 0.9rem;
+  opacity: 0.95;
+}
+
+.nav-principal {
+  background: var(--gov-azul-escuro);
+}
+
+.nav-principal ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  max-width: var(--max);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.nav-principal a {
+  display: block;
+  color: var(--gov-branco);
+  padding: 0.65rem 1rem;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+}
+
+.nav-principal a:hover,
+.nav-principal a:focus,
+.nav-principal a[aria-current="page"] {
+  background: rgba(255, 255, 255, 0.08);
+  border-bottom-color: var(--gov-branco);
+  text-decoration: none;
+}
+
+/* Faixa de demonstração */
+.faixa-demo {
+  background: var(--gov-alerta-bg);
+  color: var(--gov-alerta);
+  border-bottom: 1px solid #e0d4a0;
+  padding: 0.55rem 1.25rem;
+  font-size: 0.85rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.faixa-demo strong {
+  font-weight: 700;
+}
+
+/* Conteúdo */
+.conteudo {
+  flex: 1;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 2.5rem;
+  width: 100%;
+}
+
+.page-titulo {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+  color: var(--gov-azul);
+}
+
+.page-lead {
+  margin: 0 0 1.5rem;
+  color: var(--gov-texto-sec);
+  max-width: 42rem;
+}
+
+/* Cards de módulo (capa) */
+.modulos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.card-modulo {
+  background: var(--gov-branco);
+  border: 1px solid var(--gov-borda);
+  border-left: 4px solid var(--gov-azul);
+  padding: 1.25rem;
+  border-radius: 2px;
+}
+
+.card-modulo h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  color: var(--gov-azul);
+}
+
+.card-modulo p {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+  color: var(--gov-texto-sec);
+}
+
+.btn {
+  display: inline-block;
+  background: var(--gov-azul);
+  color: var(--gov-branco);
+  padding: 0.55rem 1.1rem;
+  font-size: 0.9rem;
+  font-family: inherit;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:hover,
+.btn:focus {
+  background: var(--gov-azul-escuro);
+  text-decoration: none;
+  color: var(--gov-branco);
+}
+
+.btn-secundario {
+  background: var(--gov-branco);
+  color: var(--gov-azul);
+  border: 1px solid var(--gov-azul);
+}
+
+.btn-secundario:hover,
+.btn-secundario:focus {
+  background: var(--gov-azul-claro);
+  color: var(--gov-azul);
+}
+
+/* Filtros */
+.filtros {
+  background: var(--gov-branco);
+  border: 1px solid var(--gov-borda);
+  padding: 1rem 1.15rem;
+  margin-bottom: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.85rem 1rem;
+  align-items: end;
+}
+
+.filtros label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gov-texto-sec);
+}
+
+.filtros select,
+.filtros input {
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 0.45rem 0.5rem;
+  border: 1px solid var(--gov-borda);
+  border-radius: 2px;
+  color: var(--gov-texto);
+  background: var(--gov-branco);
+}
+
+.filtros select:disabled {
+  background: var(--gov-fundo);
+  color: #888;
+}
+
+.meta-dados {
+  font-size: 0.8rem;
+  color: var(--gov-texto-sec);
+  margin: 0 0 1.25rem;
+  padding: 0.65rem 0.85rem;
+  background: var(--gov-azul-claro);
+  border-left: 3px solid var(--gov-azul);
+}
+
+/* KPIs */
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.kpi {
+  background: var(--gov-branco);
+  border: 1px solid var(--gov-borda);
+  padding: 1rem;
+  border-radius: 2px;
+}
+
+.kpi-rotulo {
+  font-size: 0.78rem;
+  color: var(--gov-texto-sec);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin: 0 0 0.4rem;
+}
+
+.kpi-valor {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--gov-azul);
+  margin: 0;
+  line-height: 1.1;
+}
+
+.kpi-unidade {
+  font-size: 0.8rem;
+  color: var(--gov-texto-sec);
+  margin: 0.25rem 0 0.5rem;
+}
+
+.kpi-fonte {
+  font-size: 0.72rem;
+  color: #666;
+  margin: 0;
+  border-top: 1px solid var(--gov-borda);
+  padding-top: 0.45rem;
+}
+
+/* Seções e gráficos */
+.secao {
+  background: var(--gov-branco);
+  border: 1px solid var(--gov-borda);
+  padding: 1.15rem;
+  margin-bottom: 1.25rem;
+}
+
+.secao h2 {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  color: var(--gov-azul);
+}
+
+.grafico-wrap {
+  position: relative;
+  height: 280px;
+  max-width: 100%;
+}
+
+.grafico-wrap.alto {
+  height: 340px;
+}
+
+/* Tabelas */
+.tabela-scroll {
+  overflow-x: auto;
+}
+
+table.dados {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+table.dados th,
+table.dados td {
+  padding: 0.55rem 0.65rem;
+  text-align: left;
+  border-bottom: 1px solid var(--gov-borda);
+}
+
+table.dados th {
+  background: var(--gov-azul-claro);
+  color: var(--gov-azul);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+table.dados td.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+table.dados tbody tr:hover {
+  background: #f0f2f7;
+}
+
+/* Metodologia */
+.lista-indicadores {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista-indicadores li {
+  background: var(--gov-branco);
+  border: 1px solid var(--gov-borda);
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.lista-indicadores h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+  color: var(--gov-azul);
+}
+
+.lista-indicadores dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  gap: 0.25rem 0.75rem;
+  font-size: 0.85rem;
+}
+
+.lista-indicadores dt {
+  font-weight: 600;
+  color: var(--gov-texto-sec);
+}
+
+.lista-indicadores dd {
+  margin: 0;
+}
+
+.aviso-regra {
+  font-size: 0.85rem;
+  color: var(--gov-alerta);
+  font-style: italic;
+}
+
+/* Destaque PQA-VS / prontidão (SES-MT) */
+.painel-destaque {
+  border: 2px solid var(--gov-azul, #1b3281);
+  background: #f5f7fb;
+  padding: 1.25rem 1.5rem;
+  margin: 1.25rem 0;
+}
+.painel-destaque h2 {
+  margin: 0 0 0.5rem;
+  color: var(--gov-azul, #1b3281);
+  font-size: 1.15rem;
+}
+.painel-destaque .destaque-valor {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gov-texto, #231f20);
+  margin: 0.25rem 0;
+}
+.painel-destaque .destaque-meta {
+  font-size: 0.9rem;
+  margin: 0.35rem 0 0;
+}
+.painel-prontidao dl {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.35rem 1.5rem;
+  margin: 0.75rem 0 0;
+  font-size: 0.95rem;
+}
+.painel-prontidao dt {
+  color: #444;
+}
+.painel-prontidao dd {
+  margin: 0;
+  text-align: right;
+  font-weight: 600;
+}
+.lista-fenotipo {
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+}
+.lista-fenotipo li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid #e2e6ef;
+  font-size: 0.95rem;
+}
+.tag-registry {
+  font-size: 0.75rem;
+  color: #555;
+  font-family: Consolas, "Courier New", monospace;
+}
+
+.seletor-fonte {
+  font-size: 0.9rem;
+  color: var(--gov-texto, #231f20);
+}
+.seletor-fonte select {
+  margin-left: 0.35rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #1b3281;
+  background: #fff;
+  color: #231f20;
+  font-family: inherit;
+}
+
+/* Rodapé */
+.rodape {
+  background: var(--gov-azul-escuro);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.8rem;
+  padding: 1.25rem;
+  margin-top: auto;
+}
+
+.rodape-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+.rodape p {
+  margin: 0 0 0.4rem;
+}
+
+.rodape a {
+  color: #c5d0f0;
+}
+
+/* Utilitários */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cabecalho h1 {
+    font-size: 1.55rem;
+  }
+}
+
+.vazio {
+  color: var(--gov-texto-sec);
+  font-size: 0.9rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Cascata / funil */
+.cascata-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cascata-lista li {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid var(--gov-borda);
+  font-size: 0.9rem;
+}
+
+.cascata-barra {
+  height: 8px;
+  background: var(--gov-azul-claro);
+  border-radius: 2px;
+  margin-top: 0.25rem;
+  overflow: hidden;
+}
+
+.cascata-barra > span {
+  display: block;
+  height: 100%;
+  background: var(--gov-azul);
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.45rem;
+  border-radius: 2px;
+  letter-spacing: 0.03em;
+}
+
+.badge-muito-alta { background: #fde8e8; color: #8b1a1a; }
+.badge-alta { background: #fff0e0; color: #8a4b00; }
+.badge-media { background: #fff8e1; color: #8a6d00; }
+.badge-baixa { background: #e8f5ec; color: #1a5c2e; }
+.badge-na { background: #eee; color: #666; }
+
+.lista-acoes article {
+  border: 1px solid var(--gov-borda);
+  border-left: 4px solid var(--gov-azul);
+  background: var(--gov-branco);
+  padding: 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.lista-acoes h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+  color: var(--gov-azul);
+}
+
+.stub-mvp {
+  background: var(--gov-azul-claro);
+  border: 1px dashed var(--gov-azul);
+  padding: 1.25rem;
+  font-size: 0.95rem;
+}
+
+/* MVP3 Onda B — workflow gestão de ações */
+.workflow-board {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 900px) {
+  .workflow-board {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .workflow-board {
+    grid-template-columns: 1fr;
+  }
+}
+
+.workflow-col {
+  background: var(--gov-azul-claro);
+  border: 1px solid var(--gov-borda);
+  padding: 0.65rem;
+  min-height: 8rem;
+}
+
+.workflow-col h3 {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  color: var(--gov-azul);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.workflow-card {
+  background: var(--gov-branco);
+  border: 1px solid var(--gov-borda);
+  border-left: 3px solid var(--gov-azul);
+  padding: 0.55rem 0.65rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.88rem;
+}
+
+.workflow-card .wf-titulo {
+  margin: 0 0 0.35rem;
+  font-weight: 600;
+  color: var(--gov-texto);
+}
+
+.btn-print {
+  font-family: var(--fonte);
+  background: var(--gov-azul);
+  color: var(--gov-branco);
+  border: none;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.btn-print:hover,
+.btn-print:focus {
+  background: var(--gov-azul-escuro);
+}

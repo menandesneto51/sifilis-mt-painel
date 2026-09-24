@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Epidemiologia — Sífilis MT</title>
+  <link rel="stylesheet" href="assets/css/ses-mt.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/charts.js" defer></script>
+</head>
+<body>
+  <header class="cabecalho"><div class="cabecalho-inner">
+    <p class="cabecalho-orgao">Governo de Mato Grosso · SES-MT · CIEVS-MT</p>
+    <h1>Sífilis MT — Epidemiologia</h1>
+    <p class="cabecalho-sub">Onde e em quem · taxas, casos, variação (agregados)</p>
+  </div></header>
+  <nav class="nav-principal"><ul>
+    <li><a href="index.html">Executivo</a></li>
+    <li><a href="epidemiologia.html" aria-current="page">Epidemiologia</a></li>
+    <li><a href="transmissao-vertical.html">Transmissão Vertical</a></li>
+    <li><a href="cascata.html">Cascata</a></li>
+    <li><a href="laboratorio.html">Laboratório</a></li>
+    <li><a href="territorio.html">Território</a></li>
+    <li><a href="qualidade.html">Qualidade</a></li>
+    <li><a href="acoes.html">Ações</a></li>
+  </ul></nav>
+  <div class="faixa-demo" id="faixa-demo"><strong>DW / DEMO:</strong> agregados. Sem PII.</div>
+  <main class="conteudo">
+    <h2 class="page-titulo">Vigilância epidemiológica</h2>
+    <p class="meta-dados" id="seletor-fonte"></p>
+    <p class="meta-dados" id="meta"></p>
+    <div class="kpis" id="kpis"></div>
+    <div class="grid-2">
+      <section class="secao"><h2>Série — taxas gestante e SC</h2><div class="grafico-wrap alto"><canvas id="chart-serie"></canvas></div></section>
+      <section class="secao"><h2>Série — taxa adquirida (NI + CID A51–A53 / 100 mil)</h2><div class="grafico-wrap alto"><canvas id="chart-adq"></canvas></div></section>
+    </div>
+    <div class="grid-2">
+      <section class="secao"><h2>Série — PQA-VS (SC/SIFG %)</h2><div class="grafico-wrap alto"><canvas id="chart-pqa"></canvas></div>
+        <h2 style="margin-top:1rem">Variação interanual</h2>
+        <div class="kpis" id="var-ano"></div>
+      </section>
+      <section class="secao">
+        <h2>Equidade — raça/cor (gestantes SIFG)</h2>
+        <div class="grafico-wrap alto"><canvas id="chart-raca"></canvas></div>
+        <p class="aviso-regra" id="eq-nota"></p>
+      </section>
+    </div>
+    <div class="grid-2">
+      <section class="secao">
+        <h2>Equidade — faixa etária (gestantes SIFG)</h2>
+        <div class="grafico-wrap alto"><canvas id="chart-faixa"></canvas></div>
+      </section>
+      <section class="secao">
+        <h2>Nowcast SC — MVP3 (experimental)</h2>
+        <p class="aviso-regra" id="nowcast-aviso"></p>
+        <div class="kpis" id="nowcast-kpis"></div>
+        <div class="grafico-wrap alto"><canvas id="chart-nowcast"></canvas></div>
+        <p class="kpi-fonte" id="nowcast-nota"></p>
+        <h3 class="page-titulo" style="font-size:1rem;margin-top:1rem">Taxas ERS suavizadas (empirical Bayes)</h3>
+        <div class="tabela-scroll">
+          <table class="dados" id="tab-nowcast-ers">
+            <thead>
+              <tr>
+                <th>ERS</th>
+                <th>Casos SC</th>
+                <th>NV</th>
+                <th>Taxa obs.</th>
+                <th>Taxa EB</th>
+                <th>Peso obs.</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="rodape"><div class="rodape-inner"><p>SES-MT · CIEVS-MT · SINAN + SINASC agregados · Nowcast MVP3 experimental</p></div></footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", async function () {
+      SifilisApp.barraFonte("seletor-fonte");
+      const [epi, equiRaw, nowc] = await Promise.all([
+        SifilisApp.load("epidemiologia.json"),
+        SifilisApp.load("equidade_dw.json").catch(function () { return null; }),
+        SifilisApp.load("nowcast.json").catch(function () { return null; }),
+      ]);
+      const anos = epi.anos_disponiveis || (epi.serie_anual && epi.serie_anual.anos) || [];
+      const ano = SifilisApp.barraAno("wrap-ano", anos, epi.ano);
+      const e = SifilisApp.estadoNoAno(epi, ano) || epi.estado;
+      const equi = equiRaw ? SifilisApp.dadoNoAno(equiRaw, ano) : null;
+      const faixa = document.getElementById("faixa-demo");
+      if (faixa) {
+        faixa.innerHTML =
+          epi.tipo === "extracao_dw"
+            ? "<strong>DW SES-MT:</strong> agregados ano " + ano + ". Sem PII."
+            : "<strong>DEMONSTRAÇÃO:</strong> agregados sintéticos. Sem PII.";
+      }
+      document.getElementById("meta").textContent = SifilisApp.metaHtml(Object.assign({}, epi, { ano: ano }));
+      document.getElementById("kpis").innerHTML =
+        SifilisApp.kpi(
+          "Taxa adquirida",
+          SifilisApp.fmt(e.adquirida && e.adquirida.taxa, 1),
+          "por 100 mil" +
+            (e.adquirida && e.adquirida.casos != null ? " · n=" + SifilisApp.fmt(e.adquirida.casos) : ""),
+          e.adquirida && e.adquirida.nivel_evidencia === "proxy" ? "NI+CID A51–A53 (SES-MT)" : "SIFA"
+        ) +
+        SifilisApp.kpi("Taxa gestante", SifilisApp.fmt(e.gestante.taxa, 1), "por 1.000 NV", "SIFG+SINASC") +
+        SifilisApp.kpi("Incidência SC", SifilisApp.fmt(e.congenita.taxa, 1), "por 1.000 NV", "SIFC+SINASC") +
+        SifilisApp.kpi("PQA-VS", SifilisApp.fmt(e.razao_sc_gestante_pct, 1) + "%", "SC/SIFG", "razao_sc_gestante") +
+        SifilisApp.kpi("Óbitos SC", SifilisApp.fmt(e.congenita.obitos), "proxy SINAN", "SIM MVP3");
+      const s = epi.serie_anual || {};
+      if (SifilisCharts.linhaMulti && s.anos) {
+        SifilisCharts.linhaMulti(
+          "chart-serie",
+          s.anos.map(String),
+          [
+            { rotulo: "Taxa gestante /1.000 NV", data: s.gestante_taxa },
+            { rotulo: "Incidência SC /1.000 NV", data: s.congenita_taxa },
+          ]
+        );
+        if (s.adquirida_taxa) {
+          SifilisCharts.linha("chart-adq", s.anos.map(String), s.adquirida_taxa, "Taxa / 100 mil (NI + CID A51–A53)");
+        }
+        SifilisCharts.linha("chart-pqa", s.anos.map(String), s.razao_sc_gestante_pct, "SC/SIFG %");
+      }
+      document.getElementById("var-ano").innerHTML =
+        SifilisApp.kpi("Δ Adquirida", SifilisApp.fmt(e.adquirida && e.adquirida.variacao_anual_pct, 1) + "%", "vs ano anterior", "proxy") +
+        SifilisApp.kpi("Δ Gestantes", SifilisApp.fmt(e.gestante.variacao_anual_pct, 1) + "%", "vs ano anterior", "") +
+        SifilisApp.kpi("Δ SC", SifilisApp.fmt(e.congenita.variacao_anual_pct, 1) + "%", "vs ano anterior", "");
+
+      const raca = (equi && equi.raca_gestante) || e.equidade_gestante_raca || [];
+      const faixas = (equi && equi.faixa_etaria_gestante) || e.equidade_faixa_etaria || [];
+      document.getElementById("eq-nota").textContent =
+        (equi && equi.aviso) ||
+        e.equidade_nota ||
+        "Equidade: rode extract_dw_enriquecimento + publish.";
+      if (e.adquirida && e.adquirida.nota) {
+        document.getElementById("eq-nota").textContent =
+          (e.adquirida.nota || "") +
+          " · " +
+          ((equi && equi.aviso) || e.equidade_nota || "");
+      }      if (raca.length) {
+        SifilisCharts.barrasH(
+          "chart-raca",
+          raca.map(function (x) { return x.categoria; }),
+          raca.map(function (x) { return x.pct; }),
+          "% gestantes SIFG"
+        );
+      }
+      if (faixas.length) {
+        SifilisCharts.barrasH(
+          "chart-faixa",
+          faixas.map(function (x) { return x.categoria; }),
+          faixas.map(function (x) { return x.pct; }),
+          "% gestantes SIFG"
+        );
+      }
+
+      if (nowc && (nowc.serie_anual || nowc.serie_semanal)) {
+        document.getElementById("nowcast-aviso").textContent = nowc.aviso || "";
+        const est = nowc.estado || {};
+        const hor = nowc.horizonte || {};
+        document.getElementById("nowcast-kpis").innerHTML =
+          SifilisApp.kpi(
+            "Casos SC (ano)",
+            SifilisApp.fmt(est.casos_sc),
+            "observado",
+            "nowcast_taxa_sc"
+          ) +
+          SifilisApp.kpi(
+            "Taxa SC",
+            est.taxa_sc != null ? SifilisApp.fmt(est.taxa_sc, 1) : "—",
+            "por 1.000 NV",
+            "estado"
+          ) +
+          SifilisApp.kpi(
+            "MA próxima",
+            hor.proximo_ano_estimado_casos_sc != null
+              ? SifilisApp.fmt(hor.proximo_ano_estimado_casos_sc, 1)
+              : "—",
+            "estimativa experimental",
+            nowc.metodo || "MA"
+          );
+        document.getElementById("nowcast-nota").textContent =
+          (nowc.nota_municipios_pequenos || "") +
+          " · método: " +
+          (nowc.metodo || "—") +
+          " · " +
+          (nowc.formula_status || "");
+        const sw = nowc.serie_anual || nowc.serie_semanal;
+        const labels = (sw.anos || sw.semanas || []).map(String);
+        if (SifilisCharts.linhaMulti) {
+          SifilisCharts.linhaMulti("chart-nowcast", labels, [
+            { rotulo: "Observado SC (n)", data: sw.observado_sc },
+            {
+              rotulo: nowc.tipo === "extracao_dw" ? "Média móvel (nowcast)" : "Nowcast (demo)",
+              data: sw.nowcast_sc,
+            },
+          ]);
+        }
+        const tb = document.querySelector("#tab-nowcast-ers tbody");
+        tb.innerHTML = "";
+        (nowc.ers_taxas_eb || []).forEach(function (r) {
+          tb.innerHTML +=
+            "<tr><td>" +
+            r.ers +
+            (r.suavizado ? ' <span class="tag-registry">EB</span>' : "") +
+            '</td><td class="num">' +
+            SifilisApp.fmt(r.casos_sc) +
+            '</td><td class="num">' +
+            SifilisApp.fmt(r.nascidos_vivos) +
+            '</td><td class="num">' +
+            SifilisApp.fmt(r.taxa_obs, 1) +
+            '</td><td class="num">' +
+            SifilisApp.fmt(r.taxa_eb, 1) +
+            '</td><td class="num">' +
+            SifilisApp.fmt(r.peso_observado, 2) +
+            "</td></tr>";
+        });
+        if (!(nowc.ers_taxas_eb || []).length) {
+          tb.innerHTML =
+            '<tr><td colspan="6">Sem ERS — rode publish com staging SINASC/SIFC.</td></tr>';
+        }
+      } else {
+        document.getElementById("nowcast-aviso").textContent =
+          "nowcast.json ausente — placeholder MVP3.";
+      }
+    });
+  </script>
+</body>
+</html>

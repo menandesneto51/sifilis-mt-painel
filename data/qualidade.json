@@ -1,0 +1,23 @@
+{
+  "tipo": "demonstracao",
+  "aviso": "Scores sintéticos. Qualidade SEPARADA do risco epidemiológico.",
+  "ano": 2025,
+  "estado": {
+    "completude_geral_pct": 86.2,
+    "inconsistencias_logicas": 214,
+    "notificacao_tardia_pct": 18.4,
+    "score_qualidade_medio": 74.5
+  },
+  "municipios": [
+    { "ibge": "5103403", "nome": "Cuiabá", "regional_id": "baixada-cuiabana", "score": 88, "completude": 90, "inconsistencias": 22, "notif_tardia": 12 },
+    { "ibge": "5108402", "nome": "Várzea Grande", "regional_id": "baixada-cuiabana", "score": 82, "completude": 87, "inconsistencias": 18, "notif_tardia": 15 },
+    { "ibge": "5107602", "nome": "Rondonópolis", "regional_id": "rondonopolis", "score": 79, "completude": 85, "inconsistencias": 15, "notif_tardia": 16 },
+    { "ibge": "5107909", "nome": "Sinop", "regional_id": "sinop", "score": 81, "completude": 86, "inconsistencias": 12, "notif_tardia": 14 },
+    { "ibge": "5107958", "nome": "Tangará da Serra", "regional_id": "tangara-da-serra", "score": 76, "completude": 83, "inconsistencias": 11, "notif_tardia": 17 },
+    { "ibge": "5102504", "nome": "Cáceres", "regional_id": "caceres", "score": 61, "completude": 72, "inconsistencias": 28, "notif_tardia": 24 },
+    { "ibge": "5101803", "nome": "Barra do Garças", "regional_id": "barra-do-garcas", "score": 68, "completude": 78, "inconsistencias": 14, "notif_tardia": 20 },
+    { "ibge": "5107859", "nome": "São Félix do Araguaia", "regional_id": "sao-felix-do-araguaia", "score": 52, "completude": 65, "inconsistencias": 19, "notif_tardia": 31 },
+    { "ibge": "5107063", "nome": "Porto Alegre do Norte", "regional_id": "porto-alegre-do-norte", "score": 55, "completude": 68, "inconsistencias": 16, "notif_tardia": 28 },
+    { "ibge": "5105150", "nome": "Juína", "regional_id": "juina", "score": 70, "completude": 80, "inconsistencias": 10, "notif_tardia": 19 }
+  ]
+}

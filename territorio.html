@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Território — Sífilis MT</title>
+  <link rel="stylesheet" href="assets/css/ses-mt.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/charts.js" defer></script>
+  <script src="assets/js/filtros.js" defer></script>
+</head>
+<body>
+  <header class="cabecalho"><div class="cabecalho-inner">
+    <p class="cabecalho-orgao">Governo de Mato Grosso · SES-MT · CIEVS-MT</p>
+    <h1>Sífilis MT — Território</h1>
+    <p class="cabecalho-sub">Regional (ERS) → Município · agregados DW</p>
+  </div></header>
+  <nav class="nav-principal"><ul>
+    <li><a href="index.html">Executivo</a></li>
+    <li><a href="epidemiologia.html">Epidemiologia</a></li>
+    <li><a href="transmissao-vertical.html">Transmissão Vertical</a></li>
+    <li><a href="cascata.html">Cascata</a></li>
+    <li><a href="laboratorio.html">Laboratório</a></li>
+    <li><a href="territorio.html" aria-current="page">Território</a></li>
+    <li><a href="qualidade.html">Qualidade</a></li>
+    <li><a href="acoes.html">Ações</a></li>
+  </ul></nav>
+  <div class="faixa-demo" id="faixa-demo"><strong>DW:</strong> agregados municipais/regionais. Sem PII.</div>
+  <main class="conteudo">
+    <h2 class="page-titulo">Recorte geográfico</h2>
+    <p class="meta-dados" id="seletor-fonte"></p>
+    <form class="filtros">
+      <label>Regional (ERS)<select id="filtro-regional"></select></label>
+      <label>Município<select id="filtro-municipio" disabled></select></label>
+    </form>
+    <p class="meta-dados" id="meta"></p>
+    <div class="kpis" id="kpis"></div>
+    <section class="secao">
+      <h2>Indicadores por regional (DW)</h2>
+      <div class="grafico-wrap alto"><canvas id="chart-reg"></canvas></div>
+      <div class="tabela-scroll" style="margin-top:1rem">
+        <table class="dados" id="tab-reg">
+          <thead><tr><th>Regional</th><th>Adquirida*</th><th>Gestante</th><th>SC</th><th>Taxa SC</th><th>PQA %</th><th>Prioridade**</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="aviso-regra">* Adquirida = NI + CID A51–A53 (método SES-MT; sem ficha específica). ** Prioridade = proxy por incidência SC (não Índice composto ADR-003).</p>
+    </section>
+    <section class="secao">
+      <h2>Ranking municipal (top 40 por casos SC)</h2>
+      <div class="tabela-scroll">
+        <table class="dados" id="tab-mun">
+          <thead><tr><th>Município</th><th>Regional</th><th>Adquirida*</th><th>Gestante</th><th>SC</th><th>Taxa SC</th><th>PQA %</th><th>Prioridade**</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer class="rodape"><div class="rodape-inner"><p>SES-MT · regionais conforme campo RegionalResidencia do DW · filtros ERS oficiais</p></div></footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", async function () {
+      SifilisApp.barraFonte("seletor-fonte");
+      const [indRaw, risco] = await Promise.all([
+        SifilisApp.load("territorio_indicadores.json"),
+        SifilisApp.load("risco_municipios.json"),
+      ]);
+      const epi = await SifilisApp.load("epidemiologia.json").catch(function () { return null; });
+      const anos = (epi && epi.anos_disponiveis) || [indRaw.ano];
+      const ano = SifilisApp.barraAno("wrap-ano", anos, (epi && epi.ano) || indRaw.ano);
+      const ind = SifilisApp.dadoNoAno(indRaw, ano) || indRaw;
+      document.getElementById("meta").textContent =
+        (ind.tipo === "extracao_dw" ? "DW · " : "Demo · ") +
+        "Ano " +
+        ano +
+        " · " +
+        (ind.ers_n || Object.keys(ind.por_regional || {}).length) +
+        " ERS oficiais SES-MT" +
+        (ind.municipios_nao_mapeados
+          ? " · " + ind.municipios_nao_mapeados + " mun. sem ERS mapeada"
+          : "") +
+        " · " +
+        (ind.aviso || "");
+
+      function renderRegiao(rid) {
+        const por = ind.por_regional || {};
+        let rows = Object.keys(por).map(function (id) {
+          return { id: id, d: por[id] };
+        });
+        if (rid) {
+          rows = rows.filter(function (r) {
+            return r.id === rid;
+          });
+        }
+        rows.sort(function (a, b) {
+          return (b.d.congenita_casos || 0) - (a.d.congenita_casos || 0);
+        });
+        const tb = document.querySelector("#tab-reg tbody");
+        tb.innerHTML = "";
+        rows.forEach(function (r) {
+          tb.innerHTML +=
+            "<tr><td>" +
+            (r.d.nome || r.id) +
+            '</td><td class="num">' +
+            SifilisApp.fmt(r.d.adquirida_casos) +
+            '</td><td class="num">' +
+            SifilisApp.fmt(r.d.gestante_casos) +
+            '</td><td class="num">' +
+            SifilisApp.fmt(r.d.congenita_casos) +
+            '</td><td class="num">' +
+            SifilisApp.fmt(r.d.taxa_congenita, 1) +
+            '</td><td class="num">' +
+            SifilisApp.fmt(r.d.razao_sc_gestante_pct, 1) +
+            "</td><td>" +
+            SifilisApp.badgePrioridade(r.d.prioridade_max) +
+            "</td></tr>";
+        });
+        SifilisCharts.barrasH(
+          "chart-reg",
+          rows.map(function (r) {
+            return r.d.nome || r.id;
+          }),
+          rows.map(function (r) {
+            return r.d.taxa_congenita;
+          }),
+          "Incidência SC /1.000 NV"
+        );
+        if (rid && rows[0]) {
+          const d = rows[0].d;
+          document.getElementById("kpis").innerHTML =
+            SifilisApp.kpi("Adquirida*", SifilisApp.fmt(d.adquirida_casos), "NI + CID A51–A53", "") +
+            SifilisApp.kpi("Gestante", SifilisApp.fmt(d.gestante_casos), "casos", "") +
+            SifilisApp.kpi("SC", SifilisApp.fmt(d.congenita_casos), "casos", "") +
+            SifilisApp.kpi("Taxa SC", SifilisApp.fmt(d.taxa_congenita, 1), "/1.000 NV", "") +
+            SifilisApp.kpi("Prioridade**", d.prioridade_max, "proxy incidência", "");
+        } else {
+          document.getElementById("kpis").innerHTML =
+            SifilisApp.kpi("ERS", String(ind.ers_n || rows.length), "escritórios regionais oficiais", "SES-MT") +
+            SifilisApp.kpi("Municípios", SifilisApp.fmt(ind.municipios_n), "com SIFG e/ou SIFC mapeados", "") +
+            (ind.cnes_disponivel
+              ? SifilisApp.kpi(
+                  "CNES",
+                  SifilisApp.fmt(
+                    rows.reduce(function (s, r) {
+                      return s + (r.d.estabelecimentos_n || 0);
+                    }, 0)
+                  ),
+                  (function () {
+                    var sus = rows.reduce(function (s, r) {
+                      return s + (r.d.estabelecimentos_sus_n || 0);
+                    }, 0);
+                    return sus
+                      ? "estab. · SUS " + SifilisApp.fmt(sus)
+                      : "estabelecimentos (agg)";
+                  })(),
+                  "CNES"
+                )
+              : "");
+        }
+      }
+
+      const tbMun = document.querySelector("#tab-mun tbody");
+      (ind.ranking_municipios || []).forEach(function (m) {
+        tbMun.innerHTML +=
+          "<tr><td>" +
+          (m.municipio || m.co_municipio_ibge) +
+          "</td><td>" +
+          (m.regional || "—") +
+          '</td><td class="num">' +
+          SifilisApp.fmt(m.adquirida_casos) +
+          '</td><td class="num">' +
+          SifilisApp.fmt(m.gestante_casos) +
+          '</td><td class="num">' +
+          SifilisApp.fmt(m.congenita_casos) +
+          '</td><td class="num">' +
+          SifilisApp.fmt(m.taxa_congenita, 1) +
+          '</td><td class="num">' +
+          SifilisApp.fmt(m.razao_sc_gestante_pct, 1) +
+          "</td><td>" +
+          SifilisApp.badgePrioridade(m.prioridade_proxy) +
+          "</td></tr>";
+      });
+
+      await SifilisFiltros.init(function (f) {
+        renderRegiao(f.regionalId);
+        if (f.municipioIbge) {
+          const ibge6 = String(f.municipioIbge).slice(0, 6);
+          const m = (ind.ranking_municipios || []).find(function (x) {
+            return String(x.co_municipio_ibge).slice(0, 6) === ibge6;
+          });
+          const r = (risco.municipios || []).find(function (x) {
+            return String(x.ibge).slice(0, 6) === ibge6;
+          });
+          if (m) {
+            document.getElementById("kpis").innerHTML =
+              SifilisApp.kpi(m.municipio, SifilisApp.fmt(m.congenita_casos), "casos SC", m.prioridade_proxy) +
+              SifilisApp.kpi("Adquirida*", SifilisApp.fmt(m.adquirida_casos), "NI + CID A51–A53", "") +
+              SifilisApp.kpi("Gestantes", SifilisApp.fmt(m.gestante_casos), "casos", "") +
+              SifilisApp.kpi("Taxa SC", SifilisApp.fmt(m.taxa_congenita, 1), "/1.000 NV", "") +
+              (r
+                ? SifilisApp.kpi("Score risco demo", SifilisApp.fmt(r.score, 1), r.prioridade, "sintético")
+                : "");
+          }
+        }
+      });
+      renderRegiao("");
+    });
+  </script>
+</body>
+</html>

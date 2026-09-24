@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Laboratório — Sífilis MT | SES-MT / CIEVS-MT</title>
+  <link rel="stylesheet" href="assets/css/ses-mt.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/charts.js" defer></script>
+</head>
+<body>
+  <header class="cabecalho">
+    <div class="cabecalho-inner">
+      <p class="cabecalho-orgao">Governo de Mato Grosso · Secretaria de Estado de Saúde · CIEVS-MT</p>
+      <h1>Sífilis MT — Laboratório</h1>
+      <p class="cabecalho-sub">GAL / LACEN · volume, positividade, TAT · insumos MVP3</p>
+    </div>
+  </header>
+  <nav class="nav-principal" aria-label="Abas">
+    <ul>
+      <li><a href="index.html">Executivo</a></li>
+      <li><a href="epidemiologia.html">Epidemiologia</a></li>
+      <li><a href="transmissao-vertical.html">Transmissão Vertical</a></li>
+      <li><a href="cascata.html">Cascata</a></li>
+      <li><a href="laboratorio.html" aria-current="page">Laboratório</a></li>
+      <li><a href="territorio.html">Território</a></li>
+      <li><a href="qualidade.html">Qualidade</a></li>
+      <li><a href="acoes.html">Ações</a></li>
+    </ul>
+  </nav>
+  <div class="faixa-demo" id="faixa-demo" role="status">
+    <strong>DW GAL:</strong> agregados. Sinal laboratorial ≠ surto. Sem PII.
+  </div>
+  <main class="conteudo">
+    <h2 class="page-titulo">Laboratório e insumos</h2>
+    <p class="page-lead">
+      Volume e positividade de exames de sífilis no GAL · TAT mediano · proxy de reagente sem SINAN.
+      Subíndice laboratorial no Índice de Risco permanece N/A (ADR-003).
+    </p>
+    <p class="meta-dados" id="seletor-fonte"></p>
+    <p class="meta-dados" id="wrap-ano"></p>
+    <p class="meta-dados" id="meta"></p>
+    <div class="kpis" id="kpis"></div>
+    <p class="aviso-regra" id="aviso-lab"></p>
+    <div class="grid-2">
+      <section class="secao">
+        <h2>Testes por ERS</h2>
+        <div class="grafico-wrap alto"><canvas id="chart-ers"></canvas></div>
+      </section>
+      <section class="secao">
+        <h2>Série estadual (janela)</h2>
+        <div class="grafico-wrap alto"><canvas id="chart-serie"></canvas></div>
+      </section>
+    </div>
+    <section class="secao">
+      <h2>Ranking ERS</h2>
+      <div class="tabela-scroll">
+        <table class="dados" id="tab-ers">
+          <thead>
+            <tr>
+              <th>ERS</th>
+              <th>Testes</th>
+              <th>Liberados</th>
+              <th>Reagentes</th>
+              <th>Positividade %</th>
+              <th>TAT média</th>
+              <th>Reagente s/ SINAN*</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="aviso-regra">
+        * Proxy municipal (reagente GAL sem casos SIFA-proxy+SIFG no ano). Não é linkage nominal.
+      </p>
+    </section>
+    <section class="secao">
+      <h2>Ranking municipal (top 40 por volume)</h2>
+      <div class="tabela-scroll">
+        <table class="dados" id="tab-mun">
+          <thead>
+            <tr>
+              <th>Município</th>
+              <th>ERS</th>
+              <th>Testes</th>
+              <th>Liberados</th>
+              <th>Reagentes</th>
+              <th>Positividade %</th>
+              <th>Reagente s/ SINAN*</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+    <section class="secao">
+      <h2 id="insumos-titulo">Insumos e desfechos — MVP3</h2>
+      <p class="aviso-regra" id="insumos-aviso"></p>
+      <div class="kpis" id="insumos-kpis"></div>
+      <div class="tabela-scroll">
+        <table class="dados" id="tab-ruptura">
+          <thead><tr><th>ERS</th><th>Mun. com ruptura (demo)</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="kpi-fonte">SISLOGLAB/CNES · ADR-007 · limiares de ruptura só após norma em regras.yml · sem PII</p>
+    </section>
+  </main>
+  <footer class="rodape">
+    <div class="rodape-inner">
+      <p>Governo de Mato Grosso · SES-MT · CIEVS-MT · Sífilis MT MVP2+MVP3</p>
+      <p>Fonte: dbo.VW_GAL · Insumos: contrato SISLOGLAB · Índice de Risco lab = N/A</p>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", async function () {
+      try {
+        SifilisApp.barraFonte("seletor-fonte");
+        const [labRaw, epi, insumos] = await Promise.all([
+          SifilisApp.load("laboratorio.json"),
+          SifilisApp.load("epidemiologia.json").catch(function () {
+            return null;
+          }),
+          SifilisApp.load("insumos.json").catch(function () {
+            return null;
+          }),
+        ]);
+        const anos =
+          (labRaw.por_ano && Object.keys(labRaw.por_ano).map(Number).sort()) ||
+          (epi && epi.anos_disponiveis) ||
+          [labRaw.ano];
+        const ano = SifilisApp.barraAno("wrap-ano", anos, labRaw.ano);
+        const lab = SifilisApp.dadoNoAno(labRaw, ano) || labRaw;
+        const e = lab.estado || {};
+        const faixa = document.getElementById("faixa-demo");
+        if (faixa) {
+          faixa.innerHTML = lab.disponivel
+            ? "<strong>DW GAL:</strong> agregados reais · ano " +
+              ano +
+              " · sinal ≠ surto · sem PII."
+            : "<strong>GAL indisponível:</strong> rode extract com VPN · sem PII.";
+        }
+        document.getElementById("meta").textContent =
+          SifilisApp.metaHtml({
+            tipo: lab.tipo,
+            ano: ano,
+            fonte_prevista: lab.fonte_prevista || "dbo.VW_GAL",
+            extraido_em: labRaw.publicado_em || lab.extraido_em,
+          }) +
+          " · Subíndice risco lab: " +
+          (lab.subindice_risco_lab || "N/A");
+        document.getElementById("aviso-lab").textContent = lab.aviso || "";
+        document.getElementById("kpis").innerHTML =
+          SifilisApp.kpi("Testes", SifilisApp.fmt(e.lab_testes_n), "volume GAL sífilis", "lab_testes_n") +
+          SifilisApp.kpi(
+            "Liberados",
+            SifilisApp.fmt(e.lab_testes_liberados_n),
+            "com status liberado",
+            ""
+          ) +
+          SifilisApp.kpi(
+            "Positividade",
+            e.lab_positividade != null ? SifilisApp.fmt(e.lab_positividade, 1) + "%" : "—",
+            "reagentes / liberados",
+            "lab_positividade"
+          ) +
+          SifilisApp.kpi(
+            "TAT p50",
+            e.lab_tat_p50 != null ? SifilisApp.fmt(e.lab_tat_p50, 1) + " d" : "—",
+            "mediana estadual",
+            "lab_tat_p50"
+          ) +
+          SifilisApp.kpi(
+            "Reagente s/ SINAN",
+            SifilisApp.fmt(e.lab_reagente_sem_sinan),
+            "proxy municipal",
+            "lab_reagente_sem_sinan"
+          );
+
+        const ers = (lab.ranking_ers || []).slice().filter(function (r) {
+          return (r.testes_n || 0) > 0;
+        });
+        SifilisCharts.barrasH(
+          "chart-ers",
+          ers.map(function (r) {
+            return r.nome;
+          }),
+          ers.map(function (r) {
+            return r.testes_n || 0;
+          }),
+          "Testes GAL"
+        );
+
+        const por = labRaw.por_ano || {};
+        const anosSerie = Object.keys(por)
+          .map(Number)
+          .sort();
+        SifilisCharts.linha(
+          "chart-serie",
+          anosSerie.map(String),
+          anosSerie.map(function (y) {
+            const st = (por[String(y)] && por[String(y)].estado) || {};
+            return st.lab_testes_n != null ? st.lab_testes_n : 0;
+          }),
+          "Testes"
+        );
+
+        const tb = document.querySelector("#tab-ers tbody");
+        (lab.ranking_ers || []).forEach(function (r) {
+          tb.innerHTML +=
+            "<tr><td>" +
+            r.nome +
+            '</td><td class="num">' +
+            SifilisApp.fmt(r.testes_n) +
+            '</td><td class="num">' +
+            SifilisApp.fmt(r.testes_liberados_n) +
+            '</td><td class="num">' +
+            SifilisApp.fmt(r.reagentes_n) +
+            '</td><td class="num">' +
+            SifilisApp.fmt(r.positividade_pct, 1) +
+            '</td><td class="num">' +
+            SifilisApp.fmt(r.tat_media_dias, 1) +
+            '</td><td class="num">' +
+            SifilisApp.fmt(r.reagente_sem_sinan_n) +
+            "</td></tr>";
+        });
+
+        const tbm = document.querySelector("#tab-mun tbody");
+        (lab.ranking_municipios || []).forEach(function (m) {
+          tbm.innerHTML +=
+            "<tr><td>" +
+            (m.municipio || m.co_municipio_ibge) +
+            "</td><td>" +
+            (m.regional || "—") +
+            '</td><td class="num">' +
+            SifilisApp.fmt(m.testes_n) +
+            '</td><td class="num">' +
+            SifilisApp.fmt(m.testes_liberados_n) +
+            '</td><td class="num">' +
+            SifilisApp.fmt(m.reagentes_n) +
+            '</td><td class="num">' +
+            SifilisApp.fmt(m.positividade_pct, 1) +
+            '</td><td class="num">' +
+            SifilisApp.fmt(m.reagente_sem_sinan_n) +
+            "</td></tr>";
+        });
+
+        if (insumos) {
+          const ie = insumos.estado || {};
+          const dw = insumos.tipo === "extracao_dw";
+          document.getElementById("insumos-aviso").textContent = insumos.aviso || "";
+          const tit = document.getElementById("insumos-titulo");
+          if (tit) {
+            tit.textContent = dw
+              ? "Insumos e desfechos — MVP3 (extract DW)"
+              : "Insumos e desfechos — MVP3 (demo)";
+          }
+          document.getElementById("insumos-kpis").innerHTML =
+            SifilisApp.kpi(
+              "Ruptura penicilina",
+              ie.ruptura_penicilina_n != null ? SifilisApp.fmt(ie.ruptura_penicilina_n) : "—",
+              dw ? (ie.ruptura_penicilina_n != null ? "mapa CSV / SISLOGLAB" : "SISLOGLAB CSV pendente") : "mun. (demo)",
+              "ruptura_penicilina"
+            ) +
+            SifilisApp.kpi(
+              "Cobertura testes",
+              ie.dias_cobertura_testes_mediana != null
+                ? SifilisApp.fmt(ie.dias_cobertura_testes_mediana, 0) + " d"
+                : "—",
+              dw
+                ? ie.dias_cobertura_testes_mediana != null
+                  ? "mapa CSV · mediana"
+                  : "SISLOGLAB CSV pendente"
+                : "mediana mun.",
+              "estoque_testes_dias_cobertura"
+            ) +
+            SifilisApp.kpi(
+              "Cobertura penicilina",
+              ie.dias_cobertura_penicilina_mediana != null
+                ? SifilisApp.fmt(ie.dias_cobertura_penicilina_mediana, 0) + " d"
+                : "—",
+              dw
+                ? ie.dias_cobertura_penicilina_mediana != null
+                  ? "mapa CSV · mediana"
+                  : "SISLOGLAB CSV pendente"
+                : "mediana mun.",
+              "estoque_penicilina_dias_cobertura"
+            ) +
+            SifilisApp.kpi(
+              "SIA sífilis",
+              ie.procedimentos_sia_sifilis != null
+                ? SifilisApp.fmt(ie.procedimentos_sia_sifilis)
+                : "—",
+              dw ? "proced. A50–A53 · DW" : "proced. (demo)",
+              "procedimentos_sia_sifilis"
+            ) +
+            SifilisApp.kpi(
+              "SIH sífilis",
+              ie.internacoes_sih_sifilis != null
+                ? SifilisApp.fmt(ie.internacoes_sih_sifilis)
+                : "—",
+              dw ? "internações · VW_INTERNACAO" : "internações (demo)",
+              "internacoes_sih_sifilis"
+            ) +
+            SifilisApp.kpi(
+              "Óbitos SIM",
+              ie.obitos_sc_sim != null ? SifilisApp.fmt(ie.obitos_sc_sim) : "—",
+              dw
+                ? "dbo.SIM A50 · proxy SINAN=" + SifilisApp.fmt(ie.obitos_sc_proxy_sinan)
+                : "aguardando extract · proxy SINAN=" + SifilisApp.fmt(ie.obitos_sc_proxy_sinan),
+              "obitos_sc_sim"
+            );
+          const tbr = document.querySelector("#tab-ruptura tbody");
+          tbr.innerHTML = "";
+          const rupturas = insumos.regionais_alerta_ruptura || [];
+          if (!rupturas.length && dw) {
+            tbr.innerHTML =
+              '<tr><td colspan="2">Sem alerta de ruptura — SISLOGLAB ainda não publicado no DW.</td></tr>';
+          }
+          rupturas.forEach(function (r) {
+            tbr.innerHTML +=
+              "<tr><td>" +
+              r.nome +
+              '</td><td class="num">' +
+              SifilisApp.fmt(r.mun_ruptura) +
+              "</td></tr>";
+          });
+        } else {
+          document.getElementById("insumos-aviso").textContent =
+            "insumos.json ausente — rode publish ou use data/synthetic.";
+        }
+      } catch (err) {
+        document.getElementById("meta").textContent =
+          "Falha ao carregar laboratorio.json — rode publish_dashboard_data.";
+        console.error(err);
+      }
+    });
+  </script>
+</body>
+</html>

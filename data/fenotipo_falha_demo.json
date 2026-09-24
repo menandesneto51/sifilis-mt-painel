@@ -1,0 +1,92 @@
+{
+  "tipo": "demonstracao",
+  "aviso": "Categorias processuais da linha de cuidado — não são afirmações causais definitivas. Lacunas de informação geram 'falha_de_informacao' ou 'sem_falha_identificavel'.",
+  "total_sc_classificados": 361,
+  "categorias": [
+    {
+      "id": "sem_prenatal",
+      "nome": "Sem pré-natal",
+      "n": 54,
+      "pct": 15.0,
+      "indicador_id": "fenotipo_sem_prenatal_pct",
+      "regra_id": "fenotipo_falha_sem_prenatal"
+    },
+    {
+      "id": "prenatal_sem_testagem",
+      "nome": "Pré-natal sem testagem",
+      "n": 29,
+      "pct": 8.0,
+      "indicador_id": "fenotipo_prenatal_sem_testagem_pct",
+      "regra_id": "fenotipo_falha_prenatal_sem_testagem"
+    },
+    {
+      "id": "diagnostico_tardio",
+      "nome": "Diagnóstico tardio",
+      "n": 94,
+      "pct": 26.0,
+      "indicador_id": "fenotipo_diagnostico_tardio_pct",
+      "regra_id": "fenotipo_falha_diagnostico_tardio"
+    },
+    {
+      "id": "tratamento_nao_iniciado",
+      "nome": "Tratamento não iniciado",
+      "n": 40,
+      "pct": 11.1,
+      "indicador_id": "fenotipo_tratamento_nao_iniciado_pct",
+      "regra_id": "fenotipo_falha_tratamento_nao_iniciado"
+    },
+    {
+      "id": "tratamento_incompleto",
+      "nome": "Tratamento incompleto",
+      "n": 47,
+      "pct": 13.0,
+      "indicador_id": "fenotipo_tratamento_incompleto_pct",
+      "regra_id": "fenotipo_falha_tratamento_incompleto"
+    },
+    {
+      "id": "tratamento_fora_prazo",
+      "nome": "Tratamento fora do prazo",
+      "n": 36,
+      "pct": 10.0,
+      "indicador_id": "fenotipo_tratamento_fora_prazo_pct",
+      "regra_id": "fenotipo_falha_tratamento_fora_prazo"
+    },
+    {
+      "id": "possivel_reinfecao",
+      "nome": "Possível reinfecção",
+      "n": 11,
+      "pct": 3.0,
+      "indicador_id": "fenotipo_possivel_reinfecao_pct",
+      "regra_id": "fenotipo_falha_possivel_reinfecao"
+    },
+    {
+      "id": "acompanhamento_inadequado",
+      "nome": "Acompanhamento inadequado",
+      "n": 25,
+      "pct": 6.9,
+      "indicador_id": "fenotipo_acompanhamento_inadequado_pct",
+      "regra_id": "fenotipo_falha_acompanhamento_inadequado"
+    },
+    {
+      "id": "falha_de_informacao",
+      "nome": "Falha de informação",
+      "n": 18,
+      "pct": 5.0,
+      "indicador_id": "fenotipo_falha_de_informacao_pct",
+      "regra_id": "fenotipo_falha_falha_de_informacao"
+    },
+    {
+      "id": "sem_falha_identificavel",
+      "nome": "Sem falha identificável nos dados",
+      "n": 7,
+      "pct": 1.9,
+      "indicador_id": "fenotipo_sem_falha_identificavel_pct",
+      "regra_id": "fenotipo_falha_sem_falha_identificavel"
+    }
+  ],
+  "fonte_prevista": "SIFC+SIFG agregados (proxy MVP1); linkage Gold no ambiente SES",
+  "extraido_em": "2026-09-17",
+  "atraso_dias": 45,
+  "ano": 2025,
+  "nivel_evidencia": "proxy"
+}

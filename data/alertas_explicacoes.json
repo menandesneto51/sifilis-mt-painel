@@ -1,0 +1,568 @@
+{
+  "tipo": "explicacoes_alertas",
+  "ano": 2025,
+  "aviso": "RAG excerpts — revisar. Sem PII. ADR-011.",
+  "itens": [
+    {
+      "modo": "rag_excerpts",
+      "aviso": "Texto assistido por recuperação de excerpts — revisar antes de publicar. ADR-011.",
+      "evento": {
+        "alerta_id": "incidencia_sc_acima_meta",
+        "territorio": "Alta Floresta",
+        "acao_associada_id": "acao_distancia_eliminacao"
+      },
+      "citacoes": [
+        {
+          "parametro_id": "taxa_incidencia_congenita",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        },
+        {
+          "parametro_id": "meta_incidencia_sc_por_1000_nv",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "meta_cobertura_trat_adequado_pct",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "taxa_deteccao_adquirida",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        }
+      ],
+      "texto": "Alerta **incidencia_sc_acima_meta** — Alta Floresta (muito_alta).\nIndicador `taxa_incidencia_congenita` = 0.7 (limiar 0.5).\n\nCitações do corpus oficial:\n- [taxa_incidencia_congenita] Taxa de incidência de sífilis congênita em menores de 1 ano. Número de casos novos confirmados de sífilis congênita em menores de 1 ano de idade, em um determinado ano de diagnóstico e local de residência × 1.000 / Número total de nascidos vivos de mães residentes no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sina... (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita)\n- [meta_incidencia_sc_por_1000_nv] Indicador: Taxa de incidência de sífilis congênita. Meta de impacto: ≤ 0,5 caso por 1.000 nascidos vivos. Período avaliado: Pelo menos por um ano (último ano completo). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv)\n- [meta_cobertura_trat_adequado_pct] Indicador: Cobertura de gestantes tratadas adequadamente para sífilis. Meta de impacto: ≥ 95%. Período avaliado: Pelo menos por dois anos (últimos dois anos completos). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct)\n- [taxa_deteccao_adquirida] Taxa de detecção de sífilis adquirida. Número de casos de sífilis adquirida em um determinado ano de diagnóstico e local de residência × 100.000 / População total de indivíduos, residente no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sinan/IBGE. (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida)\n\nAção sugerida (registry): `acao_distancia_eliminacao`.",
+      "assistido_por_ia": true
+    },
+    {
+      "modo": "rag_excerpts",
+      "aviso": "Texto assistido por recuperação de excerpts — revisar antes de publicar. ADR-011.",
+      "evento": {
+        "alerta_id": "incidencia_sc_acima_meta",
+        "territorio": "Baixada Cuiabana",
+        "acao_associada_id": "acao_distancia_eliminacao"
+      },
+      "citacoes": [
+        {
+          "parametro_id": "taxa_incidencia_congenita",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        },
+        {
+          "parametro_id": "meta_incidencia_sc_por_1000_nv",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "meta_cobertura_trat_adequado_pct",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "taxa_deteccao_adquirida",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        }
+      ],
+      "texto": "Alerta **incidencia_sc_acima_meta** — Baixada Cuiabana (muito_alta).\nIndicador `taxa_incidencia_congenita` = 12.5 (limiar 0.5).\n\nCitações do corpus oficial:\n- [taxa_incidencia_congenita] Taxa de incidência de sífilis congênita em menores de 1 ano. Número de casos novos confirmados de sífilis congênita em menores de 1 ano de idade, em um determinado ano de diagnóstico e local de residência × 1.000 / Número total de nascidos vivos de mães residentes no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sina... (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita)\n- [meta_incidencia_sc_por_1000_nv] Indicador: Taxa de incidência de sífilis congênita. Meta de impacto: ≤ 0,5 caso por 1.000 nascidos vivos. Período avaliado: Pelo menos por um ano (último ano completo). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv)\n- [meta_cobertura_trat_adequado_pct] Indicador: Cobertura de gestantes tratadas adequadamente para sífilis. Meta de impacto: ≥ 95%. Período avaliado: Pelo menos por dois anos (últimos dois anos completos). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct)\n- [taxa_deteccao_adquirida] Taxa de detecção de sífilis adquirida. Número de casos de sífilis adquirida em um determinado ano de diagnóstico e local de residência × 100.000 / População total de indivíduos, residente no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sinan/IBGE. (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida)\n\nAção sugerida (registry): `acao_distancia_eliminacao`.",
+      "assistido_por_ia": true
+    },
+    {
+      "modo": "rag_excerpts",
+      "aviso": "Texto assistido por recuperação de excerpts — revisar antes de publicar. ADR-011.",
+      "evento": {
+        "alerta_id": "incidencia_sc_acima_meta",
+        "territorio": "Barra do Garças",
+        "acao_associada_id": "acao_distancia_eliminacao"
+      },
+      "citacoes": [
+        {
+          "parametro_id": "taxa_incidencia_congenita",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        },
+        {
+          "parametro_id": "meta_incidencia_sc_por_1000_nv",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "meta_cobertura_trat_adequado_pct",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "taxa_deteccao_adquirida",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        }
+      ],
+      "texto": "Alerta **incidencia_sc_acima_meta** — Barra do Garças (muito_alta).\nIndicador `taxa_incidencia_congenita` = 12.5 (limiar 0.5).\n\nCitações do corpus oficial:\n- [taxa_incidencia_congenita] Taxa de incidência de sífilis congênita em menores de 1 ano. Número de casos novos confirmados de sífilis congênita em menores de 1 ano de idade, em um determinado ano de diagnóstico e local de residência × 1.000 / Número total de nascidos vivos de mães residentes no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sina... (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita)\n- [meta_incidencia_sc_por_1000_nv] Indicador: Taxa de incidência de sífilis congênita. Meta de impacto: ≤ 0,5 caso por 1.000 nascidos vivos. Período avaliado: Pelo menos por um ano (último ano completo). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv)\n- [meta_cobertura_trat_adequado_pct] Indicador: Cobertura de gestantes tratadas adequadamente para sífilis. Meta de impacto: ≥ 95%. Período avaliado: Pelo menos por dois anos (últimos dois anos completos). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct)\n- [taxa_deteccao_adquirida] Taxa de detecção de sífilis adquirida. Número de casos de sífilis adquirida em um determinado ano de diagnóstico e local de residência × 100.000 / População total de indivíduos, residente no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sinan/IBGE. (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida)\n\nAção sugerida (registry): `acao_distancia_eliminacao`.",
+      "assistido_por_ia": true
+    },
+    {
+      "modo": "rag_excerpts",
+      "aviso": "Texto assistido por recuperação de excerpts — revisar antes de publicar. ADR-011.",
+      "evento": {
+        "alerta_id": "incidencia_sc_acima_meta",
+        "territorio": "Colíder",
+        "acao_associada_id": "acao_distancia_eliminacao"
+      },
+      "citacoes": [
+        {
+          "parametro_id": "taxa_incidencia_congenita",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        },
+        {
+          "parametro_id": "meta_incidencia_sc_por_1000_nv",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "meta_cobertura_trat_adequado_pct",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "taxa_deteccao_adquirida",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        }
+      ],
+      "texto": "Alerta **incidencia_sc_acima_meta** — Colíder (muito_alta).\nIndicador `taxa_incidencia_congenita` = 5.5 (limiar 0.5).\n\nCitações do corpus oficial:\n- [taxa_incidencia_congenita] Taxa de incidência de sífilis congênita em menores de 1 ano. Número de casos novos confirmados de sífilis congênita em menores de 1 ano de idade, em um determinado ano de diagnóstico e local de residência × 1.000 / Número total de nascidos vivos de mães residentes no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sina... (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita)\n- [meta_incidencia_sc_por_1000_nv] Indicador: Taxa de incidência de sífilis congênita. Meta de impacto: ≤ 0,5 caso por 1.000 nascidos vivos. Período avaliado: Pelo menos por um ano (último ano completo). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv)\n- [meta_cobertura_trat_adequado_pct] Indicador: Cobertura de gestantes tratadas adequadamente para sífilis. Meta de impacto: ≥ 95%. Período avaliado: Pelo menos por dois anos (últimos dois anos completos). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct)\n- [taxa_deteccao_adquirida] Taxa de detecção de sífilis adquirida. Número de casos de sífilis adquirida em um determinado ano de diagnóstico e local de residência × 100.000 / População total de indivíduos, residente no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sinan/IBGE. (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida)\n\nAção sugerida (registry): `acao_distancia_eliminacao`.",
+      "assistido_por_ia": true
+    },
+    {
+      "modo": "rag_excerpts",
+      "aviso": "Texto assistido por recuperação de excerpts — revisar antes de publicar. ADR-011.",
+      "evento": {
+        "alerta_id": "incidencia_sc_acima_meta",
+        "territorio": "Cáceres",
+        "acao_associada_id": "acao_distancia_eliminacao"
+      },
+      "citacoes": [
+        {
+          "parametro_id": "taxa_incidencia_congenita",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        },
+        {
+          "parametro_id": "meta_incidencia_sc_por_1000_nv",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "meta_cobertura_trat_adequado_pct",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "taxa_deteccao_adquirida",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        }
+      ],
+      "texto": "Alerta **incidencia_sc_acima_meta** — Cáceres (muito_alta).\nIndicador `taxa_incidencia_congenita` = 35.9 (limiar 0.5).\n\nCitações do corpus oficial:\n- [taxa_incidencia_congenita] Taxa de incidência de sífilis congênita em menores de 1 ano. Número de casos novos confirmados de sífilis congênita em menores de 1 ano de idade, em um determinado ano de diagnóstico e local de residência × 1.000 / Número total de nascidos vivos de mães residentes no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sina... (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita)\n- [meta_incidencia_sc_por_1000_nv] Indicador: Taxa de incidência de sífilis congênita. Meta de impacto: ≤ 0,5 caso por 1.000 nascidos vivos. Período avaliado: Pelo menos por um ano (último ano completo). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv)\n- [meta_cobertura_trat_adequado_pct] Indicador: Cobertura de gestantes tratadas adequadamente para sífilis. Meta de impacto: ≥ 95%. Período avaliado: Pelo menos por dois anos (últimos dois anos completos). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct)\n- [taxa_deteccao_adquirida] Taxa de detecção de sífilis adquirida. Número de casos de sífilis adquirida em um determinado ano de diagnóstico e local de residência × 100.000 / População total de indivíduos, residente no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sinan/IBGE. (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida)\n\nAção sugerida (registry): `acao_distancia_eliminacao`.",
+      "assistido_por_ia": true
+    },
+    {
+      "modo": "rag_excerpts",
+      "aviso": "Texto assistido por recuperação de excerpts — revisar antes de publicar. ADR-011.",
+      "evento": {
+        "alerta_id": "incidencia_sc_acima_meta",
+        "territorio": "Diamantino",
+        "acao_associada_id": "acao_distancia_eliminacao"
+      },
+      "citacoes": [
+        {
+          "parametro_id": "taxa_incidencia_congenita",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        },
+        {
+          "parametro_id": "meta_incidencia_sc_por_1000_nv",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "meta_cobertura_trat_adequado_pct",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "taxa_deteccao_adquirida",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        }
+      ],
+      "texto": "Alerta **incidencia_sc_acima_meta** — Diamantino (muito_alta).\nIndicador `taxa_incidencia_congenita` = 15.5 (limiar 0.5).\n\nCitações do corpus oficial:\n- [taxa_incidencia_congenita] Taxa de incidência de sífilis congênita em menores de 1 ano. Número de casos novos confirmados de sífilis congênita em menores de 1 ano de idade, em um determinado ano de diagnóstico e local de residência × 1.000 / Número total de nascidos vivos de mães residentes no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sina... (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita)\n- [meta_incidencia_sc_por_1000_nv] Indicador: Taxa de incidência de sífilis congênita. Meta de impacto: ≤ 0,5 caso por 1.000 nascidos vivos. Período avaliado: Pelo menos por um ano (último ano completo). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv)\n- [meta_cobertura_trat_adequado_pct] Indicador: Cobertura de gestantes tratadas adequadamente para sífilis. Meta de impacto: ≥ 95%. Período avaliado: Pelo menos por dois anos (últimos dois anos completos). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct)\n- [taxa_deteccao_adquirida] Taxa de detecção de sífilis adquirida. Número de casos de sífilis adquirida em um determinado ano de diagnóstico e local de residência × 100.000 / População total de indivíduos, residente no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sinan/IBGE. (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida)\n\nAção sugerida (registry): `acao_distancia_eliminacao`.",
+      "assistido_por_ia": true
+    },
+    {
+      "modo": "rag_excerpts",
+      "aviso": "Texto assistido por recuperação de excerpts — revisar antes de publicar. ADR-011.",
+      "evento": {
+        "alerta_id": "incidencia_sc_acima_meta",
+        "territorio": "Juara",
+        "acao_associada_id": "acao_distancia_eliminacao"
+      },
+      "citacoes": [
+        {
+          "parametro_id": "taxa_incidencia_congenita",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        },
+        {
+          "parametro_id": "meta_incidencia_sc_por_1000_nv",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "meta_cobertura_trat_adequado_pct",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "taxa_deteccao_adquirida",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        }
+      ],
+      "texto": "Alerta **incidencia_sc_acima_meta** — Juara (muito_alta).\nIndicador `taxa_incidencia_congenita` = 1.7 (limiar 0.5).\n\nCitações do corpus oficial:\n- [taxa_incidencia_congenita] Taxa de incidência de sífilis congênita em menores de 1 ano. Número de casos novos confirmados de sífilis congênita em menores de 1 ano de idade, em um determinado ano de diagnóstico e local de residência × 1.000 / Número total de nascidos vivos de mães residentes no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sina... (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita)\n- [meta_incidencia_sc_por_1000_nv] Indicador: Taxa de incidência de sífilis congênita. Meta de impacto: ≤ 0,5 caso por 1.000 nascidos vivos. Período avaliado: Pelo menos por um ano (último ano completo). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv)\n- [meta_cobertura_trat_adequado_pct] Indicador: Cobertura de gestantes tratadas adequadamente para sífilis. Meta de impacto: ≥ 95%. Período avaliado: Pelo menos por dois anos (últimos dois anos completos). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct)\n- [taxa_deteccao_adquirida] Taxa de detecção de sífilis adquirida. Número de casos de sífilis adquirida em um determinado ano de diagnóstico e local de residência × 100.000 / População total de indivíduos, residente no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sinan/IBGE. (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida)\n\nAção sugerida (registry): `acao_distancia_eliminacao`.",
+      "assistido_por_ia": true
+    },
+    {
+      "modo": "rag_excerpts",
+      "aviso": "Texto assistido por recuperação de excerpts — revisar antes de publicar. ADR-011.",
+      "evento": {
+        "alerta_id": "incidencia_sc_acima_meta",
+        "territorio": "Juína",
+        "acao_associada_id": "acao_distancia_eliminacao"
+      },
+      "citacoes": [
+        {
+          "parametro_id": "taxa_incidencia_congenita",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        },
+        {
+          "parametro_id": "meta_incidencia_sc_por_1000_nv",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "meta_cobertura_trat_adequado_pct",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "taxa_deteccao_adquirida",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        }
+      ],
+      "texto": "Alerta **incidencia_sc_acima_meta** — Juína (muito_alta).\nIndicador `taxa_incidencia_congenita` = 1.9 (limiar 0.5).\n\nCitações do corpus oficial:\n- [taxa_incidencia_congenita] Taxa de incidência de sífilis congênita em menores de 1 ano. Número de casos novos confirmados de sífilis congênita em menores de 1 ano de idade, em um determinado ano de diagnóstico e local de residência × 1.000 / Número total de nascidos vivos de mães residentes no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sina... (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita)\n- [meta_incidencia_sc_por_1000_nv] Indicador: Taxa de incidência de sífilis congênita. Meta de impacto: ≤ 0,5 caso por 1.000 nascidos vivos. Período avaliado: Pelo menos por um ano (último ano completo). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv)\n- [meta_cobertura_trat_adequado_pct] Indicador: Cobertura de gestantes tratadas adequadamente para sífilis. Meta de impacto: ≥ 95%. Período avaliado: Pelo menos por dois anos (últimos dois anos completos). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct)\n- [taxa_deteccao_adquirida] Taxa de detecção de sífilis adquirida. Número de casos de sífilis adquirida em um determinado ano de diagnóstico e local de residência × 100.000 / População total de indivíduos, residente no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sinan/IBGE. (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida)\n\nAção sugerida (registry): `acao_distancia_eliminacao`.",
+      "assistido_por_ia": true
+    },
+    {
+      "modo": "rag_excerpts",
+      "aviso": "Texto assistido por recuperação de excerpts — revisar antes de publicar. ADR-011.",
+      "evento": {
+        "alerta_id": "incidencia_sc_acima_meta",
+        "territorio": "Mato Grosso",
+        "acao_associada_id": "acao_distancia_eliminacao"
+      },
+      "citacoes": [
+        {
+          "parametro_id": "taxa_incidencia_congenita",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        },
+        {
+          "parametro_id": "meta_incidencia_sc_por_1000_nv",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "meta_cobertura_trat_adequado_pct",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "taxa_deteccao_adquirida",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        }
+      ],
+      "texto": "Alerta **incidencia_sc_acima_meta** — Mato Grosso (muito_alta).\nIndicador `taxa_incidencia_congenita` = 11.7 (limiar 0.5).\n\nCitações do corpus oficial:\n- [taxa_incidencia_congenita] Taxa de incidência de sífilis congênita em menores de 1 ano. Número de casos novos confirmados de sífilis congênita em menores de 1 ano de idade, em um determinado ano de diagnóstico e local de residência × 1.000 / Número total de nascidos vivos de mães residentes no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sina... (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita)\n- [meta_incidencia_sc_por_1000_nv] Indicador: Taxa de incidência de sífilis congênita. Meta de impacto: ≤ 0,5 caso por 1.000 nascidos vivos. Período avaliado: Pelo menos por um ano (último ano completo). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv)\n- [meta_cobertura_trat_adequado_pct] Indicador: Cobertura de gestantes tratadas adequadamente para sífilis. Meta de impacto: ≥ 95%. Período avaliado: Pelo menos por dois anos (últimos dois anos completos). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct)\n- [taxa_deteccao_adquirida] Taxa de detecção de sífilis adquirida. Número de casos de sífilis adquirida em um determinado ano de diagnóstico e local de residência × 100.000 / População total de indivíduos, residente no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sinan/IBGE. (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida)\n\nAção sugerida (registry): `acao_distancia_eliminacao`.",
+      "assistido_por_ia": true
+    },
+    {
+      "modo": "rag_excerpts",
+      "aviso": "Texto assistido por recuperação de excerpts — revisar antes de publicar. ADR-011.",
+      "evento": {
+        "alerta_id": "incidencia_sc_acima_meta",
+        "territorio": "Peixoto de Azevedo",
+        "acao_associada_id": "acao_distancia_eliminacao"
+      },
+      "citacoes": [
+        {
+          "parametro_id": "taxa_incidencia_congenita",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        },
+        {
+          "parametro_id": "meta_incidencia_sc_por_1000_nv",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "meta_cobertura_trat_adequado_pct",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "taxa_deteccao_adquirida",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        }
+      ],
+      "texto": "Alerta **incidencia_sc_acima_meta** — Peixoto de Azevedo (muito_alta).\nIndicador `taxa_incidencia_congenita` = 5.0 (limiar 0.5).\n\nCitações do corpus oficial:\n- [taxa_incidencia_congenita] Taxa de incidência de sífilis congênita em menores de 1 ano. Número de casos novos confirmados de sífilis congênita em menores de 1 ano de idade, em um determinado ano de diagnóstico e local de residência × 1.000 / Número total de nascidos vivos de mães residentes no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sina... (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita)\n- [meta_incidencia_sc_por_1000_nv] Indicador: Taxa de incidência de sífilis congênita. Meta de impacto: ≤ 0,5 caso por 1.000 nascidos vivos. Período avaliado: Pelo menos por um ano (último ano completo). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv)\n- [meta_cobertura_trat_adequado_pct] Indicador: Cobertura de gestantes tratadas adequadamente para sífilis. Meta de impacto: ≥ 95%. Período avaliado: Pelo menos por dois anos (últimos dois anos completos). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct)\n- [taxa_deteccao_adquirida] Taxa de detecção de sífilis adquirida. Número de casos de sífilis adquirida em um determinado ano de diagnóstico e local de residência × 100.000 / População total de indivíduos, residente no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sinan/IBGE. (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida)\n\nAção sugerida (registry): `acao_distancia_eliminacao`.",
+      "assistido_por_ia": true
+    },
+    {
+      "modo": "rag_excerpts",
+      "aviso": "Texto assistido por recuperação de excerpts — revisar antes de publicar. ADR-011.",
+      "evento": {
+        "alerta_id": "incidencia_sc_acima_meta",
+        "territorio": "Pontes e Lacerda",
+        "acao_associada_id": "acao_distancia_eliminacao"
+      },
+      "citacoes": [
+        {
+          "parametro_id": "taxa_incidencia_congenita",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        },
+        {
+          "parametro_id": "meta_incidencia_sc_por_1000_nv",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "meta_cobertura_trat_adequado_pct",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "taxa_deteccao_adquirida",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        }
+      ],
+      "texto": "Alerta **incidencia_sc_acima_meta** — Pontes e Lacerda (muito_alta).\nIndicador `taxa_incidencia_congenita` = 8.3 (limiar 0.5).\n\nCitações do corpus oficial:\n- [taxa_incidencia_congenita] Taxa de incidência de sífilis congênita em menores de 1 ano. Número de casos novos confirmados de sífilis congênita em menores de 1 ano de idade, em um determinado ano de diagnóstico e local de residência × 1.000 / Número total de nascidos vivos de mães residentes no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sina... (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita)\n- [meta_incidencia_sc_por_1000_nv] Indicador: Taxa de incidência de sífilis congênita. Meta de impacto: ≤ 0,5 caso por 1.000 nascidos vivos. Período avaliado: Pelo menos por um ano (último ano completo). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv)\n- [meta_cobertura_trat_adequado_pct] Indicador: Cobertura de gestantes tratadas adequadamente para sífilis. Meta de impacto: ≥ 95%. Período avaliado: Pelo menos por dois anos (últimos dois anos completos). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct)\n- [taxa_deteccao_adquirida] Taxa de detecção de sífilis adquirida. Número de casos de sífilis adquirida em um determinado ano de diagnóstico e local de residência × 100.000 / População total de indivíduos, residente no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sinan/IBGE. (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida)\n\nAção sugerida (registry): `acao_distancia_eliminacao`.",
+      "assistido_por_ia": true
+    },
+    {
+      "modo": "rag_excerpts",
+      "aviso": "Texto assistido por recuperação de excerpts — revisar antes de publicar. ADR-011.",
+      "evento": {
+        "alerta_id": "incidencia_sc_acima_meta",
+        "territorio": "Porto Alegre do Norte",
+        "acao_associada_id": "acao_distancia_eliminacao"
+      },
+      "citacoes": [
+        {
+          "parametro_id": "taxa_incidencia_congenita",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        },
+        {
+          "parametro_id": "meta_incidencia_sc_por_1000_nv",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "meta_cobertura_trat_adequado_pct",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "taxa_deteccao_adquirida",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        }
+      ],
+      "texto": "Alerta **incidencia_sc_acima_meta** — Porto Alegre do Norte (muito_alta).\nIndicador `taxa_incidencia_congenita` = 1.3 (limiar 0.5).\n\nCitações do corpus oficial:\n- [taxa_incidencia_congenita] Taxa de incidência de sífilis congênita em menores de 1 ano. Número de casos novos confirmados de sífilis congênita em menores de 1 ano de idade, em um determinado ano de diagnóstico e local de residência × 1.000 / Número total de nascidos vivos de mães residentes no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sina... (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita)\n- [meta_incidencia_sc_por_1000_nv] Indicador: Taxa de incidência de sífilis congênita. Meta de impacto: ≤ 0,5 caso por 1.000 nascidos vivos. Período avaliado: Pelo menos por um ano (último ano completo). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv)\n- [meta_cobertura_trat_adequado_pct] Indicador: Cobertura de gestantes tratadas adequadamente para sífilis. Meta de impacto: ≥ 95%. Período avaliado: Pelo menos por dois anos (últimos dois anos completos). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct)\n- [taxa_deteccao_adquirida] Taxa de detecção de sífilis adquirida. Número de casos de sífilis adquirida em um determinado ano de diagnóstico e local de residência × 100.000 / População total de indivíduos, residente no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sinan/IBGE. (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida)\n\nAção sugerida (registry): `acao_distancia_eliminacao`.",
+      "assistido_por_ia": true
+    },
+    {
+      "modo": "rag_excerpts",
+      "aviso": "Texto assistido por recuperação de excerpts — revisar antes de publicar. ADR-011.",
+      "evento": {
+        "alerta_id": "incidencia_sc_acima_meta",
+        "territorio": "Rondonópolis",
+        "acao_associada_id": "acao_distancia_eliminacao"
+      },
+      "citacoes": [
+        {
+          "parametro_id": "taxa_incidencia_congenita",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        },
+        {
+          "parametro_id": "meta_incidencia_sc_por_1000_nv",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "meta_cobertura_trat_adequado_pct",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "taxa_deteccao_adquirida",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        }
+      ],
+      "texto": "Alerta **incidencia_sc_acima_meta** — Rondonópolis (muito_alta).\nIndicador `taxa_incidencia_congenita` = 27.6 (limiar 0.5).\n\nCitações do corpus oficial:\n- [taxa_incidencia_congenita] Taxa de incidência de sífilis congênita em menores de 1 ano. Número de casos novos confirmados de sífilis congênita em menores de 1 ano de idade, em um determinado ano de diagnóstico e local de residência × 1.000 / Número total de nascidos vivos de mães residentes no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sina... (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita)\n- [meta_incidencia_sc_por_1000_nv] Indicador: Taxa de incidência de sífilis congênita. Meta de impacto: ≤ 0,5 caso por 1.000 nascidos vivos. Período avaliado: Pelo menos por um ano (último ano completo). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv)\n- [meta_cobertura_trat_adequado_pct] Indicador: Cobertura de gestantes tratadas adequadamente para sífilis. Meta de impacto: ≥ 95%. Período avaliado: Pelo menos por dois anos (últimos dois anos completos). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct)\n- [taxa_deteccao_adquirida] Taxa de detecção de sífilis adquirida. Número de casos de sífilis adquirida em um determinado ano de diagnóstico e local de residência × 100.000 / População total de indivíduos, residente no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sinan/IBGE. (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida)\n\nAção sugerida (registry): `acao_distancia_eliminacao`.",
+      "assistido_por_ia": true
+    },
+    {
+      "modo": "rag_excerpts",
+      "aviso": "Texto assistido por recuperação de excerpts — revisar antes de publicar. ADR-011.",
+      "evento": {
+        "alerta_id": "incidencia_sc_acima_meta",
+        "territorio": "Sinop",
+        "acao_associada_id": "acao_distancia_eliminacao"
+      },
+      "citacoes": [
+        {
+          "parametro_id": "taxa_incidencia_congenita",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        },
+        {
+          "parametro_id": "meta_incidencia_sc_por_1000_nv",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "meta_cobertura_trat_adequado_pct",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "taxa_deteccao_adquirida",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        }
+      ],
+      "texto": "Alerta **incidencia_sc_acima_meta** — Sinop (muito_alta).\nIndicador `taxa_incidencia_congenita` = 6.4 (limiar 0.5).\n\nCitações do corpus oficial:\n- [taxa_incidencia_congenita] Taxa de incidência de sífilis congênita em menores de 1 ano. Número de casos novos confirmados de sífilis congênita em menores de 1 ano de idade, em um determinado ano de diagnóstico e local de residência × 1.000 / Número total de nascidos vivos de mães residentes no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sina... (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita)\n- [meta_incidencia_sc_por_1000_nv] Indicador: Taxa de incidência de sífilis congênita. Meta de impacto: ≤ 0,5 caso por 1.000 nascidos vivos. Período avaliado: Pelo menos por um ano (último ano completo). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv)\n- [meta_cobertura_trat_adequado_pct] Indicador: Cobertura de gestantes tratadas adequadamente para sífilis. Meta de impacto: ≥ 95%. Período avaliado: Pelo menos por dois anos (últimos dois anos completos). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct)\n- [taxa_deteccao_adquirida] Taxa de detecção de sífilis adquirida. Número de casos de sífilis adquirida em um determinado ano de diagnóstico e local de residência × 100.000 / População total de indivíduos, residente no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sinan/IBGE. (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida)\n\nAção sugerida (registry): `acao_distancia_eliminacao`.",
+      "assistido_por_ia": true
+    },
+    {
+      "modo": "rag_excerpts",
+      "aviso": "Texto assistido por recuperação de excerpts — revisar antes de publicar. ADR-011.",
+      "evento": {
+        "alerta_id": "incidencia_sc_acima_meta",
+        "territorio": "São Félix do Araguaia",
+        "acao_associada_id": "acao_distancia_eliminacao"
+      },
+      "citacoes": [
+        {
+          "parametro_id": "taxa_incidencia_congenita",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        },
+        {
+          "parametro_id": "meta_incidencia_sc_por_1000_nv",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "meta_cobertura_trat_adequado_pct",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "taxa_deteccao_adquirida",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        }
+      ],
+      "texto": "Alerta **incidencia_sc_acima_meta** — São Félix do Araguaia (muito_alta).\nIndicador `taxa_incidencia_congenita` = 3.6 (limiar 0.5).\n\nCitações do corpus oficial:\n- [taxa_incidencia_congenita] Taxa de incidência de sífilis congênita em menores de 1 ano. Número de casos novos confirmados de sífilis congênita em menores de 1 ano de idade, em um determinado ano de diagnóstico e local de residência × 1.000 / Número total de nascidos vivos de mães residentes no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sina... (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita)\n- [meta_incidencia_sc_por_1000_nv] Indicador: Taxa de incidência de sífilis congênita. Meta de impacto: ≤ 0,5 caso por 1.000 nascidos vivos. Período avaliado: Pelo menos por um ano (último ano completo). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv)\n- [meta_cobertura_trat_adequado_pct] Indicador: Cobertura de gestantes tratadas adequadamente para sífilis. Meta de impacto: ≥ 95%. Período avaliado: Pelo menos por dois anos (últimos dois anos completos). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct)\n- [taxa_deteccao_adquirida] Taxa de detecção de sífilis adquirida. Número de casos de sífilis adquirida em um determinado ano de diagnóstico e local de residência × 100.000 / População total de indivíduos, residente no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sinan/IBGE. (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida)\n\nAção sugerida (registry): `acao_distancia_eliminacao`.",
+      "assistido_por_ia": true
+    },
+    {
+      "modo": "rag_excerpts",
+      "aviso": "Texto assistido por recuperação de excerpts — revisar antes de publicar. ADR-011.",
+      "evento": {
+        "alerta_id": "incidencia_sc_acima_meta",
+        "territorio": "Tangará da Serra",
+        "acao_associada_id": "acao_distancia_eliminacao"
+      },
+      "citacoes": [
+        {
+          "parametro_id": "taxa_incidencia_congenita",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        },
+        {
+          "parametro_id": "meta_incidencia_sc_por_1000_nv",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "meta_cobertura_trat_adequado_pct",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "taxa_deteccao_adquirida",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        }
+      ],
+      "texto": "Alerta **incidencia_sc_acima_meta** — Tangará da Serra (muito_alta).\nIndicador `taxa_incidencia_congenita` = 4.2 (limiar 0.5).\n\nCitações do corpus oficial:\n- [taxa_incidencia_congenita] Taxa de incidência de sífilis congênita em menores de 1 ano. Número de casos novos confirmados de sífilis congênita em menores de 1 ano de idade, em um determinado ano de diagnóstico e local de residência × 1.000 / Número total de nascidos vivos de mães residentes no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sina... (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita)\n- [meta_incidencia_sc_por_1000_nv] Indicador: Taxa de incidência de sífilis congênita. Meta de impacto: ≤ 0,5 caso por 1.000 nascidos vivos. Período avaliado: Pelo menos por um ano (último ano completo). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv)\n- [meta_cobertura_trat_adequado_pct] Indicador: Cobertura de gestantes tratadas adequadamente para sífilis. Meta de impacto: ≥ 95%. Período avaliado: Pelo menos por dois anos (últimos dois anos completos). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct)\n- [taxa_deteccao_adquirida] Taxa de detecção de sífilis adquirida. Número de casos de sífilis adquirida em um determinado ano de diagnóstico e local de residência × 100.000 / População total de indivíduos, residente no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sinan/IBGE. (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida)\n\nAção sugerida (registry): `acao_distancia_eliminacao`.",
+      "assistido_por_ia": true
+    },
+    {
+      "modo": "rag_excerpts",
+      "aviso": "Texto assistido por recuperação de excerpts — revisar antes de publicar. ADR-011.",
+      "evento": {
+        "alerta_id": "incidencia_sc_acima_meta",
+        "territorio": "Água Boa",
+        "acao_associada_id": "acao_distancia_eliminacao"
+      },
+      "citacoes": [
+        {
+          "parametro_id": "taxa_incidencia_congenita",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        },
+        {
+          "parametro_id": "meta_incidencia_sc_por_1000_nv",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "meta_cobertura_trat_adequado_pct",
+          "excerpt_ref": "docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct",
+          "documento_id": "Guia_Certificacao_Eliminacao_TV_2024"
+        },
+        {
+          "parametro_id": "taxa_deteccao_adquirida",
+          "excerpt_ref": "docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida",
+          "documento_id": "Boletim_Epidemiologico_Sifilis_2025"
+        }
+      ],
+      "texto": "Alerta **incidencia_sc_acima_meta** — Água Boa (muito_alta).\nIndicador `taxa_incidencia_congenita` = 3.6 (limiar 0.5).\n\nCitações do corpus oficial:\n- [taxa_incidencia_congenita] Taxa de incidência de sífilis congênita em menores de 1 ano. Número de casos novos confirmados de sífilis congênita em menores de 1 ano de idade, em um determinado ano de diagnóstico e local de residência × 1.000 / Número total de nascidos vivos de mães residentes no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sina... (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_incidencia_congenita)\n- [meta_incidencia_sc_por_1000_nv] Indicador: Taxa de incidência de sífilis congênita. Meta de impacto: ≤ 0,5 caso por 1.000 nascidos vivos. Período avaliado: Pelo menos por um ano (último ano completo). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_incidencia_sc_por_1000_nv)\n- [meta_cobertura_trat_adequado_pct] Indicador: Cobertura de gestantes tratadas adequadamente para sífilis. Meta de impacto: ≥ 95%. Período avaliado: Pelo menos por dois anos (últimos dois anos completos). (docs/oficiais/excerpts/pcdt_tv_parametros.yml#meta_cobertura_trat_adequado_pct)\n- [taxa_deteccao_adquirida] Taxa de detecção de sífilis adquirida. Número de casos de sífilis adquirida em um determinado ano de diagnóstico e local de residência × 100.000 / População total de indivíduos, residente no mesmo local, no mesmo ano. Fonte(s): MS/SVSA/Sinan/IBGE. (docs/oficiais/excerpts/boletim_2025_indicadores.yml#taxa_deteccao_adquirida)\n\nAção sugerida (registry): `acao_distancia_eliminacao`.",
+      "assistido_por_ia": true
+    }
+  ]
+}

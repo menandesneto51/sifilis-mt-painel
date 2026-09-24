@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sala TV — Sífilis MT</title>
+  <link rel="stylesheet" href="assets/css/ses-mt.css" />
+  <script src="assets/js/app.js" defer></script>
+</head>
+<body>
+  <header class="cabecalho"><div class="cabecalho-inner">
+    <p class="cabecalho-orgao">Governo de Mato Grosso · SES-MT · CIEVS-MT</p>
+    <h1>Sífilis MT — Sala de investigação TV</h1>
+    <p class="cabecalho-sub">Pauta agregada para comitê · sem dossiê nominal</p>
+  </div></header>
+  <nav class="nav-principal"><ul>
+    <li><a href="index.html">Executivo</a></li>
+    <li><a href="epidemiologia.html">Epidemiologia</a></li>
+    <li><a href="transmissao-vertical.html">Transmissão Vertical</a></li>
+    <li><a href="cascata.html">Cascata</a></li>
+    <li><a href="laboratorio.html">Laboratório</a></li>
+    <li><a href="territorio.html">Território</a></li>
+    <li><a href="qualidade.html">Qualidade</a></li>
+    <li><a href="acoes.html">Ações</a></li>
+  </ul></nav>
+  <div class="faixa-demo" id="faixa-demo"><strong>MVP3 Onda B:</strong> agregados para comitê. Sem PII. Dossiê nominal só no SES.</div>
+  <main class="conteudo">
+    <h2 class="page-titulo">Pauta estadual / regional</h2>
+    <p class="page-lead">
+      Função <code>sala_investigacao_tv</code> — ADR-008.
+      <a href="transmissao-vertical.html">Voltar à Transmissão Vertical</a> ·
+      <a href="boletim.html">Abrir boletim</a> ·
+      <a href="acoes.html">Gestão de ações</a>
+    </p>
+    <p class="meta-dados" id="meta"></p>
+    <div class="kpis" id="kpis"></div>
+    <p class="aviso-regra" id="disclaimer"></p>
+    <p class="aviso-regra" id="alertas-badge">Carregando alertas…</p>
+    <section class="secao">
+      <h2>Regionais na pauta</h2>
+      <div class="lista-acoes" id="pauta"></div>
+    </section>
+  </main>
+  <footer class="rodape"><div class="rodape-inner"><p>SES-MT · CIEVS-MT · Sala TV agregada · ADR-008 · Sem lista nominal</p></div></footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", async function () {
+      const [data, alertas] = await Promise.all([
+        SifilisApp.load("sala_tv_agregado.json"),
+        SifilisApp.load("alertas.json").catch(function () { return null; }),
+      ]);
+      const r = data.resumo_estado || {};
+      document.getElementById("meta").textContent =
+        (data.aviso || "") + " · Ano " + (data.ano || "—") + " · Fonte: " + (data.fonte || "");
+      document.getElementById("disclaimer").textContent = data.disclaimer || "";
+      document.getElementById("kpis").innerHTML =
+        SifilisApp.kpi("Casos SC", SifilisApp.fmt(r.casos_sc), "agregado", "SIFC") +
+        SifilisApp.kpi("Gestantes SIFG", SifilisApp.fmt(r.gestantes_sifg), "agregado", "SIFG") +
+        SifilisApp.kpi("PQA-VS", SifilisApp.fmt(r.pqa_vs_pct, 1) + "%", "SC/SIFG", "razao_sc_gestante") +
+        SifilisApp.kpi("ERS prioridade alta", SifilisApp.fmt(r.ers_prioridade_alta_n), "pauta", "comitê");
+      if (alertas) {
+        var ps = alertas.por_severidade || {};
+        document.getElementById("alertas-badge").textContent =
+          "Alertas: " +
+          (alertas.n_alertas || 0) +
+          " · muito alta " +
+          (ps.muito_alta || 0) +
+          " · alta " +
+          (ps.alta || 0) +
+          " · média " +
+          (ps.media || 0) +
+          " · fonte alertas.yml · sem PII";
+      } else {
+        document.getElementById("alertas-badge").textContent =
+          "Alertas: arquivo ainda não publicado · rode scripts/publish_alertas.py";
+      }
+      const el = document.getElementById("pauta");
+      (data.pauta_ers || []).forEach(function (p) {
+        el.innerHTML +=
+          "<article>" +
+          "<h3>" + SifilisApp.badgePrioridade(p.prioridade) + " " + p.ers_nome +
+          ' <span class="tag-registry">' + (p.status_comite || "") + "</span></h3>" +
+          "<p><strong>SC:</strong> " + SifilisApp.fmt(p.casos_sc) +
+          " · taxa " + SifilisApp.fmt(p.taxa_sc, 1) + "/1.000 NV · gestantes " +
+          SifilisApp.fmt(p.gestantes_sifg) + " · PQA " + SifilisApp.fmt(p.pqa_vs_pct, 1) + "%</p>" +
+          "<p><strong>Fenótipo dominante (proxy):</strong> <span class=\"tag-registry\">" +
+          (p.fenotipo_dominante || "—") + "</span></p>" +
+          "<p><strong>Pontos de discussão:</strong></p><ul>" +
+          (p.pontos_discussao || []).map(function (x) { return "<li>" + x + "</li>"; }).join("") +
+          "</ul></article>";
+      });
+    });
+  </script>
+</body>
+</html>

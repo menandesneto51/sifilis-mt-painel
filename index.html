@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Executivo — Sífilis MT | SES-MT / CIEVS-MT</title>
+  <link rel="stylesheet" href="assets/css/ses-mt.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/charts.js" defer></script>
+</head>
+<body>
+  <header class="cabecalho">
+    <div class="cabecalho-inner">
+      <p class="cabecalho-orgao">Governo de Mato Grosso · Secretaria de Estado de Saúde · CIEVS-MT</p>
+      <h1>Sífilis MT — Executivo</h1>
+      <p class="cabecalho-sub">Inteligência estadual · Vigilância, TV e apoio à decisão · MVP1–3</p>
+    </div>
+  </header>
+  <nav class="nav-principal" aria-label="Abas">
+    <ul>
+      <li><a href="index.html" aria-current="page">Executivo</a></li>
+      <li><a href="epidemiologia.html">Epidemiologia</a></li>
+      <li><a href="transmissao-vertical.html">Transmissão Vertical</a></li>
+      <li><a href="cascata.html">Cascata</a></li>
+      <li><a href="laboratorio.html">Laboratório</a></li>
+      <li><a href="territorio.html">Território</a></li>
+      <li><a href="qualidade.html">Qualidade</a></li>
+      <li><a href="acoes.html">Ações</a></li>
+    </ul>
+  </nav>
+  <div class="faixa-demo" role="status" id="faixa-demo"><strong>DEMONSTRAÇÃO / DW:</strong> agregados. Sem PII.</div>
+  <main class="conteudo">
+    <h2 class="page-titulo">Painel executivo</h2>
+    <p class="page-lead">Onde aumenta · quem é afetado · onde a linha de cuidado falha · o que fazer.
+      <a href="operacional-ses.html">Nível operacional (somente SES)</a>
+    </p>
+    <p class="meta-dados" id="seletor-fonte"></p>
+    <p class="meta-dados" id="meta"></p>
+    <div class="kpis" id="kpis"></div>
+    <section class="secao" aria-labelledby="alertas-titulo">
+      <h2 id="alertas-titulo">Alertas operacionais</h2>
+      <p class="aviso-regra" id="alertas-aviso">Agregados · limiares em <code>alertas.yml</code> · sem PII</p>
+      <div class="kpis" id="alertas-kpis"></div>
+      <div class="tabela-scroll">
+        <table class="dados" id="tab-alertas">
+          <thead>
+            <tr><th>Severidade</th><th>Território</th><th>Alerta</th><th>Valor</th><th>Limiar</th><th>Ação</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="kpi-fonte"><a href="acoes.html">Abrir gestão de ações</a> · <a href="sala-tv.html">Sala TV</a></p>
+    </section>
+    <section class="painel-destaque" id="bloco-pqa" aria-labelledby="exec-pqa">
+      <h2 id="exec-pqa">PQA-VS em destaque</h2>
+      <p class="destaque-valor" id="exec-pqa-valor">—</p>
+      <p class="destaque-meta">Razão SC / sífilis em gestantes · ver detalhe em <a href="transmissao-vertical.html">Transmissão Vertical</a> (fenótipo + prontidão).</p>
+      <div class="grafico-wrap" style="margin-top:1rem;max-height:220px"><canvas id="chart-pqa-serie"></canvas></div>
+    </section>
+    <div class="kpis" id="contadores"></div>
+    <section class="secao" aria-labelledby="sim-exec-titulo">
+      <h2 id="sim-exec-titulo">Simulador de metas — incidência SC</h2>
+      <p class="aviso-regra" id="sim-exec-aviso"></p>
+      <div class="kpis" id="sim-exec-kpis"></div>
+      <p class="kpi-fonte">Meta parametrizada em <code>regras.yml</code> · detalhe em <a href="transmissao-vertical.html">Transmissão Vertical</a></p>
+    </section>
+    <div class="grid-2">
+      <section class="secao">
+        <h2>Prioridade por ERS (16 regionais)</h2>
+        <div class="grafico-wrap alto"><canvas id="chart-ers"></canvas></div>
+        <p class="aviso-regra" style="margin-top:0.5rem">Ordenação por taxa SC / 1.000 NV (proxy). Não é Índice de Risco composto.</p>
+      </section>
+      <section class="secao">
+        <h2>Top problemas</h2>
+        <ol id="top-problemas"></ol>
+        <h2 style="margin-top:1.25rem">ERS — MUITO ALTA / ALTA</h2>
+        <div class="tabela-scroll">
+          <table class="dados" id="tab-prio"><thead><tr><th>ERS</th><th>Taxa SC</th><th>PQA %</th><th>Prioridade</th></tr></thead><tbody></tbody></table>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="rodape"><div class="rodape-inner">
+    <p>Governo de Mato Grosso · SES-MT · CIEVS-MT · Sífilis MT MVP1</p>
+    <p>Fonte e atraso: ver meta acima · Adquirida = NI + CID A51–A53 (método SES-MT)</p>
+  </div></footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", async function () {
+      try {
+        SifilisApp.barraFonte("seletor-fonte");
+        const [epi, terrRaw, oportRaw, qualRaw, pront, alertas] = await Promise.all([
+          SifilisApp.load("epidemiologia.json"),
+          SifilisApp.load("territorio_indicadores.json"),
+          SifilisApp.load("oportunidade_dw.json").catch(function () { return null; }),
+          SifilisApp.load("qualidade_proxy_dw.json").catch(function () { return null; }),
+          SifilisApp.load("prontidao_eliminacao.json").catch(function () { return null; }),
+          SifilisApp.load("alertas.json").catch(function () { return null; }),
+        ]);
+        const anos = epi.anos_disponiveis || [];
+        const ano = SifilisApp.barraAno("wrap-ano", anos, epi.ano);
+        const e = SifilisApp.estadoNoAno(epi, ano) || epi.estado;
+        const terr = SifilisApp.dadoNoAno(terrRaw, ano) || terrRaw;
+        const oport = oportRaw ? SifilisApp.dadoNoAno(oportRaw, ano) : null;
+        const qual = qualRaw ? SifilisApp.dadoNoAno(qualRaw, ano) : null;
+        const faixa = document.getElementById("faixa-demo");
+        if (faixa) {
+          faixa.innerHTML =
+            epi.tipo === "extracao_dw"
+              ? "<strong>DW SES-MT:</strong> agregados reais. Sem PII. Ano " +
+                ano +
+                " · " +
+                (terr.ers_n || 16) +
+                " ERS oficiais" +
+                (epi.incompleto && ano === epi.ano ? " (pode estar incompleto)." : ".")
+              : "<strong>DEMONSTRAÇÃO:</strong> agregados sintéticos. Não oficiais. Sem PII.";
+        }
+        document.getElementById("meta").textContent = SifilisApp.metaHtml(Object.assign({}, epi, { ano: ano }));
+        document.getElementById("kpis").innerHTML =
+          SifilisApp.kpi(
+            "Adquirida",
+            SifilisApp.fmt(e.adquirida.casos),
+            e.adquirida && e.adquirida.nivel_evidencia === "proxy"
+              ? "NI+CID A51–A53 · /100 mil " + SifilisApp.fmt(e.adquirida.taxa, 1)
+              : "casos · view DW pendente",
+            (e.adquirida && e.adquirida.nota) || "SIFA"
+          ) +
+          SifilisApp.kpi(
+            "Gestantes",
+            SifilisApp.fmt(e.gestante.casos),
+            "casos" +
+              (e.gestante.variacao_anual_pct != null
+                ? " · Δ " + SifilisApp.fmt(e.gestante.variacao_anual_pct, 1) + "%"
+                : ""),
+            "SINAN-SIFG"
+          ) +
+          SifilisApp.kpi(
+            "Congênita",
+            SifilisApp.fmt(e.congenita.casos),
+            "casos" +
+              (e.congenita.variacao_anual_pct != null
+                ? " · Δ " + SifilisApp.fmt(e.congenita.variacao_anual_pct, 1) + "%"
+                : ""),
+            "SINAN-SIFC"
+          ) +
+          SifilisApp.kpi(
+            "PQA-VS SC/SIFG",
+            SifilisApp.fmt(e.razao_sc_gestante_pct, 1) + "%",
+            "indicador oficial",
+            "razao_sc_gestante"
+          );
+        if (alertas) {
+          var ps = alertas.por_severidade || {};
+          document.getElementById("alertas-aviso").textContent =
+            (alertas.aviso || "") + " · n=" + (alertas.n_alertas || 0);
+          document.getElementById("alertas-kpis").innerHTML =
+            SifilisApp.kpi("Alertas", SifilisApp.fmt(alertas.n_alertas), "eventos", "alertas.yml") +
+            SifilisApp.kpi("Muito alta", SifilisApp.fmt(ps.muito_alta || 0), "severidade", "") +
+            SifilisApp.kpi("Alta", SifilisApp.fmt(ps.alta || 0), "severidade", "") +
+            SifilisApp.kpi("Média", SifilisApp.fmt(ps.media || 0), "severidade", "");
+          var tba = document.querySelector("#tab-alertas tbody");
+          tba.innerHTML = "";
+          (alertas.eventos || []).slice(0, 25).forEach(function (ev) {
+            tba.innerHTML +=
+              "<tr><td>" +
+              (ev.severidade || "") +
+              "</td><td>" +
+              (ev.territorio || "") +
+              "</td><td>" +
+              (ev.alerta_id || "") +
+              '</td><td class="num">' +
+              SifilisApp.fmt(ev.valor, 1) +
+              '</td><td class="num">' +
+              SifilisApp.fmt(ev.limiar, 1) +
+              "</td><td>" +
+              (ev.acao_associada_id || "") +
+              "</td></tr>";
+          });
+        }
+        document.getElementById("exec-pqa-valor").textContent =
+          SifilisApp.fmt(e.razao_sc_gestante_pct, 1) + "%";
+        const s = epi.serie_anual || {};
+        if (s.anos && s.razao_sc_gestante_pct) {
+          SifilisCharts.linha("chart-pqa-serie", s.anos.map(String), s.razao_sc_gestante_pct, "SC/SIFG %");
+        }
+        const qs = qual && qual.estado ? qual.estado.score_qualidade_proxy : null;
+        document.getElementById("contadores").innerHTML =
+          SifilisApp.kpi("ERS oficiais", String(terr.ers_n || 16), "escritórios regionais", "territorio.json") +
+          SifilisApp.kpi(
+            "Índice oport. perdidas",
+            oport && oport.indice_oportunidades_perdidas != null
+              ? SifilisApp.fmt(oport.indice_oportunidades_perdidas, 1)
+              : "—",
+            "0–100 · experimental",
+            "indice_oportunidades_perdidas"
+          ) +
+          SifilisApp.kpi(
+            "Esquema não realizado",
+            oport && oport.esquema_nao_realizado_pct != null
+              ? SifilisApp.fmt(oport.esquema_nao_realizado_pct, 1) + "%"
+              : "—",
+            oport ? SifilisApp.fmt(oport.esquema_nao_realizado_n) + " fichas SIFG" : "DW",
+            "oportunidade_dw"
+          ) +
+          SifilisApp.kpi(
+            "Consulta sem testagem",
+            oport && oport.consulta_sem_testagem_pct != null
+              ? SifilisApp.fmt(oport.consulta_sem_testagem_pct, 1) + "%"
+              : "—",
+            oport && oport.consulta_sem_testagem_fonte === "esus_aps_gestante_sem_proced_testagem"
+              ? "e-SUS APS · IG>0 sem proced."
+              : "proxy SIFG / e-SUS",
+            "consulta_sem_testagem"
+          ) +
+          SifilisApp.kpi(
+            "HepB SIPNI",
+            oport && oport.sipni_hepb_n != null ? SifilisApp.fmt(oport.sipni_hepb_n) : "—",
+            "doses agregadas MT",
+            "sipni_hepb_doses_n"
+          ) +
+          SifilisApp.kpi(
+            "Parceria tratada",
+            oport && oport.parceria_tratada_pct != null
+              ? SifilisApp.fmt(oport.parceria_tratada_pct, 1) + "%"
+              : "—",
+            "SIFG concomitante",
+            "parceria_tratada"
+          ) +
+          SifilisApp.kpi(
+            "Qualidade (proxy)",
+            qs != null ? SifilisApp.fmt(qs, 1) : "—",
+            "≠ risco epidemiológico",
+            "qualidade_proxy_dw"
+          ) +
+          (terr.cnes_disponivel
+            ? SifilisApp.kpi(
+                "CNES",
+                SifilisApp.fmt(
+                  (terr.ranking_ers || []).reduce(function (s, r) {
+                    return s + (r.estabelecimentos_n || 0);
+                  }, 0)
+                ),
+                (function () {
+                  var sus = (terr.ranking_ers || []).reduce(function (s, r) {
+                    return s + (r.estabelecimentos_sus_n || 0);
+                  }, 0);
+                  return sus
+                    ? "estab. · SUS (proxy atendimento) " + SifilisApp.fmt(sus)
+                    : "estabelecimentos (agg)";
+                })(),
+                "CNES"
+              )
+            : "");
+        const problemas = (epi.top_problemas || []).slice();
+        if (oport && oport.esquema_nao_realizado_pct != null) {
+          problemas.unshift(
+            "Esquema não realizado em " +
+              SifilisApp.fmt(oport.esquema_nao_realizado_pct, 1) +
+              "% das gestantes SIFG (" +
+              ano +
+              ")"
+          );
+        }
+        document.getElementById("top-problemas").innerHTML = problemas
+          .slice(0, 6)
+          .map(function (p) {
+            return "<li>" + p + "</li>";
+          })
+          .join("");
+        const ers = (terr.ranking_ers || []).slice();
+        SifilisCharts.barrasH(
+          "chart-ers",
+          ers.map(function (r) {
+            return r.nome;
+          }),
+          ers.map(function (r) {
+            return r.taxa_congenita != null ? r.taxa_congenita : 0;
+          }),
+          "Taxa SC / 1.000 NV"
+        );
+        const tb = document.querySelector("#tab-prio tbody");
+        ers
+          .filter(function (r) {
+            return r.prioridade_max === "MUITO ALTA" || r.prioridade_max === "ALTA";
+          })
+          .forEach(function (r) {
+            tb.innerHTML +=
+              "<tr><td>" +
+              r.nome +
+              '</td><td class="num">' +
+              SifilisApp.fmt(r.taxa_congenita, 1) +
+              '</td><td class="num">' +
+              SifilisApp.fmt(r.razao_sc_gestante_pct, 1) +
+              "</td><td>" +
+              SifilisApp.badgePrioridade(r.prioridade_max) +
+              "</td></tr>";
+          });
+
+        const sim = pront && pront.simulador_metas;
+        if (sim && sim.ok) {
+          document.getElementById("sim-exec-aviso").textContent = sim.aviso || "";
+          document.getElementById("sim-exec-kpis").innerHTML =
+            SifilisApp.kpi(
+              "Taxa atual",
+              SifilisApp.fmt(sim.taxa_atual, 1),
+              "por 1.000 NV",
+              "taxa_incidencia_congenita"
+            ) +
+            SifilisApp.kpi(
+              "Casos a evitar",
+              SifilisApp.fmt(sim.casos_a_evitar, 1),
+              "para ≤ " + SifilisApp.fmt(sim.meta_por_1000_nv, 1) + "/1.000 NV",
+              "distancia_meta_incidencia_sc"
+            ) +
+            SifilisApp.kpi(
+              "Redução",
+              SifilisApp.fmt(sim.reducao_casos_pct, 1) + "%",
+              "dos casos SC do ano",
+              "simulador_metas"
+            );
+        } else {
+          document.getElementById("sim-exec-aviso").textContent =
+            "Rode publish_dashboard_data para popular o simulador (meta em regras.yml).";
+        }
+      } catch (err) {
+        document.getElementById("meta").textContent = "Erro: " + err.message + " — sirva via HTTP local.";
+      }
+    });
+  </script>
+</body>
+</html>

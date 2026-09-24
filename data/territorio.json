@@ -1,0 +1,272 @@
+{
+  "fonte": "SES-MT — Escritórios Regionais de Saúde (ERS)",
+  "referencia": "https://www.saude.mt.gov.br/unidade/escritorios-regionais-de-saude",
+  "observacao": "Distribuição municipal conforme ERS/SES-MT. Códigos IBGE de 7 dígitos quando disponíveis.",
+  "regionais": [
+    {
+      "id": "agua-boa",
+      "nome": "Água Boa",
+      "sede": "Água Boa",
+      "municipios": [
+        { "ibge": "5100201", "nome": "Água Boa" },
+        { "ibge": "5101852", "nome": "Bom Jesus do Araguaia" },
+        { "ibge": "5102702", "nome": "Canarana" },
+        { "ibge": "5103106", "nome": "Cocalinho" },
+        { "ibge": "5103858", "nome": "Gaúcha do Norte" },
+        { "ibge": "5106156", "nome": "Nova Nazaré" },
+        { "ibge": "5106776", "nome": "Querência" },
+        { "ibge": "5107188", "nome": "Ribeirão Cascalheira" }
+      ]
+    },
+    {
+      "id": "alta-floresta",
+      "nome": "Alta Floresta",
+      "sede": "Alta Floresta",
+      "municipios": [
+        { "ibge": "5100250", "nome": "Alta Floresta" },
+        { "ibge": "5100805", "nome": "Apiacás" },
+        { "ibge": "5102793", "nome": "Carlinda" },
+        { "ibge": "5105507", "nome": "Nova Bandeirantes" },
+        { "ibge": "5106156", "nome": "Nova Monte Verde" },
+        { "ibge": "5106214", "nome": "Nova Guarita" },
+        { "ibge": "5106297", "nome": "Paranaíta" }
+      ]
+    },
+    {
+      "id": "baixada-cuiabana",
+      "nome": "Baixada Cuiabana",
+      "sede": "Cuiabá",
+      "municipios": [
+        { "ibge": "5100102", "nome": "Acorizal" },
+        { "ibge": "5101605", "nome": "Barão de Melgaço" },
+        { "ibge": "5103005", "nome": "Chapada dos Guimarães" },
+        { "ibge": "5103403", "nome": "Cuiabá" },
+        { "ibge": "5104906", "nome": "Jangada" },
+        { "ibge": "5105900", "nome": "Nobres" },
+        { "ibge": "5106107", "nome": "Nossa Senhora do Livramento" },
+        { "ibge": "5106206", "nome": "Nova Brasilândia" },
+        { "ibge": "5106453", "nome": "Planalto da Serra" },
+        { "ibge": "5106503", "nome": "Poconé" },
+        { "ibge": "5107800", "nome": "Santo Antônio do Leverger" },
+        { "ibge": "5108402", "nome": "Várzea Grande" }
+      ]
+    },
+    {
+      "id": "barra-do-garcas",
+      "nome": "Barra do Garças",
+      "sede": "Barra do Garças",
+      "municipios": [
+        { "ibge": "5101209", "nome": "Araguaiana" },
+        { "ibge": "5101803", "nome": "Barra do Garças" },
+        { "ibge": "5102603", "nome": "Campinápolis" },
+        { "ibge": "5103908", "nome": "General Carneiro" },
+        { "ibge": "5106254", "nome": "Nova Xavantina" },
+        { "ibge": "5106288", "nome": "Novo São Joaquim" },
+        { "ibge": "5106650", "nome": "Pontal do Araguaia" },
+        { "ibge": "5106700", "nome": "Ponte Branca" },
+        { "ibge": "5107196", "nome": "Ribeirãozinho" },
+        { "ibge": "5108204", "nome": "Torixoréu" }
+      ]
+    },
+    {
+      "id": "caceres",
+      "nome": "Cáceres",
+      "sede": "Cáceres",
+      "municipios": [
+        { "ibge": "5101258", "nome": "Araputanga" },
+        { "ibge": "5102504", "nome": "Cáceres" },
+        { "ibge": "5103437", "nome": "Curvelândia" },
+        { "ibge": "5103957", "nome": "Glória D'Oeste" },
+        { "ibge": "5104500", "nome": "Indiavaí" },
+        { "ibge": "5105002", "nome": "Jauru" },
+        { "ibge": "5105234", "nome": "Lambari D'Oeste" },
+        { "ibge": "5105622", "nome": "Mirassol d'Oeste" },
+        { "ibge": "5106826", "nome": "Porto Esperidião" },
+        { "ibge": "5107154", "nome": "Reserva do Cabaçal" },
+        { "ibge": "5107204", "nome": "Rio Branco" },
+        { "ibge": "5107750", "nome": "Salto do Céu" },
+        { "ibge": "5107105", "nome": "São José dos Quatro Marcos" }
+      ]
+    },
+    {
+      "id": "colider",
+      "nome": "Colíder",
+      "sede": "Colíder",
+      "municipios": [
+        { "ibge": "5103056", "nome": "Colíder" },
+        { "ibge": "5103353", "nome": "Guarantã do Norte" },
+        { "ibge": "5104559", "nome": "Itaúba" },
+        { "ibge": "5105606", "nome": "Matupá" },
+        { "ibge": "5106214", "nome": "Nova Canaã do Norte" },
+        { "ibge": "5106262", "nome": "Novo Mundo" },
+        { "ibge": "5108055", "nome": "Terra Nova do Norte" }
+      ]
+    },
+    {
+      "id": "diamantino",
+      "nome": "Diamantino",
+      "sede": "Diamantino",
+      "municipios": [
+        { "ibge": "5103503", "nome": "Diamantino" },
+        { "ibge": "5103602", "nome": "Dom Aquino" },
+        { "ibge": "5104609", "nome": "Itiquira" },
+        { "ibge": "5104906", "nome": "Jangada" },
+        { "ibge": "5105259", "nome": "Lucas do Rio Verde" },
+        { "ibge": "5105900", "nome": "Nobres" },
+        { "ibge": "5106222", "nome": "Nova Mutum" },
+        { "ibge": "5106304", "nome": "Paranatinga" },
+        { "ibge": "5106859", "nome": "Porto dos Gaúchos" },
+        { "ibge": "5107303", "nome": "Rosário Oeste" },
+        { "ibge": "5107768", "nome": "Santa Rita do Trivelato" },
+        { "ibge": "5107941", "nome": "Tabaporã" }
+      ]
+    },
+    {
+      "id": "juara",
+      "nome": "Juara",
+      "sede": "Juara",
+      "municipios": [
+        { "ibge": "5105101", "nome": "Juara" },
+        { "ibge": "5106156", "nome": "Nova Maringá" },
+        { "ibge": "5106270", "nome": "Novo Horizonte do Norte" },
+        { "ibge": "5106859", "nome": "Porto dos Gaúchos" },
+        { "ibge": "5107303", "nome": "São José do Rio Claro" },
+        { "ibge": "5107941", "nome": "Tabaporã" }
+      ]
+    },
+    {
+      "id": "juina",
+      "nome": "Juína",
+      "sede": "Juína",
+      "municipios": [
+        { "ibge": "5101407", "nome": "Aripuanã" },
+        { "ibge": "5101902", "nome": "Brasnorte" },
+        { "ibge": "5102850", "nome": "Castanheira" },
+        { "ibge": "5103252", "nome": "Colniza" },
+        { "ibge": "5103377", "nome": "Cotriguaçu" },
+        { "ibge": "5105150", "nome": "Juína" },
+        { "ibge": "5105176", "nome": "Juruena" }
+      ]
+    },
+    {
+      "id": "peixoto-de-azevedo",
+      "nome": "Peixoto de Azevedo",
+      "sede": "Peixoto de Azevedo",
+      "municipios": [
+        { "ibge": "5103353", "nome": "Guarantã do Norte" },
+        { "ibge": "5105606", "nome": "Matupá" },
+        { "ibge": "5106214", "nome": "Nova Guarita" },
+        { "ibge": "5106262", "nome": "Novo Mundo" },
+        { "ibge": "5106420", "nome": "Peixoto de Azevedo" },
+        { "ibge": "5108055", "nome": "Terra Nova do Norte" }
+      ]
+    },
+    {
+      "id": "pontes-e-lacerda",
+      "nome": "Pontes e Lacerda",
+      "sede": "Pontes e Lacerda",
+      "municipios": [
+        { "ibge": "5101704", "nome": "Barra do Bugres" },
+        { "ibge": "5102686", "nome": "Campos de Júlio" },
+        { "ibge": "5103302", "nome": "Comodoro" },
+        { "ibge": "5103369", "nome": "Conquista D'Oeste" },
+        { "ibge": "5105507", "nome": "Nova Lacerda" },
+        { "ibge": "5105622", "nome": "Nova Olímpia" },
+        { "ibge": "5106758", "nome": "Pontes e Lacerda" },
+        { "ibge": "5108353", "nome": "Vale de São Domingos" },
+        { "ibge": "5105507", "nome": "Vila Bela da Santíssima Trindade" }
+      ]
+    },
+    {
+      "id": "porto-alegre-do-norte",
+      "nome": "Porto Alegre do Norte",
+      "sede": "Porto Alegre do Norte",
+      "municipios": [
+        { "ibge": "5102694", "nome": "Canabrava do Norte" },
+        { "ibge": "5103353", "nome": "Confresa" },
+        { "ibge": "5107063", "nome": "Porto Alegre do Norte" },
+        { "ibge": "5107743", "nome": "Santa Cruz do Xingu" },
+        { "ibge": "5107776", "nome": "Santa Terezinha" },
+        { "ibge": "5107883", "nome": "São José do Xingu" },
+        { "ibge": "5108600", "nome": "Vila Rica" }
+      ]
+    },
+    {
+      "id": "rondonopolis",
+      "nome": "Rondonópolis",
+      "sede": "Rondonópolis",
+      "municipios": [
+        { "ibge": "5100300", "nome": "Alto Araguaia" },
+        { "ibge": "5100359", "nome": "Alto Garças" },
+        { "ibge": "5100409", "nome": "Alto Taquari" },
+        { "ibge": "5101209", "nome": "Araguainha" },
+        { "ibge": "5102678", "nome": "Campo Verde" },
+        { "ibge": "5103602", "nome": "Dom Aquino" },
+        { "ibge": "5104208", "nome": "Guiratinga" },
+        { "ibge": "5104609", "nome": "Itiquira" },
+        { "ibge": "5104801", "nome": "Jaciara" },
+        { "ibge": "5105200", "nome": "Juscimeira" },
+        { "ibge": "5106304", "nome": "Paranatinga" },
+        { "ibge": "5106379", "nome": "Pedra Preta" },
+        { "ibge": "5107005", "nome": "Poxoréu" },
+        { "ibge": "5107047", "nome": "Primavera do Leste" },
+        { "ibge": "5107602", "nome": "Rondonópolis" },
+        { "ibge": "5107792", "nome": "Santo Antônio do Leste" },
+        { "ibge": "5107295", "nome": "São José do Povo" },
+        { "ibge": "5107402", "nome": "São Pedro da Cipa" },
+        { "ibge": "5108100", "nome": "Tesouro" }
+      ]
+    },
+    {
+      "id": "sao-felix-do-araguaia",
+      "nome": "São Félix do Araguaia",
+      "sede": "São Félix do Araguaia",
+      "municipios": [
+        { "ibge": "5102694", "nome": "Luciara" },
+        { "ibge": "5106156", "nome": "Novo Santo Antônio" },
+        { "ibge": "5107188", "nome": "Porto Alegre do Norte" },
+        { "ibge": "5107859", "nome": "São Félix do Araguaia" },
+        { "ibge": "5108600", "nome": "Serra Nova Dourada" }
+      ]
+    },
+    {
+      "id": "sinop",
+      "nome": "Sinop",
+      "sede": "Sinop",
+      "municipios": [
+        { "ibge": "5103056", "nome": "Cláudia" },
+        { "ibge": "5103701", "nome": "Feliz Natal" },
+        { "ibge": "5104524", "nome": "Ipiranga do Norte" },
+        { "ibge": "5104540", "nome": "Itanhangá" },
+        { "ibge": "5105259", "nome": "Lucas do Rio Verde" },
+        { "ibge": "5106222", "nome": "Nova Mutum" },
+        { "ibge": "5106247", "nome": "Nova Ubiratã" },
+        { "ibge": "5107246", "nome": "Santa Carmem" },
+        { "ibge": "5107768", "nome": "Santa Rita do Trivelato" },
+        { "ibge": "5107909", "nome": "Sinop" },
+        { "ibge": "5107925", "nome": "Sorriso" },
+        { "ibge": "5108006", "nome": "Tapurah" },
+        { "ibge": "5108304", "nome": "União do Sul" },
+        { "ibge": "5108502", "nome": "Vera" }
+      ]
+    },
+    {
+      "id": "tangara-da-serra",
+      "nome": "Tangará da Serra",
+      "sede": "Tangará da Serra",
+      "municipios": [
+        { "ibge": "5100508", "nome": "Alto Paraguai" },
+        { "ibge": "5101001", "nome": "Arenápolis" },
+        { "ibge": "5101704", "nome": "Barra do Bugres" },
+        { "ibge": "5102637", "nome": "Campo Novo do Parecis" },
+        { "ibge": "5102686", "nome": "Campos de Júlio" },
+        { "ibge": "5103503", "nome": "Denise" },
+        { "ibge": "5103800", "nome": "Figueirópolis D'Oeste" },
+        { "ibge": "5106239", "nome": "Nova Marilândia" },
+        { "ibge": "5106247", "nome": "Nova Olímpia" },
+        { "ibge": "5107875", "nome": "Sapezal" },
+        { "ibge": "5107958", "nome": "Tangará da Serra" }
+      ]
+    }
+  ]
+}

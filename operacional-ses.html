@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Operacional SES — Sífilis MT</title>
+  <link rel="stylesheet" href="assets/css/ses-mt.css" />
+</head>
+<body>
+  <header class="cabecalho"><div class="cabecalho-inner">
+    <p class="cabecalho-orgao">Governo de Mato Grosso · SES-MT · CIEVS-MT</p>
+    <h1>Sífilis MT — Nível operacional</h1>
+    <p class="cabecalho-sub">UBS / caso · somente ambiente SES (ADR-009)</p>
+  </div></header>
+  <nav class="nav-principal"><ul>
+    <li><a href="index.html">Executivo</a></li>
+    <li><a href="epidemiologia.html">Epidemiologia</a></li>
+    <li><a href="transmissao-vertical.html">Transmissão Vertical</a></li>
+    <li><a href="cascata.html">Cascata</a></li>
+    <li><a href="laboratorio.html">Laboratório</a></li>
+    <li><a href="territorio.html">Território</a></li>
+    <li><a href="qualidade.html">Qualidade</a></li>
+    <li><a href="acoes.html">Ações</a></li>
+  </ul></nav>
+  <div class="faixa-demo" role="status">
+    <strong>LIMITE DO REPOSITÓRIO:</strong> este painel Git não exibe lista nominal, CPF, CNS nem microdado de UBS.
+  </div>
+  <main class="conteudo">
+    <h2 class="page-titulo">Onde fica o nível operacional</h2>
+    <p class="page-lead">
+      Coortes, dossiê de caso e fila de UBS rodam <strong>apenas na rede SES</strong>,
+      com resolução de identidade local. Aqui no Git há só o contrato
+      (<code>sql/gold/02_operacional_ses.sql</code>, ADR-009).
+    </p>
+    <section class="stub-mvp">
+      <p><strong>Neste repositório / Cursor:</strong> agregados por ERS e município.</p>
+      <p><strong>No ambiente SES:</strong> Gold com hashes + join nominal; dossiê TV; fila UBS.</p>
+      <p>Sem PII. Sem inventar regra clínica. Meta e PCDT só via <code>regras.yml</code>.</p>
+    </section>
+    <section class="secao">
+      <h2>Use os painéis agregados</h2>
+      <ul>
+        <li><a href="sala-tv.html">Sala de investigação TV</a> — pauta por ERS</li>
+        <li><a href="acoes.html">Gestão de ações</a> — workflow alerta→resultado</li>
+        <li><a href="transmissao-vertical.html">Transmissão Vertical</a> — PQA, fenótipo, prontidão</li>
+        <li><a href="boletim.html">Boletim agregado</a></li>
+      </ul>
+    </section>
+    <p class="aviso-regra">
+      Documentação: <code>docs/arquitetura/NIVEL_OPERACIONAL_SES.md</code> · ADR-009.
+    </p>
+  </main>
+  <footer class="rodape"><div class="rodape-inner">
+    <p>SES-MT · CIEVS-MT · Nível operacional fora do Git · ADR-009</p>
+  </div></footer>
+</body>
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cascata do Cuidado — Sífilis MT</title>
+  <link rel="stylesheet" href="assets/css/ses-mt.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/charts.js" defer></script>
+</head>
+<body>
+  <header class="cabecalho"><div class="cabecalho-inner">
+    <p class="cabecalho-orgao">Governo de Mato Grosso · SES-MT · CIEVS-MT</p>
+    <h1>Sífilis MT — Cascata do Cuidado</h1>
+    <p class="cabecalho-sub">Onde a gestante/criança se perde na linha de cuidado</p>
+  </div></header>
+  <nav class="nav-principal"><ul>
+    <li><a href="index.html">Executivo</a></li>
+    <li><a href="epidemiologia.html">Epidemiologia</a></li>
+    <li><a href="transmissao-vertical.html">Transmissão Vertical</a></li>
+    <li><a href="cascata.html" aria-current="page">Cascata</a></li>
+    <li><a href="laboratorio.html">Laboratório</a></li>
+    <li><a href="territorio.html">Território</a></li>
+    <li><a href="qualidade.html">Qualidade</a></li>
+    <li><a href="acoes.html">Ações</a></li>
+  </ul></nav>
+  <div class="faixa-demo" id="faixa-demo"><strong>Cascata:</strong> parcial DW (SIFG/SIFC). Sem PII.</div>
+  <main class="conteudo">
+    <h2 class="page-titulo">Cascata de Transmissão Vertical</h2>
+    <p class="meta-dados" id="seletor-fonte"></p>
+    <p class="meta-dados" id="meta"></p>
+    <div class="kpis" id="kpis-dw"></div>
+    <div class="grid-2">
+      <section class="secao">
+        <h2>Volumes DW (cascata parcial)</h2>
+        <div class="grafico-wrap alto"><canvas id="chart-funil"></canvas></div>
+        <p class="aviso-regra">Etapas = SIFG/SIFC (incl. testagem NT). Bloco paralelo e-SUS APS quando extract disponível. Parâmetros PCDT literais abaixo — avaliação caso a caso pendente (sem datas nominais).</p>
+      </section>
+      <section class="secao">
+        <h2>Etapas e retenção</h2>
+        <ul class="cascata-lista" id="lista-cascata"></ul>
+      </section>
+    </div>
+    <section class="secao">
+      <h2>Parâmetros PCDT / Eliminação TV (literais)</h2>
+      <p class="meta-dados" id="pcdt-meta">NT 14/2023 + Guia Certificação Eliminação TV. Sem avaliação nominal.</p>
+      <div class="kpis" id="kpis-pcdt"></div>
+      <div class="tabela-wrap"><table class="tabela" id="tab-pcdt-params"><thead>
+        <tr><th>Parâmetro</th><th>Valor</th><th>Status</th><th>Documento</th></tr>
+      </thead><tbody></tbody></table></div>
+    </section>
+    <section class="secao">
+      <h2>Oportunidade — campos DW</h2>
+      <div class="kpis" id="kpis-op"></div>
+      <p class="aviso-regra" id="op-pendente"></p>
+    </section>
+    <section class="secao">
+      <h2>Municípios com maior gap de testagem (e-SUS APS)</h2>
+      <p class="meta-dados">Atendimentos com IG&gt;0 sem procedimento de testagem sífilis no mesmo encontro (mín. 80 atd.).</p>
+      <div class="tabela-wrap"><table class="tabela" id="tab-esus-gap"><thead>
+        <tr><th>Município</th><th>ERS</th><th>Atend.</th><th>Com test.</th><th>Sem test.</th><th>%</th><th>HepB SIPNI</th></tr>
+      </thead><tbody></tbody></table></div>
+      <h3 class="page-titulo" style="font-size:1.1rem;margin-top:1.5rem">Gap de testagem por ERS</h3>
+      <div class="tabela-wrap"><table class="tabela" id="tab-esus-gap-ers"><thead>
+        <tr><th>ERS</th><th>Mun.</th><th>Atend.</th><th>Sem test.</th><th>%</th></tr>
+      </thead><tbody></tbody></table></div>
+    </section>
+    <section class="secao">
+      <h2>SISREG — solicitações sífilis por status</h2>
+      <p class="meta-dados">Agregado ambulatorial (CID A50–A53 / SIGTAP sífilis). Sem PII. Proxy de central ≠ município IBGE.</p>
+      <div class="tabela-wrap"><table class="tabela" id="tab-sisreg-status"><thead>
+        <tr><th>Status</th><th>Solicitações</th></tr>
+      </thead><tbody></tbody></table></div>
+    </section>
+    <section class="secao">
+      <h2>SIPNI — principais vacinas (doses agregadas MT)</h2>
+      <p class="meta-dados" id="sipni-materno-meta">Volume estadual por imunobiológico (SI-PNI / Vacinas). Sem PII.</p>
+      <div class="kpis" id="kpis-sipni-mat"></div>
+      <div class="tabela-wrap"><table class="tabela" id="tab-sipni-vac"><thead>
+        <tr><th>Código</th><th>Sigla</th><th>Doses</th></tr>
+      </thead><tbody></tbody></table></div>
+    </section>
+  </main>
+  <footer class="rodape"><div class="rodape-inner"><p>SES-MT · CIEVS-MT · Guia Eliminação TV · NT 14/2022-SAPS</p></div></footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", async function () {
+      SifilisApp.barraFonte("seletor-fonte");
+      const [casRaw, oportRaw, epi] = await Promise.all([
+        SifilisApp.load("cascata_tv.json"),
+        SifilisApp.load("oportunidade_dw.json").catch(function () { return null; }),
+        SifilisApp.load("epidemiologia.json"),
+      ]);
+      const ano = SifilisApp.barraAno("wrap-ano", epi.anos_disponiveis || [], epi.ano);
+      const e = SifilisApp.estadoNoAno(epi, ano) || epi.estado;
+      const cas = SifilisApp.dadoNoAno(casRaw, ano) || casRaw;
+      const oport = oportRaw ? SifilisApp.dadoNoAno(oportRaw, ano) : null;
+      const faixa = document.getElementById("faixa-demo");
+      if (faixa) {
+        faixa.innerHTML =
+          cas.tipo === "extracao_dw"
+            ? "<strong>DW SES-MT:</strong> cascata parcial ano " + ano + ". Sem PII."
+            : "<strong>DEMONSTRAÇÃO:</strong> funil sintético. Sem PII.";
+      }
+      document.getElementById("meta").textContent =
+        (cas.aviso || "") + " · Ano " + ano;
+      document.getElementById("kpis-dw").innerHTML =
+        SifilisApp.kpi("Gestantes SIFG", SifilisApp.fmt(e.gestante.casos), "casos " + ano, "SINAN-SIFG") +
+        SifilisApp.kpi("SC", SifilisApp.fmt(e.congenita.casos), "casos " + ano, "SINAN-SIFC") +
+        SifilisApp.kpi("PQA-VS", SifilisApp.fmt(e.razao_sc_gestante_pct, 1) + "%", "SC/SIFG", "oficial");
+      const et = cas.etapas || [];
+      const max = et.length ? et[0].n : 1;
+      SifilisCharts.funil(
+        "chart-funil",
+        et.map(function (x) { return x.label; }),
+        et.map(function (x) { return x.n; })
+      );
+      const ul = document.getElementById("lista-cascata");
+      et.forEach(function (step, i) {
+        const prev = i ? et[i - 1].n : null;
+        const ret = prev ? ((step.n / prev) * 100).toFixed(1).replace(".", ",") + "%" : "—";
+        const perda = prev != null ? prev - step.n : "—";
+        ul.innerHTML +=
+          "<li><div><strong>" + step.label + "</strong>" +
+          '<div class="cascata-barra"><span style="width:' + Math.max(0, Math.min(100, (step.n / max) * 100)) + '%"></span></div></div>' +
+          '<span class="num">' + SifilisApp.fmt(step.n) + "</span>" +
+          "<span>ret. " + ret + " · Δ " + perda + "</span></li>";
+      });
+      if (oport) {
+        const fonteTest =
+          oport.consulta_sem_testagem_fonte === "esus_aps_gestante_sem_proced_testagem"
+            ? "e-SUS APS · sem proced. no encontro"
+            : "proxy SIFG NT";
+        document.getElementById("kpis-op").innerHTML =
+          SifilisApp.kpi(
+            "e-SUS gestante (IG)",
+            oport.esus_atendimentos_gestante_n != null
+              ? SifilisApp.fmt(oport.esus_atendimentos_gestante_n)
+              : "—",
+            "atend. APS com IG>0",
+            "esus_aps"
+          ) +
+          SifilisApp.kpi(
+            "e-SUS com testagem",
+            oport.esus_atendimentos_gestante_com_testagem_n != null
+              ? SifilisApp.fmt(oport.esus_atendimentos_gestante_com_testagem_n)
+              : "—",
+            "mesmo atendimento · SIGTAP/AB",
+            "esus_aps"
+          ) +
+          SifilisApp.kpi(
+            "Consulta sem testagem",
+            oport.consulta_sem_testagem_pct != null
+              ? SifilisApp.fmt(oport.consulta_sem_testagem_pct, 1) + "%"
+              : "—",
+            fonteTest,
+            "consulta_sem_testagem"
+          ) +
+          SifilisApp.kpi(
+            "Proced. testagem APS",
+            oport.esus_proced_testagem_n != null
+              ? SifilisApp.fmt(oport.esus_proced_testagem_n)
+              : "—",
+            "volume anual mun×ano",
+            "esus_aps"
+          ) +
+          SifilisApp.kpi(
+            "Índice oport. perdidas",
+            oport.indice_oportunidades_perdidas != null
+              ? SifilisApp.fmt(oport.indice_oportunidades_perdidas, 1)
+              : "—",
+            "0–100 · média de componentes",
+            "indice_oportunidades_perdidas"
+          ) +
+          SifilisApp.kpi(
+            "Parceria tratada",
+            SifilisApp.fmt(oport.parceria_tratada_pct, 1) + "%",
+            SifilisApp.fmt(oport.parceria_tratada_n) + " / " + SifilisApp.fmt(oport.gestante_casos),
+            "parceria_tratada"
+          ) +
+          SifilisApp.kpi(
+            "Esquema não realizado",
+            SifilisApp.fmt(oport.esquema_nao_realizado_pct, 1) + "%",
+            SifilisApp.fmt(oport.esquema_nao_realizado_n) + " fichas",
+            "SIFG"
+          ) +
+          SifilisApp.kpi(
+            "Penicilina APS",
+            oport.esus_proced_penicilina_n != null
+              ? SifilisApp.fmt(oport.esus_proced_penicilina_n)
+              : "—",
+            oport.esus_proced_penicilina_n
+              ? "admin. penicilina sífilis"
+              : "sem volume no fato APS",
+            "esus_aps"
+          ) +
+          SifilisApp.kpi(
+            "SISREG sífilis",
+            oport.sisreg_solicitacoes_sifilis_n != null
+              ? SifilisApp.fmt(oport.sisreg_solicitacoes_sifilis_n)
+              : "—",
+            oport.sisreg_status === "extract_ok"
+              ? "solic. ambulatoriais agregadas"
+              : "regulação · pendente/sem volume",
+            "sisreg"
+          ) +
+          SifilisApp.kpi(
+            "SIPNI doses MT",
+            oport.sipni_doses_n != null ? SifilisApp.fmt(oport.sipni_doses_n) : "—",
+            oport.sipni_status === "extract_ok"
+              ? ((oport.sipni_municipios_n != null ? oport.sipni_municipios_n + " mun. · " : "") + "Vacinas agregado")
+              : "PNI · pendente",
+            "sipni"
+          );
+        document.getElementById("op-pendente").textContent =
+          (oport.aviso || "") +
+          " Pendente: " +
+          (oport.pendente_mvp2 || []).join("; ") +
+          "." +
+          (oport.motor_pcdt
+            ? " Motor PCDT: " +
+              oport.motor_pcdt.motor +
+              " (" +
+              (oport.motor_pcdt.prontos_n || 0) +
+              "/" +
+              (oport.motor_pcdt.total_n || 0) +
+              " parâmetros literais" +
+              (oport.motor_pcdt.avaliacao_caso
+                ? "; avaliação caso=" + oport.motor_pcdt.avaliacao_caso
+                : "") +
+              ")."
+            : "");
+      }
+      const etEsus = cas.etapas_esus_aps || [];
+      if (etEsus.length) {
+        const box = document.getElementById("lista-cascata");
+        box.innerHTML +=
+          '<li style="margin-top:1rem"><div><strong>Bloco paralelo e-SUS APS</strong></div>' +
+          "<span></span><span></span></li>";
+        const maxE = etEsus[0].n || 1;
+        etEsus.forEach(function (step, i) {
+          const prev = i ? etEsus[i - 1].n : null;
+          const ret = prev ? ((step.n / prev) * 100).toFixed(1).replace(".", ",") + "%" : "—";
+          const perda = prev != null ? prev - step.n : "—";
+          box.innerHTML +=
+            "<li><div><strong>" + step.label + "</strong>" +
+            '<div class="cascata-barra"><span style="width:' +
+            Math.max(0, Math.min(100, (step.n / maxE) * 100)) +
+            '%"></span></div></div>' +
+            '<span class="num">' + SifilisApp.fmt(step.n) + "</span>" +
+            "<span>ret. " + ret + " · Δ " + perda + "</span></li>";
+        });
+      }
+      const tb = document.querySelector("#tab-esus-gap tbody");
+      if (tb && oport) {
+        const rank = oport.ranking_esus_gap_testagem || [];
+        if (!rank.length) {
+          tb.innerHTML = "<tr><td colspan='7'>Sem ranking e-SUS para o ano (extract ou volume mínimo).</td></tr>";
+        } else {
+          rank.forEach(function (r) {
+            tb.innerHTML +=
+              "<tr><td>" + (r.municipio || r.co_municipio_ibge || "—") + "</td>" +
+              "<td>" + (r.regional || "—") + "</td>" +
+              "<td>" + SifilisApp.fmt(r.atendimentos_gestante_n) + "</td>" +
+              "<td>" + SifilisApp.fmt(r.com_testagem_n) + "</td>" +
+              "<td>" + SifilisApp.fmt(r.sem_testagem_n) + "</td>" +
+              "<td>" + SifilisApp.fmt(r.sem_testagem_pct, 1) + "%</td>" +
+              "<td>" + (r.sipni_hepb_doses_n != null ? SifilisApp.fmt(r.sipni_hepb_doses_n) : "—") + "</td></tr>";
+          });
+        }
+      }
+      const tbErs = document.querySelector("#tab-esus-gap-ers tbody");
+      if (tbErs && oport) {
+        const rankE = oport.ranking_esus_gap_ers || [];
+        if (!rankE.length) {
+          tbErs.innerHTML = "<tr><td colspan='5'>Sem agregado ERS.</td></tr>";
+        } else {
+          rankE.forEach(function (r) {
+            tbErs.innerHTML +=
+              "<tr><td>" + (r.regional || r.ers_id || "—") + "</td>" +
+              "<td>" + SifilisApp.fmt(r.municipios_n) + "</td>" +
+              "<td>" + SifilisApp.fmt(r.atendimentos_gestante_n) + "</td>" +
+              "<td>" + SifilisApp.fmt(r.sem_testagem_n) + "</td>" +
+              "<td>" + SifilisApp.fmt(r.sem_testagem_pct, 1) + "%</td></tr>";
+          });
+        }
+      }
+      const kMat = document.getElementById("kpis-sipni-mat");
+      if (kMat && oport) {
+        kMat.innerHTML =
+          SifilisApp.kpi("HepB", oport.sipni_hepb_n != null ? SifilisApp.fmt(oport.sipni_hepb_n) : "—", "doses SIPNI", "sipni_hepb_doses_n") +
+          SifilisApp.kpi("dTpa", oport.sipni_dtpa_n != null ? SifilisApp.fmt(oport.sipni_dtpa_n) : "—", "doses SIPNI", "sipni") +
+          SifilisApp.kpi("dT", oport.sipni_dt_n != null ? SifilisApp.fmt(oport.sipni_dt_n) : "—", "doses SIPNI", "sipni") +
+          SifilisApp.kpi("BCG", oport.sipni_bcg_n != null ? SifilisApp.fmt(oport.sipni_bcg_n) : "—", "doses SIPNI", "sipni");
+        const metaS = document.getElementById("sipni-materno-meta");
+        if (metaS && oport.sipni_materno_aviso) metaS.textContent = oport.sipni_materno_aviso;
+      }
+      const tbSipni = document.querySelector("#tab-sipni-vac tbody");
+      if (tbSipni && oport) {
+        const top = oport.sipni_top_vacinas || [];
+        if (!top.length) {
+          tbSipni.innerHTML = "<tr><td colspan='3'>Sem extract SIPNI para o ano.</td></tr>";
+        } else {
+          top.forEach(function (r) {
+            tbSipni.innerHTML +=
+              "<tr><td>" + (r.co_vacina || "—") + "</td>" +
+              "<td>" + (r.sg_vacina || "—") + "</td>" +
+              "<td>" + SifilisApp.fmt(r.doses_n) + "</td></tr>";
+          });
+        }
+      }
+      const tbSis = document.querySelector("#tab-sisreg-status tbody");
+      if (tbSis && oport) {
+        const st = oport.sisreg_por_status || [];
+        if (!st.length) {
+          tbSis.innerHTML = "<tr><td colspan='2'>Sem extract SISREG status para o ano.</td></tr>";
+        } else {
+          st.slice(0, 12).forEach(function (r) {
+            tbSis.innerHTML +=
+              "<tr><td>" + (r.status || "—") + "</td>" +
+              "<td>" + SifilisApp.fmt(r.n) + "</td></tr>";
+          });
+        }
+      }
+      const kPcdt = document.getElementById("kpis-pcdt");
+      const tbPcdt = document.querySelector("#tab-pcdt-params tbody");
+      if (oport && oport.motor_pcdt) {
+        const mp = oport.motor_pcdt;
+        if (kPcdt) {
+          kPcdt.innerHTML =
+            SifilisApp.kpi("Motor", mp.motor || "—", mp.avaliacao_caso || "", "regras.yml") +
+            SifilisApp.kpi(
+              "Parâmetros literais",
+              (mp.prontos_n != null ? mp.prontos_n : "—") + "/" + (mp.total_n != null ? mp.total_n : "—"),
+              "extraido_literal",
+              "NT 14/2023"
+            );
+        }
+        const metaP = document.getElementById("pcdt-meta");
+        if (metaP && mp.motivo) metaP.textContent = mp.motivo;
+        if (tbPcdt) {
+          const params = mp.parametros || [];
+          if (!params.length) {
+            tbPcdt.innerHTML = "<tr><td colspan='4'>Sem parâmetros PCDT no JSON.</td></tr>";
+          } else {
+            params.forEach(function (p) {
+              const val =
+                p.valor != null
+                  ? SifilisApp.fmt(p.valor, typeof p.valor === "number" && p.valor < 10 ? 1 : 0) +
+                    (p.unidade ? " " + p.unidade : "")
+                  : "—";
+              tbPcdt.innerHTML +=
+                "<tr><td>" + (p.id || "—") + "</td>" +
+                "<td>" + val + "</td>" +
+                "<td>" + (p.formula_status || "—") + "</td>" +
+                "<td>" + (p.documento || "—") + "</td></tr>";
+            });
+          }
+        }
+      } else if (tbPcdt) {
+        tbPcdt.innerHTML = "<tr><td colspan='4'>Republish oportunidade_dw para carregar motor_pcdt.</td></tr>";
+      }
+    });
+  </script>
+</body>
+</html>

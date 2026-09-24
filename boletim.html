@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Boletim — Sífilis MT</title>
+  <link rel="stylesheet" href="assets/css/ses-mt.css" />
+  <script src="assets/js/app.js" defer></script>
+  <style>
+    @media print {
+      .nav-principal, .faixa-demo, .no-print { display: none !important; }
+      body { background: #fff; }
+      .cabecalho { border-bottom: 2px solid #1B3281; }
+    }
+  </style>
+</head>
+<body>
+  <header class="cabecalho"><div class="cabecalho-inner">
+    <p class="cabecalho-orgao">Governo de Mato Grosso · SES-MT · CIEVS-MT</p>
+    <h1 id="titulo">Sífilis MT — Boletim</h1>
+    <p class="cabecalho-sub" id="periodo">Agregados · impressão local</p>
+  </div></header>
+  <nav class="nav-principal no-print"><ul>
+    <li><a href="index.html">Executivo</a></li>
+    <li><a href="epidemiologia.html">Epidemiologia</a></li>
+    <li><a href="transmissao-vertical.html">Transmissão Vertical</a></li>
+    <li><a href="cascata.html">Cascata</a></li>
+    <li><a href="laboratorio.html">Laboratório</a></li>
+    <li><a href="territorio.html">Território</a></li>
+    <li><a href="qualidade.html">Qualidade</a></li>
+    <li><a href="acoes.html">Ações</a></li>
+  </ul></nav>
+  <div class="faixa-demo no-print" id="faixa-demo"><strong>MVP3 Onda B:</strong> boletim demo — não oficial. Sem PII.</div>
+  <main class="conteudo">
+    <p class="page-lead no-print">
+      Função <code>boletim_automatico</code> — ADR-008.
+      <button type="button" class="btn-print" onclick="window.print()">Imprimir / PDF</button>
+      · <a href="sala-tv.html">Sala TV</a> · <a href="acoes.html">Ações</a>
+    </p>
+    <p class="meta-dados" id="meta"></p>
+    <div class="kpis" id="kpis"></div>
+    <div class="grid-2">
+      <section class="secao">
+        <h2>Destaques</h2>
+        <ul id="destaques"></ul>
+      </section>
+      <section class="secao">
+        <h2>Regionais em destaque</h2>
+        <ul id="ers"></ul>
+      </section>
+    </div>
+    <section class="secao">
+      <h2>Próximos passos de gestão</h2>
+      <ul id="acoes"></ul>
+    </section>
+    <section class="secao" aria-labelledby="ia-titulo">
+      <h2 id="ia-titulo">Rascunho assistido por IA</h2>
+      <p class="aviso-regra">
+        Assistido por IA · revisar antes de publicar · RAG só sobre
+        <code>docs/oficiais/excerpts/</code> · ADR-011 · sem inventar meta clínica
+      </p>
+      <pre id="ia-rascunho" class="aviso-regra" style="white-space:pre-wrap;font-family:inherit"></pre>
+      <p class="kpi-fonte">
+        Gerar: <code>.venv\Scripts\python.exe scripts/draft_ia_assistida.py</code>
+        → <code>dashboard/data/rascunho_boletim.json</code>
+      </p>
+    </section>
+    <p class="aviso-regra" id="rodape-boletim"></p>
+  </main>
+  <footer class="rodape"><div class="rodape-inner"><p id="fontes-rodape">SES-MT · CIEVS-MT · Boletim agregado MVP3</p></div></footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", async function () {
+      const [b, ia] = await Promise.all([
+        SifilisApp.load("boletim.json"),
+        SifilisApp.load("rascunho_boletim.json").catch(function () { return null; }),
+      ]);
+      document.getElementById("titulo").textContent = b.titulo || "Boletim Sífilis MT";
+      document.getElementById("periodo").textContent =
+        (b.periodo || "") + " · " + (b.atraso_dados || "");
+      document.getElementById("meta").textContent = b.aviso || "";
+      document.getElementById("kpis").innerHTML = (b.kpis || []).map(function (k) {
+        return SifilisApp.kpi(
+          k.nome,
+          SifilisApp.fmt(k.valor, typeof k.valor === "number" && k.valor % 1 ? 1 : 0) +
+            (k.unidade && k.unidade.indexOf("%") >= 0 ? "" : ""),
+          k.unidade + (k.n != null ? " · n=" + SifilisApp.fmt(k.n) : ""),
+          k.id
+        );
+      }).join("");
+      document.getElementById("destaques").innerHTML =
+        (b.destaques || []).map(function (d) { return "<li>" + d + "</li>"; }).join("");
+      document.getElementById("ers").innerHTML =
+        (b.ers_destaque || []).map(function (e) {
+          return "<li>" + SifilisApp.badgePrioridade(e.prioridade) + " " + e.nome +
+            " — taxa SC " + SifilisApp.fmt(e.taxa_sc, 1) + "/1.000 NV</li>";
+        }).join("");
+      document.getElementById("acoes").innerHTML =
+        (b.acoes_sugeridas || []).map(function (a) { return "<li>" + a + "</li>"; }).join("");
+      document.getElementById("rodape-boletim").textContent = b.rodape || "";
+      document.getElementById("fontes-rodape").textContent =
+        "SES-MT · CIEVS-MT · Fontes: " + (b.fontes || []).join(", ");
+      var elIa = document.getElementById("ia-rascunho");
+      if (ia && ia.markdown) {
+        elIa.textContent = ia.markdown;
+      } else {
+        elIa.textContent =
+          "Rascunho ainda não gerado. Rode scripts/draft_ia_assistida.py no refresh semanal.";
+      }
+    });
+  </script>
+</body>
+</html>

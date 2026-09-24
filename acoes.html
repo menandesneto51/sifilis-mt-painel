@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ações — Sífilis MT</title>
+  <link rel="stylesheet" href="assets/css/ses-mt.css" />
+  <script src="assets/js/app.js" defer></script>
+</head>
+<body>
+  <header class="cabecalho"><div class="cabecalho-inner">
+    <p class="cabecalho-orgao">Governo de Mato Grosso · SES-MT · CIEVS-MT</p>
+    <h1>Sífilis MT — Ações</h1>
+    <p class="cabecalho-sub">Motivo · onde · evidência · workflow alerta→resultado</p>
+  </div></header>
+  <nav class="nav-principal"><ul>
+    <li><a href="index.html">Executivo</a></li>
+    <li><a href="epidemiologia.html">Epidemiologia</a></li>
+    <li><a href="transmissao-vertical.html">Transmissão Vertical</a></li>
+    <li><a href="cascata.html">Cascata</a></li>
+    <li><a href="laboratorio.html">Laboratório</a></li>
+    <li><a href="territorio.html">Território</a></li>
+    <li><a href="qualidade.html">Qualidade</a></li>
+    <li><a href="acoes.html" aria-current="page">Ações</a></li>
+  </ul></nav>
+  <div class="faixa-demo" id="faixa-demo"><strong>DW / DEMO:</strong> recomendações de gestão — não prescritivas clínicas.</div>
+  <main class="conteudo">
+    <h2 class="page-titulo">O que deve ser feito, onde e com qual prioridade</h2>
+    <p class="page-lead">
+      Motor no espírito ARARAS + gestão de ações MVP3.
+      <a href="sala-tv.html">Sala TV</a> · <a href="boletim.html">Boletim</a> ·
+      <a href="operacional-ses.html">Operacional SES</a>
+    </p>
+    <p class="meta-dados" id="seletor-fonte"></p>
+    <p class="meta-dados" id="meta"></p>
+    <p class="meta-dados" id="filtros-acoes">
+      <label>Regional (ERS)
+        <select id="filtro-ers"><option value="">Todas</option></select>
+      </label>
+      <label>Município
+        <select id="filtro-mun" disabled><option value="">Todos</option></select>
+      </label>
+    </p>
+
+    <section class="secao" aria-labelledby="wf-titulo">
+      <h2 id="wf-titulo">Gestão de ações — workflow (MVP3 Onda B)</h2>
+      <p class="aviso-regra" id="wf-aviso"></p>
+      <p class="aviso-regra">
+        Persistência real só no ambiente SES (ADR-010). Neste painel Git: <code>localStorage</code> demo
+        (migra de sessionStorage se existir) · sem nome/CPF · resultado agregado quando disponível.
+      </p>
+      <div class="kpis" id="wf-kpis"></div>
+      <div class="workflow-board" id="wf-board"></div>
+    </section>
+
+    <h2 class="page-titulo">Recomendações territoriais</h2>
+    <div class="lista-acoes" id="lista"></div>
+    <section class="secao">
+      <h2>Prioridade por ERS (proxy incidência SC)</h2>
+      <div class="tabela-scroll">
+        <table class="dados" id="tab-ers">
+          <thead>
+            <tr>
+              <th>ERS</th>
+              <th>Gestante</th>
+              <th>SC</th>
+              <th>Taxa SC</th>
+              <th>PQA %</th>
+              <th>Prioridade*</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="aviso-regra">* Proxy por incidência SC — não é Índice de Risco composto (ADR-003). Tabela demo de subíndices permanece em <code>risco_municipios.json</code>.</p>
+    </section>
+  </main>
+  <footer class="rodape"><div class="rodape-inner"><p>SES-MT · CIEVS-MT · Recomendações de gestão — não substituem protocolo clínico · ADR-008</p></div></footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", async function () {
+      SifilisApp.barraFonte("seletor-fonte");
+      const [rec, terrRaw, risco, epi, gestao] = await Promise.all([
+        SifilisApp.load("recomendacoes.json"),
+        SifilisApp.load("territorio_indicadores.json").catch(function () { return null; }),
+        SifilisApp.load("risco_municipios.json").catch(function () { return null; }),
+        SifilisApp.load("epidemiologia.json").catch(function () { return null; }),
+        SifilisApp.load("gestao_acoes.json").catch(function () { return null; }),
+      ]);
+      const anos = (epi && epi.anos_disponiveis) || (terrRaw && [terrRaw.ano]) || [];
+      const ano = SifilisApp.barraAno("wrap-ano", anos, (epi && epi.ano) || (terrRaw && terrRaw.ano));
+      const terr = terrRaw ? SifilisApp.dadoNoAno(terrRaw, ano) : null;
+      const faixa = document.getElementById("faixa-demo");
+      if (faixa) {
+        faixa.innerHTML =
+          rec.tipo === "extracao_dw"
+            ? "<strong>DW SES-MT:</strong> recomendações a partir de agregados. Não prescritivas. Sem PII. Ano " + ano + "."
+            : "<strong>DEMONSTRAÇÃO:</strong> recomendações sintéticas — não prescritivas clínicas.";
+      }
+      document.getElementById("meta").textContent =
+        (rec.aviso || "") + " · Ano " + (rec.ano || ano) + " · " + (rec.recomendacoes || []).length + " recomendações";
+
+      if (gestao) {
+        document.getElementById("wf-aviso").textContent = gestao.aviso || "";
+        const statusLabels = {
+          alerta: "Alerta",
+          em_andamento: "Em andamento",
+          concluida: "Concluída",
+          resultado: "Resultado",
+        };
+        const TRANS = {
+          alerta: ["em_andamento"],
+          em_andamento: ["concluida", "alerta"],
+          concluida: ["resultado"],
+          resultado: [],
+        };
+        const STORE_KEY = "sifilis_mt_gestao_local_v1";
+        try {
+          var local = JSON.parse(localStorage.getItem(STORE_KEY) || sessionStorage.getItem(STORE_KEY) || "{}");
+          (gestao.itens || []).forEach(function (it) {
+            if (local[it.id]) {
+              it.status = local[it.id].status || it.status;
+              if (local[it.id].resultado) it.resultado = local[it.id].resultado;
+            }
+          });
+        } catch (e) { /* ignore */ }
+        function salvarLocal() {
+          var map = {};
+          (gestao.itens || []).forEach(function (it) {
+            map[it.id] = { status: it.status, resultado: it.resultado || null };
+          });
+          localStorage.setItem(STORE_KEY, JSON.stringify(map));
+        }
+        const epiEstado = epi && (SifilisApp.estadoNoAno ? SifilisApp.estadoNoAno(epi, ano) : epi.estado);
+        const selErs = document.getElementById("filtro-ers");
+        const selMun = document.getElementById("filtro-mun");
+        const ersSet = {};
+        (gestao.itens || []).forEach(function (it) {
+          if (it.ers) ersSet[it.ers] = true;
+        });
+        Object.keys(ersSet).sort().forEach(function (e) {
+          const o = document.createElement("option");
+          o.value = e;
+          o.textContent = e;
+          selErs.appendChild(o);
+        });
+        function itensFiltrados() {
+          var ers = selErs.value;
+          var mun = selMun.value;
+          return (gestao.itens || []).filter(function (it) {
+            if (ers && it.ers !== ers && it.territorio !== ers) return false;
+            if (mun && String(it.co_municipio_ibge || "") !== mun && it.territorio !== mun) return false;
+            return true;
+          });
+        }
+        function popularMun() {
+          selMun.innerHTML = '<option value="">Todos</option>';
+          var ers = selErs.value;
+          var muns = {};
+          (gestao.itens || []).forEach(function (it) {
+            if (ers && it.ers !== ers && it.territorio !== ers) return;
+            if (it.nivel === "municipio" && (it.co_municipio_ibge || it.territorio)) {
+              muns[it.co_municipio_ibge || it.territorio] = it.territorio;
+            }
+          });
+          var keys = Object.keys(muns).sort();
+          selMun.disabled = !keys.length;
+          keys.forEach(function (k) {
+            var o = document.createElement("option");
+            o.value = k;
+            o.textContent = muns[k];
+            selMun.appendChild(o);
+          });
+        }
+        function aplicarTransicao(id, novo) {
+          var it = (gestao.itens || []).find(function (x) { return x.id === id; });
+          if (!it) return;
+          var ok = (TRANS[it.status] || []).indexOf(novo) >= 0;
+          if (!ok) return;
+          it.status = novo;
+          if (novo === "resultado") {
+            var pqa = epiEstado && epiEstado.razao_sc_gestante_pct;
+            var taxa = epiEstado && epiEstado.congenita && epiEstado.congenita.taxa;
+            it.resultado = {
+              resumo: "Resultado registrado no painel (demo local — persistir no SES).",
+              efeito_observado:
+                "Indicadores estaduais de referência: PQA=" +
+                SifilisApp.fmt(pqa, 1) +
+                "% · taxa SC=" +
+                SifilisApp.fmt(taxa, 1) +
+                "/1.000 NV. Comparar com janela anterior no refresh. Sem afirmação causal.",
+              indicadores_depois: {
+                razao_sc_gestante_pct: pqa,
+                taxa_incidencia_congenita: taxa,
+              },
+            };
+          }
+          salvarLocal();
+          renderBoard();
+        }
+        function renderBoard() {
+          var itens = itensFiltrados();
+          var counts = { alerta: 0, em_andamento: 0, concluida: 0, resultado: 0 };
+          itens.forEach(function (it) {
+            if (counts[it.status] != null) counts[it.status]++;
+          });
+          document.getElementById("wf-kpis").innerHTML =
+            SifilisApp.kpi("Alerta", String(counts.alerta), "abertas", "workflow") +
+            SifilisApp.kpi("Em andamento", String(counts.em_andamento), "execução", "workflow") +
+            SifilisApp.kpi("Concluídas", String(counts.concluida), "fechadas", "workflow") +
+            SifilisApp.kpi("Com resultado", String(counts.resultado), "ciclo", "workflow");
+          const board = document.getElementById("wf-board");
+          board.innerHTML = "";
+          (gestao.status_fluxo || Object.keys(statusLabels)).forEach(function (st) {
+            const col = document.createElement("div");
+            col.className = "workflow-col";
+            col.innerHTML = "<h3>" + (statusLabels[st] || st) + "</h3>";
+            itens.filter(function (it) { return it.status === st; }).forEach(function (it) {
+              const card = document.createElement("article");
+              card.className = "workflow-card";
+              var btns = (TRANS[it.status] || [])
+                .map(function (nx) {
+                  return (
+                    '<button type="button" class="btn btn-secundario btn-transicao" data-id="' +
+                    it.id +
+                    '" data-nx="' +
+                    nx +
+                    '">→ ' +
+                    (statusLabels[nx] || nx) +
+                    "</button>"
+                  );
+                })
+                .join(" ");
+              card.innerHTML =
+                "<p class=\"wf-titulo\">" + SifilisApp.badgePrioridade(it.prioridade) + " " + it.titulo + "</p>" +
+                "<p><strong>Onde:</strong> " + it.territorio +
+                (it.prazo_dias != null ? " · prazo " + it.prazo_dias + " d" : "") + "</p>" +
+                "<p class=\"kpi-fonte\">" + (it.evidencia_resumo || "") + "</p>" +
+                (it.resultado
+                  ? "<p><strong>Resultado:</strong> " + it.resultado.resumo +
+                    "<br><em>" + (it.resultado.efeito_observado || "") + "</em></p>"
+                  : "") +
+                (it.acao_associada_ids || []).map(function (id) {
+                  return '<span class="tag-registry">' + id + "</span>";
+                }).join(" ") +
+                (btns ? "<p class=\"kpi-fonte\">" + btns + "</p>" : "");
+              col.appendChild(card);
+            });
+            board.appendChild(col);
+          });
+          board.querySelectorAll(".btn-transicao").forEach(function (btn) {
+            btn.addEventListener("click", function () {
+              aplicarTransicao(btn.getAttribute("data-id"), btn.getAttribute("data-nx"));
+            });
+          });
+        }
+        selErs.addEventListener("change", function () {
+          popularMun();
+          renderBoard();
+        });
+        selMun.addEventListener("change", renderBoard);
+        popularMun();
+        renderBoard();
+      }
+
+      const lista = document.getElementById("lista");
+      (rec.recomendacoes || []).forEach(function (r) {
+        const tags = (r.indicador_ids || []).map(function (id) {
+          return '<span class="tag-registry">' + id + "</span>";
+        }).join(" ");
+        const acoesReg = (r.acao_associada_ids || []).map(function (id) {
+          return '<span class="tag-registry">' + id + "</span>";
+        }).join(" ");
+        lista.innerHTML +=
+          "<article><h3>" + SifilisApp.badgePrioridade(r.prioridade) + " " + r.motivo + "</h3>" +
+          "<p><strong>Onde:</strong> " + r.onde +
+          (r.fenotipo_dominante ? " · Fenótipo: <span class=\"tag-registry\">" + r.fenotipo_dominante + "</span>" : "") +
+          "</p>" +
+          "<p><strong>Evidência:</strong></p><ul>" +
+          (r.evidencia || []).map(function (e) { return "<li>" + e + "</li>"; }).join("") +
+          "</ul><p><strong>Ações:</strong></p><ul>" +
+          (r.acoes || []).map(function (a) { return "<li>" + a + "</li>"; }).join("") +
+          "</ul>" +
+          (tags ? "<p><strong>Indicadores (registry):</strong> " + tags + "</p>" : "") +
+          (acoesReg ? "<p><strong>Ações registry:</strong> " + acoesReg + "</p>" : "") +
+          "</article>";
+      });
+
+      const tb = document.querySelector("#tab-ers tbody");
+      const ers = (terr && terr.ranking_ers) || [];
+      if (ers.length) {
+        ers.forEach(function (r) {
+          tb.innerHTML +=
+            "<tr><td>" + r.nome +
+            '</td><td class="num">' + SifilisApp.fmt(r.gestante_casos) +
+            '</td><td class="num">' + SifilisApp.fmt(r.congenita_casos) +
+            '</td><td class="num">' + SifilisApp.fmt(r.taxa_congenita, 1) +
+            '</td><td class="num">' + SifilisApp.fmt(r.razao_sc_gestante_pct, 1) +
+            "</td><td>" + SifilisApp.badgePrioridade(r.prioridade_max) + "</td></tr>";
+        });
+      } else if (risco && risco.municipios) {
+        risco.municipios.slice().sort(function (a, b) { return b.score - a.score; }).forEach(function (m) {
+          tb.innerHTML +=
+            "<tr><td>" + m.nome +
+            '</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>' +
+            SifilisApp.badgePrioridade(m.prioridade) + "</td></tr>";
+        });
+      }
+    });
+  </script>
+</body>
+</html>

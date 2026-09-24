@@ -1,0 +1,32 @@
+{
+  "tipo": "demonstracao",
+  "aviso": "Cascata sintética — ordem de grandeza ilustrativa.",
+  "ano": 2025,
+  "recorte": "Mato Grosso",
+  "etapas": [
+    { "id": "gestantes_identificadas", "label": "Gestantes identificadas", "n": 1000 },
+    { "id": "pn_iniciado", "label": "Pré-natal iniciado", "n": 960 },
+    { "id": "testagem", "label": "Testagem para sífilis", "n": 910 },
+    { "id": "reagente", "label": "Teste reagente", "n": 73 },
+    { "id": "diagnostico", "label": "Diagnóstico", "n": 70 },
+    { "id": "trat_iniciado", "label": "Tratamento iniciado", "n": 68 },
+    { "id": "trat_adequado", "label": "Tratamento adequado", "n": 49 },
+    { "id": "seguimento", "label": "Seguimento", "n": 44 },
+    { "id": "parto", "label": "Parto", "n": 42 },
+    { "id": "crianca_avaliada", "label": "Criança avaliada", "n": 38 },
+    { "id": "sem_sc", "label": "Sem sífilis congênita", "n": 27 }
+  ],
+  "perdas_destaque": [
+    { "de": "testagem", "para": "reagente", "nota": "Carga de infecção (positivos)" },
+    { "de": "trat_iniciado", "para": "trat_adequado", "perda": 19, "nota": "Maior perda assistencial na cascata demo" },
+    { "de": "crianca_avaliada", "para": "sem_sc", "perda": 11, "nota": "11 crianças com SC no exemplo conceitual" }
+  ],
+  "operacional": {
+    "pn_inicio_precoce_pct": 72.4,
+    "pn_4_consultas_pct": 81.0,
+    "gestantes_sem_tratamento": 63,
+    "trat_30d_parto_pct": 68.5,
+    "parceria_tratada_pct": 56.1,
+    "dias_positivo_tratamento_mediana": 9
+  }
+}

@@ -1,0 +1,586 @@
+{
+  "tipo": "extracao_dw",
+  "ano": 2026,
+  "aviso": "Cascata SIFG/SIFC + bloco paralelo e-SUS APS (IG>0 × procedimento testagem). Não é funil clínico único nem PCDT. Adequação terapêutica = onda seguinte. Sem PII.",
+  "recorte": "Mato Grosso",
+  "etapas": [
+    {
+      "id": "gestantes_sifg",
+      "label": "Gestantes notificadas (SIFG)",
+      "n": 1278,
+      "fonte": "sinan_sifg"
+    },
+    {
+      "id": "testagem_registrada",
+      "label": "Teste NT ≠ não realizado (SIFG)",
+      "n": 891,
+      "fonte": "sinan_sifg"
+    },
+    {
+      "id": "esquema_registrado",
+      "label": "Esquema ≠ não realizado (SIFG)",
+      "n": 1204,
+      "fonte": "sinan_sifg"
+    },
+    {
+      "id": "parceria_tratada",
+      "label": "Parceria tratada concomitante",
+      "n": 458,
+      "fonte": "sinan_sifg"
+    },
+    {
+      "id": "sc_sifc",
+      "label": "Sífilis congênita notificada (SIFC)",
+      "n": 459,
+      "fonte": "sinan_sifc"
+    },
+    {
+      "id": "dx_materno_parto",
+      "label": "Dx materno no parto/após (SIFC)",
+      "n": 78,
+      "fonte": "sinan_sifc"
+    }
+  ],
+  "etapas_esus_aps": [],
+  "perdas_destaque": [
+    {
+      "de": "gestantes_sifg",
+      "para": "testagem_registrada",
+      "perda": 387,
+      "retencao_pct": 69.7
+    },
+    {
+      "de": "esquema_registrado",
+      "para": "parceria_tratada",
+      "perda": 746,
+      "retencao_pct": 38.0
+    },
+    {
+      "de": "sc_sifc",
+      "para": "dx_materno_parto",
+      "perda": 381,
+      "retencao_pct": 17.0
+    }
+  ],
+  "operacional": {
+    "parceria_tratada_pct": 35.8,
+    "esquema_nao_realizado_pct": 5.8,
+    "gestantes_sem_tratamento": 74,
+    "diagnostico_materno_parto_pct": 17.0,
+    "consulta_sem_testagem_pct": 30.3,
+    "consulta_sem_testagem_fonte": "proxy_sifg_teste_nt",
+    "esus_gestante_sem_testagem_pct": null,
+    "indice_oportunidades_perdidas": 25.3
+  },
+  "pendente_mvp2": [
+    "tempo diagnostico→tratamento (datas nominais — fora do agregado)",
+    "avaliação caso PCDT (datas de dose/parto — sem PII no repo)",
+    "cruzar SIPNI doses com coorte gestante (sem PII)"
+  ],
+  "por_ano": {
+    "2022": {
+      "tipo": "extracao_dw",
+      "ano": 2022,
+      "aviso": "Cascata SIFG/SIFC + bloco paralelo e-SUS APS (IG>0 × procedimento testagem). Não é funil clínico único nem PCDT. Adequação terapêutica = onda seguinte. Sem PII.",
+      "recorte": "Mato Grosso",
+      "etapas": [
+        {
+          "id": "gestantes_sifg",
+          "label": "Gestantes notificadas (SIFG)",
+          "n": 1690,
+          "fonte": "sinan_sifg"
+        },
+        {
+          "id": "testagem_registrada",
+          "label": "Teste NT ≠ não realizado (SIFG)",
+          "n": 1404,
+          "fonte": "sinan_sifg"
+        },
+        {
+          "id": "esquema_registrado",
+          "label": "Esquema ≠ não realizado (SIFG)",
+          "n": 1633,
+          "fonte": "sinan_sifg"
+        },
+        {
+          "id": "parceria_tratada",
+          "label": "Parceria tratada concomitante",
+          "n": 727,
+          "fonte": "sinan_sifg"
+        },
+        {
+          "id": "sc_sifc",
+          "label": "Sífilis congênita notificada (SIFC)",
+          "n": 367,
+          "fonte": "sinan_sifc"
+        },
+        {
+          "id": "dx_materno_parto",
+          "label": "Dx materno no parto/após (SIFC)",
+          "n": 100,
+          "fonte": "sinan_sifc"
+        }
+      ],
+      "etapas_esus_aps": [
+        {
+          "id": "esus_pn_ig",
+          "label": "Atendimentos APS com IG>0 (e-SUS)",
+          "n": 186577,
+          "fonte": "esus_aps"
+        },
+        {
+          "id": "esus_pn_com_testagem",
+          "label": "Desses com proced. testagem sífilis",
+          "n": 75111,
+          "fonte": "esus_aps"
+        }
+      ],
+      "perdas_destaque": [
+        {
+          "de": "gestantes_sifg",
+          "para": "testagem_registrada",
+          "perda": 286,
+          "retencao_pct": 83.1
+        },
+        {
+          "de": "esquema_registrado",
+          "para": "parceria_tratada",
+          "perda": 906,
+          "retencao_pct": 44.5
+        },
+        {
+          "de": "parceria_tratada",
+          "para": "sc_sifc",
+          "perda": 360,
+          "retencao_pct": 50.5
+        },
+        {
+          "de": "sc_sifc",
+          "para": "dx_materno_parto",
+          "perda": 267,
+          "retencao_pct": 27.2
+        },
+        {
+          "de": "esus_pn_ig",
+          "para": "esus_pn_com_testagem",
+          "perda": 111466,
+          "retencao_pct": 40.3,
+          "bloco": "esus_aps"
+        }
+      ],
+      "operacional": {
+        "parceria_tratada_pct": 43.0,
+        "esquema_nao_realizado_pct": 3.4,
+        "gestantes_sem_tratamento": 57,
+        "diagnostico_materno_parto_pct": 27.2,
+        "consulta_sem_testagem_pct": 59.7,
+        "consulta_sem_testagem_fonte": "esus_aps_gestante_sem_proced_testagem",
+        "esus_gestante_sem_testagem_pct": 59.7,
+        "indice_oportunidades_perdidas": 32.3
+      },
+      "pendente_mvp2": [
+        "tempo diagnostico→tratamento (datas nominais — fora do agregado)",
+        "avaliação caso PCDT (datas de dose/parto — sem PII no repo)",
+        "cruzar SIPNI doses com coorte gestante (sem PII)"
+      ]
+    },
+    "2023": {
+      "tipo": "extracao_dw",
+      "ano": 2023,
+      "aviso": "Cascata SIFG/SIFC + bloco paralelo e-SUS APS (IG>0 × procedimento testagem). Não é funil clínico único nem PCDT. Adequação terapêutica = onda seguinte. Sem PII.",
+      "recorte": "Mato Grosso",
+      "etapas": [
+        {
+          "id": "gestantes_sifg",
+          "label": "Gestantes notificadas (SIFG)",
+          "n": 1978,
+          "fonte": "sinan_sifg"
+        },
+        {
+          "id": "testagem_registrada",
+          "label": "Teste NT ≠ não realizado (SIFG)",
+          "n": 1576,
+          "fonte": "sinan_sifg"
+        },
+        {
+          "id": "esquema_registrado",
+          "label": "Esquema ≠ não realizado (SIFG)",
+          "n": 1925,
+          "fonte": "sinan_sifg"
+        },
+        {
+          "id": "parceria_tratada",
+          "label": "Parceria tratada concomitante",
+          "n": 796,
+          "fonte": "sinan_sifg"
+        },
+        {
+          "id": "sc_sifc",
+          "label": "Sífilis congênita notificada (SIFC)",
+          "n": 469,
+          "fonte": "sinan_sifc"
+        },
+        {
+          "id": "dx_materno_parto",
+          "label": "Dx materno no parto/após (SIFC)",
+          "n": 108,
+          "fonte": "sinan_sifc"
+        }
+      ],
+      "etapas_esus_aps": [
+        {
+          "id": "esus_pn_ig",
+          "label": "Atendimentos APS com IG>0 (e-SUS)",
+          "n": 234592,
+          "fonte": "esus_aps"
+        },
+        {
+          "id": "esus_pn_com_testagem",
+          "label": "Desses com proced. testagem sífilis",
+          "n": 84328,
+          "fonte": "esus_aps"
+        }
+      ],
+      "perdas_destaque": [
+        {
+          "de": "gestantes_sifg",
+          "para": "testagem_registrada",
+          "perda": 402,
+          "retencao_pct": 79.7
+        },
+        {
+          "de": "esquema_registrado",
+          "para": "parceria_tratada",
+          "perda": 1129,
+          "retencao_pct": 41.4
+        },
+        {
+          "de": "parceria_tratada",
+          "para": "sc_sifc",
+          "perda": 327,
+          "retencao_pct": 58.9
+        },
+        {
+          "de": "sc_sifc",
+          "para": "dx_materno_parto",
+          "perda": 361,
+          "retencao_pct": 23.0
+        },
+        {
+          "de": "esus_pn_ig",
+          "para": "esus_pn_com_testagem",
+          "perda": 150264,
+          "retencao_pct": 35.9,
+          "bloco": "esus_aps"
+        }
+      ],
+      "operacional": {
+        "parceria_tratada_pct": 40.2,
+        "esquema_nao_realizado_pct": 2.7,
+        "gestantes_sem_tratamento": 53,
+        "diagnostico_materno_parto_pct": 23.0,
+        "consulta_sem_testagem_pct": 64.1,
+        "consulta_sem_testagem_fonte": "esus_aps_gestante_sem_proced_testagem",
+        "esus_gestante_sem_testagem_pct": 64.1,
+        "indice_oportunidades_perdidas": 31.7
+      },
+      "pendente_mvp2": [
+        "tempo diagnostico→tratamento (datas nominais — fora do agregado)",
+        "avaliação caso PCDT (datas de dose/parto — sem PII no repo)",
+        "cruzar SIPNI doses com coorte gestante (sem PII)"
+      ]
+    },
+    "2024": {
+      "tipo": "extracao_dw",
+      "ano": 2024,
+      "aviso": "Cascata SIFG/SIFC + bloco paralelo e-SUS APS (IG>0 × procedimento testagem). Não é funil clínico único nem PCDT. Adequação terapêutica = onda seguinte. Sem PII.",
+      "recorte": "Mato Grosso",
+      "etapas": [
+        {
+          "id": "gestantes_sifg",
+          "label": "Gestantes notificadas (SIFG)",
+          "n": 2289,
+          "fonte": "sinan_sifg"
+        },
+        {
+          "id": "testagem_registrada",
+          "label": "Teste NT ≠ não realizado (SIFG)",
+          "n": 1790,
+          "fonte": "sinan_sifg"
+        },
+        {
+          "id": "esquema_registrado",
+          "label": "Esquema ≠ não realizado (SIFG)",
+          "n": 2205,
+          "fonte": "sinan_sifg"
+        },
+        {
+          "id": "parceria_tratada",
+          "label": "Parceria tratada concomitante",
+          "n": 886,
+          "fonte": "sinan_sifg"
+        },
+        {
+          "id": "sc_sifc",
+          "label": "Sífilis congênita notificada (SIFC)",
+          "n": 494,
+          "fonte": "sinan_sifc"
+        },
+        {
+          "id": "dx_materno_parto",
+          "label": "Dx materno no parto/após (SIFC)",
+          "n": 129,
+          "fonte": "sinan_sifc"
+        }
+      ],
+      "etapas_esus_aps": [
+        {
+          "id": "esus_pn_ig",
+          "label": "Atendimentos APS com IG>0 (e-SUS)",
+          "n": 232639,
+          "fonte": "esus_aps"
+        },
+        {
+          "id": "esus_pn_com_testagem",
+          "label": "Desses com proced. testagem sífilis",
+          "n": 79646,
+          "fonte": "esus_aps"
+        }
+      ],
+      "perdas_destaque": [
+        {
+          "de": "gestantes_sifg",
+          "para": "testagem_registrada",
+          "perda": 499,
+          "retencao_pct": 78.2
+        },
+        {
+          "de": "esquema_registrado",
+          "para": "parceria_tratada",
+          "perda": 1319,
+          "retencao_pct": 40.2
+        },
+        {
+          "de": "parceria_tratada",
+          "para": "sc_sifc",
+          "perda": 392,
+          "retencao_pct": 55.8
+        },
+        {
+          "de": "sc_sifc",
+          "para": "dx_materno_parto",
+          "perda": 365,
+          "retencao_pct": 26.1
+        },
+        {
+          "de": "esus_pn_ig",
+          "para": "esus_pn_com_testagem",
+          "perda": 152993,
+          "retencao_pct": 34.2,
+          "bloco": "esus_aps"
+        }
+      ],
+      "operacional": {
+        "parceria_tratada_pct": 38.7,
+        "esquema_nao_realizado_pct": 3.7,
+        "gestantes_sem_tratamento": 84,
+        "diagnostico_materno_parto_pct": 26.1,
+        "consulta_sem_testagem_pct": 65.8,
+        "consulta_sem_testagem_fonte": "esus_aps_gestante_sem_proced_testagem",
+        "esus_gestante_sem_testagem_pct": 65.8,
+        "indice_oportunidades_perdidas": 33.7
+      },
+      "pendente_mvp2": [
+        "tempo diagnostico→tratamento (datas nominais — fora do agregado)",
+        "avaliação caso PCDT (datas de dose/parto — sem PII no repo)",
+        "cruzar SIPNI doses com coorte gestante (sem PII)"
+      ]
+    },
+    "2025": {
+      "tipo": "extracao_dw",
+      "ano": 2025,
+      "aviso": "Cascata SIFG/SIFC + bloco paralelo e-SUS APS (IG>0 × procedimento testagem). Não é funil clínico único nem PCDT. Adequação terapêutica = onda seguinte. Sem PII.",
+      "recorte": "Mato Grosso",
+      "etapas": [
+        {
+          "id": "gestantes_sifg",
+          "label": "Gestantes notificadas (SIFG)",
+          "n": 2336,
+          "fonte": "sinan_sifg"
+        },
+        {
+          "id": "testagem_registrada",
+          "label": "Teste NT ≠ não realizado (SIFG)",
+          "n": 1767,
+          "fonte": "sinan_sifg"
+        },
+        {
+          "id": "esquema_registrado",
+          "label": "Esquema ≠ não realizado (SIFG)",
+          "n": 2244,
+          "fonte": "sinan_sifg"
+        },
+        {
+          "id": "parceria_tratada",
+          "label": "Parceria tratada concomitante",
+          "n": 905,
+          "fonte": "sinan_sifg"
+        },
+        {
+          "id": "sc_sifc",
+          "label": "Sífilis congênita notificada (SIFC)",
+          "n": 675,
+          "fonte": "sinan_sifc"
+        },
+        {
+          "id": "dx_materno_parto",
+          "label": "Dx materno no parto/após (SIFC)",
+          "n": 108,
+          "fonte": "sinan_sifc"
+        }
+      ],
+      "etapas_esus_aps": [
+        {
+          "id": "esus_pn_ig",
+          "label": "Atendimentos APS com IG>0 (e-SUS)",
+          "n": 224898,
+          "fonte": "esus_aps"
+        },
+        {
+          "id": "esus_pn_com_testagem",
+          "label": "Desses com proced. testagem sífilis",
+          "n": 81078,
+          "fonte": "esus_aps"
+        }
+      ],
+      "perdas_destaque": [
+        {
+          "de": "gestantes_sifg",
+          "para": "testagem_registrada",
+          "perda": 569,
+          "retencao_pct": 75.6
+        },
+        {
+          "de": "esquema_registrado",
+          "para": "parceria_tratada",
+          "perda": 1339,
+          "retencao_pct": 40.3
+        },
+        {
+          "de": "parceria_tratada",
+          "para": "sc_sifc",
+          "perda": 230,
+          "retencao_pct": 74.6
+        },
+        {
+          "de": "sc_sifc",
+          "para": "dx_materno_parto",
+          "perda": 567,
+          "retencao_pct": 16.0
+        },
+        {
+          "de": "esus_pn_ig",
+          "para": "esus_pn_com_testagem",
+          "perda": 143820,
+          "retencao_pct": 36.1,
+          "bloco": "esus_aps"
+        }
+      ],
+      "operacional": {
+        "parceria_tratada_pct": 38.7,
+        "esquema_nao_realizado_pct": 3.9,
+        "gestantes_sem_tratamento": 92,
+        "diagnostico_materno_parto_pct": 16.0,
+        "consulta_sem_testagem_pct": 63.9,
+        "consulta_sem_testagem_fonte": "esus_aps_gestante_sem_proced_testagem",
+        "esus_gestante_sem_testagem_pct": 63.9,
+        "indice_oportunidades_perdidas": 31.1
+      },
+      "pendente_mvp2": [
+        "tempo diagnostico→tratamento (datas nominais — fora do agregado)",
+        "avaliação caso PCDT (datas de dose/parto — sem PII no repo)",
+        "cruzar SIPNI doses com coorte gestante (sem PII)"
+      ]
+    },
+    "2026": {
+      "tipo": "extracao_dw",
+      "ano": 2026,
+      "aviso": "Cascata SIFG/SIFC + bloco paralelo e-SUS APS (IG>0 × procedimento testagem). Não é funil clínico único nem PCDT. Adequação terapêutica = onda seguinte. Sem PII.",
+      "recorte": "Mato Grosso",
+      "etapas": [
+        {
+          "id": "gestantes_sifg",
+          "label": "Gestantes notificadas (SIFG)",
+          "n": 1278,
+          "fonte": "sinan_sifg"
+        },
+        {
+          "id": "testagem_registrada",
+          "label": "Teste NT ≠ não realizado (SIFG)",
+          "n": 891,
+          "fonte": "sinan_sifg"
+        },
+        {
+          "id": "esquema_registrado",
+          "label": "Esquema ≠ não realizado (SIFG)",
+          "n": 1204,
+          "fonte": "sinan_sifg"
+        },
+        {
+          "id": "parceria_tratada",
+          "label": "Parceria tratada concomitante",
+          "n": 458,
+          "fonte": "sinan_sifg"
+        },
+        {
+          "id": "sc_sifc",
+          "label": "Sífilis congênita notificada (SIFC)",
+          "n": 459,
+          "fonte": "sinan_sifc"
+        },
+        {
+          "id": "dx_materno_parto",
+          "label": "Dx materno no parto/após (SIFC)",
+          "n": 78,
+          "fonte": "sinan_sifc"
+        }
+      ],
+      "etapas_esus_aps": [],
+      "perdas_destaque": [
+        {
+          "de": "gestantes_sifg",
+          "para": "testagem_registrada",
+          "perda": 387,
+          "retencao_pct": 69.7
+        },
+        {
+          "de": "esquema_registrado",
+          "para": "parceria_tratada",
+          "perda": 746,
+          "retencao_pct": 38.0
+        },
+        {
+          "de": "sc_sifc",
+          "para": "dx_materno_parto",
+          "perda": 381,
+          "retencao_pct": 17.0
+        }
+      ],
+      "operacional": {
+        "parceria_tratada_pct": 35.8,
+        "esquema_nao_realizado_pct": 5.8,
+        "gestantes_sem_tratamento": 74,
+        "diagnostico_materno_parto_pct": 17.0,
+        "consulta_sem_testagem_pct": 30.3,
+        "consulta_sem_testagem_fonte": "proxy_sifg_teste_nt",
+        "esus_gestante_sem_testagem_pct": null,
+        "indice_oportunidades_perdidas": 25.3
+      },
+      "pendente_mvp2": [
+        "tempo diagnostico→tratamento (datas nominais — fora do agregado)",
+        "avaliação caso PCDT (datas de dose/parto — sem PII no repo)",
+        "cruzar SIPNI doses com coorte gestante (sem PII)"
+      ]
+    }
+  }
+}

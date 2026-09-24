@@ -1,0 +1,693 @@
+{
+  "tipo": "extracao_dw",
+  "ano": 2026,
+  "aviso": "Equidade agregada SIFG (raça/faixa/zona). Sem PII. Denominadores populacionais por estrato pendentes.",
+  "raca_gestante": [
+    {
+      "categoria": "Parda",
+      "n": 868,
+      "pct": 67.9
+    },
+    {
+      "categoria": "Branca",
+      "n": 266,
+      "pct": 20.8
+    },
+    {
+      "categoria": "Preta",
+      "n": 114,
+      "pct": 8.9
+    },
+    {
+      "categoria": "Indigena",
+      "n": 12,
+      "pct": 0.9
+    },
+    {
+      "categoria": "Amarela",
+      "n": 10,
+      "pct": 0.8
+    },
+    {
+      "categoria": "Ignorado",
+      "n": 7,
+      "pct": 0.5
+    },
+    {
+      "categoria": "*Em Branco",
+      "n": 1,
+      "pct": 0.1
+    }
+  ],
+  "faixa_etaria_gestante": [
+    {
+      "categoria": "05.20 a 24 anos",
+      "n": 467,
+      "pct": 36.5
+    },
+    {
+      "categoria": "06.25 a 29 anos",
+      "n": 285,
+      "pct": 22.3
+    },
+    {
+      "categoria": "04.15 a 19 anos",
+      "n": 278,
+      "pct": 21.8
+    },
+    {
+      "categoria": "07.30 a 34 anos",
+      "n": 150,
+      "pct": 11.7
+    },
+    {
+      "categoria": "08.35 a 39 anos",
+      "n": 62,
+      "pct": 4.9
+    },
+    {
+      "categoria": "09.40 a 44 anos",
+      "n": 23,
+      "pct": 1.8
+    },
+    {
+      "categoria": "03.10 a 14 anos",
+      "n": 12,
+      "pct": 0.9
+    },
+    {
+      "categoria": "10.45 a 49 anos",
+      "n": 1,
+      "pct": 0.1
+    }
+  ],
+  "zona_gestante": [
+    {
+      "categoria": "Urbana",
+      "n": 1174,
+      "pct": 91.9
+    },
+    {
+      "categoria": "Rural",
+      "n": 73,
+      "pct": 5.7
+    },
+    {
+      "categoria": "*Em Branco",
+      "n": 19,
+      "pct": 1.5
+    },
+    {
+      "categoria": "Periurbana",
+      "n": 7,
+      "pct": 0.5
+    },
+    {
+      "categoria": "Ignorado",
+      "n": 5,
+      "pct": 0.4
+    }
+  ],
+  "total_gestante": 1278,
+  "indicadores_ref": [
+    "taxa_por_raca_cor",
+    "gap_desigualdade"
+  ],
+  "por_ano": {
+    "2022": {
+      "tipo": "extracao_dw",
+      "ano": 2022,
+      "aviso": "Equidade agregada SIFG (raça/faixa/zona). Sem PII. Denominadores populacionais por estrato pendentes.",
+      "raca_gestante": [
+        {
+          "categoria": "Parda",
+          "n": 1112,
+          "pct": 65.8
+        },
+        {
+          "categoria": "Branca",
+          "n": 331,
+          "pct": 19.6
+        },
+        {
+          "categoria": "Preta",
+          "n": 159,
+          "pct": 9.4
+        },
+        {
+          "categoria": "Ignorado",
+          "n": 54,
+          "pct": 3.2
+        },
+        {
+          "categoria": "Amarela",
+          "n": 24,
+          "pct": 1.4
+        },
+        {
+          "categoria": "Indigena",
+          "n": 8,
+          "pct": 0.5
+        },
+        {
+          "categoria": "*Em Branco",
+          "n": 2,
+          "pct": 0.1
+        }
+      ],
+      "faixa_etaria_gestante": [
+        {
+          "categoria": "05.20 a 24 anos",
+          "n": 637,
+          "pct": 37.7
+        },
+        {
+          "categoria": "06.25 a 29 anos",
+          "n": 386,
+          "pct": 22.8
+        },
+        {
+          "categoria": "04.15 a 19 anos",
+          "n": 377,
+          "pct": 22.3
+        },
+        {
+          "categoria": "07.30 a 34 anos",
+          "n": 189,
+          "pct": 11.2
+        },
+        {
+          "categoria": "08.35 a 39 anos",
+          "n": 64,
+          "pct": 3.8
+        },
+        {
+          "categoria": "09.40 a 44 anos",
+          "n": 21,
+          "pct": 1.2
+        },
+        {
+          "categoria": "03.10 a 14 anos",
+          "n": 15,
+          "pct": 0.9
+        },
+        {
+          "categoria": "10.45 a 49 anos",
+          "n": 1,
+          "pct": 0.1
+        }
+      ],
+      "zona_gestante": [
+        {
+          "categoria": "Urbana",
+          "n": 1549,
+          "pct": 91.7
+        },
+        {
+          "categoria": "Rural",
+          "n": 109,
+          "pct": 6.4
+        },
+        {
+          "categoria": "*Em Branco",
+          "n": 22,
+          "pct": 1.3
+        },
+        {
+          "categoria": "Periurbana",
+          "n": 7,
+          "pct": 0.4
+        },
+        {
+          "categoria": "Ignorado",
+          "n": 3,
+          "pct": 0.2
+        }
+      ],
+      "total_gestante": 1690,
+      "indicadores_ref": [
+        "taxa_por_raca_cor",
+        "gap_desigualdade"
+      ]
+    },
+    "2023": {
+      "tipo": "extracao_dw",
+      "ano": 2023,
+      "aviso": "Equidade agregada SIFG (raça/faixa/zona). Sem PII. Denominadores populacionais por estrato pendentes.",
+      "raca_gestante": [
+        {
+          "categoria": "Parda",
+          "n": 1317,
+          "pct": 66.6
+        },
+        {
+          "categoria": "Branca",
+          "n": 391,
+          "pct": 19.8
+        },
+        {
+          "categoria": "Preta",
+          "n": 201,
+          "pct": 10.2
+        },
+        {
+          "categoria": "Ignorado",
+          "n": 26,
+          "pct": 1.3
+        },
+        {
+          "categoria": "Amarela",
+          "n": 26,
+          "pct": 1.3
+        },
+        {
+          "categoria": "Indigena",
+          "n": 13,
+          "pct": 0.7
+        },
+        {
+          "categoria": "*Em Branco",
+          "n": 4,
+          "pct": 0.2
+        }
+      ],
+      "faixa_etaria_gestante": [
+        {
+          "categoria": "05.20 a 24 anos",
+          "n": 686,
+          "pct": 34.7
+        },
+        {
+          "categoria": "04.15 a 19 anos",
+          "n": 490,
+          "pct": 24.8
+        },
+        {
+          "categoria": "06.25 a 29 anos",
+          "n": 453,
+          "pct": 22.9
+        },
+        {
+          "categoria": "07.30 a 34 anos",
+          "n": 200,
+          "pct": 10.1
+        },
+        {
+          "categoria": "08.35 a 39 anos",
+          "n": 98,
+          "pct": 5.0
+        },
+        {
+          "categoria": "09.40 a 44 anos",
+          "n": 27,
+          "pct": 1.4
+        },
+        {
+          "categoria": "03.10 a 14 anos",
+          "n": 23,
+          "pct": 1.2
+        },
+        {
+          "categoria": "10.45 a 49 anos",
+          "n": 1,
+          "pct": 0.1
+        }
+      ],
+      "zona_gestante": [
+        {
+          "categoria": "Urbana",
+          "n": 1844,
+          "pct": 93.2
+        },
+        {
+          "categoria": "Rural",
+          "n": 103,
+          "pct": 5.2
+        },
+        {
+          "categoria": "*Em Branco",
+          "n": 22,
+          "pct": 1.1
+        },
+        {
+          "categoria": "Periurbana",
+          "n": 7,
+          "pct": 0.4
+        },
+        {
+          "categoria": "Ignorado",
+          "n": 2,
+          "pct": 0.1
+        }
+      ],
+      "total_gestante": 1978,
+      "indicadores_ref": [
+        "taxa_por_raca_cor",
+        "gap_desigualdade"
+      ]
+    },
+    "2024": {
+      "tipo": "extracao_dw",
+      "ano": 2024,
+      "aviso": "Equidade agregada SIFG (raça/faixa/zona). Sem PII. Denominadores populacionais por estrato pendentes.",
+      "raca_gestante": [
+        {
+          "categoria": "Parda",
+          "n": 1567,
+          "pct": 68.5
+        },
+        {
+          "categoria": "Branca",
+          "n": 429,
+          "pct": 18.7
+        },
+        {
+          "categoria": "Preta",
+          "n": 237,
+          "pct": 10.4
+        },
+        {
+          "categoria": "Amarela",
+          "n": 26,
+          "pct": 1.1
+        },
+        {
+          "categoria": "Ignorado",
+          "n": 21,
+          "pct": 0.9
+        },
+        {
+          "categoria": "Indigena",
+          "n": 9,
+          "pct": 0.4
+        }
+      ],
+      "faixa_etaria_gestante": [
+        {
+          "categoria": "05.20 a 24 anos",
+          "n": 835,
+          "pct": 36.5
+        },
+        {
+          "categoria": "04.15 a 19 anos",
+          "n": 554,
+          "pct": 24.2
+        },
+        {
+          "categoria": "06.25 a 29 anos",
+          "n": 507,
+          "pct": 22.1
+        },
+        {
+          "categoria": "07.30 a 34 anos",
+          "n": 236,
+          "pct": 10.3
+        },
+        {
+          "categoria": "08.35 a 39 anos",
+          "n": 111,
+          "pct": 4.8
+        },
+        {
+          "categoria": "09.40 a 44 anos",
+          "n": 24,
+          "pct": 1.0
+        },
+        {
+          "categoria": "03.10 a 14 anos",
+          "n": 21,
+          "pct": 0.9
+        },
+        {
+          "categoria": "10.45 a 49 anos",
+          "n": 1,
+          "pct": 0.0
+        }
+      ],
+      "zona_gestante": [
+        {
+          "categoria": "Urbana",
+          "n": 2137,
+          "pct": 93.4
+        },
+        {
+          "categoria": "Rural",
+          "n": 115,
+          "pct": 5.0
+        },
+        {
+          "categoria": "*Em Branco",
+          "n": 20,
+          "pct": 0.9
+        },
+        {
+          "categoria": "Periurbana",
+          "n": 13,
+          "pct": 0.6
+        },
+        {
+          "categoria": "Ignorado",
+          "n": 4,
+          "pct": 0.2
+        }
+      ],
+      "total_gestante": 2289,
+      "indicadores_ref": [
+        "taxa_por_raca_cor",
+        "gap_desigualdade"
+      ]
+    },
+    "2025": {
+      "tipo": "extracao_dw",
+      "ano": 2025,
+      "aviso": "Equidade agregada SIFG (raça/faixa/zona). Sem PII. Denominadores populacionais por estrato pendentes.",
+      "raca_gestante": [
+        {
+          "categoria": "Parda",
+          "n": 1582,
+          "pct": 67.7
+        },
+        {
+          "categoria": "Branca",
+          "n": 432,
+          "pct": 18.5
+        },
+        {
+          "categoria": "Preta",
+          "n": 262,
+          "pct": 11.2
+        },
+        {
+          "categoria": "Ignorado",
+          "n": 26,
+          "pct": 1.1
+        },
+        {
+          "categoria": "Amarela",
+          "n": 24,
+          "pct": 1.0
+        },
+        {
+          "categoria": "Indigena",
+          "n": 8,
+          "pct": 0.3
+        },
+        {
+          "categoria": "*Em Branco",
+          "n": 2,
+          "pct": 0.1
+        }
+      ],
+      "faixa_etaria_gestante": [
+        {
+          "categoria": "05.20 a 24 anos",
+          "n": 830,
+          "pct": 35.5
+        },
+        {
+          "categoria": "06.25 a 29 anos",
+          "n": 586,
+          "pct": 25.1
+        },
+        {
+          "categoria": "04.15 a 19 anos",
+          "n": 522,
+          "pct": 22.3
+        },
+        {
+          "categoria": "07.30 a 34 anos",
+          "n": 250,
+          "pct": 10.7
+        },
+        {
+          "categoria": "08.35 a 39 anos",
+          "n": 91,
+          "pct": 3.9
+        },
+        {
+          "categoria": "09.40 a 44 anos",
+          "n": 26,
+          "pct": 1.1
+        },
+        {
+          "categoria": "03.10 a 14 anos",
+          "n": 25,
+          "pct": 1.1
+        },
+        {
+          "categoria": "10.45 a 49 anos",
+          "n": 6,
+          "pct": 0.3
+        }
+      ],
+      "zona_gestante": [
+        {
+          "categoria": "Urbana",
+          "n": 2186,
+          "pct": 93.6
+        },
+        {
+          "categoria": "Rural",
+          "n": 116,
+          "pct": 5.0
+        },
+        {
+          "categoria": "*Em Branco",
+          "n": 22,
+          "pct": 0.9
+        },
+        {
+          "categoria": "Periurbana",
+          "n": 11,
+          "pct": 0.5
+        },
+        {
+          "categoria": "Ignorado",
+          "n": 1,
+          "pct": 0.0
+        }
+      ],
+      "total_gestante": 2336,
+      "indicadores_ref": [
+        "taxa_por_raca_cor",
+        "gap_desigualdade"
+      ]
+    },
+    "2026": {
+      "tipo": "extracao_dw",
+      "ano": 2026,
+      "aviso": "Equidade agregada SIFG (raça/faixa/zona). Sem PII. Denominadores populacionais por estrato pendentes.",
+      "raca_gestante": [
+        {
+          "categoria": "Parda",
+          "n": 868,
+          "pct": 67.9
+        },
+        {
+          "categoria": "Branca",
+          "n": 266,
+          "pct": 20.8
+        },
+        {
+          "categoria": "Preta",
+          "n": 114,
+          "pct": 8.9
+        },
+        {
+          "categoria": "Indigena",
+          "n": 12,
+          "pct": 0.9
+        },
+        {
+          "categoria": "Amarela",
+          "n": 10,
+          "pct": 0.8
+        },
+        {
+          "categoria": "Ignorado",
+          "n": 7,
+          "pct": 0.5
+        },
+        {
+          "categoria": "*Em Branco",
+          "n": 1,
+          "pct": 0.1
+        }
+      ],
+      "faixa_etaria_gestante": [
+        {
+          "categoria": "05.20 a 24 anos",
+          "n": 467,
+          "pct": 36.5
+        },
+        {
+          "categoria": "06.25 a 29 anos",
+          "n": 285,
+          "pct": 22.3
+        },
+        {
+          "categoria": "04.15 a 19 anos",
+          "n": 278,
+          "pct": 21.8
+        },
+        {
+          "categoria": "07.30 a 34 anos",
+          "n": 150,
+          "pct": 11.7
+        },
+        {
+          "categoria": "08.35 a 39 anos",
+          "n": 62,
+          "pct": 4.9
+        },
+        {
+          "categoria": "09.40 a 44 anos",
+          "n": 23,
+          "pct": 1.8
+        },
+        {
+          "categoria": "03.10 a 14 anos",
+          "n": 12,
+          "pct": 0.9
+        },
+        {
+          "categoria": "10.45 a 49 anos",
+          "n": 1,
+          "pct": 0.1
+        }
+      ],
+      "zona_gestante": [
+        {
+          "categoria": "Urbana",
+          "n": 1174,
+          "pct": 91.9
+        },
+        {
+          "categoria": "Rural",
+          "n": 73,
+          "pct": 5.7
+        },
+        {
+          "categoria": "*Em Branco",
+          "n": 19,
+          "pct": 1.5
+        },
+        {
+          "categoria": "Periurbana",
+          "n": 7,
+          "pct": 0.5
+        },
+        {
+          "categoria": "Ignorado",
+          "n": 5,
+          "pct": 0.4
+        }
+      ],
+      "total_gestante": 1278,
+      "indicadores_ref": [
+        "taxa_por_raca_cor",
+        "gap_desigualdade"
+      ]
+    }
+  }
+}
