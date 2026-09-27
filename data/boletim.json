@@ -7,7 +7,7 @@
   "titulo": "Boletim Sífilis MT — estado · 2025",
   "orgao": "Governo de Mato Grosso · SES-MT · CIEVS-MT",
   "periodo": "Recorte anual 2025",
-  "atraso_dados": "2026-09-24T14:49:06.562923+00:00",
+  "atraso_dados": "2026-09-27T00:08:05.159938+00:00",
   "fontes": [
     "SINAN adquirida (NI + CID A51–A53)",
     "SINAN-SIFG",
@@ -82,6 +82,6 @@
     "Registrar andamento no quadro de gestão de ações (ADR-010 — store SES).",
     "Revisar rascunho assistido por IA antes de publicar (ADR-011)."
   ],
-  "rodape": "Parâmetros clínicos e metas oficiais apenas via config/regras.yml. Sem lista nominal. Gerado em 2026-09-24T14:49:18.819320+00:00",
-  "gerado_em": "2026-09-24T14:49:18.819331+00:00"
+  "rodape": "Parâmetros clínicos e metas oficiais apenas via config/regras.yml. Sem lista nominal. Gerado em 2026-09-27T00:30:41.407972+00:00",
+  "gerado_em": "2026-09-27T00:30:41.407988+00:00"
 }

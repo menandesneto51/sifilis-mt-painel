@@ -2,7 +2,7 @@
   "tipo": "extracao_dw",
   "aviso": "Agregados reais do DW SES-MT. Sem microdados/PII. Ano corrente pode estar incompleto. Adquirida = NI + CID A51–A53 (método SES-MT; sem ficha específica no DW). Denominador populacional: carry-forward de 2023 (numerador 2025).",
   "fonte_prevista": "DW/SES-MT Datawarehouse",
-  "extraido_em": "2026-09-24T14:49:06.562923+00:00",
+  "extraido_em": "2026-09-27T00:08:05.159938+00:00",
   "atraso_dias": null,
   "ano": 2025,
   "anos_disponiveis": [
