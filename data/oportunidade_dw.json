@@ -403,58 +403,58 @@
   ],
   "esus_proced_penicilina_n": null,
   "esus_proced_penicilina_nota": "Códigos ABPG032/0301100241 na dim e-SUS; volume zero no fato APS na janela.",
-  "sisreg_status": "acesso_ok_sem_volume_ou_pendente",
-  "sisreg_solicitacoes_sifilis_n": null,
-  "sisreg_cid_sifilis_n": null,
-  "sisreg_proced_sifilis_n": null,
+  "sisreg_status": "extract_ok",
+  "sisreg_solicitacoes_sifilis_n": 570,
+  "sisreg_cid_sifilis_n": 570,
+  "sisreg_proced_sifilis_n": 29,
   "sisreg_por_status": [
     {
       "status": "AGENDAMENTO / CONFIRMADO / EXECUTANTE",
-      "n": 27681
+      "n": 278
     },
     {
       "status": "AGENDAMENTO / PENDENTE CONFIRMAÇÃO / EXECUTANTE",
-      "n": 9877
-    },
-    {
-      "status": "SOLICITAÇÃO / AGENDADA / SOLICITANTE",
-      "n": 4840
-    },
-    {
-      "status": "AGENDAMENTO / FALTA / EXECUTANTE",
-      "n": 1683
-    },
-    {
-      "status": "SOLICITAÇÃO / AGENDADA / FILA DE ESPERA",
-      "n": 1370
-    },
-    {
-      "status": "SOLICITAÇÃO / AUTORIZADA / REGULADOR",
-      "n": 1156
-    },
-    {
-      "status": "AGENDAMENTO / CANCELADO / SOLICITANTE",
-      "n": 1008
-    },
-    {
-      "status": "AGENDAMENTO / CANCELADO / REGULADOR",
-      "n": 836
-    },
-    {
-      "status": "SOLICITAÇÃO / NEGADA / REGULADOR",
-      "n": 374
+      "n": 85
     },
     {
       "status": "SOLICITAÇÃO / PENDENTE / FILA DE ESPERA",
-      "n": 340
+      "n": 85
     },
     {
-      "status": "SOLICITAÇÃO / CANCELADA / SOLICITANTE",
-      "n": 58
+      "status": "SOLICITAÇÃO / AUTORIZADA / REGULADOR",
+      "n": 26
+    },
+    {
+      "status": "AGENDAMENTO / FALTA / EXECUTANTE",
+      "n": 26
+    },
+    {
+      "status": "SOLICITAÇÃO / NEGADA / REGULADOR",
+      "n": 18
     },
     {
       "status": "SOLICITAÇÃO / DEVOLVIDA / REGULADOR",
-      "n": 54
+      "n": 15
+    },
+    {
+      "status": "SOLICITAÇÃO / AGENDADA / FILA DE ESPERA",
+      "n": 11
+    },
+    {
+      "status": "AGENDAMENTO / CANCELADO / SOLICITANTE",
+      "n": 9
+    },
+    {
+      "status": "SOLICITAÇÃO / CANCELADA / COORDENADOR",
+      "n": 6
+    },
+    {
+      "status": "SOLICITAÇÃO / PENDENTE / REGULADOR",
+      "n": 6
+    },
+    {
+      "status": "SOLICITAÇÃO / CANCELADA / SOLICITANTE",
+      "n": 2
     }
   ],
   "sipni_status": "extract_ok",
@@ -1236,58 +1236,54 @@
       ],
       "esus_proced_penicilina_n": null,
       "esus_proced_penicilina_nota": "Códigos ABPG032/0301100241 na dim e-SUS; volume zero no fato APS na janela.",
-      "sisreg_status": "acesso_ok_sem_volume_ou_pendente",
-      "sisreg_solicitacoes_sifilis_n": null,
-      "sisreg_cid_sifilis_n": null,
-      "sisreg_proced_sifilis_n": null,
+      "sisreg_status": "extract_ok",
+      "sisreg_solicitacoes_sifilis_n": 278,
+      "sisreg_cid_sifilis_n": 278,
+      "sisreg_proced_sifilis_n": 28,
       "sisreg_por_status": [
         {
           "status": "AGENDAMENTO / CONFIRMADO / EXECUTANTE",
-          "n": 18610
+          "n": 116
         },
         {
           "status": "AGENDAMENTO / PENDENTE CONFIRMAÇÃO / EXECUTANTE",
-          "n": 12249
-        },
-        {
-          "status": "AGENDAMENTO / CANCELADO / SOLICITANTE",
-          "n": 2210
-        },
-        {
-          "status": "SOLICITAÇÃO / AGENDADA / SOLICITANTE",
-          "n": 844
+          "n": 72
         },
         {
           "status": "AGENDAMENTO / FALTA / EXECUTANTE",
-          "n": 722
-        },
-        {
-          "status": "AGENDAMENTO / CANCELADO / REGULADOR",
-          "n": 240
-        },
-        {
-          "status": "SOLICITAÇÃO / AGENDADA / FILA DE ESPERA",
-          "n": 143
+          "n": 34
         },
         {
           "status": "SOLICITAÇÃO / NEGADA / REGULADOR",
-          "n": 109
+          "n": 22
+        },
+        {
+          "status": "AGENDAMENTO / CANCELADO / SOLICITANTE",
+          "n": 12
+        },
+        {
+          "status": "SOLICITAÇÃO / CANCELADA / COORDENADOR",
+          "n": 6
+        },
+        {
+          "status": "SOLICITAÇÃO / PENDENTE / FILA DE ESPERA",
+          "n": 5
         },
         {
           "status": "SOLICITAÇÃO / DEVOLVIDA / REGULADOR",
-          "n": 20
-        },
-        {
-          "status": "SOLICITAÇÃO / AUTORIZADA / REGULADOR",
-          "n": 15
-        },
-        {
-          "status": "AGENDAMENTO / CANCELADO / COORDENADOR",
-          "n": 11
+          "n": 5
         },
         {
           "status": "SOLICITAÇÃO / CANCELADA / SOLICITANTE",
-          "n": 10
+          "n": 3
+        },
+        {
+          "status": "SOLICITAÇÃO / AGENDADA / SOLICITANTE",
+          "n": 2
+        },
+        {
+          "status": "AGENDAMENTO / CANCELADO / COORDENADOR",
+          "n": 1
         }
       ],
       "sipni_status": "extract_ok",
@@ -1876,58 +1872,58 @@
       ],
       "esus_proced_penicilina_n": null,
       "esus_proced_penicilina_nota": "Códigos ABPG032/0301100241 na dim e-SUS; volume zero no fato APS na janela.",
-      "sisreg_status": "acesso_ok_sem_volume_ou_pendente",
-      "sisreg_solicitacoes_sifilis_n": null,
-      "sisreg_cid_sifilis_n": null,
-      "sisreg_proced_sifilis_n": null,
+      "sisreg_status": "extract_ok",
+      "sisreg_solicitacoes_sifilis_n": 464,
+      "sisreg_cid_sifilis_n": 464,
+      "sisreg_proced_sifilis_n": 38,
       "sisreg_por_status": [
         {
           "status": "AGENDAMENTO / CONFIRMADO / EXECUTANTE",
-          "n": 25257
-        },
-        {
-          "status": "AGENDAMENTO / PENDENTE CONFIRMAÇÃO / EXECUTANTE",
-          "n": 14281
-        },
-        {
-          "status": "AGENDAMENTO / CANCELADO / SOLICITANTE",
-          "n": 1329
-        },
-        {
-          "status": "AGENDAMENTO / FALTA / EXECUTANTE",
-          "n": 539
-        },
-        {
-          "status": "AGENDAMENTO / CANCELADO / REGULADOR",
-          "n": 235
+          "n": 157
         },
         {
           "status": "SOLICITAÇÃO / NEGADA / REGULADOR",
-          "n": 181
+          "n": 77
+        },
+        {
+          "status": "AGENDAMENTO / PENDENTE CONFIRMAÇÃO / EXECUTANTE",
+          "n": 76
+        },
+        {
+          "status": "AGENDAMENTO / FALTA / EXECUTANTE",
+          "n": 66
         },
         {
           "status": "SOLICITAÇÃO / PENDENTE / FILA DE ESPERA",
-          "n": 52
+          "n": 51
         },
         {
           "status": "SOLICITAÇÃO / DEVOLVIDA / REGULADOR",
-          "n": 42
+          "n": 13
         },
         {
-          "status": "AGENDAMENTO / CANCELADO / COORDENADOR",
-          "n": 22
+          "status": "AGENDAMENTO / CANCELADO / SOLICITANTE",
+          "n": 10
         },
         {
           "status": "SOLICITAÇÃO / CANCELADA / COORDENADOR",
           "n": 9
         },
         {
+          "status": "SOLICITAÇÃO / CANCELADA / SOLICITANTE",
+          "n": 2
+        },
+        {
           "status": "SOLICITAÇÃO / CANCELADA / REGULADOR",
-          "n": 5
+          "n": 1
+        },
+        {
+          "status": "AGENDAMENTO / CANCELADO / REGULADOR",
+          "n": 1
         },
         {
           "status": "SOLICITAÇÃO / PENDENTE / REGULADOR",
-          "n": 5
+          "n": 1
         }
       ],
       "sipni_status": "extract_ok",
@@ -2516,58 +2512,58 @@
       ],
       "esus_proced_penicilina_n": null,
       "esus_proced_penicilina_nota": "Códigos ABPG032/0301100241 na dim e-SUS; volume zero no fato APS na janela.",
-      "sisreg_status": "acesso_ok_sem_volume_ou_pendente",
-      "sisreg_solicitacoes_sifilis_n": null,
-      "sisreg_cid_sifilis_n": null,
-      "sisreg_proced_sifilis_n": null,
+      "sisreg_status": "extract_ok",
+      "sisreg_solicitacoes_sifilis_n": 702,
+      "sisreg_cid_sifilis_n": 702,
+      "sisreg_proced_sifilis_n": 23,
       "sisreg_por_status": [
         {
           "status": "AGENDAMENTO / CONFIRMADO / EXECUTANTE",
-          "n": 23914
-        },
-        {
-          "status": "AGENDAMENTO / PENDENTE CONFIRMAÇÃO / EXECUTANTE",
-          "n": 13975
-        },
-        {
-          "status": "AGENDAMENTO / CANCELADO / SOLICITANTE",
-          "n": 1333
-        },
-        {
-          "status": "AGENDAMENTO / FALTA / EXECUTANTE",
-          "n": 651
-        },
-        {
-          "status": "AGENDAMENTO / CANCELADO / REGULADOR",
-          "n": 460
-        },
-        {
-          "status": "SOLICITAÇÃO / NEGADA / REGULADOR",
-          "n": 302
+          "n": 212
         },
         {
           "status": "SOLICITAÇÃO / PENDENTE / FILA DE ESPERA",
-          "n": 175
+          "n": 172
+        },
+        {
+          "status": "AGENDAMENTO / PENDENTE CONFIRMAÇÃO / EXECUTANTE",
+          "n": 135
+        },
+        {
+          "status": "SOLICITAÇÃO / NEGADA / REGULADOR",
+          "n": 99
+        },
+        {
+          "status": "AGENDAMENTO / FALTA / EXECUTANTE",
+          "n": 23
         },
         {
           "status": "SOLICITAÇÃO / CANCELADA / REGULADOR",
-          "n": 32
-        },
-        {
-          "status": "AGENDAMENTO / CANCELADO / COORDENADOR",
           "n": 17
         },
         {
-          "status": "SOLICITAÇÃO / PENDENTE / REGULADOR",
+          "status": "AGENDAMENTO / CANCELADO / SOLICITANTE",
           "n": 16
         },
         {
-          "status": "SOLICITAÇÃO / AGENDADA / FILA DE ESPERA",
-          "n": 14
+          "status": "SOLICITAÇÃO / DEVOLVIDA / REGULADOR",
+          "n": 11
         },
         {
-          "status": "SOLICITAÇÃO / DEVOLVIDA / REGULADOR",
-          "n": 13
+          "status": "SOLICITAÇÃO / PENDENTE / REGULADOR",
+          "n": 5
+        },
+        {
+          "status": "SOLICITAÇÃO / CANCELADA / COORDENADOR",
+          "n": 4
+        },
+        {
+          "status": "SOLICITAÇÃO / AUTORIZADA / REGULADOR",
+          "n": 2
+        },
+        {
+          "status": "AGENDAMENTO / CANCELADO / COORDENADOR",
+          "n": 2
         }
       ],
       "sipni_status": "extract_ok",
@@ -3156,58 +3152,58 @@
       ],
       "esus_proced_penicilina_n": null,
       "esus_proced_penicilina_nota": "Códigos ABPG032/0301100241 na dim e-SUS; volume zero no fato APS na janela.",
-      "sisreg_status": "acesso_ok_sem_volume_ou_pendente",
-      "sisreg_solicitacoes_sifilis_n": null,
-      "sisreg_cid_sifilis_n": null,
-      "sisreg_proced_sifilis_n": null,
+      "sisreg_status": "extract_ok",
+      "sisreg_solicitacoes_sifilis_n": 570,
+      "sisreg_cid_sifilis_n": 570,
+      "sisreg_proced_sifilis_n": 29,
       "sisreg_por_status": [
         {
           "status": "AGENDAMENTO / CONFIRMADO / EXECUTANTE",
-          "n": 27681
+          "n": 278
         },
         {
           "status": "AGENDAMENTO / PENDENTE CONFIRMAÇÃO / EXECUTANTE",
-          "n": 9877
-        },
-        {
-          "status": "SOLICITAÇÃO / AGENDADA / SOLICITANTE",
-          "n": 4840
-        },
-        {
-          "status": "AGENDAMENTO / FALTA / EXECUTANTE",
-          "n": 1683
-        },
-        {
-          "status": "SOLICITAÇÃO / AGENDADA / FILA DE ESPERA",
-          "n": 1370
-        },
-        {
-          "status": "SOLICITAÇÃO / AUTORIZADA / REGULADOR",
-          "n": 1156
-        },
-        {
-          "status": "AGENDAMENTO / CANCELADO / SOLICITANTE",
-          "n": 1008
-        },
-        {
-          "status": "AGENDAMENTO / CANCELADO / REGULADOR",
-          "n": 836
-        },
-        {
-          "status": "SOLICITAÇÃO / NEGADA / REGULADOR",
-          "n": 374
+          "n": 85
         },
         {
           "status": "SOLICITAÇÃO / PENDENTE / FILA DE ESPERA",
-          "n": 340
+          "n": 85
         },
         {
-          "status": "SOLICITAÇÃO / CANCELADA / SOLICITANTE",
-          "n": 58
+          "status": "SOLICITAÇÃO / AUTORIZADA / REGULADOR",
+          "n": 26
+        },
+        {
+          "status": "AGENDAMENTO / FALTA / EXECUTANTE",
+          "n": 26
+        },
+        {
+          "status": "SOLICITAÇÃO / NEGADA / REGULADOR",
+          "n": 18
         },
         {
           "status": "SOLICITAÇÃO / DEVOLVIDA / REGULADOR",
-          "n": 54
+          "n": 15
+        },
+        {
+          "status": "SOLICITAÇÃO / AGENDADA / FILA DE ESPERA",
+          "n": 11
+        },
+        {
+          "status": "AGENDAMENTO / CANCELADO / SOLICITANTE",
+          "n": 9
+        },
+        {
+          "status": "SOLICITAÇÃO / CANCELADA / COORDENADOR",
+          "n": 6
+        },
+        {
+          "status": "SOLICITAÇÃO / PENDENTE / REGULADOR",
+          "n": 6
+        },
+        {
+          "status": "SOLICITAÇÃO / CANCELADA / SOLICITANTE",
+          "n": 2
         }
       ],
       "sipni_status": "extract_ok",

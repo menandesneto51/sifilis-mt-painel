@@ -33,7 +33,7 @@
     "prontidao_eliminacao_score"
   ],
   "fonte_prevista": "DW + parametros regras.yml",
-  "extraido_em": "2026-09-27T00:30:41.346581+00:00",
+  "extraido_em": "2026-09-27T00:46:52.200472+00:00",
   "ano": 2025,
   "parametros_usados": {
     "meta_incidencia_sc_por_1000_nv": 0.5,

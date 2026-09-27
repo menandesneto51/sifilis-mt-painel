@@ -1,5 +1,5 @@
 {
-  "publicado_em": "2026-09-27T00:30:41.346615+00:00",
+  "publicado_em": "2026-09-27T00:46:52.200501+00:00",
   "ano": 2025,
   "fonte": "DW",
   "ers_n": 16,
@@ -12,7 +12,7 @@
   },
   "adquirida_metodo": "NI + CID A51–A53 (método SES-MT)",
   "freshness": {
-    "coletado_em": "2026-09-27T00:30:41.414992+00:00",
+    "coletado_em": "2026-09-27T00:46:52.265772+00:00",
     "fontes": {
       "sinan_sifg": {
         "path": "data\\extracted\\staging\\agg_sifilis_gestante.csv",
